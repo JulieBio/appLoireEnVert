@@ -5,14 +5,16 @@ import './App.css';
 //import { createStore, applyMiddleware } from 'redux';
 //import thunk from 'redux-thunk'
 //import reducers from './reducers';
+import Head from './components/head';
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header>
-        </header>
-      </div>
+        <div>
+          <Head/>
+        </div>
     );
   }
 }
