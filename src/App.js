@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import EventList from "./components/EventList";
+
 //import Result from './containers/Result';
 //import { Provider } from 'react-redux';
 //import { createStore, applyMiddleware } from 'redux';
@@ -10,8 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-        </header>
+        <EventList />
       </div>
     );
   }
