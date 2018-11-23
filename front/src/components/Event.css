@@ -13,10 +13,16 @@
 .description{
    margin-top:40px;
 }
- .quandtype {
+ .quand {
     font-family: Arial, serif;
     font-size: 1.1em;
     font-weight: bold;
     color: rgb(54, 135, 150);
+ }
+ .type {
+   font-family: Arial, serif;
+   font-size: 1.1em;
+   font-weight: bold;
+   color: rgb(54, 135, 150);
  }
 
