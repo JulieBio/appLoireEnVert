@@ -77,12 +77,15 @@ class EventList extends Component {
 
                 <CardImg top cardImage src={event.image} alt="Card image cap" classname="images" />
               <CardBody classname="bodyCard">
+                <Row classname="description">
+                    <CardTitle className="type">{event.type}</CardTitle>
+                </Row>
                 <Row>
                   <CardSubtitle className="nom">{event.nom}</CardSubtitle>
                 </Row>
                 <br/>
-                <Row classname="description">
-                    <CardTitle className="quandtype">{event.quand} - {event.type}</CardTitle>
+                <Row>
+                <CardText className="quand">{event.quand}</CardText>
                 </Row>
 
 
