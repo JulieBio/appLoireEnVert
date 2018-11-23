@@ -39,8 +39,6 @@ const events = [
     }
     ];
      
-     
-     
  
 class EventList extends Component {
     constructor(props){

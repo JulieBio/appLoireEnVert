@@ -9,8 +9,6 @@ import './App.css';
 //import reducers from './reducers';
 import Head from './components/head';
 
-
-
 class App extends Component {
   render() {
     return (
