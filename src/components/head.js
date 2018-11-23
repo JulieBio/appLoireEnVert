@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './head.css';
 // import Media from "react-media";
 
 // const Media = require("react-media");
 
-class Head extends Component {
+class Head extends React.Component  {
     render() {
       return (
           <div className="header">
