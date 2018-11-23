@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import EventList from './containers/EventList';
 import './App.css';
+
 //import Result from './containers/Result';
 //import { Provider } from 'react-redux';
 //import { createStore, applyMiddleware } from 'redux';
@@ -14,6 +16,7 @@ class App extends Component {
     return (
         <div>
           <Head/>
+          <EventList />
         </div>
     );
   }
