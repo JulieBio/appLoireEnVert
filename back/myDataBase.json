@@ -1,0 +1,85 @@
+{
+    "event": {
+        "1":{
+
+            "name": "La mer et son immensité",
+            "image" : "https://loireenvert.fr/wp-content/uploads/2018/11/plage-1850059-pixabay.jpg",
+            "date": "tout le mois",
+            "time": "9 h 00 - 13 h 00",
+            "type": "exposition",
+            "place": "Maison de la Nature",
+            "free": "true",
+            "description": "Hissez les voiles et prenez le large <br> La mer… Elle fait partie de la vie de chacun, en vacances, en voyage, lors d’activités sportives ou encore par l’intermédiaire de quantités de produits que nous consommons. Mais connaissons-nous vraiment cette immensité et tous les trésors qu’elle recèle ? Quel rôle joue-t-elle sur notre planète ? Pouvons-nous vraiment l’apprivoiser comme nous le pensons ? Plus qu’un enjeu de société, les mers se dépeuplent, s’épuisent et sont dans des situations alarmantes. La réaction à protéger et conserver nos milieux marins n’est pas une solution, c’est une obligation."
+            
+        },
+
+        "2":{
+
+            "name": "L’Afrique noire et ses symboles",
+            "image" :"https://loireenvert.fr/wp-content/uploads/2018/11/elephant-2870777-pixabay.jpg",
+            "date": "vendredi 01 février 2019 - jeudi 28 février 2019",
+            "time": "14 h 00 - 18 h 00",
+            "type": "exposition",
+            "place": "Maison de la Réserve",
+            "free": "true",
+            "description": "Du légendaire désert du Sahara aux méandres du Congo, du majestueux massif de l’Atlas aux neiges éternelles du Kilimandjaro, le continent africain révèle un patrimoine sans égal. Partez à la découverte de ce vaste continent contrasté qu’est l’Afrique. Il y sera question de ses habitants, de leurs coutumes, de sa faune et de sa flore mais aussi des maux qui la tourmentent. Parler de l’Afrique c’est également aborder sa culture ancestrale, son patrimoine oral et ses contes, ainsi que les grands écrivains qu’elle a vu naître."
+            
+        },
+        "3":{
+
+            "name": "La biodiversité et les corridors biologiques",
+            "image" :"https://loireenvert.fr/wp-content/uploads/2018/11/haies-pixabay-2831013.jpg",
+            "date": "Mercredis,samedis, dimanches et tous les jours des vacances scolaires ",
+            "time": "13h30 à 18h",
+            "type": "exposition",
+            "place": "Ecopôle du Forez",
+            "free": "false",
+            "description": "La biodiversité, ou diversité biologique, constitue le tissu vivant de la planète. Elle recouvre l’ensemble des formes de vie sur Terre, les relations qui existent entre elles et avec leurs milieux depuis l’origine commune de la vie. Un ensemble de panneaux vous présenteront la biodiversité sur le territoire de Saint-Etienne La Métropole et les actions menées en faveur des corridors biologiques."
+        },
+
+        "4": {
+            "name": "balade découverte de l'Ecopôle avec la LPO",
+            "image": "https://loireenvert.fr/wp-content/uploads/2015/09/nettes-rousses.jpg",
+            "date": "dimanche 6 Janvier 2019 ",
+            "time" : "14 h 30 - 16 h",
+            "type": "sortie",
+            "lieu": "Ecopôle du Forez",
+            "free": "false",
+            "description": "Venez découvrir l’Ecopôle du Forez en compagnie d’un guide naturaliste de la Ligue pour la protection des oiseaux de la Loire. Au cours d’une balade commentée d’environ 1 h 30, vous observerez une multitude d’oiseaux d’eau et comprendrez l’histoire du site qui les a conduit à s’installer ici. <br/>Sans inscription (de 5 à 15 places)."
+            },
+
+        "5": {
+            "name": "Semences paysannes et souveraineté alimentaire",
+            "image": "https://loireenvert.fr/wp-content/uploads/2018/11/sorgho-pixabay-3624849.jpg",
+            "date": "Jeudi le 10 janvier 2019",
+            "time" : "18 h 30 à 20 h 30",
+            "type": "conférence",
+            "lieu": "Maison de la nature",
+            "free": "false",
+            "description": "Soirée débat autour de la question : souveraineté alimentaire et semences paysannes ? Projection du film documentaire « Éloge des mils, l’héritage africain » de Robert Ali Brac de la Perrière, et partage d’expérience des bénévoles de la maison de la semence."
+            },
+
+        "6": {
+            "name": "Visite guidée de la réserve naturelle des gorges de la Loire",
+            "image": "https://loireenvert.fr/wp-content/uploads/2016/11/paysage-gorges-loire.jpg",
+            "date": "dimanche 10 novembre 2019 ",
+            "time" : "14h30 et 16h30",
+            "type": "famille",
+            "lieu": "Maison de la Réserve",
+            "free": "false",
+            "description": "Lors d’une balade commentée, venez découvrir un site naturel exceptionnel et protégé depuis 1988 sous la forme d’une réserve naturelle. Sa mosaïque de milieux naturels et sa richesse faunistique et floristique sont protégés par FNE Loire et le SMAGL depuis 2012. Au départ de la Maison de la Réserve, votre guide vous emmènera aux deux points de vue les plus connus de la réserve, avec vue plongeante sur les gorges de la Loire ! Laissez-vous raconter de manière interactive l’histoire du site, son patrimoine naturel et les grands enjeux qui nécessitent sa protection !"
+            },
+
+        "7": {
+            "name": "Abritons les insectes",
+            "image": "http://loireenvert.fr/wp-content/uploads/2014/11/gite-insectes.jpg",
+            "date": "mercredi 23 janvier 2019",
+            "time" : "14h00 et 16h00",
+            "type": "atelier",
+            "lieu": "Maison de la Réserve",
+            "free": "false",
+            "description": "Préparons d’ores et déjà l’arrivée du printemps et aménageons une maison pour les insectes que nous installerons dans notre jardin."
+            }
+    }
+} 
+    
