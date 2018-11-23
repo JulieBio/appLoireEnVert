@@ -2,7 +2,9 @@
     font-family: 'Lobster', cursive;
     src: url("https://fonts.google.com/specimen/Lobster"),
    }
-
+.cardAccueil{
+   margin-top:20px;
+}
 .nom {
     font-family: 'Lobster', Arial, serif;
     font-size: 1.6em;
