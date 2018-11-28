@@ -19,38 +19,42 @@ const EventDetails = ({event}) => (
             <Card body outline>
             <CardImg top cardImage src={event.image} alt="Card image cap" classname="images" />
               <CardBody classname="bodyCard">
-                <Row classname="description">
+                <Row classname="description-eventDetails">
                   {/*type*/}
-                    <CardTitle className="type">{event.type}</CardTitle>
+                    <CardTitle className="type-eventDetails">{event.type}</CardTitle>
+                </Row>
+                <Row>
+                    {/*who*/}
+                  <CardSubtitle className="qui-eventDetails">{event.who}</CardSubtitle>
                 </Row>
                 <Row>
                   {/*name*/}
-                  <CardSubtitle className="nom">{event.name}</CardSubtitle>
+                  <CardSubtitle className="nom-eventDetails">{event.name}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
                     {/*where*/}
-                  <CardSubtitle className="where">{event.where}</CardSubtitle>
+                  <CardSubtitle className="where-eventDetails">{event.where}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
                     {/*Place*/}
-                  <CardSubtitle className="place">{event.place}</CardSubtitle>
+                  <CardSubtitle className="place-eventDetails">{event.place}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
                       {/*city*/}
-                  <CardSubtitle className="city">{event.city}</CardSubtitle>
+                  <CardSubtitle className="city-eventDetails">{event.city}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
                   {/*date*/}
-                <CardSubtitle className="quand">{event.date}</CardSubtitle>
+                <CardSubtitle className="quand-eventDetails">{event.date}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
                   {/*time*/}
-                  <CardSubtitle className="heure">{event.time}</CardSubtitle>
+                  <CardSubtitle className="heure-eventDetails">{event.time}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
@@ -59,7 +63,7 @@ const EventDetails = ({event}) => (
                 </Row>
                 <br/>
                 <Row>
-                  <CardText className="description">{event.description}</CardText>
+                  <CardText className="description-eventDetails">{event.description}</CardText>
                 </Row>
                 <br/>
               </CardBody>

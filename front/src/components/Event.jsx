@@ -12,21 +12,21 @@ CardSubtitle,
 const Event = ({event}) => (
     <Container>
         <div
-            className="cardAccueil"
+            className="cardAccueil-event"
             onClick={() => this.activitySelected(event)}>
 
             <Card body outline>
             <CardImg top  src={event.image} alt="Card image cap" className="images" />
               <CardBody className="bodyCard">
-                <Row className="description">
-                    <CardTitle className="type">{event.type}</CardTitle>
+                <Row className="description-event">
+                    <CardTitle className="type-event">{event.type}</CardTitle>
                 </Row>
                 <Row>
-                  <CardSubtitle className="nom">{event.name}</CardSubtitle>
+                  <CardSubtitle className="nom-event">{event.name}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
-                <CardSubtitle className="quand">{event.date}</CardSubtitle>
+                <CardSubtitle className="quand-event">{event.date}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
