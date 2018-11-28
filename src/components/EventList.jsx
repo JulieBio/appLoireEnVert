@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Card,
@@ -12,6 +13,7 @@ import {
 
 const events = [
   {
+    id: 1,
     nom: "La biodiversité et les corridors biologiques",
     image:
       "http://insectes-de-france.fr/wp-content/uploads/Saint-Cloud-400x300.jpg",
@@ -47,27 +49,52 @@ const events = [
 ];
 
 class EventList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      type: null,
+      nom: null,
+      quand: null,
+      image: null
+    };
+  }
+
+  activitySelected = event => {
+    this.setState({
+      type: event.type,
+      nom: event.nom,
+      quand: event.quand,
+      image: event.image
+    });
+  };
+
   render() {
+    console.log(this.state.type);
     return (
       <div>
         {events.map(event => (
-          <div>
-            <Card body outline color="primary">
-              <CardImg top width="80%" src={event.image} alt="Card image cap" />
-              <CardBody>
-                <CardTitle>{event.type}</CardTitle>
-                <CardSubtitle>{event.nom}</CardSubtitle>
-                <CardText>{event.quand}</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
+          <div
+            key={event}
+            className="cardAccueil"
+            /*    onClick={() => this.activitySelected(event)} */
+          >
+            <NavLink to={`/event${event.id}`}>
+              <Card body outline color="primary">
+                <CardImg top cardImage src={event.image} alt="Card image cap" />
+                <CardBody>
+                  <CardTitle>{event.type}</CardTitle>
+                  <CardSubtitle>{event.nom}</CardSubtitle>
+                  <CardText>{event.quand}</CardText>
+                </CardBody>
+              </Card>{" "}
+            </NavLink>
           </div>
-
-          /*           <div>
+        ))
+        /*           <div>
             <img src={event.image} />
             <p>{event.nom}</p>
           </div> */
-        ))}
+        }
       </div>
     );
   }
