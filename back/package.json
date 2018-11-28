@@ -54,6 +54,5 @@
   "keywords": [
     "hackathon",
     "lyon"
-  ],
-  "proxy": "http://localhost:5000"
+  ]
 }
