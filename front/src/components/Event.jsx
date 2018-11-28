@@ -9,6 +9,7 @@ CardTitle,
 CardSubtitle,
 } from "reactstrap";
 
+
 const Event = ({event}) => (
     <Container>
         <div
@@ -42,4 +43,6 @@ const Event = ({event}) => (
      </Container>
 
 );
+
+
 export default Event;

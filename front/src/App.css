@@ -26,30 +26,6 @@
 
 
 {/*composant EventDetails*/}
-.cardAccueil-eventDetails{
-   margin-top:20px;
-}
-.nom-eventDetails {
-    font-family: 'Lobster', Arial, serif;
-    font-size: 1.6em;
-    color: rgb(203, 137, 52);
-}
-.description-eventDetails{
-   margin-top:40px;
-}
- .quand-eventDetails {
-    font-family: Arial, serif;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: rgb(54, 135, 150);
- }
- .type-eventDetails {
-   font-family: Arial, serif;
-   font-size: 1.1em;
-   font-weight: bold;
-   color: rgb(54, 135, 150);
- }
-
  .qui-eventDetails {
    font-family: Arial, serif;
    font-size: 1.1em;

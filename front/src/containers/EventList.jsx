@@ -5,13 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import { NavLink } from "react-router-dom";
 //import { Container, Row, Col } from 'reactstrap';
 
+
 class EventList extends Component {
     constructor(props){
         super(props);
         this.state = {
             events:[],
         }
-    
+
     }
 
     componentWillMount(){
@@ -29,7 +30,7 @@ class EventList extends Component {
 
     render () {
         const {events} = this.state;
-        
+
         return (
 
             <div className="EventList">
