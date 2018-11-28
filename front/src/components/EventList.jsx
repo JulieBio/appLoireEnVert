@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "reactstrap";
+import "./Event.css";
 import {
   Card,
   CardImg,
@@ -13,7 +15,6 @@ import {
 
 const events = [
   {
-    id: 1,
     nom: "La biodiversité et les corridors biologiques",
     image:
       "http://insectes-de-france.fr/wp-content/uploads/Saint-Cloud-400x300.jpg",
@@ -59,41 +60,42 @@ class EventList extends Component {
     };
   }
 
-  activitySelected = event => {
-    this.setState({
-      type: event.type,
-      nom: event.nom,
-      quand: event.quand,
-      image: event.image
-    });
-  };
-
   render() {
-    console.log(this.state.type);
     return (
       <div>
         {events.map(event => (
-          <div
-            key={event}
-            className="cardAccueil"
-            /*    onClick={() => this.activitySelected(event)} */
-          >
-            <NavLink to={`/event${event.id}`}>
-              <Card body outline color="primary">
-                <CardImg top cardImage src={event.image} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>{event.type}</CardTitle>
-                  <CardSubtitle>{event.nom}</CardSubtitle>
-                  <CardText>{event.quand}</CardText>
-                </CardBody>
-              </Card>{" "}
-            </NavLink>
-          </div>
+          <Container>
+            <div key={event} className="cardAccueil">
+              <NavLink to={`/event${event.id}`}>
+                <Card body outline>
+                  <CardImg
+                    top
+                    cardImage
+                    src={event.image}
+                    alt="Card image cap"
+                    classname="images"
+                  />
+                  <CardBody classname="bodyCard">
+                    <Row classname="description">
+                      <CardTitle className="type">{event.type}</CardTitle>
+                    </Row>
+                    <Row>
+                      <CardSubtitle className="nom">{event.nom}</CardSubtitle>
+                    </Row>
+                    <br />
+                    <Row>
+                      <CardText className="quand">{event.quand}</CardText>
+                    </Row>
+                  </CardBody>
+                </Card>
+              </NavLink>
+            </div>
+          </Container>
         ))
         /*           <div>
-            <img src={event.image} />
-            <p>{event.nom}</p>
-          </div> */
+              <img src={event.image} />
+              <p>{event.nom}</p>
+            </div> */
         }
       </div>
     );

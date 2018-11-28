@@ -9,6 +9,7 @@ import EventDetails from "./components/EventDetails";
 //import { createStore, applyMiddleware } from 'redux';
 //import thunk from 'redux-thunk'
 //import reducers from './reducers';
+import Head from "./components/head";
 
 class App extends Component {
   constructor() {
@@ -27,8 +28,13 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" component={EventList} />
-            <Route path="/event:id" component={EventDetails} />
+            <Route path="/event/:id" component={EventDetails} />
           </Switch>
+
+          <div>
+            <Head />
+            <EventList />
+          </div>
         </div>
       </BrowserRouter>
     );

@@ -1,0 +1,33 @@
+
+.header{
+    display: flex;
+    height: 60px;
+    width:100%;
+  }
+  .logo {
+    display :flex;
+    justify-content: flex-start;
+    height: 60px;
+    width: 60px;
+    background-image: url('https://i.postimg.cc/ZYdYfqbK/loire-en-vert50.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .titleHeader{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+  }
+  .titleLoire {
+    display: flex;
+    color: rgb(148, 165, 133);
+    font-size: 25px;
+    margin: 5px 0 -5px 5px;
+  }
+  .title2Loire{
+    display: flex;
+    flex-wrap: wrap;
+    color:  rgb(203, 137, 52);
+    font-size: 13px;
+    margin: 5px 0 -5px 5px;
+  }
