@@ -1,27 +1,33 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 
-// export const updateRandomHouse = () => ({
-//   type: 'SELECT_RANDOM',
-// })
+export const updateEventsList = (event) => ({
+    type: 'UPDATE_EVENTS_LIST',
+    event
+})
 
-// export const updateSpecificHouse = (id) => ({
-//   type: 'SELECT_SPECIFIC',
-//   id
-// })
+export const addEvent = (event) => ({
+    type: 'ADD_EVENT',
+    event
+})
 
-// export const updateHouseList = (houses) => ({
-//   type: 'UPDATE_HOUSE_LIST',
-//   houses
-// })
-
-// export const fetchHouses = () => {
-//   return dispatch => {
-//     return axios.get('http://localhost:5000/houses')
-//       .then(response => {
-//         const houses  = response.data.houses;
-//         console.log(houses)
-//         dispatch(updateHouseList(houses))
-//       })
+export const fetchEvents = () => {
+    return dispatch => {
+        dispatch ()
+        return axios.get('/event')
+            .then(result => {
+                console.log(result.data)
+            })
+    }
+}
+//voir pour le filtre :
+// {
+//     type : SET_VISIBILITY_FILTER , 
+//     filtre : SHOW_COMPLETED 
 //   }
-// }
+
+// export const addTodoEvents = (event) => {
+//     return (dispatch, getState) =>
+//     dispatch addEvents(event);
+
+// };
