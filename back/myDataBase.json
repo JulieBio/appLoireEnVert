@@ -9,6 +9,7 @@
             "where": "Maison de la Nature",
             "place": "Stéphanois-Pilat",
             "city" : "Saint-Etienne",
+            "who": "Famille",
             "type": "exposition",
             "free": "true",
             "description": "Hissez les voiles et prenez le large <br> La mer… Elle fait partie de la vie de chacun, en vacances, en voyage, lors d’activités sportives ou encore par l’intermédiaire de quantités de produits que nous consommons. Mais connaissons-nous vraiment cette immensité et tous les trésors qu’elle recèle ? Quel rôle joue-t-elle sur notre planète ? Pouvons-nous vraiment l’apprivoiser comme nous le pensons ? Plus qu’un enjeu de société, les mers se dépeuplent, s’épuisent et sont dans des situations alarmantes. La réaction à protéger et conserver nos milieux marins n’est pas une solution, c’est une obligation."
@@ -128,7 +129,7 @@
             "lieu": "Maison de la Nature",
             "free": "true",
             "description": "À destination du grand public et des étudiants, cette soirée organisée à l’Université Jean-Monnet va sensibiliser les participants à leur environnement de proximité. En partenariat avec l’Université Jean-Monnet, la Ville de Saint-Étienne, Saint-Étienne Métropole, l’Agence de l’eau Loire Bretagne et la Stéphanoise des eaux."
-            },
+            }
 
     }
 } 
