@@ -1,24 +1,25 @@
-const activeEvents = (state = 
-  //{ housesList: [], selectedHouse: "" }, action) => {
-    switch (action.type) {
+const activeEvents = (state, action) => {
+  switch (action.type) {
 
-//       case 'UPDATE_HOUSE_LIST':
-//         const houses = action.houses;
-//         return { ...state, housesList: houses }
-  
-//       case 'SELECT_RANDOM':
-//         const { housesList } = state;
-//         selectedHouse = housesList[Math.floor(Math.random() * housesList.length)]
-//         return { ...state, selectedHouse }
-  
-//       case 'SELECT_SPECIFIC':
-//         selectedHouse = housesList[action.id]
-//         return { ...state, selectedHouse }
-  
-//       default:
-//         return state
-  
-    }
+    case 'UPDATE_EVENTS_LIST':
+      return action.updateEventsList;
+
+    case 'ADD_EVENT':
+      return action.addEvent
+
+    default:
+      return state
+
+  }
 }
 
 export default activeEvents;
+
+
+// case 'UPDATE_EVENTS_LIST':
+// const updateEventsList = action.updateEventsList;
+// return { ...state, updateEventsList: event }
+
+// case 'ADD_EVENT':
+// const addEvent = action.addEvent;
+// return { ...state, addEvent: events }
