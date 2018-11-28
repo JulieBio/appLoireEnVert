@@ -6,8 +6,10 @@
             "image" : "https://loireenvert.fr/wp-content/uploads/2018/11/plage-1850059-pixabay.jpg",
             "date": "tout le mois",
             "time": "9 h 00 - 13 h 00",
+            "where": "Maison de la Nature",
+            "place": "Stéphanois-Pilat",
+            "city" : "Saint-Etienne",
             "type": "exposition",
-            "place": "Maison de la Nature",
             "free": "true",
             "description": "Hissez les voiles et prenez le large <br> La mer… Elle fait partie de la vie de chacun, en vacances, en voyage, lors d’activités sportives ou encore par l’intermédiaire de quantités de produits que nous consommons. Mais connaissons-nous vraiment cette immensité et tous les trésors qu’elle recèle ? Quel rôle joue-t-elle sur notre planète ? Pouvons-nous vraiment l’apprivoiser comme nous le pensons ? Plus qu’un enjeu de société, les mers se dépeuplent, s’épuisent et sont dans des situations alarmantes. La réaction à protéger et conserver nos milieux marins n’est pas une solution, c’est une obligation."
             
@@ -53,6 +55,7 @@
             "image": "https://loireenvert.fr/wp-content/uploads/2018/11/sorgho-pixabay-3624849.jpg",
             "date": "Jeudi le 10 janvier 2019",
             "time" : "18 h 30 à 20 h 30",
+            "place": "Stéphanois-Pilat",
             "type": "conférence",
             "lieu": "Maison de la nature",
             "free": "false",
@@ -64,6 +67,7 @@
             "image": "https://loireenvert.fr/wp-content/uploads/2016/11/paysage-gorges-loire.jpg",
             "date": "dimanche 10 novembre 2019 ",
             "time" : "14h30 et 16h30",
+            "place": "Stéphanois-Pilat",
             "type": "famille",
             "lieu": "Maison de la Réserve",
             "free": "false",
@@ -75,11 +79,57 @@
             "image": "http://loireenvert.fr/wp-content/uploads/2014/11/gite-insectes.jpg",
             "date": "mercredi 23 janvier 2019",
             "time" : "14h00 et 16h00",
+            "place": "Stéphanois-Pilat",
             "type": "atelier",
             "lieu": "Maison de la Réserve",
             "free": "false",
             "description": "Préparons d’ores et déjà l’arrivée du printemps et aménageons une maison pour les insectes que nous installerons dans notre jardin."
-            }
+            },
+        "8": {
+            "name": "balade découverte de l'Ecopôle avec la LPO",
+            "image": "https://loireenvert.fr/wp-content/uploads/2015/09/nettes-rousses.jpg",
+            "date": "dimanche 3 février 2019 ",
+            "time" : "14 h 30 - 16h30 h",
+            "type": "sortie",
+            "place": "Forez",
+            "lieu": "Ecopôle du Forez",
+            "free": "false",
+            "description": "Venez découvrir l’Ecopôle du Forez en compagnie d’un guide naturaliste de la Ligue pour la protection des oiseaux de la Loire. Au cours d’une balade commentée d’environ 1 h 30, vous observerez une multitude d’oiseaux d’eau et comprendrez l’histoire du site qui les a conduit à s’installer ici. <br/>Sans inscription (de 5 à 15 places)."
+            },
+        "9": {
+            "name": "Visite guidée de la réserve naturelle des gorges de la Loire",
+            "image": "https://loireenvert.fr/wp-content/uploads/2016/11/paysage-gorges-loire.jpg",
+            "date": "dimanche 10 février 2019 ",
+            "time" : "14h30 et 16h30",
+            "place": "Stéphanois-Pilat",
+            "type": "famille",
+            "lieu": "Maison de la Réserve",
+            "free": "false",
+            "description": "Lors d’une balade commentée, venez découvrir un site naturel exceptionnel et protégé depuis 1988 sous la forme d’une réserve naturelle. Sa mosaïque de milieux naturels et sa richesse faunistique et floristique sont protégés par FNE Loire et le SMAGL depuis 2012. Au départ de la Maison de la Réserve, votre guide vous emmènera aux deux points de vue les plus connus de la réserve, avec vue plongeante sur les gorges de la Loire ! Laissez-vous raconter de manière interactive l’histoire du site, son patrimoine naturel et les grands enjeux qui nécessitent sa protection !"
+            },
+        "10": {
+            "name": "Eau et changement climatique",
+            "image": "https://loireenvert.fr/wp-content/uploads/2016/11/paysage-gorges-loire.jpg",
+            "date": "Mercredi 13 Février 2019 ",
+            "time" : "14h30 et 16h30",
+            "place": "Stéphanois-Pilat",
+            "type": "apéro-quiz",
+            "lieu": "Maison de la Nature",
+            "free": "true",
+            "description": "À destination du grand public et des étudiants, cette soirée organisée à l’Université Jean-Monnet va sensibiliser les participants à leur environnement de proximité. En partenariat avec l’Université Jean-Monnet, la Ville de Saint-Étienne, Saint-Étienne Métropole, l’Agence de l’eau Loire Bretagne et la Stéphanoise des eaux."
+            },
+        "11": {
+            "name": "Apprenez à mieux (re)connaître les crapauds, grenouilles, tritons…",
+            "image": "https://loireenvert.fr/wp-content/uploads/2016/11/paysage-gorges-loire.jpg",
+            "date": "Jeudi 18 Février 2019 ",
+            "time" : "18h30 et 20h30",
+            "place": "Stéphanois-Pilat",
+            "type": "conférence",
+            "lieu": "Maison de la Nature",
+            "free": "true",
+            "description": "À destination du grand public et des étudiants, cette soirée organisée à l’Université Jean-Monnet va sensibiliser les participants à leur environnement de proximité. En partenariat avec l’Université Jean-Monnet, la Ville de Saint-Étienne, Saint-Étienne Métropole, l’Agence de l’eau Loire Bretagne et la Stéphanoise des eaux."
+            },
+
     }
 } 
     
