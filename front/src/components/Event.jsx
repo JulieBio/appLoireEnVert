@@ -16,9 +16,9 @@ const Event = ({event}) => (
             onClick={() => this.activitySelected(event)}>
 
             <Card body outline>
-            <CardImg top cardImage src={event.image} alt="Card image cap" classname="images" />
-              <CardBody classname="bodyCard">
-                <Row classname="description">
+            <CardImg top  src={event.image} alt="Card image cap" className="images" />
+              <CardBody className="bodyCard">
+                <Row className="description">
                     <CardTitle className="type">{event.type}</CardTitle>
                 </Row>
                 <Row>
