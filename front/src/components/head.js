@@ -10,7 +10,7 @@ class Head extends React.Component  {
           <div className="header">
           <script src="https://unpkg.com/react-media/umd/react-media.min.js"></script>
             <div className="logo"></div>
-            <div classname="titleHeader">
+            <div className="titleHeader">
             <p className="titleLoire">Loire en vert</p>
             <p className="title2Loire">Toutes les activités nature dans la Loire</p>
             </div>
