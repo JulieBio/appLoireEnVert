@@ -1,8 +1,7 @@
+const activeEvents = (state = 
+  //{ housesList: [], selectedHouse: "" }, action) => {
+    switch (action.type) {
 
-// export default function (state = { housesList: [], selectedHouse: "" }, action) {
-//     let selectedHouse;
-//     switch (action.type) {
-  
 //       case 'UPDATE_HOUSE_LIST':
 //         const houses = action.houses;
 //         return { ...state, housesList: houses }
@@ -19,6 +18,7 @@
 //       default:
 //         return state
   
-//     }
-//   }
-  
+    }
+}
+
+export default activeEvents;

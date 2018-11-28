@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-//import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import EventList from './containers/EventList';
 //import Result from './containers/Result';
 //import { Provider } from 'react-redux';
@@ -9,13 +9,12 @@ import EventList from './containers/EventList';
 //import reducers from './reducers';
 import Head from './components/head';
 
-
 class App extends Component {
   render() {
     return (
         <div>
           <Head/>
-          <EventList />
+          <EventList/>
         </div>
     );
   }

@@ -1,9 +1,9 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 
-// export const updateRandomHouse = () => ({
-//   type: 'SELECT_RANDOM',
-// })
+export const updateRandomEvents = () => ({
+  type: 'SELECT_RANDOM',
+})
 
 // export const updateSpecificHouse = (id) => ({
 //   type: 'SELECT_SPECIFIC',
