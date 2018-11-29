@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addEvent } from '../actions/index';
+//import { addEvent } from '../actions/index';
 import { updateEventsList } from '../actions/index';
 import Event from '../components/Event';
 import 'bootstrap/dist/css/bootstrap.min.css';
