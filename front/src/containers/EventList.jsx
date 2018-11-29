@@ -10,7 +10,7 @@ import {fetchEvents} from '../actions/index';
 
 class EventList extends Component {
     componentWillMount() { 
-        fetchEvents();
+        this.props.functionCallDispatch();
     }
 
     render() {
@@ -20,7 +20,7 @@ class EventList extends Component {
             <div className="EventList">
 {/* Julie : récupération des évenements */}
                 {
-                    this.props.activeEvents.events.map(event => <Event event={event} />)
+                    this.props.activeEvents.events.map((event,index) => <Event key={`event${index}`} event={event} />)
                 }
 
             </div>
@@ -32,6 +32,7 @@ class EventList extends Component {
 const mapStateToProps = store => store;
 
 const mapDispatchToProps = dispatch => ({
+    functionCallDispatch:()=>dispatch(fetchEvents()),
     addEvent: event => {
         dispatch(updateEventsList(event));
     }

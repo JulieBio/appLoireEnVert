@@ -4,12 +4,13 @@ const activeEvents = (state = { events: [] }, action) => {
 // Julie : déclaration des actions
 
     case 'UPDATE_EVENTS_LIST':
-      return { ...state, events: action.updateEventsList };
+    console.log( action.events)
+      return { ...state, events: action.events };
 
     case 'ADD_EVENT':
-      const evt = state.events;
-      evt.push(action.addEvent)
-      return { ...state, events: action.event };
+      const newEvents = state.events;
+      newEvents.push(action.event)
+      return { ...state, events: newEvents };
 
     default:
       return state
