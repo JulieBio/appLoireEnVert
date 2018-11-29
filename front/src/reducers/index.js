@@ -1,6 +1,6 @@
-// import { combineReducers } from 'redux';
-// import reducers from './reducers';
+import { combineReducers } from 'redux';
+import reducers from './reducers';
 
-// export default combineReducers({
-//   houses: housesReducer,
-// })
+export default combineReducers({
+  houses: housesReducer,
+})
