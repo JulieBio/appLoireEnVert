@@ -13,13 +13,16 @@ router.get('/', function (req, res) {
 });
 
 router.get('/event', function (req, res) {
+  
   const data = db.getData("/event");
+  console.log("events");
   const events= [];
   Object.keys(data).map((key)=> {
     events.push({...data[key],id:key})
   });
   console.log(JSON.stringify(events,2,2))
   res.json({events});
+  console.log("fetch in back")
 });
 
 router.get('/event/:id', function (req, res) {

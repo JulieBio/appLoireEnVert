@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
+//import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import allReducers from './reducers';

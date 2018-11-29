@@ -9,7 +9,7 @@ const activeEvents = (state = { events: [] }, action) => {
     case 'ADD_EVENT':
       const evt = state.events;
       evt.push(action.addEvent)
-      return { ...state, events: evt };
+      return { ...state, events: action.event };
 
     default:
       return state

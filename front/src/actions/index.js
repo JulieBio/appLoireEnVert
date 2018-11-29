@@ -1,25 +1,31 @@
 import axios from 'axios';
+//import thunk from 'redux-thunk';
 
 //Julie : description de l'action
 export const updateEventsList = (event) => ({
     type: 'UPDATE_EVENTS_LIST',
-    event
+    event,
 })
 
 export const addEvent = (event) => ({
     type: 'ADD_EVENT',
-    event
+    event,
 })
 
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 export const fetchEvents = () => {
+    console.log(1)
+    console.log("i'm in fetch event");
     return dispatch => {
-        dispatch ()
+        console.log(2)
         return axios.get('/event')
-            .then(result => {
-                console.log(result.data)
-            })
+        .then(response => {
+            const activeEvents  = response.data.events;
+            console.log("response", response)
+            dispatch(updateEventsList(activeEvents))
+        });
     }
+    
 }
 
 //voir pour le filtre :

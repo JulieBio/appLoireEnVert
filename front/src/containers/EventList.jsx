@@ -6,9 +6,12 @@ import Event from '../components/Event';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { NavLink } from "react-router-dom";
 //import { Container, Row, Col } from 'reactstrap';
+import {fetchEvents} from '../actions/index';
 
 class EventList extends Component {
-    componentWillMount() { }
+    componentWillMount() { 
+        fetchEvents();
+    }
 
     render() {
         console.log(this.props.activeEvents.events)
