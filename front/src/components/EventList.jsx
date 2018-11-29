@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "reactstrap";
@@ -95,11 +95,11 @@ class EventList extends Component {
         /*           <div>
               <img src={event.image} />
               <p>{event.nom}</p>
-            </div> */
-        }
+            </div> 
+        } 
       </div>
     );
   }
-}
+} 
 
-export default EventList;
+export default EventList; */
