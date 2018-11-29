@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
 
 const store = createStore(allReducers);
 
@@ -20,3 +20,4 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById('root'));

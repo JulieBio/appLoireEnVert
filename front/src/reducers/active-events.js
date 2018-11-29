@@ -1,8 +1,8 @@
-const activeEvents = (state, action) => {
+const activeEvents = (state ={Event, selectedEvent: "Event"}, action) => {
   switch (action.type) {
 
     case 'UPDATE_EVENTS_LIST':
-      return action.updateEventsList;
+      return {...state, selectedEvent: action.updateEventsList};
 
     case 'ADD_EVENT':
       return action.addEvent
