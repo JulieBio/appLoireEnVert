@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-//import { addEvent } from '../actions/index';
+import { addEvent } from '../actions/index';
 import { updateEventsList } from '../actions/index';
 import Event from '../components/Event';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,27 +8,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import { Container, Row, Col } from 'reactstrap';
 
 class EventList extends Component {
-     componentWillMount() { }
+    componentWillMount() { }
+
     render() {
+        console.log(this.props.activeEvents.events)
         return (
 
             <div className="EventList">
-                {/* {
-                    this.props.activeEvents.event.map((event) => <Event event={event} />)
-                } */}
-                {/* {/ {this.props.activeEvents.events.map(event  =>  <li  key={event}>{event}</li>)} */}
-                <Event event={this.props.activeEvents.Event}/> 
+{/* Julie : récupération des évenements */}
+                {
+                    this.props.activeEvents.events.map(event => <Event event={event} />)
+                }
+
             </div>
         );
     }
 }
 
+//Julie : transfert des états
 const mapStateToProps = store => store;
 
 const mapDispatchToProps = dispatch => ({
-    updateEvent: (event) => 
-        dispatch(updateEventsList())
-    
-})
+    addEvent: event => {
+        dispatch(updateEventsList(event));
+    }
+
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventList);

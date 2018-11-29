@@ -8,11 +8,10 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const store = createStore(allReducers);
 
 ReactDOM.render(
+// Julie : le store de Redux
     <Provider store={store}>
         <App />
     </Provider>,

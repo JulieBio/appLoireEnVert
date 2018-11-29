@@ -1,6 +1,8 @@
 
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-
+@font-face {
+    font-family: 'Lobster', cursive;
+    src: url("https://fonts.google.com/specimen/Lobster"),
+   }
 .cardAccueil{
    margin-top:20px;
 }
