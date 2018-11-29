@@ -1,6 +1,11 @@
-// import { combineReducers } from 'redux';
-// import reducers from './reducers';
+import { combineReducers } from 'redux';
 
-// export default combineReducers({
-//   houses: housesReducer,
-// })
+// Julie : regroupe tous les Reducers
+
+import ActiveEventsReducer from './active-events';
+
+const allReducers = combineReducers({
+    activeEvents: ActiveEventsReducer,
+})
+
+export default allReducers;
