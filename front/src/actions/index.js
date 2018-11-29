@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-
+//Julie : description de l'action
 export const updateEventsList = (event) => ({
     type: 'UPDATE_EVENTS_LIST',
     event
@@ -11,6 +11,7 @@ export const addEvent = (event) => ({
     event
 })
 
+//Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 export const fetchEvents = () => {
     return dispatch => {
         dispatch ()
@@ -20,6 +21,7 @@ export const fetchEvents = () => {
             })
     }
 }
+
 //voir pour le filtre :
 // {
 //     type : SET_VISIBILITY_FILTER , 

@@ -1,11 +1,15 @@
-const activeEvents = (state, action) => {
+const activeEvents = (state = { events: [] }, action) => {
   switch (action.type) {
 
+// Julie : déclaration des actions
+
     case 'UPDATE_EVENTS_LIST':
-      return action.updateEventsList;
+      return { ...state, events: action.updateEventsList };
 
     case 'ADD_EVENT':
-      return action.addEvent
+      const evt = state.events;
+      evt.push(action.addEvent)
+      return { ...state, events: evt };
 
     default:
       return state
@@ -19,7 +23,3 @@ export default activeEvents;
 // case 'UPDATE_EVENTS_LIST':
 // const updateEventsList = action.updateEventsList;
 // return { ...state, updateEventsList: event }
-
-// case 'ADD_EVENT':
-// const addEvent = action.addEvent;
-// return { ...state, addEvent: events }
