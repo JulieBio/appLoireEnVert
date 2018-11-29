@@ -8,13 +8,12 @@ CardBody,
 CardTitle,
 CardSubtitle,
 } from "reactstrap";
+import euro from '../asset/euro.png';
 
-const Event = ({event}) => (
+const Event = ({event,euro}) => (
     <Container>
         <div
-            className="cardAccueil"
-            onClick={() => this.activitySelected(event)}>
-
+            className="cardAccueil">
             <Card body outline>
             <CardImg top cardImage src={event.image} alt="Card image cap" classname="images" />
               <CardBody classname="bodyCard">
@@ -34,7 +33,7 @@ const Event = ({event}) => (
                 </Row>
                 <br/>
                 <Row>
-                  <CardSubtitle className="free">{event.free}</CardSubtitle>
+                  <CardSubtitle className="free">{event.free === "true" ? " " : <img src={this.props.euro} alt='/'/>}</CardSubtitle>
                 </Row>
               </CardBody>
             </Card>

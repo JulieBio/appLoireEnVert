@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Event from '../components/Event';
+import '../components/Event.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { NavLink } from "react-router-dom";
 //import { Container, Row, Col } from 'reactstrap';
@@ -14,28 +15,28 @@ class EventList extends Component {
     
     }
 
+ //axios qui appelle les évènements en bdd  
     componentWillMount(){
-       axios.get('/event')
+       axios.get('/event') // correspond à l'adresse http://localhost:5000 modifié dans package json du dossier front ajout ligne proxy
             .then(result => {
-            console.log(result.data);
             this.setState({
                 events:result.data.events||[],
             });
         })
     }
-    // activitySelected = event => {
-    //     this.setState({ type: event.type });
-    //   };
+
+   
 
     render () {
         const {events} = this.state;
-        
+    
         return (
 
             <div className="EventList">
                 {
                     events.map((event) => <Event event={event}/>)
                 }
+
             </div>
         );
     }
