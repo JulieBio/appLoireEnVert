@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import EventList from "./containers/EventList";
 import EventDetails from "./components/EventDetails";
 //import Result from './containers/Result';

@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+
+a {
+  text-decoration: none !important;
+}
+
+/*composant Event*/
+.cardAccueil-event {
+  margin-top: 20px;
+}
+
+.nom-event {
+  font-family: "Lobster", Arial, serif;
+  font-size: 1.6em;
+  color: rgb(203, 137, 52);
+}
+
+.description-event {
+  margin-top: 40px;
+}
+.quand-event {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+.type-event {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+
+.heure-event {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+
+/*composant EventDetails*/
+.qui-eventDetails {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+
+.ou-eventDetails {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+
+.place-eventDetails {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+
+.city-eventDetails {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
