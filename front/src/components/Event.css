@@ -1,29 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
 
-@font-face {
-    font-family: 'Lobster', cursive;
-    src: url("https://fonts.google.com/specimen/Lobster"),
-   }
-.cardAccueil{
-   margin-top:20px;
+.cardAccueil {
+  margin-top: 20px;
 }
 .nom {
-    font-family: 'Lobster', Arial, serif;
-    font-size: 1.6em;
-    color: rgb(203, 137, 52);
+  font-family: "Lobster", Arial, serif;
+  font-size: 1.6em;
+  color: rgb(203, 137, 52);
 }
-.description{
-   margin-top:40px;
+.description {
+  margin-top: 40px;
 }
- .quand {
-    font-family: Arial, serif;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: rgb(54, 135, 150);
- }
- .type {
-   font-family: Arial, serif;
-   font-size: 1.1em;
-   font-weight: bold;
-   color: rgb(54, 135, 150);
- }
-
+.quand {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
+.type {
+  font-family: Arial, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(54, 135, 150);
+}
