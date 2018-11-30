@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "reactstrap";
+import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import backgroundEuro from '../assets/euro.png';
+
 
 const styleEuro = {
   euro: {
@@ -78,7 +79,13 @@ const Event = ({event}) => (
             </Row>
             <br />
             <Row>
-              <CardSubtitle className="free">{event.free}</CardSubtitle>
+              <CardSubtitle className="free">
+                {event.free === "true" ? (
+                  <h1/>
+                ) : (
+                  <div style={styleEuro.euro}/>
+                )}
+              </CardSubtitle>
             </Row>
           </CardBody>
         </Card>

@@ -26,6 +26,10 @@
    color: rgb(54, 135, 150);
  }
 
+ a .lienAccueil {
+   text-decoration: none;
+ }
+
 
 {/*composant EventDetails*/}
  .qui-eventDetails {
