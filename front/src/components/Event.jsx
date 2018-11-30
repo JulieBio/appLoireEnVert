@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import "./Event.css";
+
 const styleEuro = {
   euro: {
     background: `url(${backgroundEuro})`,
@@ -18,7 +20,7 @@ const styleEuro = {
 const Event = ({ event }) => (
   <Container>
     <div className="cardAccueil">
-      <NavLink to={`/event/${event.id}`}>
+      <NavLink to={`/event/${event.id}`} className="lienaccueil">
         <Card body outline>
           <CardImg
             top

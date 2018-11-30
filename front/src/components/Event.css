@@ -8,6 +8,15 @@
   font-size: 1.6em;
   color: rgb(203, 137, 52);
 }
+
+a .lienaccueil {
+  text-decoration: none;
+}
+
+/* .lienaccueil {
+  text-decoration: none;
+} */
+
 .description {
   margin-top: 40px;
 }
