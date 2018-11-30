@@ -2,7 +2,9 @@
 {/*composant Event*/}
 .cardAccueil-event{
    margin-top:20px;
+
 }
+
 .nom-event {
     font-family: 'Lobster', Arial, serif;
     font-size: 1.6em;
