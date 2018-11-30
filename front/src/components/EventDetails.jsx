@@ -1,16 +1,5 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-Card,
-CardBody,
-CardSubtitle,
-CardText,
-Button,
-Container,
-Row
-} from "reactstrap";
-import Event from './components/Event';
-import "./Event.css";
 import axios from "axios";
 
 class EventDetails extends Component {
@@ -29,7 +18,12 @@ class EventDetails extends Component {
     axios.get(`/event/${this.id}`).then(result => {
       this.setState({
         name: result.data.name,
-        type: result.data.type
+        type: result.data.type,
+        who: result.data.who,
+        where: result.data.where,
+        place: result.data.place,
+        city: result.data.city,
+        description: result.data.description,
       });
       console.log(result.data.name);
       console.log(result.data.name);
@@ -39,15 +33,18 @@ class EventDetails extends Component {
   render() {
     return (
       <div>
-        hello
-        <p>{this.id}</p>
         <p>{this.state.name}</p>
         <p>{this.state.type}</p>
+        <p>{this.state.who}</p>
+        <p>{this.state.where}</p>
+        <p>{this.state.place}</p>
+        <p>{this.state.city}</p>
+        <p>{this.state.description}</p>
       </div>
     );
   }
 }
-      const EventDetails = ({event}) => (
+      /*const EventDetails = ({event}) => (
         <Container>
           <div
             className="cardAccueil"
@@ -57,22 +54,22 @@ class EventDetails extends Component {
               <Event />
               <CardBody classname="bodyCard">
                 <Row>
-                    {/*who*/}
+                    {/*who}
                   <CardSubtitle className="qui-eventDetails">{event.who}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
-                    {/*where*/}
+                    {/*where}
                   <CardSubtitle className="where-eventDetails">{event.where}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
-                    {/*Place*/}
+                    {/*Place}
                   <CardSubtitle className="place-eventDetails">{event.place}</CardSubtitle>
                 </Row>
                 <br/>
                 <Row>
-                      {/*city*/}
+                      {/*city}
                   <CardSubtitle className="city-eventDetails">{event.city}</CardSubtitle>
                 </Row>
                 <br/>
@@ -86,5 +83,5 @@ class EventDetails extends Component {
         </div>
      </Container>
 
-);
+);*/
 export default EventDetails;

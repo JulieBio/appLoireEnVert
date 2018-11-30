@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "reactstrap";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import "./Event.css";
 import { NavLink } from "react-router-dom";
 
 const Event = ({ event }) => (
