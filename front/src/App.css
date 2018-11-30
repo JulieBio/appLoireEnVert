@@ -33,7 +33,7 @@
    color: rgb(54, 135, 150);
  }
 
- .where-eventDetails {
+ .ou-eventDetails {
    font-family: Arial, serif;
    font-size: 1.1em;
    font-weight: bold;
@@ -41,6 +41,13 @@
  }
 
  .place-eventDetails {
+   font-family: Arial, serif;
+   font-size: 1.1em;
+   font-weight: bold;
+   color: rgb(54, 135, 150);
+ }
+
+ .city-eventDetails {
    font-family: Arial, serif;
    font-size: 1.1em;
    font-weight: bold;

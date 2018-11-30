@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import { Container, CardImg } from "reactstrap";
 
 class EventDetails extends Component {
   constructor(props) {
@@ -9,14 +10,13 @@ class EventDetails extends Component {
       name: null,
       type: null
     };
-    console.log(this.state.name);
-    console.log(this.state.type);
     this.id = this.props.match.params.id;
   }
 
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
       this.setState({
+        image: result.data.image,
         name: result.data.name,
         type: result.data.type,
         who: result.data.who,
@@ -25,22 +25,23 @@ class EventDetails extends Component {
         city: result.data.city,
         description: result.data.description,
       });
-      console.log(result.data.name);
-      console.log(result.data.name);
     });
   }
 
   render() {
     return (
-      <div>
-        <p>{this.state.name}</p>
-        <p>{this.state.type}</p>
-        <p>{this.state.who}</p>
-        <p>{this.state.where}</p>
-        <p>{this.state.place}</p>
-        <p>{this.state.city}</p>
-        <p>{this.state.description}</p>
-      </div>
+      <Container>
+        <div>
+          <CardImg src={this.state.image} alt="image evenement"/>
+          <p className="nom-event">{this.state.name}</p>
+          <p className="type-event">{this.state.type}</p>
+          <p className="qui-eventDetails">{this.state.who}</p>
+          <p classname="ou-eventDetails">{this.state.where}</p>
+          <p className="place-eventDetails">{this.state.place}</p>
+          <p className="city-eventDetails">{this.state.city}</p>
+          <p className="description-event">{this.state.description}</p>
+        </div>
+      </Container>
     );
   }
 }
