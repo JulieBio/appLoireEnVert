@@ -7,6 +7,7 @@ import "./head.css";
 class Head extends React.Component {
   render() {
     return (
+      //Julie : bandeau head avec logo et nom
       <div className="header">
         <script src="https://unpkg.com/react-media/umd/react-media.min.js" />
         <div className="logo" />
