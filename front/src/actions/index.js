@@ -6,21 +6,10 @@ export const updateEventsList = events => ({
   type: "UPDATE_EVENTS_LIST",
   events
 });
-
-export const updateRandomHouse = () => ({
-  type: "SELECT_RANDOM"
+export const addEvent = event => ({
+  type: "ADD_EVENT",
+  event
 });
-
-export const updateSpecificHouse = id => ({
-  type: "SELECT_SPECIFIC",
-  id
-});
-
-export const updateHouseList = houses => ({
-  type: "UPDATE_HOUSE_LIST",
-  houses
-});
-
 export const fetchEvents = () => {
   console.log(1);
   console.log("i'm in fetch event");
@@ -33,10 +22,7 @@ export const fetchEvents = () => {
     });
   };
 };
-export const addEvent = event => ({
-  type: "ADD_EVENT",
-  event
-});
+
 
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 
