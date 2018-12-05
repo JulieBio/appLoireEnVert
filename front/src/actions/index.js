@@ -38,6 +38,18 @@ export const addEvent = event => ({
   event
 });
 
+//Début stockage filtre test
+export const addTest = test => ({
+  type: "ADD_TEST",
+  test
+})
+
+export const updateTest = test => ({
+  type: "UPDATE_TEST",
+  test
+});
+//Fin stockage filtre test
+
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 
 //voir pour le filtre :
