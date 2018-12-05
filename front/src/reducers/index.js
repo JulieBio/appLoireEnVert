@@ -4,8 +4,12 @@ import { combineReducers } from "redux";
 
 import ActiveEventsReducer from "./active-events";
 
+//Marion : regroupe reducers test
+import ActiveTestReducer from "./active-test.js"
+
 const allReducers = combineReducers({
-  activeEvents: ActiveEventsReducer
+  activeEvents: ActiveEventsReducer,
+  activeTest: ActiveTestReducer
 });
 
 export default allReducers;

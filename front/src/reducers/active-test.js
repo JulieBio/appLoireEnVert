@@ -1,11 +1,12 @@
-const activeEvents = (state = { events: [] }, action) => {
+const activeTest = (state = { events: [] }, action) => {
   switch (action.type) {
 
 // Julie : déclaration des actions
+//Marion : déclaration des actions test
 
-    case 'UPDATE_EVENTS_LIST':
+    case 'UPDATE_TEST':
     console.log( action.events)
-      return { ...state, events: action.events };
+      return { ...state, test: action.test };
 
     case 'ADD_TEST':
       const newTest= state.test;
@@ -14,11 +15,10 @@ const activeEvents = (state = { events: [] }, action) => {
 
     default:
       return state
-
   }
 }
 
-export default activeEvents;
+export default activeTest;
 
 
 // case 'UPDATE_EVENTS_LIST':
