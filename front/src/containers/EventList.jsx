@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 //import { addEvent } from '../actions/index';
-<<<<<<< HEAD
 import { updateEventsList } from '../actions/index';
 import Event from '../components/Event';
 import '../components/Event.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-=======
-import { updateEventsList } from "../actions/index";
-import Event from "../components/Event";
-import "bootstrap/dist/css/bootstrap.min.css";
->>>>>>> dev
 //import { NavLink } from "react-router-dom";
 //import { Container, Row, Col } from 'reactstrap';
 import { fetchEvents } from "../actions/index";
