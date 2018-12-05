@@ -6,19 +6,9 @@ export const updateEventsList = events => ({
   type: "UPDATE_EVENTS_LIST",
   events
 });
-
-export const updateRandomHouse = () => ({
-  type: "SELECT_RANDOM"
-});
-
-export const updateSpecificHouse = id => ({
-  type: "SELECT_SPECIFIC",
-  id
-});
-
-export const updateHouseList = houses => ({
-  type: "UPDATE_HOUSE_LIST",
-  houses
+export const addEvent = event => ({
+  type: "ADD_EVENT",
+  event
 });
 
 export const fetchEvents = () => {
@@ -33,10 +23,7 @@ export const fetchEvents = () => {
     });
   };
 };
-export const addEvent = event => ({
-  type: "ADD_EVENT",
-  event
-});
+
 
 //Marion : Début stockage filtre test
 export const addTest = test => ({
