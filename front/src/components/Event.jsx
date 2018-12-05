@@ -1,6 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row} from 'reactstrap';
+import backgroundEuro from '../assets/euro.png'
 import {
 Card,
 CardImg,
@@ -8,16 +9,25 @@ CardBody,
 CardTitle,
 CardSubtitle,
 } from "reactstrap";
-import euro from '../asset/euro.png';
-
-const Event = ({event,euro}) => (
+const styleEuro = {
+  euro: {
+    background: `url(${backgroundEuro})`,
+    backgroundSize: 'contain',
+    
+    backgroundRepeat: 'no-repeat',
+    height: '5vh',
+    width: '5vh',
+    //padding: '5px',
+  }
+}
+const Event = ({event}) => (
     <Container>
         <div
             className="cardAccueil">
             <Card body outline>
-            <CardImg top cardImage src={event.image} alt="Card image cap" classname="images" />
-              <CardBody classname="bodyCard">
-                <Row classname="description">
+            <CardImg top  src={event.image} alt="Card image cap" className="images" />
+              <CardBody className="bodyCard">
+                <Row className="description">
                     <CardTitle className="type">{event.type}</CardTitle>
                 </Row>
                 <Row>
@@ -33,7 +43,7 @@ const Event = ({event,euro}) => (
                 </Row>
                 <br/>
                 <Row>
-                  <CardSubtitle className="free">{event.free === "true" ? " " : <img src={this.props.euro} alt='/'/>}</CardSubtitle>
+                  <CardSubtitle className="free">{event.free === "true" ? <h1></h1> : <div style={styleEuro.euro} ></div>}</CardSubtitle>
                 </Row>
               </CardBody>
             </Card>
