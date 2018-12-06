@@ -6,14 +6,19 @@ export const updateEventsList = events => ({
   type: "UPDATE_EVENTS_LIST",
   events
 });
-export const updateFilterListWho = events => ({
-  type: "UPDATE_FILTER_LIST_WHO",
-  events
-});
 export const addEvent = event => ({
   type: "ADD_EVENT",
   event
 });
+export const updateFilterListWho = events => ({
+  type: "UPDATE_FILTER_LIST_WHO",
+  events
+});
+export const addEventFiltred = event => ({
+  type: "ADD_EVENT",
+  event
+});
+
 export const fetchEvents = () => {
   // console.log(1);
   // console.log("i'm in fetch event");
@@ -32,7 +37,7 @@ export const fetchFilterWho = () => {
   return dispatch => {
     console.log(2);
     return axios.get("/event/place").then(response => {
-      const activeFilters = response.data.events;
+      const activeFilters = response.data.eventsFiltred;
       console.log("response", response);
       dispatch(updateFilterListWho(activeFilters));
     });

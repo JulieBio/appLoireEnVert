@@ -8,6 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //import { Container, Row, Col } from 'reactstrap';
 import { fetchEvents } from "../actions/index";
 import EventFilterWhere from "../components/EventFilterWhere";
+import { fetchFilterWho } from "../actions/index";
+import { updateFilterListWho } from "../actions/index";
 
 class EventList extends Component {
   constructor(props) {}
@@ -17,14 +19,17 @@ class EventList extends Component {
 
   render() {
     console.log(this.props.activeEvents.events);
-   
+    console.log(this.props.filterEvents.events);
+
     return (
-      <div className="EventList" if >
+      <div className="EventList" if>
         {/* Julie : récupération des évenements */}
         {this.props.activeEvents.events.map((event, index) => (
           <Event key={`event${index}`} event={event} />
         ))}
-          <EventFilterWhere/>
+        {this.props.filterEvents.eventsFiltred.map((event, place) => (
+          <EventFilterWhere key={`event${place}`} event={event} />
+        ))}
       </div>
     );
   }
@@ -34,9 +39,12 @@ class EventList extends Component {
 const mapStateToProps = store => store;
 
 const mapDispatchToProps = dispatch => ({
-  functionCallDispatch: () => dispatch(fetchEvents()),
-  addEvent: event => {
+  functionCallDispatch: () => dispatch(fetchEvents(), fetchFilterWho()),
+    addEvent: event => {
     dispatch(updateEventsList(event));
+  },
+    addEventFilter: event => {
+    dispatch(updateFilterListWho(event));
   }
 });
 
