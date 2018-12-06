@@ -46,7 +46,7 @@ const Event = ({ event }) => (
             <Row>
               <CardSubtitle className="free">
                 {event.free === "true" ? (
-                  <h1 />
+                  ""
                 ) : (
                   <div style={styleEuro.euro} />
                 )}

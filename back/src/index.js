@@ -10,12 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
-  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-  next();
-});
+
 
 app.use('/', require('./routes'));
 
@@ -28,6 +23,12 @@ app.use(function (req, res, next) {
   next(err);
 });*/}
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
+  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+  next();
+});
 // Marion : Début essaie route BDD mysql Loire en Vert
 // écoute de l'url "/event"
 app.get('/event', (req, res) => {

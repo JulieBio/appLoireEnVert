@@ -10,11 +10,13 @@ import { fetchEvents } from "../actions/index";
 
 class EventList extends Component {
 componentWillMount() {
+
+    console.log("elel");
 this.props.functionCallDispatch();
 }
 
 render() {
-console.log(this.props.activeEvents.events);
+  console.log("el",this.props);
 return (
 <div className="EventList">
 {/* Julie : récupération des évenements */}
