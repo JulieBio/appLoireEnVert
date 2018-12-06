@@ -1,11 +1,11 @@
-const activeTest = (state = { events: [] }, action) => {
+const activeTest = (state = { test: [] }, action) => {
   switch (action.type) {
 
 // Julie : déclaration des actions
 //Marion : déclaration des actions test
 
     case 'UPDATE_TEST':
-    console.log( action.events)
+    console.log( action.test)
       return { ...state, test: action.test };
 
     case 'ADD_TEST':
