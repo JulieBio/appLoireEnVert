@@ -65,26 +65,7 @@ app.get('/event/filterwho', (req, res) => {
     }
   });
 });
-
-
-
-
-app.get('/event/filterwhere', (req, res) => {
-
-  // connection à la base de données, et sélection des évènements filtrés avec le filtre where
-  connection.query('SELECT * from eventLoire WHERE event_where = "Stéphanois-Pilat"', (err, results) => {
-
-    if (err) {
-
-      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
-      res.status(500).send('Erreur lors de la récupération des évènements filtrés');
-    } else {
-
-      // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
-      res.json(results);
-    }
-  });
-});*/
+*/
 
 //Marion : filtres pour la présentation de vendredi
 app.get('/event/stephanois-pilat', (req, res) => {
