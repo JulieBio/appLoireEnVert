@@ -1,3 +1,5 @@
+//Actions à tester pour EventFilterWhere
+
 const filterEvents = (state = { eventsFiltred: [] }, action) => {
   switch (action.type) {
     case "UPDATE_FILTER_LIST_WHO":

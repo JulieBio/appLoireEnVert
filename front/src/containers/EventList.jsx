@@ -19,7 +19,7 @@ class EventList extends Component {
 
   render() {
     console.log(this.props.activeEvents.events);
-    console.log(this.props.filterEvents.events);
+    console.log(this.props.filterEvents.events); //console.log pour tester les events filtrés
 
     return (
       <div className="EventList" if>
@@ -27,6 +27,7 @@ class EventList extends Component {
         {this.props.activeEvents.events.map((event, index) => (
           <Event key={`event${index}`} event={event} />
         ))}
+        {/* Appel des events filtrés, test Monica */}
         {this.props.filterEvents.eventsFiltred.map((event, place) => (
           <EventFilterWhere key={`event${place}`} event={event} />
         ))}
@@ -43,6 +44,7 @@ const mapDispatchToProps = dispatch => ({
     addEvent: event => {
     dispatch(updateEventsList(event));
   },
+  //Test events filtrés Monica
     addEventFilter: event => {
     dispatch(updateFilterListWho(event));
   }

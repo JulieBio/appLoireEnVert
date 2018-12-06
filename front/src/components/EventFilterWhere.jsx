@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-
 import axios from "axios";
 import { Button } from "reactstrap";
 // import EventList from "../containers/EventList";
+
 
 class EventFilterWhere extends Component {
   constructor(props) {
     super(props);
     this.state = {
       eventsFiltred: null
-      //       // filterWho: null,
+      //       // filterWho: null, à utiliser après
     };
 
     this.place = this.props.match.params.place;
