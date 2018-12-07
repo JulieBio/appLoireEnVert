@@ -9,44 +9,42 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
 import EventFilterWhere from "../components/EventFilterWhere";
 import { fetchFilterWho } from "../actions/index";
-import { updateFilterListWho } from "../actions/index";
+import { updateFilter } from "../actions/index";
 
 class EventList extends Component {
-componentWillMount() {
+  componentWillMount() {
 
-    console.log("elel");
-this.props.functionCallDispatch();
-}
+    console.log("here",this.props.filterEvents);
+    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+  }
 
-render() {
-  console.log("el",this.props);
-  console.log(this.props.filterEvents); //console.log pour tester les events filtrés
-return (
-<div className="EventList">
-{/* Julie : récupération des évenements */}
-{this.props.activeEvents.events.map((event, index) => (
-<Event key={`event${index}`} event={event} />
-))}
-{/* Appel des events filtrés, test Monica */}
-{this.props.filterEvents.eventsFiltred.map((event, index) => (
-  <EventFilterWhere key={`event${index}`} event={event} />
-))}
-</div>
-);
-}
+  render() {
+    console.log("el", this.props);
+    console.log(this.props.filterEvents); //console.log pour tester les events filtrés
+    return (
+      <div className="EventList">
+        {/* Julie : récupération des évenements */}
+        {this.props.activeEvents.events.map((event, index) => (
+          <Event key={`event${index}`} event={event} />
+        ))}
+        {/* Appel des events filtrés, test Monica */}
+       
+      </div>
+    );
+  }
 }
 
 //Julie : transfert des états
 const mapStateToProps = store => store;
 
 const mapDispatchToProps = dispatch => ({
-  functionCallDispatch: () => dispatch(fetchEvents(), fetchFilterWho()),
-    addEvent: event => {
+  functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
+  addEvent: event => {
     dispatch(updateEventsList(event));
   },
   //Test events filtrés Monica
-    addEventFilter: event => {
-    dispatch(updateFilterListWho(event));
+  addEventFilter: filter => {
+    dispatch(updateFilter(filter));
   }
 });
 

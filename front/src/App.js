@@ -10,6 +10,8 @@ import EventDetails from "./components/EventDetails";
 //import reducers from './reducers';
 import Head from "./components/head";
 import EventFilterWhere from "./components/EventFilterWhere.jsx"
+import EventFilterWho from "./components/EventFilterWho.jsx"
+
 
 class App extends Component {
   render() {
@@ -21,6 +23,8 @@ class App extends Component {
             <Route exact path="/" component={EventList} />
             <Route path="/event/:id" component={EventDetails} />
             <Route path="/where" component={EventFilterWhere} />
+            <Route path="/who" component={EventFilterWho} />
+
           </Switch>
         </div>
       </BrowserRouter>

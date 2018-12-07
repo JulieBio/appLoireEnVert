@@ -1,12 +1,12 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 //const morgan = require('morgan');
 const app = express();
 const connection = require('./conf');
 
-{/*app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+{/*app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 
@@ -49,22 +49,31 @@ app.get('/event', (req, res) => {
   });
 });
 
-app.get('/event', (req, res) => {
+app.post('/event', (req, res) => {
 
+  let query = 'SELECT * from eventLoire';
+  let queryParams = [];
+console.log(req.body)
+
+  if (req.body.where) {
+    query += ' WHERE event_where = ? AND who= ?';
+    queryParams.push(req.body.where)
+    queryParams.push(req.body.who)
+  }
   // connection à la base de données, et sélection des évènements filtrés avec le filtre where
-   connection.query('SELECT * from eventLoire WHERE event_where=?',
-  [req.query.where], (err, results) => {
+  connection.query(query, queryParams
+   , (err, results) => {
 
-    if (err) {
+      if (err) {
 
-      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
-      res.status(500).send('Erreur lors de la récupération des évènements filtrés');
-    } else {
+        // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+        res.status(500).send(err);
+      } else {
 
-      // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
-      res.json(results);
-    }
-  });
+        // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
+        res.json(results);
+      }
+    });
 });
 
 
@@ -82,7 +91,7 @@ app.get(`/event/:id`, (req, res) => {
       res.json(results[0]);
     }
   });
-  
+
 });
 
 
