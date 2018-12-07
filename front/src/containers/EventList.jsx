@@ -20,6 +20,7 @@ class EventList extends Component {
         {this.props.activeEvents.events.map((event, index) => (
           <Event key={`event${index}`} event={event} />
         ))}
+        <div className="espace"> </div>
       </div>
     );
   }

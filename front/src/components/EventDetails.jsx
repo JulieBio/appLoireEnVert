@@ -39,6 +39,7 @@ class EventDetails extends Component {
       });
     });
   }
+  
 
   goBack = () => {
     this.props.history.goBack();

@@ -10,15 +10,17 @@ class Head extends React.Component {
   render() {
     return (
       //Julie : bandeau head avec logo et nom
-      <Navbar className="header">
-        <NavbarBrand className="headerLogo" href="/">
-          <img src={Logo} alt="Logo Loire en vert" />
-        </NavbarBrand>
-        <NavItem className="titleLoire">
-          Toutes les activités nature <br />
-          dans la Loire
-        </NavItem>
-      </Navbar>
+      <div className="headerLisa">
+        <div className="header">
+          <div className="headerLogo" href="/">
+            <img src={Logo} alt="Logo Loire en vert" />
+          </div>
+          <div className="titleLoire">
+            Toutes les activités nature <br />
+            dans la Loire
+          </div>
+        </div>
+      </div>
     );
   }
 }

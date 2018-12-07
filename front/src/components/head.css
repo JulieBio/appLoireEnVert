@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
 
 .header {
-  bottom: 0;
+  top: 0;
+  padding-top: 10px;
   width: 100%;
   flex-direction: row;
   text-align: center;
@@ -12,11 +13,13 @@
   padding-left: 17px;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
 }
 
 .header > .headerLogo {
   width: 20%;
   height: auto;
+  float: left;
 }
 
 .header > .headerLogo img {
@@ -27,6 +30,7 @@
 .header > .titleLoire {
   width: 75%;
   list-style-type: none;
+  float: left;
 }
 
 .logo {
