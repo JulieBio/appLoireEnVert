@@ -18,6 +18,7 @@ const styleEuro = {
     //padding: '5px',
   }
 };
+
 const Event = ({ event }) => (
   <Container>
     <div className="cardAccueil">
@@ -45,7 +46,7 @@ const Event = ({ event }) => (
             <CardSubtitle>
               <div className="freeEvent">
                 {event.free === "true" ? (
-                  <h1 />
+                  <h1> </h1>
                 ) : (
                   <div style={styleEuro.euro} />
                 )}
