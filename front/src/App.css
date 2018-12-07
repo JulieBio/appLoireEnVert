@@ -129,15 +129,7 @@ a {
   color: rgb(54, 135, 150);
 }
 
-.description-event {
-  overflow: hidden;
-  height: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 /*composant EventDetails*/
-
 
 .qui-eventDetails {
   font-family: Arial, serif;

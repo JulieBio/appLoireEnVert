@@ -33,15 +33,9 @@ const Event = ({ event }) => (
           />
           <CardBody>
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
-
-            {/*             <CardTitle className="type-event">{event.type}</CardTitle> */}
-
             <CardSubtitle className="itemEvent">
               {event.date}, {event.time}
             </CardSubtitle>
-
-            {/*            <CardSubtitle className="heure-event">{event.time}</CardSubtitle>  */}
-
             <CardSubtitle className="itemEvent">{event.where}</CardSubtitle>
             <CardSubtitle>
               <div className="freeEvent">
@@ -58,47 +52,5 @@ const Event = ({ event }) => (
       </NavLink>
     </div>
   </Container>
-
-  /*const Event = ({ event }) => (
-  <Container>
-    <div className="cardAccueil">
-        <Card body outline>
-          <CardImg
-            top
-            cardImage
-            src={event.image}
-            alt="Card image cap"
-            classname="images"
-          />
-          <CardBody classname="bodyCard">
-            <Row classname="description">
-              <CardTitle className="type">{event.type}</CardTitle>
-            </Row>
-            <Row>
-              <CardSubtitle className="nom">{event.name}</CardSubtitle>
-            </Row>
-            <br />
-            <Row>
-              <CardSubtitle className="quand">{event.date}</CardSubtitle>
-            </Row>
-            <br />
-            <Row>
-              <CardSubtitle className="heure">{event.time}</CardSubtitle>
-            </Row>
-            <br />
-            <Row>
-              <CardSubtitle className="free">
-                {event.free === "true" ? (
-                  <h1/>
-                ) : (
-                  <div style={styleEuro.euro}/>
-                )}
-              </CardSubtitle>
-            </Row>
-          </CardBody>
-        </Card>
-
-    </div>
-  </Container>*/
 );
 export default Event;
