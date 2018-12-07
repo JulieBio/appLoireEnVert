@@ -10,10 +10,18 @@ export const addEvent = event => ({
   type: "ADD_EVENT",
   event
 });
+export const updateFilterListWho = events => ({
+  type: "UPDATE_FILTER_LIST_WHO",
+  events
+});
+export const addEventFiltred = event => ({
+  type: "ADD_EVENT",
+  event
+});
 
 export const fetchEvents = () => {
-  console.log(1);
-  console.log("i'm in fetch event");
+  // console.log(1);
+  // console.log("i'm in fetch event");
   return dispatch => {
     console.log(2);
     return axios.get("/event").then(response => {
@@ -23,6 +31,18 @@ export const fetchEvents = () => {
     }).catch(e=>{
       console.log(e)
     })
+  };
+};
+export const fetchFilterWho = () => {
+  // console.log(1);
+  // console.log("i'm in fetch event");
+  return dispatch => {
+    console.log(2);
+    return axios.get("/event?where=stephanois-pilat").then(response => {
+      const activeFilters = response.data;
+      console.log("response", response);
+      dispatch(updateFilterListWho(activeFilters));
+    });
   };
 };
 

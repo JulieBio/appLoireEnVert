@@ -16,7 +16,7 @@ const styleEuro = {
     //padding: '5px',
   }
 };
-const Event = ({ event }) => (
+const Event = ({ event }) =>(
   <Container>
     <div className="cardAccueil">
       <NavLink to={`/event/${event.id}`} className="lienAccueil">
