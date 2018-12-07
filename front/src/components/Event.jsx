@@ -9,13 +9,12 @@ const styleEuro = {
   euro: {
     background: `url(${backgroundEuro})`,
     backgroundSize: "contain",
-
     backgroundRepeat: "no-repeat",
     height: "5vh",
     width: "5vh"
-    //padding: '5px',
   }
 };
+
 const Event = ({ event }) => (
   <Container>
     <div className="cardAccueil">
@@ -46,7 +45,7 @@ const Event = ({ event }) => (
             <Row>
               <CardSubtitle className="free">
                 {event.free === "true" ? (
-                  <h1 />
+                  <h1> </h1>
                 ) : (
                   <div style={styleEuro.euro} />
                 )}
