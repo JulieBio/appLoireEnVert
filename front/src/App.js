@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="App">
           <Head />
           <Switch>
             <Route exact path="/" component={EventList} />

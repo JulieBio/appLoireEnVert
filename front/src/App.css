@@ -1,18 +1,109 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
+@font-face {
+  font-family: "Old Press";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/old_press-webfont.woff");
+}
 
 a {
   text-decoration: none !important;
 }
 
+.card {
+  border: none !important;
+}
+
+.cardAccueil {
+  margin-bottom: 15px;
+  border-radius: 0 !important;
+  box-shadow: 0 0 4px 0 #9e9e9e;
+}
+
+.CardeImage {
+  border-radius: 0 !important;
+}
+
+.App {
+  background-image: url(./assets/fond.jpg);
+}
 /*composant Event*/
 .cardAccueil-event {
   margin-top: 20px;
 }
 
-.nom-event {
-  font-family: "Lobster", Arial, serif;
+.nameEvent {
+  font-family: "Old Press", Arial;
   font-size: 1.6em;
-  color: rgb(203, 137, 52);
+  color: #b6543a;
+}
+
+.itemEvent {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  padding: 2vmin 0 0 0;
+}
+
+.freeEvent {
+  padding-top: 5vmin;
+  text-align: center;
+}
+
+.exposition,
+.expositions {
+  background-image: url("./assets/expositions.png");
+  background-size: cover;
+  height: 5vh;
+  width: 6vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.sortie {
+  background-image: url("./assets/sortie.png");
+  background-size: cover;
+  height: 5.5vh;
+  width: 6vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.conférence {
+  background-image: url("./assets/conferences.png");
+  background-size: cover;
+  height: 4vh;
+  width: 7vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Randonnées {
+  background-image: url("./assets/randonnee.png");
+  background-size: cover;
+  height: 6vh;
+  width: 4.5vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Ateliers {
+  background-image: url("./assets/ateliers.png");
+  background-size: cover;
+  height: 4vh;
+  width: 8vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.apéro-quiz {
+  background-image: url("./assets/apero-quiz.png");
+  background-size: cover;
+  height: 5vh;
+  width: 4vh;
+  background-repeat: no-repeat;
+  float: left;
 }
 
 .description-event {
@@ -36,6 +127,13 @@ a {
   font-size: 1.1em;
   font-weight: bold;
   color: rgb(54, 135, 150);
+}
+
+.description-event {
+  overflow: hidden;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*composant EventDetails*/
@@ -65,4 +163,24 @@ a {
   font-size: 1.1em;
   font-weight: bold;
   color: rgb(54, 135, 150);
+}
+
+.buttonDates {
+  background-color: #b6543a !important;
+  border-color: #b6543a !important;
+  border-radius: 0 !important;
+  width: 85px;
+  box-shadow: 0 0 4px 0 #9e9e9e !important;
+  font-family: "Patrick Hand", Arial;
+  font-size: 1.3em !important;
+}
+
+.blockButtons {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
