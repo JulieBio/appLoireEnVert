@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+/* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
+.espace {
+  height: 70px;
+  width: 100%;
+}
 
 a {
   text-decoration: none !important;
@@ -65,4 +73,76 @@ a {
   font-size: 1.1em;
   font-weight: bold;
   color: rgb(54, 135, 150);
+}
+
+/* Julie : NavBar, et tout ce qui en dépend */
+
+.navbar {
+  background-color:#b6543a;
+  position:absolute;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.menuB a:link {
+  color: #4b4b4b !important;
+}
+.menuB a:visited {
+  color: #4b4b4b !important;
+}
+.menuB a:active {
+  color: #4b4b4b !important;
+}
+
+.menuBurger{
+  margin-top:20px;
+  border-bottom: 1px solid #4b4b4b;
+  border-top: 1px solid #4b4b4b;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menuB {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 2.2em;
+  border : 1px solid #4b4b4b;
+  padding-left: 15px;
+  width:100vw;
+  height: 12,5vh;
+}
+.quiSommesNous {
+  margin-top: 30px;
+  margin-left:30px;
+  margin-right:30px;
+  font-family: "Lobster", Arial, serif;
+  color: #4b4b4b !important;
+}
+.texteQuiSommesNous{
+  margin-top: 30px;
+  margin-left:30px;
+  margin-right:30px;
+  font-family: 'Questrial', sans-serif;
+  color: #4b4b4b !important;
+  margin-bottom: 50px;
+}
+.imgpart{
+  display: flex;
+  margin-top:30px;
+  margin:0 auto;
+  width:150px;
+}
+.partenaires {
+  margin-top: 30px;
+  margin-left:30px;
+  margin-right:30px;
+  font-family: "Lobster", Arial, serif;
+  color: #4b4b4b !important;
+}
+.partenaires .row {
+  justify-content: center;
+}
+.part {
+  margin-top:30px;
 }

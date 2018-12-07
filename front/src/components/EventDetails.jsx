@@ -27,6 +27,7 @@ class EventDetails extends Component {
       });
     });
   }
+  
 
   render() {
     return (
