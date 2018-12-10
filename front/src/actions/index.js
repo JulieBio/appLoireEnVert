@@ -1,5 +1,4 @@
-import axios from 'axios';
-//import thunk from 'redux-thunk';
+import axios from "axios";
 
 //Julie : description de l'action
 export const updateEventsList = events => ({
@@ -11,42 +10,48 @@ export const addEvent = event => ({
   event
 });
 
-export const fetchEvents = () => {
-  console.log(1);
-  console.log("i'm in fetch event");
+//On crée const pour actualiser les résultats filtrés (Monica/Nadim)
+export const updateFilter = filter => ({
+  type: "UPDATE_FILTER",
+  filter
+});
+
+// Cette const je ne sais pas si elle marche, on n'a pas la BDD (Monica/Nadim)
+export const addEventFiltred = event => ({
+  type: "ADD_EVENT",
+  event
+});
+
+export const fetchEvents = filter => {
+  console.log("filter", filter);
   return dispatch => {
     console.log(2);
-    return axios.get("/event").then(response => {
-      const activeEvents = response.data.events;
-      console.log("response", response);
-      dispatch(updateEventsList(activeEvents));
-    });
+    return axios
+      .post("/event", filter)
+      .then(response => {
+        const activeEvents = response.data;
+        console.log("response", response.data);
+        dispatch(updateEventsList(activeEvents));
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 };
 
-
-//Marion : Début stockage filtre test
-export const addTest = test => ({
-  type: "ADD_TEST",
-  test
-})
-
-export const updateTest = test => ({
-  type: "UPDATE_TEST",
-  test
-});
-
-//fonction allant chercher la donnee
-export const fetchTest = () => {
-  console.log(1);
-  console.log("i'm in fetch test");
+//Je ne sais pas si elle marche tjs. Pas accès à la BDD de Marion. A virer peut être par Monica et Nadim
+export const fetchFilterWho = () => {
+  // console.log(1);
+  // console.log("i'm in fetch event");
   return dispatch => {
     console.log(2);
-    const activeTest = "test";
-      dispatch(updateTest(activeTest));
-    };
+    return axios.get("/event?where=stephanois-pilat").then(response => {
+      const activeFilters = response.data;
+      console.log("response", response);
+      dispatch(updateFilter(activeFilters));
+    });
   };
-//Fin stockage filtre test
+};
 
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 

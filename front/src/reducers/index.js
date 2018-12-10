@@ -3,13 +3,13 @@ import { combineReducers } from "redux";
 // Julie : regroupe tous les Reducers
 
 import ActiveEventsReducer from "./active-events";
+import FilterEventsReducer from "./filter-events";
 
-//Marion : regroupe reducers test
-import ActiveTestReducer from "./active-test.js"
 
 const allReducers = combineReducers({
   activeEvents: ActiveEventsReducer,
-  activeTest: ActiveTestReducer
+  filterEvents: FilterEventsReducer
+  //J'amène mon action filterEvents pour la combiner avec "allReducers" (Monica/Nadim) 
 });
 
 export default allReducers;
