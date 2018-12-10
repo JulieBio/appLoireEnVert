@@ -9,6 +9,7 @@ import EventDetails from "./components/EventDetails";
 //import thunk from 'redux-thunk'
 //import reducers from './reducers';
 import Head from "./components/head";
+import filterwhere from "./components/filterwhere.jsx"
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={EventList} />
             <Route path="/event/:id" component={EventDetails} />
+            <Route path="/where" component={filterwhere} />
           </Switch>
         </div>
       </BrowserRouter>

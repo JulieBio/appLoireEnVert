@@ -25,10 +25,12 @@ export const fetchEvents = () => {
   return dispatch => {
     console.log(2);
     return axios.get("/event").then(response => {
-      const activeEvents = response.data.events;
-      console.log("response", response);
+      const activeEvents = response.data;
+      console.log("response", response.data);
       dispatch(updateEventsList(activeEvents));
-    });
+    }).catch(e=>{
+      console.log(e)
+    })
   };
 };
 export const fetchFilterWho = () => {
@@ -37,12 +39,14 @@ export const fetchFilterWho = () => {
   return dispatch => {
     console.log(2);
     return axios.get("/event/place").then(response => {
-      const activeFilters = response.data.eventsFiltred;
+      const activeFilters = response.data;
       console.log("response", response);
       dispatch(updateFilterListWho(activeFilters));
     });
   };
 };
+
+
 
 
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy

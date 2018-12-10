@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 import { Button } from "reactstrap";
 // import EventList from "../containers/EventList";
-
 
 class EventFilterWhere extends Component {
   constructor(props) {
@@ -15,40 +15,47 @@ class EventFilterWhere extends Component {
     this.place = this.props.match.params.place;
     // this.who = this.props.match.params.who;
   }
-  
+
   getFilter() {
     //Récupération de resultats filtrés via axios
-    axios.get(`/event/${this.place}`).then(result => {
+    axios.get('/event/stephanois-pilat').then(result => {
       // Une fois les données récupérées, on va mettre à jour notre state avec les nouvelles données
       this.setState({
-        eventsFiltred: result.events,
-      
+        eventsFiltreStephanois: result.events
       });
     });
     // this.props.functionCallDispatch();
   }
 
-  routeChange = () => {
+  routeChangeForez = () => {
     console.log("was click");
-    let path = "/who";
+    let path = "event/forez";
+    this.props.history.push(path);
+  };
+  routeChangeRoannais = () => {
+    let path = "/Roannais";
+    this.props.history.push(path);
+  };
+  routeChangeStephanois = () => {
+    let path = "/event/stephanois-pilat";
     this.props.history.push(path);
   };
 
   render() {
     return (
       <div className="buttoncenter">
-        <Button onClick={this.routeChange} color="secondary" size="lg" block>
-          {this.getFilter === "Forez"}
+        <Button onClick={this.routeChangeForez} color="secondary" size="lg" block>
+          {this.getFilter == "Forez"}
         </Button>
-        <Button onClick={this.routeChange} color="secondary" size="lg" block>
-          {this.getFilter === "Roannais"}
+        <Button onClick={this.routeChangeRoannais} color="secondary" size="lg" block>
+          {this.getFilter == "Roannais"}
         </Button>
-        <Button onClick={this.routeChange} color="secondary" size="lg" block>
-          {this.getFilter === "Stéphanois Pilat"}
+        <Button onClick={this.routeChangeStephanois} color="secondary" size="lg" block>
+          {this.getFilter == "Stéphanois Pilat"}
         </Button>
       </div>
     );
   }
 }
 
-export default EventFilterWhere;
+export default withRouter (EventFilterWhere);
