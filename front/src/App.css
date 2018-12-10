@@ -208,12 +208,13 @@ a {
 }
 
 .menuBurger {
-  margin-top: 20px;
+  margin-top: 75px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: white;
 }
 .menuB {
   font-family: "Patrick Hand", cursive;
