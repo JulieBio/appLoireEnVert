@@ -4,13 +4,11 @@ import {connect} from "react-redux";
 import { updateFilter } from "../actions/index";
 
 
-
-
-class EventFilterWhere extends Component {
+class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null
+      eventsFiltred: null // a vérifier par Monica/Nadim
  
     };
 
@@ -45,4 +43,4 @@ export default connect(null,
     updateFilter: filter => {
       dispatch(updateFilter(filter));
     }
-  }))(EventFilterWhere);
+  }))(EventFilterWho);

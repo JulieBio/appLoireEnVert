@@ -1,25 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { addEvent } from '../actions/index';
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import { NavLink } from "react-router-dom";
-//import { Container, Row, Col } from 'reactstrap';
 import { fetchEvents } from "../actions/index";
-import EventFilterWhere from "../components/EventFilterWhere";
-import { fetchFilterWho } from "../actions/index";
-import { updateFilter } from "../actions/index";
+
 
 class EventList extends Component {
   componentWillMount() {
 
     console.log("here",this.props.filterEvents);
+    //filterEvents dispatchée par Fetchevents(Monica/Nadim)
     this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
 
   render() {
-    console.log("el", this.props);
+
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
       <div className="EventList">
@@ -27,9 +23,7 @@ class EventList extends Component {
         {this.props.activeEvents.events.map((event, index) => (
           <Event key={`event${index}`} event={event} />
         ))}
-        {/* Appel des events filtrés, test Monica */}
-       
-      </div>
+       </div>
     );
   }
 }
@@ -42,10 +36,10 @@ const mapDispatchToProps = dispatch => ({
   addEvent: event => {
     dispatch(updateEventsList(event));
   },
-  //Test events filtrés Monica
-  addEventFilter: filter => {
-    dispatch(updateFilter(filter));
-  }
+  //*Test events filtrés Monica ne pas effacer merci**
+  // addEventFilter: filter => {
+  //   dispatch(updateFilter(filter));
+  // }
 });
 
 export default connect(
