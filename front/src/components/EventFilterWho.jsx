@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
 import { Button } from "reactstrap";
 import {connect} from "react-redux";
 import { updateFilter } from "../actions/index";
 import { withRouter } from 'react-router-dom';
 // import EventList from "../containers/EventList";
+
 
 class EventFilterWhere extends Component {
   constructor(props) {
@@ -56,24 +56,19 @@ class EventFilterWhere extends Component {
     console.log(3);
     }*/
 
-  eventsFiltred = where => {
-    this.props.updateFilter({ where: where });
-    this.props.history.push("/who");
+  eventsFiltred = who => {
+    this.props.updateFilter({ who: who });
+    this.props.history.push("/");
   }
 
   render() {
     return (
       <div className="buttoncenter">
 
-        <Button onClick={() => this.eventsFiltred("Forez")} color="secondary" size="lg" block>
-          Forez
+        <Button onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
+          Famille
         </Button>
-        <Button onClick={() => this.eventsFiltred("Roannais")} color="secondary" size="lg" block>
-          Roannais
-        </Button>
-        <Button onClick={() => this.eventsFiltred("Stéphanois-Pilat")} color="secondary" size="lg" block>
-          Stéphanois-Pilat
-        </Button>
+        
       </div>
     );
   }

@@ -9,28 +9,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
 import EventFilterWhere from "../components/EventFilterWhere";
 import { fetchFilterWho } from "../actions/index";
-import { updateFilterListWho } from "../actions/index";
+import { updateFilter } from "../actions/index";
 
 class EventList extends Component {
-  constructor(props) {}
   componentWillMount() {
-    this.props.functionCallDispatch();
+
+    console.log("here",this.props.filterEvents);
+    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
 
   render() {
-    console.log(this.props.activeEvents.events);
-    console.log(this.props.filterEvents.events); //console.log pour tester les events filtrés
-
+    console.log("el", this.props);
+    console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
-      <div className="EventList" if>
+      <div className="EventList">
         {/* Julie : récupération des évenements */}
         {this.props.activeEvents.events.map((event, index) => (
           <Event key={`event${index}`} event={event} />
         ))}
         {/* Appel des events filtrés, test Monica */}
-        {this.props.filterEvents.eventsFiltred.map((event, place) => (
-          <EventFilterWhere key={`event${place}`} event={event} />
-        ))}
+       
       </div>
     );
   }
@@ -40,13 +38,13 @@ class EventList extends Component {
 const mapStateToProps = store => store;
 
 const mapDispatchToProps = dispatch => ({
-  functionCallDispatch: () => dispatch(fetchEvents(), fetchFilterWho()),
-    addEvent: event => {
+  functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
+  addEvent: event => {
     dispatch(updateEventsList(event));
   },
   //Test events filtrés Monica
-    addEventFilter: event => {
-    dispatch(updateFilterListWho(event));
+  addEventFilter: filter => {
+    dispatch(updateFilter(filter));
   }
 });
 

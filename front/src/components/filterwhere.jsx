@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
@@ -6,7 +6,7 @@ class filterwhere extends Component {
 
 
 
-routeChangeForez = () =>{
+/*routeChangeForez = () =>{
 console.log('was click')
 let path = "event/forez"
 this.props.history.push(path);
@@ -18,9 +18,9 @@ this.props.history.push(path);
 routeChangeStephanois = () => {
 let path = "/event/stephanois-pilat"
 this.props.history.push(path)
-}
+}*/
 
-render() {
+/*render() {
 return (
 <div className="buttoncenter">
 <Button
@@ -42,4 +42,4 @@ Stéphanois Pilat</Button>
 }
 }
 
-export default withRouter (filterwhere);
+export default withRouter (filterwhere);*/

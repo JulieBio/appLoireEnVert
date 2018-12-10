@@ -1,10 +1,10 @@
 //Actions à tester pour EventFilterWhere
 
-const filterEvents = (state = { eventsFiltred: [] }, action) => {
+const filterEvents = (state = { where: null, who:null }, action) => {
   switch (action.type) {
-    case "UPDATE_FILTER_LIST_WHO":
-      console.log(action.eventsFiltred);
-      return { ...state, events: action.eventsFiltred };
+    case "UPDATE_FILTER":
+      console.log("reducer",{ ...state, ...action.filter });
+      return { ...state, ...action.filter };
 
     case "ADD_EVENT_FILTRED":
       const newEventsFiltred = state.eventsFiltred;
