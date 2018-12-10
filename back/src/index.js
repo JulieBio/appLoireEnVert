@@ -29,8 +29,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
   next();
 });
-// Marion : Début essaie route BDD mysql Loire en Vert
-//Marion : filtres pour la présentation de vendredi
+// Marion : Début BDD mysql Loire en Vert
 // écoute de l'url "/event"
 app.get('/event', (req, res) => {
 
@@ -50,17 +49,17 @@ app.get('/event', (req, res) => {
 });
 
 app.post('/event', (req, res) => {
-
+//Marion : sélectionne tous les évènements dans la table
   let query = 'SELECT * from eventLoire';
   let queryParams = [];
 console.log(req.body)
-
+//Marion: si filtre where et où sont sélectionnés,...
   if (req.body.where) {
     query += ' WHERE event_where = ? AND who= ?';
     queryParams.push(req.body.where)
     queryParams.push(req.body.who)
   }
-  // connection à la base de données, et sélection des évènements filtrés avec le filtre where
+  // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who
   connection.query(query, queryParams
    , (err, results) => {
 
@@ -95,30 +94,7 @@ app.get(`/event/:id`, (req, res) => {
 });
 
 
-
-
-/*Marion: A travailler semaine prochaine
-
-app.get('/event/filterwho', (req, res) => {
-
-  // connection à la base de données, et sélection du type de public pour filtrer les évènements
-  connection.query('SELECT * from eventLoire WHERE who = "Famille"', (err, results) => {
-
-    if (err) {
-
-      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
-      res.status(500).send('Erreur lors de la récupération des évènements filtrés');
-    } else {
-
-      // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
-      res.json(results);
-    }
-  });
-});
-*/
-
-
-// Marion : Fin essaie route BDD mysql Loire en Vert
+// Marion : Fin BDD mysql Loire en Vert
 
 
 
