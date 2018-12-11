@@ -55,7 +55,6 @@ const Event = ({ event }) => (
           </CardBody>
         </Card>
       </NavLink>
-      <div className="espace"> </div>
     </div>
 
   </Container>
