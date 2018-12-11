@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
+import "./EventFilterWhere.css"
 
 class EventFilterWhere extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class EventFilterWhere extends Component {
   render() {
     return (
       <div className="buttoncenter">
-        <Button
+        <Button className="bottonWhere"
           onClick={() => this.eventsFiltred("Forez")} //Rappelle de la fonction eventsFiltred
           color="secondary"
           size="lg"

@@ -40,18 +40,18 @@ export const fetchEvents = filter => {
 };
 
 //Je ne sais pas si elle marche tjs. Pas accès à la BDD de Marion. A virer peut être par Monica et Nadim
-export const fetchFilterWho = () => {
-  // console.log(1);
-  // console.log("i'm in fetch event");
-  return dispatch => {
-    console.log(2);
-    return axios.get("/event?where=stephanois-pilat").then(response => {
-      const activeFilters = response.data;
-      console.log("response", response);
-      dispatch(updateFilter(activeFilters));
-    });
-  };
-};
+// export const fetchFilterWho = () => {
+//   // console.log(1);
+//   // console.log("i'm in fetch event");
+//   return dispatch => {
+//     console.log(2);
+//     return axios.get("/event?where=stephanois-pilat").then(response => {
+//       const activeFilters = response.data;
+//       console.log("response", response);
+//       dispatch(updateFilter(activeFilters));
+//     });
+//   };
+// };
 
 //Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
 
