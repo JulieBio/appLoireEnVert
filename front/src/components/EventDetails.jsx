@@ -12,7 +12,6 @@ const styleBack = {
     backgroundRepeat: "no-repeat",
     height: "4.5vh",
     width: "4.5vh",
-    
   }
 };
 
