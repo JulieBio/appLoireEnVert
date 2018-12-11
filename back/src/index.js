@@ -78,7 +78,7 @@ console.log(req.body)
 
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
-  connection.query('SELECT * from eventLoire WHERE id = ?', (err, results) => {
+  connection.query('SELECT * from eventLoire', (err, results) => {
 
     if (err) {
 
