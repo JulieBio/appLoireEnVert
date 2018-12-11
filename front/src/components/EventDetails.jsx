@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container, CardImg } from "reactstrap";
+import retourFleche from "../assets/retourFleche.png";
+
+const styleBack = {
+  goBack: {
+    background: `url(${retourFleche})`,
+    opacity: "0.5",
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    height: "4.5vh",
+    width: "4.5vh"
+  }
+};
 
 class EventDetails extends Component {
   constructor(props) {
@@ -15,6 +27,7 @@ class EventDetails extends Component {
 
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
+      console.log(result.data)
       this.setState({
         image: result.data.image,
         name: result.data.name,
@@ -29,9 +42,28 @@ class EventDetails extends Component {
   }
   
 
+  goBack = () => {
+    this.props.history.goBack();
+  };
+
   render() {
     return (
       <Container>
+        <div
+          style={{
+            position: "fixed",
+            backgroundColor: "rgb(240,240,240,0.5)",
+            height: "6vh",
+            width: "6vh",
+            borderRadius: "25px",
+            paddingTop: "4px",
+            paddingLeft: "2px",
+            margin: "5px"
+          }}
+        >
+          <div style={styleBack.goBack} onClick={this.goBack} />
+        </div>
+
         <div>
           <CardImg src={this.state.image} alt="image evenement" />
           <p className="nom-event">{this.state.name}</p>
@@ -46,44 +78,5 @@ class EventDetails extends Component {
     );
   }
 }
-/*const EventDetails = ({event}) => (
-        <Container>
-          <div
-            className="cardAccueil"
-            onClick={() => this.activitySelected(event)}>
 
-            <Card body outline>
-              <Event />
-              <CardBody classname="bodyCard">
-                <Row>
-                    {/*who}
-                  <CardSubtitle className="qui-eventDetails">{event.who}</CardSubtitle>
-                </Row>
-                <br/>
-                <Row>
-                    {/*where}
-                  <CardSubtitle className="where-eventDetails">{event.where}</CardSubtitle>
-                </Row>
-                <br/>
-                <Row>
-                    {/*Place}
-                  <CardSubtitle className="place-eventDetails">{event.place}</CardSubtitle>
-                </Row>
-                <br/>
-                <Row>
-                      {/*city}
-                  <CardSubtitle className="city-eventDetails">{event.city}</CardSubtitle>
-                </Row>
-                <br/>
-                <Row>
-                  <CardText className="description-eventDetails">{event.description}</CardText>
-                </Row>
-                <br/>
-              </CardBody>
-              <Button src="https://loireenvert.fr/">Inscription</Button>
-            </Card>
-        </div>
-     </Container>
-
-);*/
 export default EventDetails;
