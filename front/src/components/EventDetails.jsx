@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container, CardImg } from "reactstrap";
+import retourFleche from "../assets/retourFleche.png";
+
+const styleBack = {
+  goBack: {
+    background: `url(${retourFleche})`,
+    opacity: "0.5",
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    height: "4.5vh",
+    width: "4.5vh"
+  }
+};
 
 class EventDetails extends Component {
   constructor(props) {
@@ -28,10 +40,30 @@ class EventDetails extends Component {
       });
     });
   }
+  
+
+  goBack = () => {
+    this.props.history.goBack();
+  };
 
   render() {
     return (
       <Container>
+        <div
+          style={{
+            position: "fixed",
+            backgroundColor: "rgb(240,240,240,0.5)",
+            height: "6vh",
+            width: "6vh",
+            borderRadius: "25px",
+            paddingTop: "4px",
+            paddingLeft: "2px",
+            margin: "5px"
+          }}
+        >
+          <div style={styleBack.goBack} onClick={this.goBack} />
+        </div>
+
         <div>
           <CardImg src={this.state.image} alt="image evenement" />
           <p className="nom-event">{this.state.name}</p>
