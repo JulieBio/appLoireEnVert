@@ -29,7 +29,10 @@ class EventList extends Component {
 }
 
 //Julie : transfert des états
-const mapStateToProps = store => store;
+const mapStateToProps = store => {
+  console.log("store",store)
+  return store
+};
 
 const mapDispatchToProps = dispatch => ({
   functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
