@@ -11,11 +11,7 @@ const styleBack = {
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     height: "4.5vh",
-<<<<<<< HEAD
-    width: "4.5vh",
-=======
     width: "4.5vh"
->>>>>>> dc20e997abc9a2342ad5101ac60ad6cc704b34d2
   }
 };
 
