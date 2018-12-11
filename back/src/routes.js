@@ -1,19 +1,20 @@
 const express = require('express');
-const router = express.Router();
-const JsonDB = require('node-json-db');
-const db = new JsonDB("myDataBase", true, true);
+//const router = express.Router();
+//const JsonDB = require('node-json-db');
+//const db = new JsonDB("myDataBase", true, true);
+
 
 
 /**
  * BEGIN MODIFICATIONS
  */
 
-router.get('/', function (req, res) {
+/*router.get('/', function (req, res) {
   res.send("Hello World");
 });
 
 router.get('/event', function (req, res) {
-  
+
   const data = db.getData("/event");
   console.log("events");
   const events= [];
@@ -64,4 +65,6 @@ router.delete('/event/:id', function (req, res) {
  */
 
 
-module.exports = router;
+
+
+//module.exports = router;
