@@ -6,22 +6,7 @@ const connection = require('./conf');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-{/*app.use(morgan('dev'));
-app.use(express.static(__dirname + '/public'));
 
-
-
-
-app.use('/', require('./routes'));
-
-
-
-/// Error 404
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});*/}
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -95,9 +80,6 @@ app.get(`/event/:id`, (req, res) => {
 
 
 // Marion : Fin BDD mysql Loire en Vert
-
-
-
 
 let server = app.listen(process.env.PORT || 5000, function () {
   console.log('Listening on port ' + server.address().port);
