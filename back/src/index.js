@@ -81,9 +81,6 @@ app.get(`/event/:id`, (req, res) => {
 
 // Marion : Fin BDD mysql Loire en Vert
 
-
-
-
 let server = app.listen(process.env.PORT || 5000, function () {
   console.log('Listening on port ' + server.address().port);
 });
