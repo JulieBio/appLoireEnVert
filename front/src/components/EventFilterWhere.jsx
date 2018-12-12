@@ -7,13 +7,15 @@ class EventFilterWhere extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données. A tester car pas BDD.
+      eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données.
     };
 
-    this.id = this.props.match.params.id; // a tester sinon à effacer
   }
 
-  componentWillMount() {}
+  // componentWillMount() {
+   
+  // }
+
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
   //On trouve updateFilter en tant que fichier action.

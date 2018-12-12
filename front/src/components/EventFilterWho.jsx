@@ -8,17 +8,17 @@ class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null // a vérifier par Monica/Nadim
+      eventsFiltred: null
  
     };
 
-    this.id = this.props.match.params.id;
+    // this.id = this.props.match.params.id;
 
   }
 
-  componentWillMount() {
+  // componentWillMount() {
 
-  }
+  // }
 
   eventsFiltred = who => {
     this.props.updateFilter({ who: who });
