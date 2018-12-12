@@ -75,10 +75,10 @@ console.log(req.body)
     });
 });
 
-
+// Marion : connection à la base de données, et sélection du détail de l'évènement
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
-  connection.query('SELECT * from eventLoire', (err, results) => {
+  connection.query('SELECT * from eventLoire where id = ?', [id], (err, results) => {
 
     if (err) {
 
