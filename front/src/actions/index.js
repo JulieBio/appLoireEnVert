@@ -17,10 +17,10 @@ export const updateFilter = filter => ({
 });
 
 // Cette const je ne sais pas si elle marche, on n'a pas la BDD (Monica/Nadim)
-export const addEventFiltred = event => ({
-  type: "ADD_EVENT",
-  event
-});
+// export const addEventFiltred = event => ({
+//   type: "ADD_EVENT",
+//   event
+// });
 
 export const fetchEvents = filter => {
   console.log("filter", filter);
