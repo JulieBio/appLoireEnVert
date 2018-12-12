@@ -17,19 +17,13 @@ export const updateFilter = filter => ({
   filter
 });
 
-// Cette const je ne sais pas si elle marche, on n'a pas la BDD (Monica/Nadim)
-export const addEventFiltred = event => ({
-  type: "ADD_EVENT",
-  event
-});
-
 // recupération dans la bdd
 export const fetchEvents = filter => {
   console.log("filter", filter);
   return dispatch => {
     console.log(2);
     return axios
-// Julie Lisa : filter est un req.body est le même que filter dans updateFilter
+      // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
       .post("/event", filter)
       .then(response => {
         const activeEvents = response.data;

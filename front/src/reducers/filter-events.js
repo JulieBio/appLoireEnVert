@@ -8,11 +8,11 @@ const filterEvents = (state = { where: null, who: null ,when: 15}, action) => {
       console.log("reducer", state,action.filter );
       return { ...state, ...action.filter };
 
-    //Cette case je ne sais pas encore si elle utilisée, laissez moi le temps de voir (Nadim/Monica)
-    case "ADD_EVENT_FILTRED":
-      const newEventsFiltred = state.eventsFiltred;
-      newEventsFiltred.push(action.event);
-      return { ...state, events: newEventsFiltred };
+    // //Cette case je ne sais pas encore si elle utilisée, laissez moi le temps de voir (Nadim/Monica)
+    // case "ADD_EVENT_FILTRED":
+    //   const newEventsFiltred = state.eventsFiltred;
+    //   newEventsFiltred.push(action.event);
+    //   return { ...state, events: newEventsFiltred };
 
     default:
       return state;

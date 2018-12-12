@@ -6,17 +6,6 @@ const connection = require('./conf');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-{/*app.use(morgan('dev'));
-app.use(express.static(__dirname + '/public'));
-
-app.use('/', require('./routes'));
-
-/// Error 404
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});*/}
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -48,11 +37,18 @@ console.log(req.body)
 //Marion: si filtre where et où sont sélectionnés,...
 //Julie Lisa : filtre event_date pour recupérer la date courante + interval choisi avec "when"
   if (req.body.where) {
-    query += ' WHERE event_where = ? AND who= ? AND event_date < DATE_ADD(NOW(), INTERVAL ? DAYS)';
+    query += ' WHERE event_where = ? AND who= ? AND event_date_start < DATE_ADD(NOW(), INTERVAL ? DAYS)';
     queryParams.push(req.body.where)
     queryParams.push(req.body.who)
     queryParams.push(req.body.when)
   }
+  //fonction qui permet de garder le tri des endroits et passer le filtre who//
+  
+  else if (req.body.where) {
+    query += '';
+    queryParams.push(req.body.who)
+  }
+   
   // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who
   connection.query(query, queryParams
    , (err, results) => {
@@ -66,9 +62,11 @@ console.log(req.body)
     });
 });
 
+// Marion : connection à la base de données, et sélection du détail de l'évènement
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
-  connection.query('SELECT * from eventLoire', (err, results) => {
+  connection.query('SELECT * from eventLoire where id = ?', [id], (err, results) => {
+
     if (err) {
       // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
       res.status(500).send('Erreur lors de la récupération des évènements');

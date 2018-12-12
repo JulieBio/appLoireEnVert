@@ -33,7 +33,9 @@ class EventDetails extends Component {
         name: result.data.name,
         type: result.data.type,
         who: result.data.who,
-        where: result.data.where,
+        where: result.data.event_where,
+        start: result.data.event_date_start,
+        finish: result.data.event_date_finish,
         place: result.data.place,
         city: result.data.city,
         description: result.data.description
@@ -69,6 +71,7 @@ class EventDetails extends Component {
           <p className="nom-event">{this.state.name}</p>
           <p className="type-event">{this.state.type}</p>
           <p className="qui-eventDetails">{this.state.who}</p>
+          <p className="when">du {this.state.start} au {this.state.finish}</p>
           <p className="ou-eventDetails">{this.state.where}</p>
           <p className="place-eventDetails">{this.state.place}</p>
           <p className="city-eventDetails">{this.state.city}</p>
