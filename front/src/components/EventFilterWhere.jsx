@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
-import "./EventFilterWhere.css"
+import "./EventFilterWhere.css";
+import forez from "../assets/forez.png";
 
 class EventFilterWhere extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données. A tester car pas BDD.
+      // eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données. A tester car pas BDD.
     };
 
     this.id = this.props.match.params.id; // a tester sinon à effacer
@@ -25,31 +26,36 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <div className="buttoncenter">
-        <Button className="bottonWhere"
-          onClick={() => this.eventsFiltred("Forez")} //Rappelle de la fonction eventsFiltred
-          color="secondary"
-          size="lg"
-          block
-        >
-          Forez
-        </Button>
-        <Button
-          onClick={() => this.eventsFiltred("Roannais")}
-          color="secondary"
-          size="lg"
-          block
-        >
-          Roannais
-        </Button>
-        <Button
-          onClick={() => this.eventsFiltred("Stéphanois-Pilat")}
-          color="secondary"
-          size="lg"
-          block
-        >
-          Stéphanois-Pilat
-        </Button>
+      <div className= "container">
+        <div>
+          <Button
+            className= "buttonForez"
+            onClick={() => this.eventsFiltred("Forez")} //Rappelle de la fonction eventsFiltred
+            color="secondary"
+            size="lg"
+            block
+          >
+           <p><img src={forez}/></p><p>Forez</p>
+          </Button>
+          <Button
+            className=""
+            onClick={() => this.eventsFiltred("Roannais")}
+            color="secondary"
+            size="lg"
+            block
+          >
+            Roannais
+          </Button>
+          <Button
+            className="button"
+            onClick={() => this.eventsFiltred("Forez")}
+            color="secondary"
+            size="lg"
+            block
+          >
+            Stéphanois-Pilat
+          </Button>
+        </div>
       </div>
     );
   }

@@ -1,18 +1,44 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
 
-.buttoncenter {
+.container {
       width: 100%;
-      height: auto;
+      height: 100vh;
       background-image: url(../assets/fond.jpg);
-      
       box-sizing: border-box;
       size: cover;
+      position: relative;
 }
 
-.bottonWhere {
+
+.buttonForez {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+      position: absolute;
+      background-color: white;
+      width: 80%;
+      height: 10%;
+      margin: 1em;
+      top: 3em;
+      color: black;
+      font-family: "Patrick Hand", Arial, cursive;
+      text-align: center;
+      font-size: 2em;
+ 
+}
+.buttonForez img{
+      width: 60%;
+      height:auto ;
+      left: 1em;
+
+}
+.buttonForez p{
+      padding-right: 0em;
+}
+
+.buttonRoannais {
       width: 80%;
       height: 50%;
-      margin: 2em;
-      top: 20em;
+      
 
 }

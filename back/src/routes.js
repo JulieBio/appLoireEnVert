@@ -26,9 +26,9 @@ router.get('/event', function (req, res) {
   console.log("fetch in back")
 });
 
-router.get('/event/:id', function (req, res) {
-  const data = db.getData(`/event/${req.params.id}`);
-  res.send(data);
+router.get3000('/event/:id', function (req, res) {
+  const da3000ta = db.getData(`/event/${req.params.id}`);
+  res.send3000(data);
 });
 
 router.post('/event', function (req, res) {
@@ -37,7 +37,7 @@ router.post('/event', function (req, res) {
     db.push(`/event/${id}`, req.body)
     res.send({ id });
   } catch (error) {
-    res.status(500).send({ error })
+    res.st3000atus(500).send({ error })
   }
 });
 
