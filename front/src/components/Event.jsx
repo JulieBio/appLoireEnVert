@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
-import { Card, CardImg, CardBody, CardText, CardSubtitle } from "reactstrap";
+import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 const styleEuro = {
@@ -34,9 +34,10 @@ const Event = ({ event }) => (
           <CardBody>
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
-              {event.date}, {event.time}
+              du {event.event_date_start} au {event.event_date_finish}, 
+              <br/>{event.event_time}
             </CardSubtitle>
-            <CardSubtitle className="itemEvent">{event.where}</CardSubtitle>
+            <CardSubtitle className="itemEvent">{event.event_where}</CardSubtitle>
             <CardSubtitle>
               <div className="freeEvent">
                 {event.free === "true" ? (

@@ -3,7 +3,6 @@ import { Button } from "reactstrap";
 import {connect} from "react-redux";
 import { updateFilter } from "../actions/index";
 
-
 class EventFilterWho extends Component {
   constructor(props) {
     super(props);
@@ -12,13 +11,10 @@ class EventFilterWho extends Component {
     };
 
     this.id = this.props.match.params.id;
-
   }
 
   componentWillMount() {
-
   }
-
   eventsFiltred = who => {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
@@ -26,7 +22,6 @@ class EventFilterWho extends Component {
   cancelFilter= who  =>{
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
-
   }
 
 
@@ -37,7 +32,6 @@ class EventFilterWho extends Component {
         <Button onClick={() => this.cancelFilter("Famille" & "Public en situation de handicap")} color="secondary" size="lg" block>
         Tout Public
         </Button>
-
         <Button onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
           Famille
         </Button>
