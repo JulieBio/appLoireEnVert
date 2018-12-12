@@ -44,6 +44,13 @@ console.log(req.body)
     queryParams.push(req.body.where)
     queryParams.push(req.body.who)
   }
+  //fonction qui permet de garder le tri des endroits et passer le filtre who//
+  
+  else if (req.body.where) {
+    query += '';
+    queryParams.push(req.body.who)
+  }
+   
   // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who
   connection.query(query, queryParams
    , (err, results) => {
@@ -60,10 +67,10 @@ console.log(req.body)
     });
 });
 
-
+// Marion : connection à la base de données, et sélection du détail de l'évènement
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
-  connection.query('SELECT * from eventLoire', (err, results) => {
+  connection.query('SELECT * from eventLoire where id = ?', [id], (err, results) => {
 
     if (err) {
 

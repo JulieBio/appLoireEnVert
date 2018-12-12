@@ -8,8 +8,12 @@ class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       eventsFiltred: null
  
+=======
+      eventsFiltred: null // a vérifier par Monica/Nadim
+>>>>>>> 280b2732f9d5ce38f041cdf0e7c47c86f475bec3
     };
 
     // this.id = this.props.match.params.id;
@@ -24,10 +28,20 @@ class EventFilterWho extends Component {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   }
+  cancelFilter= who  =>{
+    this.props.updateFilter({ who: who });
+    this.props.history.push("/events");
+
+  }
+
 
   render() {
     return (
       <div className="buttoncenter">
+
+        <Button onClick={() => this.cancelFilter("Famille" & "Public en situation de handicap")} color="secondary" size="lg" block>
+        Tout Public
+        </Button>
 
         <Button onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
           Famille
