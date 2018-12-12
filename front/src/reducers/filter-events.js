@@ -1,7 +1,8 @@
 //const filterEvents qui prend un state "where" initial null et un state "who" null.
 //Faire la mise à jour du state (action.filter)
+// Julie Lisa : "when" est par défaut à 15 jours
 
-const filterEvents = (state = { where: null, who: null }, action) => {
+const filterEvents = (state = { where: null, who: null ,when: 15}, action) => {
   switch (action.type) {
     case "UPDATE_FILTER":
       console.log("reducer", state,action.filter );

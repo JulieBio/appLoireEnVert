@@ -34,9 +34,9 @@ const Event = ({ event }) => (
           <CardBody>
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
-              {event.date}, {event.time}
+              {event.event_date}, {event.event_time}
             </CardSubtitle>
-            <CardSubtitle className="itemEvent">{event.where}</CardSubtitle>
+            <CardSubtitle className="itemEvent">{event.event_where}</CardSubtitle>
             <CardSubtitle>
               <div className="freeEvent">
                 {event.free === "true" ? (

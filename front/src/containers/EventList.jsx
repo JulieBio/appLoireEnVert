@@ -4,7 +4,7 @@ import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
-import Buttons from "../components/Buttons";
+import Buttons from "./Buttons";
 
 class EventList extends Component {
   componentWillMount() {
