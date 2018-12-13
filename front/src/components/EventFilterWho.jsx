@@ -23,7 +23,7 @@ class EventFilterWho extends Component {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   }
-  haveEventFiltred= who  =>{
+  allFilter= who  =>{
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
 
@@ -34,13 +34,9 @@ class EventFilterWho extends Component {
     return (
       <div className="buttoncenter">
 
-        <Button onClick={() => this.haveEventFiltred("Famille" & "Public en situation de handicap" & "Enfants")} color="secondary" size="lg" block>
+        <Button onClick={() => this.allFilter("Famille" & "Public en situation de handicap" & "Enfants")} color="secondary" size="lg" block>
         Tout Public
         </Button>
-        <Button onClick={() => this.eventsFiltred(" ")} color="secondary" size="lg" block>
-          test
-        </Button>
-
         <Button onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
           Famille
         </Button>
