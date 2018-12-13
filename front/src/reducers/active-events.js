@@ -21,6 +21,3 @@ const activeEvents = (state = { events: [] }, action) => {
 export default activeEvents;
 
 
-// case 'UPDATE_EVENTS_LIST':
-// const updateEventsList = action.updateEventsList;
-// return { ...state, updateEventsList: event }

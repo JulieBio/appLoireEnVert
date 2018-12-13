@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+import { Button, Container } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWhere.css";
@@ -11,24 +11,12 @@ class EventFilterWhere extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
       eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données.
-=======
-      // eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données. A tester car pas BDD.
->>>>>>> 97cbd986e86d9bd8bf3160e4ec30469e969b52b1
     };
 
   }
 
-<<<<<<< HEAD
-  // componentWillMount() {
-   
-  // }
 
-=======
-  componentWillMount() {}
-  
->>>>>>> 97cbd986e86d9bd8bf3160e4ec30469e969b52b1
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
   //On trouve updateFilter en tant que fichier action.
@@ -39,8 +27,7 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div className="container">
+        <Container className="containerOu">
           <h1 className="titleOu">Où aller?</h1>
 
           <Button
@@ -79,8 +66,7 @@ class EventFilterWhere extends Component {
             </p>
             <p className="titleRoannais">ROANNAIS</p>
           </Button>
-        </div>
-      </div>
+        </Container>
     );
   }
 }

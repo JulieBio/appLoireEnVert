@@ -14,14 +14,9 @@ class EventFilterWho extends Component {
       eventsFiltred: null
  
     };
-
-    // this.id = this.props.match.params.id;
     
   }
 
-  // componentWillMount() {
-
-  // }
 
   eventsFiltred = who => {
     this.props.updateFilter({ who: who });
@@ -40,22 +35,25 @@ class EventFilterWho extends Component {
       <Container className="buttonsContainer">
 
         <Row className="titleWho">Pour qui ?</Row>
-          <Button className="buttonFilter" onClick={() => this.allFilter("Famille" & "Public en situation de handicap" & "Enfants")} color="secondary" size="lg" block>
-          <img className="logoFilter" src={toutPublic} alt="tout public"/>
-          <div className="textButton">TOUT PUBLIC</div>
-          </Button>
-        
-          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
-          <img className="logoFilter1" src={famille} alt= "famille"/> FAMILLES
-          </Button>
+        <Button className="buttonFilter" onClick={() => this.allFilter("Famille" & "Public en situation de handicap" & "Enfants")} color="secondary" size="lg" block>
+        <img className="logoFilter" src={toutPublic} alt="tout public"/>
+        <div className="textButton">TOUT PUBLIC</div>
+        </Button>
+      
+        <Button className="buttonFilter" onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
+        <img className="logoFilter1" src={famille} alt= "famille"/>
+        <div className="textButton2">FAMILLES</div>
+        </Button>
 
-          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Enfants")} color="secondary" size="lg" block>
-          <img className="logoFilter" src={enfants} alt="enfants"/> ENFANTS
-          </Button>
+        <Button className="buttonFilter" onClick={() => this.eventsFiltred("Enfants")} color="secondary" size="lg" block>
+        <img className="logoFilter1" src={enfants} alt="enfants"/> 
+        <div className="textButton2">ENFANTS</div>
+        </Button>
 
-          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Public en situation de handicap")} color="secondary" size="lg" block>
-          <img className="logoFilter" src={handicap} alt="handicap"/> EN SITUATION DE HANDICAP
-          </Button>
+        <Button className="buttonFilter" onClick={() => this.eventsFiltred("Public en situation de handicap")} color="secondary" size="lg" block>
+        <img className="logoFilter2" src={handicap} alt="handicap"/> 
+        <div className="textButton3">EN SITUATION DE HANDICAP</div>
+        </Button>
       </Container>  
      
 
