@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import { Container, CardImg } from "reactstrap";
+import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 
 const styleBack = {
@@ -11,7 +11,7 @@ const styleBack = {
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     height: "4.5vh",
-    width: "4.5vh"
+    width: "4.5vh",
   }
 };
 
@@ -33,14 +33,14 @@ class EventDetails extends Component {
         name: result.data.name,
         type: result.data.type,
         who: result.data.who,
-        where: result.data.where,
+        where: result.data.event_where,
         place: result.data.place,
         city: result.data.city,
         description: result.data.description
       });
     });
   }
-  
+
 
   goBack = () => {
     this.props.history.goBack();
@@ -48,7 +48,7 @@ class EventDetails extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="container-eventDetails">
         <div
           style={{
             position: "fixed",
@@ -58,22 +58,28 @@ class EventDetails extends Component {
             borderRadius: "25px",
             paddingTop: "4px",
             paddingLeft: "2px",
-            margin: "5px"
+            margin: "5px",
+            zIndex: "2",
           }}
-        >
-          <div style={styleBack.goBack} onClick={this.goBack} />
+          >
+        <div style={styleBack.goBack} onClick={this.goBack} />
         </div>
+        <Card>
+          <div>
+            <CardImg src={this.state.image} alt="image evenement" />
+            <CardBody>
+              <CardSubtitle className="nameEvent">{this.state.name}</CardSubtitle>
+              <p className="type-eventDetails">{this.state.type}</p>
+              <p className="qui-eventDetails">{this.state.who}</p>
+              <p className="ou-eventDetails">{this.state.where}</p>
+              <p className="place-eventDetails">{this.state.place}</p>
+              <p className="city-eventDetails">{this.state.city}</p>
+              <CardText className="description-event">{this.state.description}</CardText>
 
-        <div>
-          <CardImg src={this.state.image} alt="image evenement" />
-          <p className="nom-event">{this.state.name}</p>
-          <p className="type-event">{this.state.type}</p>
-          <p className="qui-eventDetails">{this.state.who}</p>
-          <p className="ou-eventDetails">{this.state.where}</p>
-          <p className="place-eventDetails">{this.state.place}</p>
-          <p className="city-eventDetails">{this.state.city}</p>
-          <p className="description-event">{this.state.description}</p>
-        </div>
+              <Button color="success" className="inscription-button" href="https://loireenvert.fr/"> Je m'inscris</Button>{' '}
+            </CardBody>
+          </div>
+        </Card>
       </Container>
     );
   }
