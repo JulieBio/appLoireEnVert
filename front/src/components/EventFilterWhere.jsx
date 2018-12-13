@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWhere.css";
 import forez from "../assets/forez.png";
+import roannais from "../assets/roannais.png";
+import stephanois from "../assets/stephanois.png";
 
 class EventFilterWhere extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class EventFilterWhere extends Component {
   }
 
   componentWillMount() {}
+  
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
   //On trouve updateFilter en tant que fichier action.
@@ -26,34 +29,45 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <div className= "container">
-        <div>
+      <div class="container">
+        <div className="container">
+          <h1 className="titleOu">Où aller?</h1>
+
           <Button
-            className= "buttonForez"
-            onClick={() => this.eventsFiltred("Forez")} //Rappelle de la fonction eventsFiltred
+            className="buttonStephanois"
+            onClick={() => this.eventsFiltred("Stéphanois-Pilat")} //Rappelle de la fonction eventsFiltred
             color="secondary"
             size="lg"
             block
           >
-           <p><img src={forez}/></p><p>Forez</p>
+            <p>
+              <img src={stephanois} alt="mapStéphanois" />
+            </p>
+            <p className="titleStéphanois">STEPHANOIS-PILAT</p>
           </Button>
           <Button
-            className=""
-            onClick={() => this.eventsFiltred("Roannais")}
-            color="secondary"
-            size="lg"
-            block
-          >
-            Roannais
-          </Button>
-          <Button
-            className="button"
+            className="buttonForez"
             onClick={() => this.eventsFiltred("Forez")}
             color="secondary"
             size="lg"
             block
           >
-            Stéphanois-Pilat
+            <p>
+              <img src={forez} alt="mapForez" />
+            </p>
+            <p className="titleForez">FOREZ</p>
+          </Button>
+          <Button
+            className="buttonRoannais"
+            onClick={() => this.eventsFiltred("Roannais")}
+            color="secondary"
+            size="lg"
+            block
+          >
+            <p>
+              <img src={roannais} alt="mapRoannais" />
+            </p>
+            <p className="titleRoannais">ROANNAIS</p>
           </Button>
         </div>
       </div>
