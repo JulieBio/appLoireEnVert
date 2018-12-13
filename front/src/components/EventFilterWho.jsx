@@ -1,23 +1,22 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import {connect} from "react-redux";
 import { updateFilter } from "../actions/index";
-
+import famille from "../assets/famille.png";
+import toutPublic from "../assets/tout-public.png";
+import enfants from "../assets/enfants6-12-ans.png";
+import handicap from "../assets/handicap.png";
 
 class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
       eventsFiltred: null
  
-=======
-      eventsFiltred: null // a vérifier par Monica/Nadim
->>>>>>> 280b2732f9d5ce38f041cdf0e7c47c86f475bec3
     };
 
     // this.id = this.props.match.params.id;
-
+    
   }
 
   // componentWillMount() {
@@ -28,7 +27,7 @@ class EventFilterWho extends Component {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   }
-  cancelFilter= who  =>{
+  allFilter= who  =>{
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
 
@@ -37,23 +36,29 @@ class EventFilterWho extends Component {
 
   render() {
     return (
-      <div className="buttoncenter">
+     
+      <Container className="buttonsContainer">
 
-        <Button onClick={() => this.cancelFilter("Famille" & "Public en situation de handicap")} color="secondary" size="lg" block>
-        Tout Public
-        </Button>
-
-        <Button onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
-          Famille
-        </Button>
-        <Button onClick={() => this.eventsFiltred("Enfants")} color="secondary" size="lg" block>
-          Enfants
-        </Button>
-        <Button onClick={() => this.eventsFiltred("Public en situation de handicap")} color="secondary" size="lg" block>
-          En situation d'handicap
-        </Button>
+        <Row className="titleWho">Pour qui ?</Row>
+          <Button className="buttonFilter" onClick={() => this.allFilter("Famille" & "Public en situation de handicap" & "Enfants")} color="secondary" size="lg" block>
+          <img className="logoFilter" src={toutPublic} alt="tout public"/>
+          <div className="textButton">TOUT PUBLIC</div>
+          </Button>
         
-      </div>
+          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Famille")} color="secondary" size="lg" block>
+          <img className="logoFilter1" src={famille} alt= "famille"/> FAMILLES
+          </Button>
+
+          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Enfants")} color="secondary" size="lg" block>
+          <img className="logoFilter" src={enfants} alt="enfants"/> ENFANTS
+          </Button>
+
+          <Button className="buttonFilter" onClick={() => this.eventsFiltred("Public en situation de handicap")} color="secondary" size="lg" block>
+          <img className="logoFilter" src={handicap} alt="handicap"/> EN SITUATION DE HANDICAP
+          </Button>
+      </Container>  
+     
+
     );
   }
 }

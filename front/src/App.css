@@ -200,6 +200,7 @@ a {
 .menuB a:link {
   color: #4b4b4b !important;
 }
+
 .menuB a:visited {
   color: #4b4b4b !important;
 }
@@ -216,6 +217,7 @@ a {
   justify-content: center;
   background-color: white;
 }
+
 .menuB {
   font-family: "Patrick Hand", cursive;
   font-size: 2.2em;
@@ -224,6 +226,7 @@ a {
   width: 100vw;
   height: 12, 5vh;
 }
+
 .quiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
@@ -231,6 +234,7 @@ a {
   font-family: "Lobster", Arial, serif;
   color: #4b4b4b !important;
 }
+
 .texteQuiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
@@ -239,12 +243,14 @@ a {
   color: #4b4b4b !important;
   margin-bottom: 50px;
 }
+
 .imgpart {
   display: flex;
   margin-top: 30px;
   margin: 0 auto;
   width: 150px;
 }
+
 .partenaires {
   margin-top: 30px;
   margin-left: 30px;
@@ -252,9 +258,65 @@ a {
   font-family: "Lobster", Arial, serif;
   color: #4b4b4b !important;
 }
+
 .partenaires .row {
   justify-content: center;
 }
+
 .part {
   margin-top: 30px;
+}
+
+/* Anaële page filtre "pour qui?" */
+
+.buttonsContainer{
+width:80vw ;
+height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+.titleWho{
+  font-size: 20vmin;
+  font-family: "Old Press", Arial, serif;
+  font-style: normal;
+  font-weight: 400; 
+  justify-content: center;
+  height: 35vmin;
+  color: #4b4b4b;
+}
+
+
+.buttonFilter{
+  display: flex;
+  height: 12vmin;
+  width: 70vmin;
+  font-family: "Patrick Hand", cursive;
+  color: #4b4b4b;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9E9E9E;
+  border-color: white;
+  border-radius: 1px;
+  margin-bottom: 4vmin;
+}
+
+
+
+.logoFilter{
+  height:6vmin;
+  margin-right:6vmin;
+ 
+
+  
+}
+
+.textButton{
+  font-size: 4vmin;
+ 
+}
+
+.logoFilter1{
+height: 8vmin;
 }

@@ -36,8 +36,6 @@
 .logo {
   display: flex;
   justify-content: flex-start;
-  height: 60px;
-  width: 60px;
   background-image: url("https://i.postimg.cc/ZYdYfqbK/loire-en-vert50.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -48,7 +46,7 @@
   height: 60px;
 }
 .titleLoire {
-  font-size: 1.3em;
+  font-size: 5vmin;
 }
 .title2Loire {
   display: flex;
