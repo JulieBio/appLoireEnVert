@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+import { Button, Container } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWhere.css";
@@ -29,8 +29,7 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div className="container">
+        <Container className="containerOu">
           <h1 className="titleOu">Où aller?</h1>
 
           <Button
@@ -69,9 +68,8 @@ class EventFilterWhere extends Component {
             </p>
             <p className="titleRoannais">ROANNAIS</p>
           </Button>
-        </div>
-      </div>
-    );
+        </Container>
+      );
   }
 }
 
