@@ -1,6 +1,5 @@
 import React from "react";
 import "./head.css";
-import { Navbar, NavbarBrand, NavItem } from "reactstrap";
 import Logo from "../assets/loire-en-vert.png";
 // import Media from "react-media";
 
