@@ -45,9 +45,9 @@ console.log(req.body)
     queryParams.push(req.body.who)
   }
   //fonction qui permet de garder le tri des endroits et passer le filtre who//
-  
+
   else if (req.body.where) {
-    query += '';
+   query += " ";
     queryParams.push(req.body.who)
   }
    
