@@ -34,3 +34,20 @@ export const fetchEvents = filter => {
   };
 };
 
+<<<<<<< HEAD
+=======
+
+//Anaële : axios qui appelle les évenements en BDD. => (/Event) correspond à l'adresse http://localhost:5000 modifiée dans package json du dossier front ajout ligne proxy
+
+//voir pour le filtre :
+// {
+//     type : SET_VISIBILITY_FILTER ,
+//     filtre : SHOW_COMPLETED
+//   }
+
+// export const addTodoEvents = (event) => {
+//     return (dispatch, getState) =>
+//     dispatch addEvents(event);
+
+// };
+>>>>>>> 97cbd986e86d9bd8bf3160e4ec30469e969b52b1
