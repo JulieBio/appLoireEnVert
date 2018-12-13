@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
 
-.container {
+.containerOu {
       width: 100%;
       height: 85vh;
       box-sizing: border-box;
@@ -25,14 +25,14 @@
       width: 80vw;
       height: 10%;
       top: 40vmin;
- 
+
 }
 .titleStéphanois{
       font-size: 6vmin;
       color: black;
       font-family: "Patrick Hand", Arial, cursive;
       margin-left: 7vmin;
-      
+
 }
 .buttonStephanois img{
       width: 7vmin;
@@ -43,7 +43,7 @@
       font-size: 6vmin;
       color: black;
       font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 7vmin; 
+      margin-left: 7vmin;
 }
 .buttonForez {
       display: flex;
@@ -55,7 +55,7 @@
       height: 10%;
       top: 60vmin;
 }
- 
+
 .buttonForez img{
       width: 7vmin;
       height:auto ;
@@ -64,8 +64,8 @@
       font-size: 6vmin;
       color: black;
       font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 7vmin; 
-      
+      margin-left: 7vmin;
+
 }
 
 .buttonRoannais {

@@ -18,7 +18,7 @@ class EventFilterWhere extends Component {
   }
 
   componentWillMount() {}
-  
+
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
   //On trouve updateFilter en tant que fichier action.
@@ -29,7 +29,7 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div className="container containerOu">
         <div className="container">
           <h1 className="titleOu">Où aller?</h1>
 
