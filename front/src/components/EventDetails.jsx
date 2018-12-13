@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import backgroundEuro from "../assets/euro.png";
 import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
+
 
 const styleBack = {
   goBack: {
@@ -12,6 +14,20 @@ const styleBack = {
     backgroundRepeat: "no-repeat",
     height: "4.5vh",
     width: "4.5vh",
+  }
+};
+
+const styleEuro = {
+  euro: {
+    background: `url(${backgroundEuro})`,
+    backgroundSize: "contain",
+    opacity: "0.5",
+    backgroundRepeat: "no-repeat",
+    height: "4.5vh",
+    width: "5vh",
+    float: "left",
+    marginRight: "1vh"
+    //padding: '5px',
   }
 };
 
@@ -36,7 +52,8 @@ class EventDetails extends Component {
         where: result.data.event_where,
         place: result.data.place,
         city: result.data.city,
-        description: result.data.description
+        description: result.data.description,
+        free: result.data.free
       });
     });
   }
@@ -69,7 +86,16 @@ class EventDetails extends Component {
             <CardImg src={this.state.image} alt="image evenement" />
             <CardBody>
               <CardSubtitle className="nameEvent">{this.state.name}</CardSubtitle>
-              <p className="type-eventDetails">{this.state.type}</p>
+              <p className="type-eventDetails">
+                <div className="freeEvent">
+                  {this.state.free === "true" ? (
+                    <h1> </h1>
+                  ) : (
+                    <div style={styleEuro.euro} />
+                  )}
+                  <div className={this.state.type} />
+                  </div>
+                </p>
               <p className="qui-eventDetails">{this.state.who}</p>
               <p className="ou-eventDetails">{this.state.where}</p>
               <p className="place-eventDetails">{this.state.place}</p>
