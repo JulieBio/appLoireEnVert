@@ -18,7 +18,7 @@ class App extends Component {
         <div className="App">
           <Head />
           <Switch>
-          <Route exact path="/" component={EventFilterWhere} />
+            <Route exact path="/" component={EventFilterWhere} />
             <Route path="/events" component={EventList} />
             <Route path="/event/:id" component={EventDetails} />
             <Route path="/who" component={EventFilterWho} />
