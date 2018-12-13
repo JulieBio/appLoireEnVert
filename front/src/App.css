@@ -345,3 +345,8 @@ margin-right:6vmin
   width: 10vmin;
   margin-right:2vmin
 }
+
+.map {
+  height: 81vh;
+  width: 100%;
+}
