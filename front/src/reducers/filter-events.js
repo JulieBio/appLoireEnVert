@@ -2,10 +2,11 @@
 //Faire la mise à jour du state (action.filter)
 // Julie Lisa : "when" est par défaut à 15 jours
 
-const filterEvents = (state = { where: null, who: null ,when: 15}, action) => {
+const filterEvents = (state = { where: null, who: null, when: 15 }, action) => {
+  console.log("je rendre dans redux filter", action);
   switch (action.type) {
     case "UPDATE_FILTER":
-      console.log("reducer", state,action.filter );
+      console.log("reducer", state, action.filter);
       return { ...state, ...action.filter };
 
     // //Cette case je ne sais pas encore si elle utilisée, laissez moi le temps de voir (Nadim/Monica)

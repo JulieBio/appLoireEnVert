@@ -13,6 +13,12 @@ class EventList extends Component {
     this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
 
+  //Lisa : on renvoie de nouveaux props quand on appuie sur les boutons de filtre jours
+  componentWillReceiveProps(newprops) {
+    if (this.props.filterEvents !== newprops.filterEvents)
+      this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
+  }
+
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
@@ -29,21 +35,24 @@ class EventList extends Component {
 }
 
 //Julie : transfert des états
-const mapStateToProps = store => {
-  console.log("store",store)
-  return store
+const mapStateToProps = ({ activeEvents, filterEvents }) => {
+  console.log("store", { activeEvents, filterEvents });
+  return { activeEvents, filterEvents };
 };
 
-const mapDispatchToProps = dispatch => ({
-  functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
-  addEvent: event => {
-    dispatch(updateEventsList(event));
-  }
-  //*Test events filtrés Monica ne pas effacer merci**
-  // addEventFilter: filter => {
-  //   dispatch(updateFilter(filter));
-  // }
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
+    addEvent: event => {
+      dispatch(updateEventsList(event));
+    }
+
+    //*Test events filtrés Monica ne pas effacer merci**
+    // addEventFilter: filter => {
+    //   dispatch(updateFilter(filter));
+    // }
+  };
+};
 
 export default connect(
   mapStateToProps,

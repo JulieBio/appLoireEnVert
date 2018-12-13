@@ -22,16 +22,18 @@ export const fetchEvents = filter => {
   console.log("filter", filter);
   return dispatch => {
     console.log(2);
-    return axios
-      // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
-      .post("/event", filter)
-      .then(response => {
-        const activeEvents = response.data;
-        console.log("response", response.data);
-        dispatch(updateEventsList(activeEvents));
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    return (
+      axios
+        // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
+        .post("/event", filter)
+        .then(response => {
+          const activeEvents = response.data;
+          console.log("response", response.data);
+          dispatch(updateEventsList(activeEvents));
+        })
+        .catch(e => {
+          console.log(e);
+        })
+    );
   };
 };
