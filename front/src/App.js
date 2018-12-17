@@ -17,6 +17,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Head />
+          <div classname="containerGeneral">
           <Switch>
           <Route exact path="/" component={EventFilterWhere} />
             <Route path="/events" component={EventList} />
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/quiSommesNous" component={QuiSommesNous} />
             <Route path="/partenaires" component={Partenaires} />
           </Switch>
+          </div>
           <NavBar />
         </div>
       </BrowserRouter>

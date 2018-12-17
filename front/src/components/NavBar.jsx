@@ -13,18 +13,23 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar className="navbar navbar-default navbar-fixed-bottom">
+
           <NavbarBrand href="/events">
             <img src={home} width="30" height="30" alt="home" />
           </NavbarBrand>
+
           <NavbarBrand href="/">
             <img src={funnel} width="30" height="30" alt="entonnoir" />
           </NavbarBrand>
+
           <NavbarBrand href="/event">
             <img src={map} width="30" height="30" alt="map" />
           </NavbarBrand>
+
           <NavbarBrand href="/menu">
             <img src={menu} width="30" height="30" alt="menu" />
           </NavbarBrand>
+
         </Navbar>
       </div>
     );

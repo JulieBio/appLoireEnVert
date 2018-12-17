@@ -8,7 +8,9 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
+
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
+
 .espace {
   height: 70px;
   width: 100%;
@@ -35,7 +37,9 @@ a {
 .App {
   background-image: url(./assets/fond.jpg);
 }
+
 /*composant Event*/
+
 .cardAccueil-event {
   margin-top: 20px;
 }
