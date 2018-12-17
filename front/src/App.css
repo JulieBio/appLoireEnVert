@@ -142,7 +142,7 @@ a {
   border-color: #58a728;
   font-family: "Patrick Hand";
   font-size: 1.6em;
-  margin-left: 30%;
+  margin-left: 10%;
 
 }
 
@@ -321,7 +321,7 @@ padding-right:0 !important;
   font-size: 20vmin;
   font-family: "Old Press", Arial, serif;
   font-style: normal;
-  font-weight: 400; 
+  font-weight: 400;
   justify-content: center;
   height: 30vmin;
   color: #4b4b4b;
@@ -348,7 +348,7 @@ padding-right:0 !important;
 
 .logoFilter{
   height:6vmin;
-  margin-right:6vmin;  
+  margin-right:6vmin;
 }
 
 .textButton{
