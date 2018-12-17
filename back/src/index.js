@@ -44,9 +44,10 @@ app.post("/event", (req, res) => {
     queryParams.push(req.body.when);
   }
   //fonction qui permet de garder le tri des endroits et passer le filtre who//
+
   else if (req.body.where) {
-    query += "";
-    queryParams.push(req.body.who);
+   query += " ";
+    queryParams.push(req.body.who)
   }
 
   // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who

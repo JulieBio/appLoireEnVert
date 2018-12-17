@@ -43,6 +43,7 @@ class EventDetails extends Component {
     });
   }
 
+  // fonction Anaële qui rappelle la page précédement visitée
   goBack = () => {
     this.props.history.goBack();
   };
@@ -70,7 +71,9 @@ class EventDetails extends Component {
           <p className="nom-event">{this.state.name}</p>
           <p className="type-event">{this.state.type}</p>
           <p className="qui-eventDetails">{this.state.who}</p>
-          <p className="when">du {this.state.start} au {this.state.finish}</p>
+          <p className="when">
+            du {this.state.start} au {this.state.finish}
+          </p>
           <p className="ou-eventDetails">{this.state.where}</p>
           <p className="place-eventDetails">{this.state.place}</p>
           <p className="city-eventDetails">{this.state.city}</p>

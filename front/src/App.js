@@ -10,6 +10,7 @@ import Menu from "./components/menu";
 import QuiSommesNous from "./components/quiSommesNous";
 import Partenaires from "./components/partenaires";
 import "./App.css";
+import MapPage from "./containers/MapPage";
 
 class App extends Component {
   render() {
@@ -18,13 +19,14 @@ class App extends Component {
         <div className="App">
           <Head />
           <Switch>
-          <Route exact path="/" component={EventFilterWhere} />
+            <Route exact path="/" component={EventFilterWhere} />
             <Route path="/events" component={EventList} />
             <Route path="/event/:id" component={EventDetails} />
             <Route path="/who" component={EventFilterWho} />
             <Route path="/menu" component={Menu} />
             <Route path="/quiSommesNous" component={QuiSommesNous} />
             <Route path="/partenaires" component={Partenaires} />
+            <Route path="/map" component={MapPage} />
           </Switch>
           <NavBar />
         </div>
