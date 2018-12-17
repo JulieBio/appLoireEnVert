@@ -2,9 +2,17 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import backgroundEuro from "../assets/euro.png";
-import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle } from "reactstrap";
+import {
+  Container,
+  Card,
+  CardImg,
+  CardBody,
+  Button,
+  CardText,
+  CardSubtitle
+} from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
-
+import moment from "moment";
 
 const styleBack = {
   goBack: {
@@ -13,7 +21,7 @@ const styleBack = {
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     height: "4.5vh",
-    width: "4.5vh",
+    width: "4.5vh"
   }
 };
 
@@ -31,6 +39,9 @@ const styleEuro = {
   }
 };
 
+var idLocale = require("moment/locale/fr");
+moment.locale("fr", idLocale);
+
 class EventDetails extends Component {
   constructor(props) {
     super(props);
@@ -43,13 +54,15 @@ class EventDetails extends Component {
 
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
-      console.log(result.data)
+      console.log(result.data);
       this.setState({
         image: result.data.image,
         name: result.data.name,
         type: result.data.type,
         who: result.data.who,
         where: result.data.event_where,
+        start: result.data.event_date_start,
+        finish: result.data.event_date_finish,
         place: result.data.place,
         city: result.data.city,
         description: result.data.description,
@@ -57,7 +70,7 @@ class EventDetails extends Component {
       });
     });
   }
-  
+
   // fonction Anaële qui rappelle la page précédement visitée
   goBack = () => {
     this.props.history.goBack();
@@ -76,16 +89,18 @@ class EventDetails extends Component {
             paddingTop: "4px",
             paddingLeft: "2px",
             margin: "5px",
-            zIndex: "2",
+            zIndex: "2"
           }}
-          >
-        <div style={styleBack.goBack} onClick={this.goBack} />
+        >
+          <div style={styleBack.goBack} onClick={this.goBack} />
         </div>
         <Card>
           <div>
             <CardImg src={this.state.image} alt="image evenement" />
             <CardBody>
-              <CardSubtitle className="nameEvent">{this.state.name}</CardSubtitle>
+              <CardSubtitle className="nameEvent">
+                {this.state.name}
+              </CardSubtitle>
               <p className="type-eventDetails">
                 <div className="freeEvent">
                   {this.state.free === "true" ? (
@@ -94,15 +109,29 @@ class EventDetails extends Component {
                     <div style={styleEuro.euro} />
                   )}
                   <div className={this.state.type} />
-                  </div>
-                </p>
+                </div>
+              </p>
               <p className="qui-eventDetails">{this.state.who}</p>
               <p className="ou-eventDetails">{this.state.where}</p>
+              <CardSubtitle className="itemEvent">
+                <p>
+                  {moment(this.state.start).format("ll")} -{" "}
+                  {moment(this.state.finish).format("ll")}
+                </p>
+              </CardSubtitle>
               <p className="place-eventDetails">{this.state.place}</p>
               <p className="city-eventDetails">{this.state.city}</p>
-              <CardText className="description-event">{this.state.description}</CardText>
-
-              <Button color="success" className="inscription-button" href="https://loireenvert.fr/"> Je m'inscris</Button>{' '}
+              <CardText className="description-event">
+                {this.state.description}
+              </CardText>
+              <Button
+                color="success"
+                className="inscription-button"
+                href="https://loireenvert.fr/"
+              >
+                {" "}
+                Je m'inscris
+              </Button>{" "}
             </CardBody>
           </div>
         </Card>

@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import moment from "moment";
 
 const styleEuro = {
   euro: {
@@ -18,6 +19,9 @@ const styleEuro = {
     //padding: '5px',
   }
 };
+// Lisa : affichage des dates en fr avec momentjs
+var idLocale = require("moment/locale/fr");
+moment.locale("fr", idLocale);
 
 const Event = ({ event }) => (
   <Container>
@@ -34,9 +38,16 @@ const Event = ({ event }) => (
           <CardBody>
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
-              {event.date}, {event.time}
+              <p>
+                {moment(event.event_date_start).format("ll")} -{" "}
+                {moment(event.event_date_finish).format("ll")}
+                <br />
+                {event.event_time}{" "}
+              </p>
             </CardSubtitle>
-            <CardSubtitle className="itemEvent">{event.where}</CardSubtitle>
+            <CardSubtitle className="itemEvent">
+              {event.event_where}
+            </CardSubtitle>
             <CardSubtitle>
               <div className="freeEvent">
                 {event.free === "true" ? (
