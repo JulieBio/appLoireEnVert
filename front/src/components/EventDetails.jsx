@@ -41,7 +41,7 @@ class EventDetails extends Component {
     });
   }
   
-
+  // fonction Anaële qui rappelle la page précédement visitée
   goBack = () => {
     this.props.history.goBack();
   };

@@ -15,6 +15,7 @@
       top: 8vmin;
       font-size: 20vmin;
       font-family: "Old Press", Arial;
+      color: #4b4b4b;
 }
 .buttonStephanois{
       display: flex;
@@ -22,28 +23,31 @@
       justify-content: stretch;
       position: absolute;
       background-color: white;
+      box-shadow: 0 0 8px 0 #9E9E9E;
       width: 80vw;
       height: 10%;
       top: 40vmin;
+      border-radius: 1px;
+      border-color:white !important;
  
 }
 .titleStéphanois{
-      font-size: 6vmin;
-      color: black;
+      font-size: 5vmin;
+      color: #4b4b4b;
       font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 7vmin;
+      margin-left: 9vmin;
       
 }
 .buttonStephanois img{
       width: 7vmin;
-      height:auto ;
+      height:auto ,
 }
 
 .titleForez {
-      font-size: 6vmin;
-      color: black;
+      font-size: 5vmin;
+      color: #4b4b4b;
       font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 7vmin; 
+      margin-left: 21vmin; 
 }
 .buttonForez {
       display: flex;
@@ -51,9 +55,12 @@
       justify-content: stretch;
       position: absolute;
       background-color: white;
+      box-shadow: 0 0 8px 0 #9E9E9E;
       width: 80vw;
       height: 10%;
       top: 60vmin;
+      border-radius: 1px;
+      border-color:white !important;
 }
  
 .buttonForez img{
@@ -61,10 +68,11 @@
       height:auto ;
 }
 .titleRoannais {
-      font-size: 6vmin;
-      color: black;
+      font-size: 5vmin;
+      color: #4b4b4b;
       font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 7vmin; 
+      margin-left: 17vmin;
+       
       
 }
 
@@ -74,9 +82,12 @@
       justify-content: stretch;
       position: absolute;
       background-color: white;
+      box-shadow: 0 0 8px 0 #9E9E9E;
       width: 80vw;
       height: 10%;
       top: 80vmin;
+      border-radius: 1px;
+      border-color:white !important;
 }
 .buttonRoannais img{
       width: 7vmin;
