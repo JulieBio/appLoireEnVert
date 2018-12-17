@@ -2,6 +2,8 @@ import React from 'react';
 import { CardImg } from 'reactstrap';
 import fneloire from '../assets/fneloire.png';
 
+// Julie: voir si logo ok car link ne fonctionne pas
+
 const QuiSommesNous = (props) => {
     return (
         <div >
@@ -15,9 +17,9 @@ const QuiSommesNous = (props) => {
                 </p>
                     <br />
                     <p>
-                    Elle regroupe une vingtaine d’associations locales. Elle agit pour l’environnement par :
+                        Elle regroupe une vingtaine d’associations locales. Elle agit pour l’environnement par :
                     </p>
-                        <ul>
+                    <ul>
                         <li>des actions de préservation de la biodiversité,</li>
                         <li>de la veille écologique et des inventaires,</li>
                         <li>des actions de communication et de sensibilisation,</li>
