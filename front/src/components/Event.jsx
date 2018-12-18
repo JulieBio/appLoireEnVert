@@ -33,9 +33,9 @@ const Event = ({ event }) => (
             src={event.image}
             alt="Card image cap"
             className="CardeImage"
-            width="100%"
+            /*  width="100%" */
           />
-          <CardBody>
+          <CardBody className="cardContent">
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
               <p>
@@ -49,7 +49,7 @@ const Event = ({ event }) => (
               {event.event_where}
             </CardSubtitle>
             <CardSubtitle>
-              <div className="freeEvent">
+              <div className="cardIcones">
                 {event.free === "true" ? (
                   <h1> </h1>
                 ) : (

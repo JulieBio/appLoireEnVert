@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
@@ -22,13 +23,20 @@ class EventList extends Component {
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
-      <div className="EventList">
-        <Buttons />
-        {/* Julie : récupération des évenements */}
-        {this.props.activeEvents.events.map((event, index) => (
-          <Event key={`event${index}`} event={event} />
-        ))}
-        <div className="espace"> </div>
+      <div>
+        <Container className="eventList">
+          <Buttons />
+          {/* Julie : récupération des évenements */}
+          <Row className="wrap">
+            {this.props.activeEvents.events.map((event, index) => (
+              <Col sm="12" md="6">
+                <Event key={`event${index}`} event={event} />
+              </Col>
+            ))}
+          </Row>
+
+          <div className="espace"> </div>
+        </Container>
       </div>
     );
   }

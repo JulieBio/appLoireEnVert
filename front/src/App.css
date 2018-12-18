@@ -30,11 +30,32 @@ a {
 
 .CardeImage {
   border-radius: 0 !important;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.cardContent {
+  height: 50vmin;
+}
+
+.cardIcones {
+  position: absolute;
+  bottom: 2vmin;
 }
 
 .App {
   background-image: url(./assets/fond.jpg);
+  background-attachment: fixed;
 }
+
+.eventList {
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 /*composant Event*/
 .cardAccueil-event {
   margin-top: 20px;
@@ -54,9 +75,10 @@ a {
 }
 
 .freeEvent {
-  padding-top: 5vmin;
+  /*   padding-top: 2vmin; */
   text-align: center;
   width: 100%;
+  bottom: 0;
 }
 
 .exposition,
@@ -114,7 +136,6 @@ a {
   float: left;
 }
 
-
 /*.quand-event {
   font-family: Arial, serif;
   font-size: 1.1em;
@@ -143,7 +164,6 @@ a {
   font-family: "Patrick Hand";
   font-size: 1.6em;
   margin-left: 30%;
-
 }
 
 @media screen and (min-width: 576px) {
@@ -162,7 +182,6 @@ a {
   font-family: "Patrick Hand";
   font-size: 1em;
   color: #4b4b4b;
-
 }
 
 .qui-eventDetails {
@@ -171,7 +190,6 @@ a {
   color: #4b4b4b;
   margin-top: 15vmin;
   margin-bottom: 0;
-
 }
 
 .ou-eventDetails {
@@ -209,20 +227,15 @@ a {
   background-color: #b6543a !important;
   border-color: #b6543a !important;
   border-radius: 0 !important;
-  width: 85px;
+  width: 100%;
   box-shadow: 0 0 4px 0 #9e9e9e !important;
   font-family: "Patrick Hand", Arial;
   font-size: 1.3em !important;
 }
 
 .blockButtons {
-  width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-  justify-content: space-between;
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
 }
 /* Julie : NavBar, et tout ce qui en dépend */
 
@@ -307,36 +320,34 @@ a {
 
 /* Anaële page filtre "pour qui?" */
 
-.buttonsContainer{
-width:80vmin ;
-height: 150vmin;
-display: flex;
-flex-direction: column;
-padding-left:0 !important;
-padding-right:0 !important;
+.buttonsContainer {
+  width: 80vmin;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-
-.titleWho{
+.titleWho {
   font-size: 20vmin;
   font-family: "Old Press", Arial, serif;
   font-style: normal;
-  font-weight: 400; 
+  font-weight: 400;
   justify-content: center;
   height: 30vmin;
   color: #4b4b4b;
-  margin-left:5vmin;
+  margin-left: 5vmin;
   margin-bottom: 10vmin;
 }
 
-
-.buttonFilter{
+.buttonFilter {
   display: flex;
   font-family: "Patrick Hand", cursive;
   color: #4b4b4b;
   font-size: 1em;
   background-color: white;
-  box-shadow: 0 0 8px 0 #9E9E9E;
+  box-shadow: 0 0 8px 0 #9e9e9e;
   border-color: white;
   border-radius: 1px;
   margin-bottom: 4vmin;
@@ -344,44 +355,42 @@ padding-right:0 !important;
   height: 14vmin;
 }
 
-
-
-.logoFilter{
-  height:6vmin;
-  margin-right:6vmin;  
+.logoFilter {
+  height: 6vmin;
+  margin-right: 6vmin;
 }
 
-.textButton{
+.textButton {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 7vmin;
 }
 
-.textButton2{
+.textButton2 {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 14vmin;
 }
 
-.textButton3{
+.textButton3 {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 2vmin;
 }
 
-.logoFilter1{
-height: 8vmin;
-width: 9vmin;
-margin-right:6vmin
+.logoFilter1 {
+  height: 8vmin;
+  width: 9vmin;
+  margin-right: 6vmin;
 }
 
-.logoFilter2{
+.logoFilter2 {
   height: 8vmin;
   width: 10vmin;
-  margin-right:2vmin
+  margin-right: 2vmin;
 }
 
 .map {
