@@ -11,6 +11,7 @@ import QuiSommesNous from "./components/quiSommesNous";
 import Partenaires from "./components/partenaires";
 import "./App.css";
 import MapPage from "./containers/MapPage";
+import "./components/EventDetails.css";
 
 class App extends Component {
   render() {
