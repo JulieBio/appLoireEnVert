@@ -118,57 +118,95 @@ a {
   float: left;
 }
 
-.description-event {
-  margin-top: 40px;
-}
-.quand-event {
+
+/*.quand-event {
   font-family: Arial, serif;
   font-size: 1.1em;
   font-weight: bold;
   color: rgb(54, 135, 150);
 }
-.type-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
+
 
 .heure-event {
   font-family: Arial, serif;
   font-size: 1.1em;
   font-weight: bold;
   color: rgb(54, 135, 150);
-}
+}*/
 
 /*composant EventDetails*/
 
+.container-eventDetails {
+  padding-top: 10px;
+  min-height: 225vmin;
+}
+
+.inscription-button {
+  background-color: #58a728;
+  border-color: #58a728;
+  font-family: "Patrick Hand";
+  font-size: 1.6em;
+  margin-left: 30%;
+
+}
+
+@media screen and (min-width: 576px) {
+  .inscription-button {
+    margin-left: 37%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inscription-button {
+    margin-left: 40%;
+  }
+}
+
+.type-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+
+}
+
 .qui-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 15vmin;
+  margin-bottom: 0;
+
 }
 
 .ou-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
 }
 
 .place-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
 }
 
 .city-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.description-event {
+  font-family: "Questrial";
+  font-size: 1em;
+  color: #4b4b4b;
+  padding: 2vmin 0 0 0;
 }
 
 .buttonDates {
@@ -204,6 +242,7 @@ a {
 .menuB a:link {
   color: #4b4b4b !important;
 }
+
 .menuB a:visited {
   color: #4b4b4b !important;
 }
@@ -220,6 +259,7 @@ a {
   justify-content: center;
   background-color: white;
 }
+
 .menuB {
   font-family: "Patrick Hand", cursive;
   font-size: 2.2em;
@@ -228,6 +268,7 @@ a {
   width: 100vw;
   height: 12, 5vh;
 }
+
 .quiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
@@ -235,6 +276,7 @@ a {
   font-family: "Lobster", Arial, serif;
   color: #4b4b4b !important;
 }
+
 .texteQuiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
@@ -243,12 +285,14 @@ a {
   color: #4b4b4b !important;
   margin-bottom: 50px;
 }
+
 .imgpart {
   display: flex;
   margin-top: 30px;
   margin: 0 auto;
   width: 150px;
 }
+
 .partenaires {
   margin-top: 30px;
   margin-left: 30px;
@@ -256,9 +300,95 @@ a {
   font-family: "Lobster", Arial, serif;
   color: #4b4b4b !important;
 }
+
 .partenaires .row {
   justify-content: center;
 }
+
 .part {
   margin-top: 30px;
+}
+
+/* Anaële page filtre "pour qui?" */
+
+.buttonsContainer{
+width:80vmin ;
+height: 150vmin;
+display: flex;
+flex-direction: column;
+padding-left:0 !important;
+padding-right:0 !important;
+}
+
+
+.titleWho{
+  font-size: 20vmin;
+  font-family: "Old Press", Arial, serif;
+  font-style: normal;
+  font-weight: 400; 
+  justify-content: center;
+  height: 30vmin;
+  color: #4b4b4b;
+  margin-left:5vmin;
+  margin-bottom: 10vmin;
+}
+
+
+.buttonFilter{
+  display: flex;
+  font-family: "Patrick Hand", cursive;
+  color: #4b4b4b;
+  font-size: 1em;
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9E9E9E;
+  border-color: white;
+  border-radius: 1px;
+  margin-bottom: 4vmin;
+  width: 80vw;
+  height: 14vmin;
+}
+
+
+
+.logoFilter{
+  height:6vmin;
+  margin-right:6vmin;  
+}
+
+.textButton{
+  display: flex;
+  justify-content: center;
+  font-size: 5vmin;
+  margin-left: 7vmin;
+}
+
+.textButton2{
+  display: flex;
+  justify-content: center;
+  font-size: 5vmin;
+  margin-left: 14vmin;
+}
+
+.textButton3{
+  display: flex;
+  justify-content: center;
+  font-size: 5vmin;
+  margin-left: 2vmin;
+}
+
+.logoFilter1{
+height: 8vmin;
+width: 9vmin;
+margin-right:6vmin
+}
+
+.logoFilter2{
+  height: 8vmin;
+  width: 10vmin;
+  margin-right:2vmin
+}
+
+.map {
+  height: 81vh;
+  width: 100%;
 }

@@ -21,8 +21,7 @@ export default class NavBar extends React.Component {
           <NavbarBrand href="/">
             <img src={funnel} width="30" height="30" alt="entonnoir" />
           </NavbarBrand>
-
-          <NavbarBrand href="/event">
+          <NavbarBrand href="/map">
             <img src={map} width="30" height="30" alt="map" />
           </NavbarBrand>
 
