@@ -8,15 +8,11 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
-<<<<<<< HEAD
 html, body{
   height: 100%;
   margin: 0;
   padding: 0;
 }
-=======
-
->>>>>>> c75e75aa7a4a4ab5c3a39c6123c374454a21968f
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
 
 .espace {
@@ -44,12 +40,7 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
-<<<<<<< HEAD
   height: 100%;
-=======
-  background-size: cover;
-  background-attachment: fixed;
->>>>>>> c75e75aa7a4a4ab5c3a39c6123c374454a21968f
 }
 
 /*composant Event*/
