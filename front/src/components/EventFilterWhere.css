@@ -1,95 +1,93 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
 
 .containerOu {
-      width: 100%;
-      height: 85vh;
-      box-sizing: border-box;
-      size: cover;
-      position: relative;
-      display: flex;
-      justify-content: center;
+  width: 100%;
+  /* height: 85vh; */
+  /* box-sizing: border-box; */
+  /* size: cover; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5vmin;
 }
 
 .titleOu {
-      position: absolute;
-      top: 8vmin;
-      font-size: 20vmin;
-      font-family: "Old Press", Arial;
-      color: #4b4b4b;
+  /* top: 8vmin; */
+  font-size: 20vmin;
+  font-family: "Old Press", Arial;
+  color: #4b4b4b;
+  text-align: center;
+
 }
-.buttonStephanois{
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 0 8px 0 #9E9E9E;
-      width: 80vw;
-      height: 10%;
-      top: 40vmin;
-      border-radius: 1px;
-      border-color:white !important;
- 
+.buttonStephanois {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9e9e9e;
+  border-radius: 1px;
+  border-color: white !important;
+  margin-bottom: 5vmin;
+    /* width: 80vw;
+      height: 10%; */
+  /* top: 40vmin; */
 }
-.titleStéphanois{
-      font-size: 5vmin;
-      color: #4b4b4b;
-      font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 9vmin;
-      
+.titleStéphanois {
+  font-size: 6vmin;
+  color: #4b4b4b;
+  font-family: "Patrick Hand", Arial, cursive;
+  justify-content: center;
+  /* margin-left: 9vmin; */
 }
-.buttonStephanois img{
+/* .buttonStephanois img{
       width: 7vmin;
       height:auto ,
-}
+} */
 
 .titleForez {
-      font-size: 5vmin;
-      color: #4b4b4b;
-      font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 21vmin; 
+  font-size: 5vmin;
+  color: #4b4b4b;
+  font-family: "Patrick Hand", Arial, cursive;
+  /* margin-left: 21vmin; */
 }
 .buttonForez {
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 0 8px 0 #9E9E9E;
-      width: 80vw;
-      height: 10%;
-      top: 60vmin;
-      border-radius: 1px;
-      border-color:white !important;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: stretch; */
+  /* position: absolute; */
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9e9e9e;
+  /* width: 80vw;
+  height: 10%;
+  top: 60vmin; */
+  border-radius: 1px;
+  border-color: white !important;
 }
 
-.buttonForez img{
-      width: 7vmin;
-      height:auto ;
+.buttonForez img {
+  width: 7vmin;
+  height: auto;
 }
 .titleRoannais {
-      font-size: 5vmin;
-      color: #4b4b4b;
-      font-family: "Patrick Hand", Arial, cursive;
-      margin-left: 17vmin;
-       
-      
+  font-size: 5vmin;
+  color: #4b4b4b;
+  font-family: "Patrick Hand", Arial, cursive;
+  /* margin-left: 17vmin; */
 }
 
 .buttonRoannais {
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 0 8px 0 #9E9E9E;
-      width: 80vw;
-      height: 10%;
-      top: 80vmin;
-      border-radius: 1px;
-      border-color:white !important;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: stretch; */
+  /* position: absolute; */
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9e9e9e;
+  /* width: 80vw;
+  height: 10%;
+  top: 80vmin; */
+  border-radius: 1px;
+  border-color: white !important;
 }
-.buttonRoannais img{
-      width: 7vmin;
-      height:auto ;
+.buttonRoannais img {
+  width: 7vmin;
+  height: auto;
 }

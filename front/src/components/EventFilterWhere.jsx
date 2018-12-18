@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWhere.css";
@@ -13,9 +13,7 @@ class EventFilterWhere extends Component {
     this.state = {
       eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données.
     };
-
   }
-
 
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
@@ -27,21 +25,27 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-        <Container className="containerOu">
-          <h1 className="titleOu">Où aller?</h1>
+      <Container className="containerOu">
+        <Row>
+          <Col xs="12" sm="12" md="12">
+            <h1 className="titleOu">Où aller?</h1>
+          </Col>
+        </Row>
 
-          <Button
-            className="buttonStephanois"
-            onClick={() => this.eventsFiltred("Stéphanois-Pilat")} //Rappelle de la fonction eventsFiltred
-            color="secondary"
-            size="lg"
-            block
-          >
-            <p>
+        <Row>
+          <Col xs="12" sm="12" md="6">
+            <Button
+              className="buttonStephanois"
+              onClick={() => this.eventsFiltred("Stéphanois-Pilat")} //Rappelle de la fonction eventsFiltred
+              color="secondary"
+              size="lg"
+              block
+            >
               <img src={stephanois} alt="mapStéphanois" />
-            </p>
-            <p className="titleStéphanois">STEPHANOIS-PILAT</p>
-          </Button>
+              <p className="titleStéphanois">STEPHANOIS-PILAT</p>
+            </Button>
+          </Col>
+          <Col xs="12" sm="12" md="6">
           <Button
             className="buttonForez"
             onClick={() => this.eventsFiltred("Forez")}
@@ -54,6 +58,8 @@ class EventFilterWhere extends Component {
             </p>
             <p className="titleForez">FOREZ</p>
           </Button>
+          </Col>
+          <Col xs="12" sm="12" md="6">
           <Button
             className="buttonRoannais"
             onClick={() => this.eventsFiltred("Roannais")}
@@ -66,7 +72,9 @@ class EventFilterWhere extends Component {
             </p>
             <p className="titleRoannais">ROANNAIS</p>
           </Button>
-        </Container>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
