@@ -129,7 +129,7 @@ class EventDetails extends Component {
                     {this.state.description}
                   </CardText>
 
-                  <div className="freeEvent">
+                  <div>
                     {this.state.free === "true" ? (
                       <Button
                         color="success"
