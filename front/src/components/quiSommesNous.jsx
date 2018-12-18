@@ -6,7 +6,7 @@ import fneloire from '../assets/fneloire.png';
 
 const QuiSommesNous = (props) => {
     return (
-        <div >
+        <div className="toutQuiSommesNous" >
             <h2 className="quiSommesNous">Qui sommes-nous ?</h2>
             <div className="texteQuiSommesNous">
                 <p>FNE Loire</p>
