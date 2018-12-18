@@ -1,0 +1,29 @@
+.scroll {
+  position: fixed;
+  bottom: 10vh;
+  right: 5vh;
+  padding-top: 4px;
+  margin: 5px;
+  opacity: 0.5;
+  background-color: #b6543a;
+  height: 6vh;
+  width: 6vh;
+  border-radius: 5px;
+  border: none;
+  z-index: 2;
+  color: white;
+}
+
+.scroll:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -9px;
+  margin-left: -5px;
+}
