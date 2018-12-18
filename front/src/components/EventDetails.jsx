@@ -9,7 +9,9 @@ import {
   CardBody,
   Button,
   CardText,
-  CardSubtitle
+  CardSubtitle,
+  Row,
+  Col
 } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
@@ -79,62 +81,66 @@ class EventDetails extends Component {
   render() {
     return (
       <Container className="container-eventDetails">
-        <div
-          style={{
-            position: "fixed",
-            backgroundColor: "rgb(240,240,240,0.5)",
-            height: "6vh",
-            width: "6vh",
-            borderRadius: "25px",
-            paddingTop: "4px",
-            paddingLeft: "2px",
-            margin: "5px",
-            zIndex: "2"
-          }}
-        >
-          <div style={styleBack.goBack} onClick={this.goBack} />
-        </div>
-        <Card>
-          <div>
-            <CardImg src={this.state.image} alt="image evenement" />
-            <CardBody>
-              <CardSubtitle className="nameEvent">
-                {this.state.name}
-              </CardSubtitle>
-              <p className="type-eventDetails">
-                <div className="freeEvent">
-                  {this.state.free === "true" ? (
-                    <h1> </h1>
-                  ) : (
-                    <div style={styleEuro.euro} />
-                  )}
-                  <div className={this.state.type} />
-                </div>
-              </p>
-              <p className="qui-eventDetails">{this.state.who}</p>
-              <p className="ou-eventDetails">{this.state.where}</p>
-              <CardSubtitle className="itemEvent">
-                <p>
-                  {moment(this.state.start).format("ll")} -{" "}
-                  {moment(this.state.finish).format("ll")}
-                </p>
-              </CardSubtitle>
-              <p className="place-eventDetails">{this.state.place}</p>
-              <p className="city-eventDetails">{this.state.city}</p>
-              <CardText className="description-event">
-                {this.state.description}
-              </CardText>
-              <Button
-                color="success"
-                className="inscription-button"
-                href="https://loireenvert.fr/"
-              >
-                {" "}
-                Je m'inscris
-              </Button>{" "}
-            </CardBody>
-          </div>
-        </Card>
+        <Row>
+          <Col>
+            <div
+              style={{
+                position: "fixed",
+                backgroundColor: "rgb(240,240,240,0.5)",
+                height: "6vh",
+                width: "6vh",
+                borderRadius: "25px",
+                paddingTop: "4px",
+                paddingLeft: "2px",
+                margin: "5px",
+                zIndex: "2"
+              }}
+            >
+              <div style={styleBack.goBack} onClick={this.goBack} />
+            </div>
+            <Card>
+              <div>
+                <CardImg src={this.state.image} alt="image evenement" />
+                <CardBody>
+                  <CardSubtitle className="nameEvent">
+                    {this.state.name}
+                  </CardSubtitle>
+                  <p className="type-eventDetails">
+                    <div className="freeEvent">
+                      {this.state.free === "true" ? (
+                        <h1> </h1>
+                      ) : (
+                        <div style={styleEuro.euro} />
+                      )}
+                      <div className={this.state.type} />
+                    </div>
+                  </p>
+                  <p className="qui-eventDetails">{this.state.who}</p>
+                  <p className="ou-eventDetails">{this.state.where}</p>
+                  <CardSubtitle className="itemEvent">
+                    <p>
+                      {moment(this.state.start).format("ll")} -{" "}
+                      {moment(this.state.finish).format("ll")}
+                    </p>
+                  </CardSubtitle>
+                  <p className="place-eventDetails">{this.state.place}</p>
+                  <p className="city-eventDetails">{this.state.city}</p>
+                  <CardText className="description-event">
+                    {this.state.description}
+                  </CardText>
+                  <Button
+                    color="success"
+                    className="inscription-button"
+                    href="https://loireenvert.fr/"
+                  >
+                  {" "}
+                  Je m'inscris
+                  </Button>{" "}
+                </CardBody>
+              </div>
+            </Card>
+          </Col>
+        </Row>
       </Container>
     );
   }
