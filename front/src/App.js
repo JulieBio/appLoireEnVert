@@ -12,6 +12,8 @@ import Partenaires from "./components/partenaires";
 import "./App.css";
 import MapPage from "./containers/MapPage";
 import "./components/EventDetails.css";
+import "./components/buttonToTop.css";
+
 
 class App extends Component {
   render() {
