@@ -128,14 +128,21 @@ class EventDetails extends Component {
                   <CardText className="description-event">
                     {this.state.description}
                   </CardText>
-                  <Button
-                    color="success"
-                    className="inscription-button"
-                    href="https://loireenvert.fr/"
-                  >
-                  {" "}
-                  Je m'inscris
-                  </Button>{" "}
+
+                  <div className="freeEvent">
+                    {this.state.free === "true" ? (
+                      <Button
+                        color="success"
+                        className="inscription-button"
+                        href="https://loireenvert.fr/"
+                      >
+                      {" "}
+                      Je m'inscris
+                      </Button>
+                    ) : (
+                      <h1> </h1>
+                    )}
+                  </div>
                 </CardBody>
               </div>
             </Card>
