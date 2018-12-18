@@ -18,12 +18,3 @@
   color: black;
   cursor: pointer;
 }
-
-.text {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -9px;
-  margin-left: -5px;
-}
