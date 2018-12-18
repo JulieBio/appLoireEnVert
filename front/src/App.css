@@ -10,7 +10,9 @@
 
 
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
-
+.containerGeneral{
+  margin-bottom : 4rem !important;
+}
 .espace {
   height: 70px;
   width: 100%;
