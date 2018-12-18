@@ -8,12 +8,17 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
+<<<<<<< HEAD
 html, body{
   height: 100%;
   margin: 0;
   padding: 0;
 }
+=======
+
+>>>>>>> c75e75aa7a4a4ab5c3a39c6123c374454a21968f
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
+
 .espace {
   height: 70px;
   width: 100%;
@@ -39,9 +44,16 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
+<<<<<<< HEAD
   height: 100%;
+=======
+  background-size: cover;
+  background-attachment: fixed;
+>>>>>>> c75e75aa7a4a4ab5c3a39c6123c374454a21968f
 }
+
 /*composant Event*/
+
 .cardAccueil-event {
   margin-top: 20px;
 }
@@ -118,97 +130,6 @@ a {
   width: 4vh;
   background-repeat: no-repeat;
   float: left;
-}
-
-
-/*.quand-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-
-.heure-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}*/
-
-/*composant EventDetails*/
-
-.container-eventDetails {
-  padding-top: 10px;
-  min-height: 225vmin;
-}
-
-.inscription-button {
-  background-color: #58a728;
-  border-color: #58a728;
-  font-family: "Patrick Hand";
-  font-size: 1.6em;
-  margin-left: 30%;
-
-}
-
-@media screen and (min-width: 576px) {
-  .inscription-button {
-    margin-left: 37%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .inscription-button {
-    margin-left: 40%;
-  }
-}
-
-.type-eventDetails {
-  font-family: "Patrick Hand";
-  font-size: 1em;
-  color: #4b4b4b;
-
-}
-
-.qui-eventDetails {
-  font-family: "Patrick Hand";
-  font-size: 1em;
-  color: #4b4b4b;
-  margin-top: 15vmin;
-  margin-bottom: 0;
-
-}
-
-.ou-eventDetails {
-  font-family: "Patrick Hand";
-  font-size: 1em;
-  color: #4b4b4b;
-  margin-top: 2vmin;
-  margin-bottom: 0;
-}
-
-.place-eventDetails {
-  font-family: "Patrick Hand";
-  font-size: 1em;
-  color: #4b4b4b;
-  margin-top: 2vmin;
-  margin-bottom: 0;
-}
-
-.city-eventDetails {
-  font-family: "Patrick Hand";
-  font-size: 1em;
-  color: #4b4b4b;
-  margin-top: 2vmin;
-  margin-bottom: 0;
-}
-
-.description-event {
-  font-family: "Questrial";
-  font-size: 1em;
-  color: #4b4b4b;
-  padding: 2vmin 0 0 0;
 }
 
 .buttonDates {
@@ -327,7 +248,7 @@ padding-right:0 !important;
   font-size: 20vmin;
   font-family: "Old Press", Arial, serif;
   font-style: normal;
-  font-weight: 400; 
+  font-weight: 400;
   justify-content: center;
   height: 30vmin;
   color: #4b4b4b;
@@ -354,7 +275,7 @@ padding-right:0 !important;
 
 .logoFilter{
   height:6vmin;
-  margin-right:6vmin;  
+  margin-right:6vmin;
 }
 
 .textButton{
