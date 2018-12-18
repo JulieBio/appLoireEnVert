@@ -34,6 +34,8 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 /*composant Event*/
 .cardAccueil-event {
@@ -134,7 +136,7 @@ a {
 
 .container-eventDetails {
   padding-top: 10px;
-  min-height: 240vmin;
+  min-height: 255vmin;
 }
 
 .inscription-button {
@@ -155,6 +157,12 @@ a {
 @media screen and (min-width: 768px) {
   .inscription-button {
     margin-left: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .inscription-button {
+    margin-left: 43%;
   }
 }
 
