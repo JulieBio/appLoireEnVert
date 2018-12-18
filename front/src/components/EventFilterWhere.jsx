@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWhere.css";
@@ -7,15 +7,31 @@ import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 
+const styles = {
+  buttonFilter: { alignItems: "center", display: "flex" }
+};
+
 class EventFilterWhere extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null //state crée vider pour ensuite pusher sur lui les données.
+      eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
+      buttonList: [
+        {
+          name: "Stéphanois-Pilat",
+          image: stephanois
+        },
+        {
+          name: "Forez",
+          image: forez
+        },
+        {
+          name: "Roannais",
+          image: roannais
+        }
+      ]
     };
-
   }
-
 
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
@@ -27,46 +43,37 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-        <Container className="containerOu">
-          <h1 className="titleOu">Où aller?</h1>
-
-          <Button
-            className="buttonStephanois"
-            onClick={() => this.eventsFiltred("Stéphanois-Pilat")} //Rappelle de la fonction eventsFiltred
-            color="secondary"
-            size="lg"
-            block
-          >
-            <p>
-              <img src={stephanois} alt="mapStéphanois" />
-            </p>
-            <p className="titleStéphanois">STEPHANOIS-PILAT</p>
-          </Button>
-          <Button
-            className="buttonForez"
-            onClick={() => this.eventsFiltred("Forez")}
-            color="secondary"
-            size="lg"
-            block
-          >
-            <p>
-              <img src={forez} alt="mapForez" />
-            </p>
-            <p className="titleForez">FOREZ</p>
-          </Button>
-          <Button
-            className="buttonRoannais"
-            onClick={() => this.eventsFiltred("Roannais")}
-            color="secondary"
-            size="lg"
-            block
-          >
-            <p>
-              <img src={roannais} alt="mapRoannais" />
-            </p>
-            <p className="titleRoannais">ROANNAIS</p>
-          </Button>
-        </Container>
+      <Container className="containerOu">
+        <Row>
+          <Col xs="12" sm="12" md="12">
+            <h1 className="titleOu">Où aller?</h1>
+          </Col>
+        </Row>
+        <Row className="">
+          {this.state.buttonList.map(button => (
+            <Col xs="12" sm="12" md="11">
+              <Button
+                className="buttonFilterMonica"
+                onClick={() => this.eventsFiltred(button.name)} //Rappelle de la fonction eventsFiltred
+                color="secondary"
+                size="lg"
+                block
+              >
+                <Container>
+                  <Row>
+                    <Col xs="3">
+                      <img src={button.image} alt="button filter" />
+                    </Col>
+                    <Col xs="9" style={styles.buttonFilter}>
+                      <p className="titleFilter">{button.name.toUpperCase()}</p>
+                    </Col>
+                  </Row>
+                </Container>
+              </Button>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }

@@ -8,7 +8,11 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
-
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
 
 .espace {
