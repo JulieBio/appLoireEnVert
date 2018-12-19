@@ -42,7 +42,12 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
-  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  /* box-sizing: border-box; */
 }
 
 /*composant Event*/
@@ -314,11 +319,20 @@ margin-right:6vmin
   width: 10vmin;
   margin-right:2vmin
 }
+/* Nadim: pour noEvent  */
+
+.cardnoEvent{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top: 40px;
+}
+.titreNoevent{
+  padding: 20px;
+  text-align: center;
+}
 
 .map {
   height: 81vh;
   width: 100%;
-}
-.erreurMessage {
-      margin-bottom: 346px;
 }
