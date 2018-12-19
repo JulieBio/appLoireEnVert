@@ -7,6 +7,8 @@ import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
 
 class EventList extends Component {
+  
+
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
@@ -19,15 +21,24 @@ class EventList extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
+
   render() {
+
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
       <div className="EventList">
         <Buttons />
         {/* Julie : récupération des évenements */}
-        {this.props.activeEvents.events.map((event, index) => (
-          <Event key={`event${index}`} event={event} />
-        ))}
+
+
+        {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
+
+        {this.props.activeEvents.events.length > 0 ?
+          (this.props.activeEvents.events.map((event, index) => (<Event key={`event${index}`} event={event} />)))
+          :
+          (<div><h1>No Events Sorry </h1></div>)
+        }
+
         <div className="espace"> </div>
       </div>
     );
