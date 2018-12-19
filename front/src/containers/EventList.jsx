@@ -27,7 +27,7 @@ class EventList extends Component {
         <Container className="eventList">
           <Buttons />
           {/* Julie : récupération des évenements */}
-          <Row className="wrap">
+          <Row>
             {this.props.activeEvents.events.map((event, index) => (
               <Col xs="12" sm="12" md="6">
                 <Event key={`event${index}`} event={event} />
