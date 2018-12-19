@@ -7,6 +7,7 @@ import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
 import ButtonToTop from "../components/buttonToTop"
 
+
 class EventList extends Component {
   
 
