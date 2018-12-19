@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
 
+
 class EventList extends Component {
   componentWillMount() {
     console.log("here", this.props.filterEvents);

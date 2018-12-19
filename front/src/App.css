@@ -151,11 +151,9 @@ a {
   width: 100%;
   position: fixed;
 }
-
 .menuB a:link {
   color: #4b4b4b !important;
 }
-
 .menuB a:visited {
   color: #4b4b4b !important;
 }
@@ -163,8 +161,17 @@ a {
   color: #4b4b4b !important;
 }
 
+.menuClose{
+  position: absolute;
+  top: 70px;
+  right: 10px;
+}
+.closeCross{
+  position: absolute;
+}
+
 .menuBurger {
-  margin-top: 75px;
+  margin-top: 40px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
@@ -215,11 +222,15 @@ a {
 }
 
 .partenaires .row {
+  display:flex;
   justify-content: center;
+  align-items: baseline;
 }
 
 .part {
+  display: flex;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* Anaële page filtre "pour qui?" */
