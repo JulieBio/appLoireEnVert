@@ -4,19 +4,45 @@ import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWho.css";
 import famille from "../assets/famille.png";
-import toutPublic from "../assets/tout-public.png";
+import toutPublic from "../assets/toutPublic.png";
 import enfants from "../assets/enfants6-12-ans.png";
 import handicap from "../assets/handicap.png";
+
+const styles = {
+  buttonFilter: { alignItems: "center", display: "flex" }
+};
 
 
 class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null
+      eventsFiltred: null,
+      buttonList: [
+        {
+          name: "Tout Public",
+          filter :`"Famille"&"Enfants"&"En situation de handicap"`,
+          image: toutPublic
+        },
+        {
+          name: "Famille",
+          filter: "Famille",
+          image: famille
+        },
+        {
+          name: "Enfants",
+          filter: "Enfants",
+          image: enfants
+        },
+        {
+          name: "En situation de handicap",
+          filter: "En situation de handicap",
+          image: handicap
+        },
+      ]
     };
-
-    this.id = this.props.match.params.id;
+  
+    // this.id = this.props.match.params.id;
   }
 
   componentWillMount() {}
@@ -24,78 +50,40 @@ class EventFilterWho extends Component {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   };
-  allFilter = who => {
-    this.props.updateFilter({ who: who });
-    this.props.history.push("/events");
-  };
+ 
 
   render() {
     return (
-      <div>
-        <Container className="buttonsContainer">
-          <Row> 
-            <Col xl="12" sm="12" md="10" className="titleWho">
-            Pour qui ?
-            </Col>
-          </Row>
-          <Row>
-            <Col>
+      <Container className="buttonsContainer">
+        <Row> 
+          <Col xl="12" sm="12" md="12" className="titleWho">
+          Pour qui ?
+          </Col>
+        </Row>
+        <Row>
+          {this.state.buttonList.map(button => (
+            <Col  xs="12" sm="12" md="12">
               <Button
-                className="buttonFilter"
-                onClick={() =>
-                  this.allFilter(
-                    "Famille" & "Public en situation de handicap" & "Enfants"
-                  )
-                }
+                className="buttonFilterWho"
+                onClick={() => this.eventsFiltred(button.filter)}
                 color="secondary"
                 size="lg"
                 block>
-                <img className="logoFilter" src={toutPublic} alt="tout public" />
-                <div className="textButton">TOUT PUBLIC</div>
+                <Container>
+                  <Row>
+                    <Col xs="3">
+                      <img src={button.image} alt="button filter" />
+                    </Col>
+                    <Col xs="9" style={styles.buttonFilter}>
+                      <p className="titleFilter">{button.name.toUpperCase()}</p>
+                    </Col>
+                  </Row>
+                </Container>
               </Button>
             </Col>
-
-            <Col>
-              <Button
-                className="buttonFilter"
-                onClick={() => this.eventsFiltred("Famille")}
-                color="secondary"
-                size="lg"
-                block
-              >
-                <img className="logoFilter1" src={famille} alt="famille" />
-                <div className="textButton2">FAMILLES</div>
-              </Button>
-            </Col>
-
-            <Col>
-              <Button
-                className="buttonFilter"
-                onClick={() => this.eventsFiltred("Enfants")}
-                color="secondary"
-                size="lg"
-                block
-              >
-                <img className="logoFilter1" src={enfants} alt="enfants" />
-                <div className="textButton2">ENFANTS</div>
-              </Button>
-            </Col>
-
-            <Col>
-              <Button
-                className="buttonFilter"
-                onClick={() => this.eventsFiltred("Public en situation de handicap")}
-                color="secondary"
-                size="lg"
-                block
-              >
-                <img className="logoFilter2" src={handicap} alt="handicap" />
-                <div className="textButton3">EN SITUATION DE HANDICAP</div>
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }

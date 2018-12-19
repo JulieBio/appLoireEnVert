@@ -11,11 +11,13 @@
 }
 
 .titleOu {
-  font-size: 20vmin;
-  font-family: "Old Press", Arial;
+  font-size: 15vmin;
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
   color: #4b4b4b;
   text-align: center;
   margin-top: 0vmin;
+  margin-bottom: 4vmin;
   padding-top: 0;
 
 }
@@ -34,7 +36,7 @@
 .titleFilter {
   font-size: 5vmin;
   color: #4b4b4b;
-  font-family: "Patrick Hand", Arial, cursive;
+  font-family: "Patrick Hand", Arial, sans-serif;
   
 }
 

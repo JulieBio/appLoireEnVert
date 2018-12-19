@@ -3,79 +3,50 @@
 
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
-.buttonsContainer{
-    max-width:800px ;
-    height:100%
-    /* display: flex;
+.buttonsContainer {
+    box-sizing: border-box;
+    size: cover;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    padding-left:0 !important;
-    padding-right:0 !important; */
-    }
+    padding: 5vmin;
+    margin-bottom: 10vmin;
+  }
     
     
 .titleWho{
-    font-size: 15vmin;
-    font-family: "Questrial", Arial, serif;
-    /* font-style: normal;
-    font-weight: 400; */
-    justify-content: center;
-    height: 30vmin;
-    color: #4b4b4b;
-    /* margin-left:5vmin; */
-    margin-bottom: 10vmin;
+  font-size: 15vmin;
+  font-family: "Questrial", Arial;
+  font-weight: bold;
+  color: #4b4b4b;
+  text-align: center;
+  margin-top: 0vmin;
+  padding-top: 0;
+  margin-bottom: 4vmin;
 }
 
-
-.buttonFilter{
+.buttonFilterWho {
     display: flex;
-    font-family: "Patrick Hand", cursive;
-    color: #4b4b4b;
-    font-size: 1em;
+    justify-content: space-around;
     background-color: white;
-    box-shadow: 0 0 8px 0 #9E9E9E;
-    border-color: white;
+    box-shadow: 0 0 8px 0 #9e9e9e;
     border-radius: 1px;
-    margin-bottom: 4vmin;
-    width: 80vw;
-    height: 14vmin;
-}
+    border-color: white !important;
+    margin-bottom: 5vmin;
+    ;
+  
+  }
 
-
-
-.logoFilter{
-    height:6vmin;
-    margin-right:6vmin;
-}
-
-.textButton{
-    display: flex;
-    justify-content: center;
+.titleFilter{
     font-size: 5vmin;
-    margin-left: 7vmin;
+    color: #4b4b4b;
+    font-family: "Patrick Hand", Arial, cursive;
 }
 
-.textButton2{
-    display: flex;
-    justify-content: center;
-    font-size: 5vmin;
-    margin-left: 14vmin;
+.buttonFilterWho img{
+  width: 12vmin;
+  height: 9vmin;
+  margin-top: 0.4vmin;
+
 }
 
-.textButton3{
-    display: flex;
-    justify-content: center;
-    font-size: 5vmin;
-    margin-left: 2vmin;
-}
-
-.logoFilter1{
-height: 8vmin;
-width: 9vmin;
-margin-right:6vmin
-}
-
-.logoFilter2{
-    height: 8vmin;
-    width: 10vmin;
-    margin-right:2vmin
-}
