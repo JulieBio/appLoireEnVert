@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Button, Container, Row } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWho.css";
 import famille from "../assets/famille.png";
-import toutPublic from "../assets/toutPublic.png";
+import toutPublic from "../assets/tout-public.png";
 import enfants from "../assets/enfants6-12-ans.png";
 import handicap from "../assets/handicap.png";
 
