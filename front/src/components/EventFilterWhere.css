@@ -14,12 +14,13 @@
 .titleOu {
   font-size: 20vmin;
   font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
   color: #4b4b4b;
   text-align: center;
   margin-top: 0vmin;
+  margin-bottom: 4vmin;
   padding-top: 0;
   margin-bottom: 4vmin;
-
 }
 .buttonFilterMonica {
   display: flex;
@@ -30,17 +31,14 @@
   border-color: white !important;
   margin-bottom: 5vmin;
   align-items: baseline;
-
 }
 
 .titleFilter {
   font-size: 5vmin;
   color: #4b4b4b;
-  font-family: "Patrick Hand", Arial, cursive;
-  
+  font-family: "Patrick Hand", Arial, sans-serif;
 }
 
-.buttonFilterMonica img{
-      width: 10vmin;
-  
+.buttonFilterMonica img {
+  width: 10vmin;
 }
