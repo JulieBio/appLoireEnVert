@@ -25,13 +25,13 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
-   min-height: 100vh; 
+  min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  
+
   /* box-sizing: border-box; */
 }
 
@@ -199,171 +199,17 @@ a {
   margin-top: 30px;
 }
 
-/* Anaële page filtre "pour qui?" */
-
-.buttonsContainer {
-  width: 80vmin;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.titleWho {
-  font-size: 20vmin;
-  font-family: "Old Press", Arial, serif;
-  font-style: normal;
-  font-weight: 400;
-  justify-content: center;
-  height: 30vmin;
-  color: #4b4b4b;
-  margin-left: 5vmin;
-  margin-bottom: 10vmin;
-}
-
-.buttonFilter {
-  display: flex;
-  font-family: "Patrick Hand", cursive;
-  color: #4b4b4b;
-  font-size: 1em;
-  background-color: white;
-  box-shadow: 0 0 8px 0 #9e9e9e;
-  border-color: white;
-  border-radius: 1px;
-  margin-bottom: 4vmin;
-  width: 80vw;
-  height: 14vmin;
-}
-
-.logoFilter {
-  height: 6vmin;
-  margin-right: 6vmin;
-}
-
-.textButton {
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 7vmin;
-}
-
-.textButton2 {
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 14vmin;
-}
-
-.textButton3 {
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 2vmin;
-}
-
-.logoFilter1 {
-  height: 8vmin;
-  width: 9vmin;
-  margin-right: 6vmin;
-}
-
-.logoFilter2 {
-  height: 8vmin;
-  width: 10vmin;
-  margin-right: 2vmin;
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-/* Anaële page filtre "pour qui?" */
-
-.buttonsContainer{
-width:80vmin ;
-height: 150vmin;
-display: flex;
-flex-direction: column;
-padding-left:0 !important;
-padding-right:0 !important;
-}
-
-
-.titleWho{
-  font-size: 20vmin;
-  font-family: "Old Press", Arial, serif;
-  font-style: normal;
-  font-weight: 400;
-  justify-content: center;
-  height: 30vmin;
-  color: #4b4b4b;
-  margin-left:5vmin;
-  margin-bottom: 10vmin;
-}
-
-
-.buttonFilter{
-  display: flex;
-  font-family: "Patrick Hand", cursive;
-  color: #4b4b4b;
-  font-size: 1em;
-  background-color: white;
-  box-shadow: 0 0 8px 0 #9E9E9E;
-  border-color: white;
-  border-radius: 1px;
-  margin-bottom: 4vmin;
-  width: 80vw;
-  height: 14vmin;
-}
-
-
-
-.logoFilter{
-  height:6vmin;
-  margin-right:6vmin;
-}
-
-.textButton{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 7vmin;
-}
-
-.textButton2{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 14vmin;
-}
-
-.textButton3{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 2vmin;
-}
-
-.logoFilter1{
-height: 8vmin;
-width: 9vmin;
-margin-right:6vmin
-}
-
-.logoFilter2{
-  height: 8vmin;
-  width: 10vmin;
-  margin-right:2vmin
-}
 /* Nadim: pour noEvent  */
 
-.cardnoEvent{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.cardnoEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
 }
-.titreNoevent{
+.titreNoevent {
+  font-family: "Questrial", Arial, sans-serif;
+  color: #b6543a;
   padding: 20px;
   text-align: center;
 }
@@ -371,4 +217,12 @@ margin-right:6vmin
 .map {
   height: 81vh;
   width: 100%;
+}
+
+.phraseResultats {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-left: 10vmin;
 }
