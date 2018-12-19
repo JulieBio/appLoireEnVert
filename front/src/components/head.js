@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Col } from "reactstrap";
 import "./head.css";
 import Logo from "../assets/loire-en-vert.png";
 // import Media from "react-media";
@@ -8,17 +9,20 @@ import Logo from "../assets/loire-en-vert.png";
 class Head extends React.Component {
   render() {
     return (
-      //Julie : bandeau head avec logo et nom
-      <div className="headerLisa">
-        <div className="header">
-          <div className="headerLogo" href="/">
-            <img src={Logo} alt="Logo Loire en vert" />
-          </div>
-          <div className="titleLoire">
-            Toutes les activités nature <br />
-            dans la Loire
-          </div>
-        </div>
+      <div className="header">
+        <Container>
+          <Row>
+            <Col xs="3" sm="3" md="3">
+              <img src={Logo} alt="Logo Loire en vert" className="headerLogo" />
+            </Col>
+            <Col xs="9" sm="9" md="9">
+              <p>
+                Toutes les activités nature <br />
+                dans la Loire
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
