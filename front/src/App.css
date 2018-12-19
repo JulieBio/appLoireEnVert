@@ -40,7 +40,12 @@ a {
 
 .App {
   background-image: url(./assets/fond.jpg);
-  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  /* box-sizing: border-box; */
 }
 
 /*composant Event*/
