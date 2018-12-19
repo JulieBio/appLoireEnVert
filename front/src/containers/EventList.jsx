@@ -38,7 +38,7 @@ class EventList extends Component {
         {this.props.activeEvents.events.length > 0 ?
           (this.props.activeEvents.events.map((event, index) => (<Event key={`event${index}`} event={event} />)))
           :
-          (<div><h1>No Events Sorry </h1></div>)
+          (<h2 className="noEvent">Aucun événement ne correspond à votre recherche </h2>)
         }
 
         <div className="espace"> </div>
