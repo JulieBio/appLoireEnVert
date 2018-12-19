@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'reactstrap';
-import cal from '../assets/cal.png';
+import cahl from '../assets/cahl.png';
 import coeurvert from '../assets/coeurvert.png';
 import aura from '../assets/aura.png';
-import deploire from '../assets/deploire.png';
+import dept from '../assets/dept.png';
 import metroloire from '../assets/metroloire.jpg';
 import saintet from '../assets/saintet.png';
 import edf from '../assets/edf.png';
@@ -17,7 +17,7 @@ const Partenaires = (props) => {
             < div className="row">
 
                 <NavLink classname="part col-xs-12 col-md-6 col-lg-4" href="https://www.ca-loirehauteloire.fr/home-part.html">
-                    <img src={cal} width="200" alt="home"></img></NavLink>
+                    <img src={cahl} width="200" alt="home"></img></NavLink>
 
                 <NavLink classname="part col-xs-12 col-md-6 col-lg-4" href="https://www.asse.fr/">
                     <img src={coeurvert} width="150" alt="home"></img></NavLink>
@@ -26,7 +26,7 @@ const Partenaires = (props) => {
                     <img src={aura} width="250" alt="home"></img></NavLink>
 
                 <NavLink classname="part col-xs-12 col-md-6 col-lg-4" href="https://www.loire.fr/">
-                    <img src={deploire} width="200" alt="home"></img></NavLink>
+                    <img src={dept} width="200" alt="home"></img></NavLink>
 
                 <NavLink classname="part col-xs-12 col-md-6 col-lg-4" href="https://www.saint-etienne-metropole.fr/">
                     <img src={metroloire} width="230" alt="home"></img></NavLink>
