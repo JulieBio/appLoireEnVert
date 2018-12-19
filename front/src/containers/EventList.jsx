@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
+import {Container, Card} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
-import ButtonToTop from "../components/buttonToTop"
+import ButtonToTop from "../components/buttonToTop";
+import "../App.css"
 
 
 class EventList extends Component {
+
+
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
@@ -21,20 +25,34 @@ class EventList extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
+
   render() {
+
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
-      <div className="EventList">
-        <Buttons />
-        {/* Julie : récupération des évenements */}
-        {this.props.activeEvents.events.map((event, index) => (
-          <Event key={`event${index}`} event={event} />
-        ))}
-        <div className="espace"> </div>
-        <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
-      </div>
+      <Container>
+        
+        <div>
+          <Buttons />
+          {/* Julie : récupération des évenements */}
+
+        </div>
+          {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
+          <Card className="cardnoEvent">
+          {this.props.activeEvents.events.length > 0 ?
+            (this.props.activeEvents.events.map((event, index) => (<Event key={`event${index}`} event={event} />)))
+            :
+            (<div className="titreNoevent"><h2>Aucun événement ne correspond à votre recherche </h2> </div>)
+          }
+          </Card>
+
+          <div className="espace"> </div>
+          <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
+        
+      </Container>
     );
   }
+
 }
 
 //Julie : transfert des états

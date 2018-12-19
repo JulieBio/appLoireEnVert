@@ -53,7 +53,7 @@ class EventDetails extends Component {
     };
     this.id = this.props.match.params.id;
   }
-
+ 
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
       console.log(result.data);
@@ -79,6 +79,7 @@ class EventDetails extends Component {
   };
 
   render() {
+    
     return (
       <Container className="container-eventDetails">
         <Row>
