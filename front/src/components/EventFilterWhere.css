@@ -8,12 +8,12 @@
   flex-wrap: wrap;
   flex-direction: column;
   padding: 5vmin;
-  margin-bottom: 10vmin;
+  margin-bottom: 0vmin;
 }
 
 .titleOu {
   font-size: 15vmin;
-  font-family: "Questrial", Arial;
+  font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   color: #4b4b4b;
   text-align: center;
