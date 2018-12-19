@@ -8,36 +8,19 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
-html, body{
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-/* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
-.containerGeneral{
-  margin-bottom : 4rem !important;
-}
 .espace {
-  height: 70px;
+  height: 90px;
   width: 100%;
 }
 
 a {
   text-decoration: none !important;
-}
-
-.card {
-  border: none !important;
-}
-
-.cardAccueil {
-  margin-bottom: 15px;
-  border-radius: 0 !important;
-  box-shadow: 0 0 4px 0 #9e9e9e;
-}
-
-.CardeImage {
-  border-radius: 0 !important;
 }
 
 .App {
@@ -46,110 +29,84 @@ a {
   min-width: 100vw;
   background-size: cover;
   background-attachment: fixed;
-  
+  margin: 0;
+  padding: 0;
+
   /* box-sizing: border-box; */
 }
 
-/*composant Event*/
+/*composant EventDetails*/
 
-.cardAccueil-event {
-  margin-top: 20px;
+.container-eventDetails {
+  padding-top: 10px;
+  min-height: 225vmin;
 }
 
-.nameEvent {
-  font-family: "Questrial", Arial, sans-serif;
-  font-weight: bold;
+.inscription-button {
+  background-color: #58a728;
+  border-color: #58a728;
+  font-family: "Patrick Hand";
   font-size: 1.6em;
-  color: #b6543a;
+  margin-left: 30%;
 }
 
-.itemEvent {
-  font-family: "Patrick Hand", Arial, sans-serif;
+@media screen and (min-width: 576px) {
+  .inscription-button {
+    margin-left: 37%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inscription-button {
+    margin-left: 40%;
+  }
+}
+
+.type-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+}
+
+.qui-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 15vmin;
+  margin-bottom: 0;
+}
+
+.ou-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.place-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.city-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.description-event {
+  font-family: "Questrial";
   font-size: 1em;
   color: #4b4b4b;
   padding: 2vmin 0 0 0;
 }
 
-.freeEvent {
-  padding-top: 5vmin;
-  text-align: center;
-  width: 100%;
-}
-
-.exposition,
-.expositions {
-  background-image: url("./assets/expositions.png");
-  background-size: cover;
-  height: 5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.sortie {
-  background-image: url("./assets/sortie.png");
-  background-size: cover;
-  height: 5.5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.conférence {
-  background-image: url("./assets/conferences.png");
-  background-size: cover;
-  height: 4vh;
-  width: 7vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Randonnées {
-  background-image: url("./assets/randonnee.png");
-  background-size: cover;
-  height: 6vh;
-  width: 4.5vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Ateliers {
-  background-image: url("./assets/ateliers.png");
-  background-size: cover;
-  height: 4vh;
-  width: 8vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.apéro-quiz {
-  background-image: url("./assets/apero-quiz.png");
-  background-size: cover;
-  height: 5vh;
-  width: 4vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.buttonDates {
-  background-color: #b6543a !important;
-  border-color: #b6543a !important;
-  border-radius: 0 !important;
-  width: 85px;
-  box-shadow: 0 0 4px 0 #9e9e9e !important;
-  font-family: "Patrick Hand", Arial, sans-serif;
-  font-size: 1.3em !important;
-}
-
-.blockButtons {
-  width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-  justify-content: space-between;
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
 /* Julie : NavBar, et tout ce qui en dépend */
 
 .navbar {
@@ -159,6 +116,7 @@ a {
   bottom: 0;
   width: 100%;
   position: fixed;
+  padding: 0.8rem 1rem !important;
 }
 .menuB a:link {
   color: #4b4b4b !important;
@@ -170,12 +128,12 @@ a {
   color: #4b4b4b !important;
 }
 
-.menuClose{
+.menuClose {
   position: absolute;
   top: 70px;
   right: 10px;
 }
-.closeCross{
+.closeCross {
   position: absolute;
 }
 
@@ -197,7 +155,7 @@ a {
   height: 12, 5vh;
 }
 
-.toutQuiSommesNous{
+.toutQuiSommesNous {
   margin-top: 20px;
 }
 .quiSommesNous {
@@ -216,7 +174,7 @@ a {
   margin-bottom: 50px;
 }
 
-.toutPartenaires{
+.toutPartenaires {
   margin-top: 20px;
 }
 .imgpart {
@@ -233,18 +191,38 @@ a {
   color: #4b4b4b !important;
 }
 .partenaires .row {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: baseline;
 }
 .part {
-  display: flex;
   margin-top: 30px;
-  margin-bottom: 30px;
 }
 
-/* Nadim map */
+/* Nadim: pour noEvent  */
+
+.cardnoEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.titreNoevent {
+  font-family: "Questrial", Arial, sans-serif;
+  color: #b6543a;
+  padding: 20px;
+  text-align: center;
+}
+
 .map {
   height: 81vh;
   width: 100%;
+}
+
+.phraseResultats {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-left: 10vmin;
 }
