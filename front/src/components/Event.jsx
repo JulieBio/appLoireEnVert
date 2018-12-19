@@ -5,6 +5,7 @@ import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
+import "./eventList.css";
 
 const styleEuro = {
   euro: {
@@ -12,8 +13,8 @@ const styleEuro = {
     backgroundSize: "contain",
     opacity: "0.5",
     backgroundRepeat: "no-repeat",
-    height: "4.5vh",
-    width: "5vh",
+    height: "25px",
+    width: "20px",
     float: "left",
     marginRight: "1vh"
     //padding: '5px',
@@ -32,11 +33,14 @@ const Event = ({ event }) => (
             top
             src={event.image}
             alt="Card image cap"
-            className="CardeImage"
+            className="cardeImage"
             /*  width="100%" */
           />
           <CardBody className="cardContent">
             <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
+            <CardSubtitle className="itemEvent">
+              <p className="typeEvent">{event.type} </p>
+            </CardSubtitle>
             <CardSubtitle className="itemEvent">
               <p>
                 {moment(event.event_date_start).format("ll")} -{" "}

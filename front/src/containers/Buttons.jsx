@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions";
-
+import "./buttons.css";
 // Julie lisa : Création d'un container buttons qui met met à jour son state.
 // ... on utilise when pour définir le nombre de jour souhaité, puis on met à jour le store avec dispatch
 class Buttons extends React.Component {

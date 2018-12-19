@@ -29,7 +29,7 @@ class EventList extends Component {
           {/* Julie : récupération des évenements */}
           <Row className="wrap">
             {this.props.activeEvents.events.map((event, index) => (
-              <Col sm="12" md="6">
+              <Col xs="12" sm="12" md="6">
                 <Event key={`event${index}`} event={event} />
               </Col>
             ))}
