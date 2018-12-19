@@ -42,7 +42,7 @@ class EventFilterWho extends Component {
       ]
     };
   
-    // this.id = this.props.match.params.id;
+    this.id = this.props.match.params.id;
   }
 
   componentWillMount() {}

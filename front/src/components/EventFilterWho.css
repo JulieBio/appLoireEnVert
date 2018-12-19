@@ -10,13 +10,13 @@
     flex-wrap: wrap;
     flex-direction: column;
     padding: 5vmin;
-    margin-bottom: 10vmin;
+    margin-bottom: 0vmin;
   }
     
     
 .titleWho{
   font-size: 15vmin;
-  font-family: "Questrial", Arial;
+  font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   color: #4b4b4b;
   text-align: center;
@@ -33,7 +33,7 @@
     border-radius: 1px;
     border-color: white !important;
     margin-bottom: 5vmin;
-    ;
+    align-items: baseline;
   
   }
 
@@ -44,9 +44,9 @@
 }
 
 .buttonFilterWho img{
-  width: 12vmin;
-  height: 9vmin;
-  margin-top: 0.4vmin;
+  width: 9vmin;
+  /* height: 9vmin; */
+  /* margin-top: 0.4vmin; */
 
 }
 
