@@ -24,7 +24,10 @@ const styleEuro = {
 var idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
-const Event = ({ event }) => (
+
+
+const Event = ({ event })  => (
+   
   <Container>
     <div className="cardAccueil">
       <NavLink to={`/event/${event.id}`} className="lienAccueil">
@@ -57,8 +60,8 @@ const Event = ({ event }) => (
                 {event.free === "true" ? (
                   <h1> </h1>
                 ) : (
-                  <div style={styleEuro.euro} />
-                )}
+                    <div style={styleEuro.euro} />
+                  )}
                 <div className={event.type} />
               </div>
             </CardSubtitle>
@@ -66,6 +69,8 @@ const Event = ({ event }) => (
         </Card>
       </NavLink>
     </div>
+    
   </Container>
 );
+
 export default Event;
