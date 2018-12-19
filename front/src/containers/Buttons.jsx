@@ -11,7 +11,7 @@ class Buttons extends React.Component {
     return (
       <div className="blockButtons">
         <Button
-          className="buttonDates"
+          className={["buttonDates", "buttonsActive"]}
           onClick={() => this.props.updateFilter({ when: 15 })}
         >
           15 jours

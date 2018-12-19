@@ -129,6 +129,10 @@ a {
   font-family: "Patrick Hand", Arial;
   font-size: 1.3em !important;
 }
+/*Marion: pour rendre bouton actif*/
+.buttonsActive:active {
+  color: blue;
+}
 
 .blockButtons {
   width: 100%;
