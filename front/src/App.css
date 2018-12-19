@@ -282,17 +282,16 @@ a {
 
 /* Anaële page filtre "pour qui?" */
 
-.buttonsContainer{
-width:80vmin ;
-height: 150vmin;
-display: flex;
-flex-direction: column;
-padding-left:0 !important;
-padding-right:0 !important;
+.buttonsContainer {
+  width: 80vmin;
+  height: 150vmin;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-
-.titleWho{
+.titleWho {
   font-size: 20vmin;
   font-family: "Old Press", Arial, serif;
   font-style: normal;
@@ -300,18 +299,17 @@ padding-right:0 !important;
   justify-content: center;
   height: 30vmin;
   color: #4b4b4b;
-  margin-left:5vmin;
+  margin-left: 5vmin;
   margin-bottom: 10vmin;
 }
 
-
-.buttonFilter{
+.buttonFilter {
   display: flex;
   font-family: "Patrick Hand", cursive;
   color: #4b4b4b;
   font-size: 1em;
   background-color: white;
-  box-shadow: 0 0 8px 0 #9E9E9E;
+  box-shadow: 0 0 8px 0 #9e9e9e;
   border-color: white;
   border-radius: 1px;
   margin-bottom: 4vmin;
@@ -319,54 +317,52 @@ padding-right:0 !important;
   height: 14vmin;
 }
 
-
-
-.logoFilter{
-  height:6vmin;
-  margin-right:6vmin;
+.logoFilter {
+  height: 6vmin;
+  margin-right: 6vmin;
 }
 
-.textButton{
+.textButton {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 7vmin;
 }
 
-.textButton2{
+.textButton2 {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 14vmin;
 }
 
-.textButton3{
+.textButton3 {
   display: flex;
   justify-content: center;
   font-size: 5vmin;
   margin-left: 2vmin;
 }
 
-.logoFilter1{
-height: 8vmin;
-width: 9vmin;
-margin-right:6vmin
+.logoFilter1 {
+  height: 8vmin;
+  width: 9vmin;
+  margin-right: 6vmin;
 }
 
-.logoFilter2{
+.logoFilter2 {
   height: 8vmin;
   width: 10vmin;
-  margin-right:2vmin
+  margin-right: 2vmin;
 }
 /* Nadim: pour noEvent  */
 
-.cardnoEvent{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.cardnoEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
 }
-.titreNoevent{
+.titreNoevent {
   padding: 20px;
   text-align: center;
 }
@@ -374,4 +370,11 @@ margin-right:6vmin
 .map {
   height: 81vh;
   width: 100%;
+}
+
+.phraseResultats {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-left: 10vmin;
 }
