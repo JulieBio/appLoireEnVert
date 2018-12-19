@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
+@import url("https://fonts.googleapis.com/css?family=Questrial");
 
 .containerOu {
   box-sizing: border-box;
@@ -11,12 +12,14 @@
 }
 
 .titleOu {
-  font-size: 20vmin;
-  font-family: "Old Press", Arial;
+  font-size: 15vmin;
+  font-family: "Questrial", Arial;
+  font-weight: bold;
   color: #4b4b4b;
   text-align: center;
   margin-top: 0vmin;
   padding-top: 0;
+  margin-bottom: 4vmin;
 
 }
 .buttonFilterMonica {
@@ -38,7 +41,7 @@
   
 }
 
-.buttonFilter img{
-      width: 9vmin;
+.buttonFilterMonica img{
+      width: 10vmin;
   
 }
