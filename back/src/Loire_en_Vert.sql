@@ -30,16 +30,10 @@ CREATE TABLE `eventLoire` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-<<<<<<< HEAD
-  `event_date` varchar(255) NOT NULL,
-  `event_time` date (255) DEFAULT NULL,
-  `event_where` date (255) NOT NULL,
-=======
   `event_date_start` date NOT NULL,
   `event_date_finish` date NOT NULL,
   `event_time` varchar(255) DEFAULT NULL,
   `event_where` varchar(255) NOT NULL,
->>>>>>> 476c9215b7ed09a872374ca1fef5a1b1781d6e84
   `place` varchar(255) NOT NULL,
   `city` varchar(255) DEFAULT NULL,
   `who` varchar(255) NOT NULL,
