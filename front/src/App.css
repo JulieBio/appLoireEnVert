@@ -135,8 +135,9 @@ a {
   font-size: 1.3em !important;
 }
 /*Marion: pour rendre bouton actif*/
-.buttonsActive:active {
-  color: blue;
+.toggled {
+	background-color: #2f70e1;
+	color: #fff;
 }
 
 .blockButtons {

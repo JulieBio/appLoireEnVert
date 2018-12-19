@@ -7,18 +7,30 @@ import { updateFilter } from "../actions";
 // Julie lisa : Création d'un container buttons qui met met à jour son state.
 // ... on utilise when pour définir le nombre de jour souhaité, puis on met à jour le store avec dispatch
 class Buttons extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      condition: false
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    this.setState({
+      condition: !this.state.condition
+    })
+  }
   render() {
     return (
       <div className="blockButtons">
         <Button
-          className={["buttonDates", "buttonsActive"]}
+          className= "buttonDates"
           onClick={() => this.props.updateFilter({ when: 15 })}
         >
           15 jours
         </Button>
         <Button
-          className="buttonDates"
-          onClick={() => this.props.updateFilter({ when: 30 })}
+          className={ this.state.condition ? "buttonDates toggled" : "buttonDates"} 
+          onClick={() => this.props.updateFilter({ when: 30 })} {...this.handleClick}
         >
           1 mois
         </Button>
