@@ -11,6 +11,9 @@ import QuiSommesNous from "./components/quiSommesNous";
 import Partenaires from "./components/partenaires";
 import "./App.css";
 import MapPage from "./containers/MapPage";
+import "./components/EventDetails.css";
+import "./components/buttonToTop.css";
+
 
 class App extends Component {
   render() {
@@ -18,6 +21,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Head />
+          <div className="containerGeneral">
           <Switch>
             <Route exact path="/" component={EventFilterWhere} />
             <Route path="/events" component={EventList} />
@@ -28,6 +32,7 @@ class App extends Component {
             <Route path="/partenaires" component={Partenaires} />
             <Route path="/map" component={MapPage} />
           </Switch>
+          </div>
           <NavBar />
         </div>
       </BrowserRouter>

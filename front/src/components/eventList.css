@@ -8,7 +8,8 @@
 /*composant Event*/
 
 .nameEvent {
-  font-family: "Old Press", Arial;
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
   font-size: 1.6em;
   color: #b6543a;
   height: 50px;

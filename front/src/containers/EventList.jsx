@@ -6,6 +6,7 @@ import Event from "../components/Event";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
+import ButtonToTop from "../components/buttonToTop";
 
 class EventList extends Component {
   componentWillMount() {
@@ -36,6 +37,7 @@ class EventList extends Component {
           </Row>
 
           <div className="espace"> </div>
+          <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
         </Container>
       </div>
     );

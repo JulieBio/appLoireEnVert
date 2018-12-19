@@ -8,9 +8,18 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
+.containerGeneral {
+  margin-bottom: 4rem !important;
+}
 .espace {
-  height: 70px;
+  height: 90px;
   width: 100%;
 }
 
@@ -21,6 +30,12 @@ a {
 .App {
   background-image: url(./assets/fond.jpg);
   background-attachment: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* box-sizing: border-box; */
 }
 
 /*composant EventDetails*/
@@ -104,12 +119,11 @@ a {
   bottom: 0;
   width: 100%;
   position: fixed;
+  padding: 0.8rem 1rem !important;
 }
-
 .menuB a:link {
   color: #4b4b4b !important;
 }
-
 .menuB a:visited {
   color: #4b4b4b !important;
 }
@@ -117,8 +131,17 @@ a {
   color: #4b4b4b !important;
 }
 
+.menuClose {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+}
+.closeCross {
+  position: absolute;
+}
+
 .menuBurger {
-  margin-top: 75px;
+  margin-top: 40px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
@@ -126,9 +149,8 @@ a {
   justify-content: center;
   background-color: white;
 }
-
 .menuB {
-  font-family: "Patrick Hand", cursive;
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 2.2em;
   border: 1px solid #4b4b4b;
   padding-left: 15px;
@@ -136,42 +158,46 @@ a {
   height: 12, 5vh;
 }
 
+.toutQuiSommesNous {
+  margin-top: 20px;
+}
 .quiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: "Lobster", Arial, serif;
+  font-family: "Questrial", Arial, serif;
   color: #4b4b4b !important;
 }
-
 .texteQuiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: "Questrial", sans-serif;
+  font-family: "Questrial", Arial, sans-serif;
   color: #4b4b4b !important;
   margin-bottom: 50px;
 }
 
+.toutPartenaires {
+  margin-top: 20px;
+}
 .imgpart {
   display: flex;
   margin-top: 30px;
   margin: 0 auto;
   width: 150px;
 }
-
 .partenaires {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: "Lobster", Arial, serif;
+  font-family: "Questrial", Arial, sans-serif;
   color: #4b4b4b !important;
 }
-
 .partenaires .row {
+  display: flex;
   justify-content: center;
+  align-items: baseline;
 }
-
 .part {
   margin-top: 30px;
 }
@@ -249,8 +275,12 @@ a {
   height: 8vmin;
   width: 10vmin;
   margin-right: 2vmin;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
+/* Nadim map */
 .map {
   height: 81vh;
   width: 100%;
