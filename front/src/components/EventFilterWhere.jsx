@@ -7,6 +7,8 @@ import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 
+
+//styles pour les buttons
 const styles = {
   buttonFilter: { alignItems: "center", display: "flex" }
 };
@@ -36,6 +38,7 @@ class EventFilterWhere extends Component {
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
   // "where" et qui va pusher le result en tant que historique à la page "who"
   //On trouve updateFilter en tant que fichier action.
+
   eventsFiltred = where => {
     this.props.updateFilter({ where: where });
     this.props.history.push("/who");
@@ -43,7 +46,7 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <Container className="containerOu">
+      <Container className="containerOu"> 
         <Row>
           <Col xs="12" sm="12" md="12">
             <h1 className="titleOu">Où aller?</h1>
@@ -51,7 +54,7 @@ class EventFilterWhere extends Component {
         </Row>
         <Row className="">
           {this.state.buttonList.map(button => (
-            <Col xs="12" sm="12" md="11">
+            <Col xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterMonica"
                 onClick={() => this.eventsFiltred(button.name)} //Rappelle de la fonction eventsFiltred
