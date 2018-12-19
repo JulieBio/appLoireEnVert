@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import famille from "../assets/famille.png";
@@ -11,22 +11,19 @@ class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null
+      eventsFiltred: null,
     };
 
     this.id = this.props.match.params.id;
   }
 
-  componentWillMount() {}
+ 
   eventsFiltred = who => {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   };
-  allFilter = who => {
-    this.props.updateFilter({ who: who });
-    this.props.history.push("/events");
-  };
 
+    
   render() {
     return (
       <Container className="buttonsContainer">
@@ -34,7 +31,7 @@ class EventFilterWho extends Component {
         <Button
           className="buttonFilter"
           onClick={() =>
-            this.allFilter(
+            this.eventsFiltred(
               "Famille" & "Public en situation de handicap" & "Enfants"
             )
           }
