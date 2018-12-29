@@ -53,7 +53,7 @@ class EventDetails extends Component {
     };
     this.id = this.props.match.params.id;
   }
- 
+
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
       console.log(result.data);
@@ -79,7 +79,7 @@ class EventDetails extends Component {
   };
 
   render() {
-    
+
     return (
       <Container className="container-eventDetails">
         <Row>
@@ -132,6 +132,8 @@ class EventDetails extends Component {
 
                   <div>
                     {this.state.free === "true" ? (
+                      <h1> </h1>
+                    ) : (
                       <Button
                         color="success"
                         className="inscription-button"
@@ -140,8 +142,6 @@ class EventDetails extends Component {
                       {" "}
                       Je m'inscris
                       </Button>
-                    ) : (
-                      <h1> </h1>
                     )}
                   </div>
                 </CardBody>
