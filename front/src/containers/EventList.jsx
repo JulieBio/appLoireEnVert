@@ -35,13 +35,26 @@ class EventList extends Component {
           {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
 
           {this.props.activeEvents.events.length > 0 ? (
-            <Row>
-              {this.props.activeEvents.events.map((event, index) => (
-                <Col xs="12" sm="12" md="6">
-                  <Event key={`event${index}`} event={event} />
-                </Col>
-              ))}
-            </Row>
+            <div>
+              {this.props.filterEvents.who !== null ? (
+                <Row>
+                  <p className="phraseResultats">
+                    Résultats pour " {this.props.filterEvents.who} " à "{" "}
+                    {this.props.filterEvents.where} "
+                  </p>
+                </Row>
+              ) : (
+                <p />
+              )}
+
+              <Row>
+                {this.props.activeEvents.events.map((event, index) => (
+                  <Col xs="12" sm="12" md="6">
+                    <Event key={`event${index}`} event={event} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           ) : (
             <Card className="cardnoEvent">
               <div className="titreNoevent">
