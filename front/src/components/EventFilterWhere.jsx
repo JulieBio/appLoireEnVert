@@ -6,6 +6,7 @@ import "./EventFilterWhere.css";
 import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
+import toutLieux from "../assets/allplaces.jpeg";
 
 
 //styles pour les buttons
@@ -33,6 +34,7 @@ class EventFilterWhere extends Component {
         }
       ]
     };
+    this.id = this.props.match.params.id;
   }
 
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
@@ -52,7 +54,28 @@ class EventFilterWhere extends Component {
             <h1 className="titleOu">Où aller?</h1>
           </Col>
         </Row>
-        <Row className="">
+        <Row>
+            <Col  xs="12" sm="12" md="12">
+              <Button
+                className="buttonFilterMonica"
+                onClick={() => this.eventsFiltred("Stéphanois-Pilat" & "Forez" & "Roannais")}
+                color="secondary"
+                size="lg"
+                block>
+                <Container>
+                  <Row>
+                    <Col xs="3">
+                      <img src={toutLieux} alt="tout lieux" />
+                    </Col>
+                    <Col xs="9" style={styles.buttonFilter}>
+                      <p className="titleFilter">TOUT LIEUX</p>
+                    </Col>
+                  </Row>
+                </Container>
+              </Button>
+            </Col>
+        </Row>
+        <Row >
           {this.state.buttonList.map(button => (
             <Col xs="12" sm="12" md="12">
               <Button
