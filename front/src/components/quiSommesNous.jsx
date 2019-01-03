@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Card } from "reactstrap";
 import { CardImg } from 'reactstrap';
-import fneloire from '../assets/fneloire.png';
+import fneloire from '../assets/FNE_Loire_logo.png';
 
 // Julie: voir si logo ok car link ne fonctionne pas
 
