@@ -42,7 +42,7 @@ class EventFilterWhere extends Component {
       ]
     };
 
-    // this.id = this.props.match.params.id;
+    this.id = this.props.match.params.id;
   }
 
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
