@@ -19,30 +19,30 @@ class EventFilterWho extends Component {
     this.state = {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
-        // {
-        //   name: "Tout Public",
-        //   filter :`"Famille"&"Enfants"&"En situation de handicap"`,
-        //   image: toutPublic
-        // },
+        {
+          name: "Tout Public",
+          filter :`"Famille"&"Enfants"&"En situation de handicap"`,
+          image: toutPublic
+        },
         {
           name: "Famille",
-          // filter: "Famille",
+          filter: "Famille",
           image: famille
         },
         {
           name: "Enfants",
-          // filter: "Enfants",
+          filter: "Enfants",
           image: enfants
         },
         {
           name: "En situation de handicap",
-          // filter: "En situation de handicap",
+          filter: "En situation de handicap",
           image: handicap
         },
       ]
     };
   
-    this.id = this.props.match.params.id;
+    // this.id = this.props.match.params.id;
   }
 
  
@@ -61,7 +61,7 @@ class EventFilterWho extends Component {
           Pour qui ?
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
             <Col  xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterWho"
@@ -81,13 +81,13 @@ class EventFilterWho extends Component {
                 </Container>
               </Button>
             </Col>
-        </Row>
+        </Row> */}
         <Row>
           {this.state.buttonList.map(button => (
             <Col  xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterWho"
-                onClick={() => this.eventsFiltred(button.name)}
+                onClick={() => this.eventsFiltred(button.filter)}
                 color="secondary"
                 size="lg"
                 block>
