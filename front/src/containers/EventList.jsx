@@ -10,6 +10,7 @@ import ButtonToTop from "../components/buttonToTop";
 import "../App.css";
 
 class EventList extends Component {
+
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
@@ -27,7 +28,8 @@ class EventList extends Component {
     return (
       <Container className="eventList">
         <div>
-          <Buttons />
+          <Buttons/>
+
           {/* Julie : récupération des évenements */}
 
           {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
