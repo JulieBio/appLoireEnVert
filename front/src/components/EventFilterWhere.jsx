@@ -8,7 +8,6 @@ import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 import toutLieux from "../assets/allplaces.jpeg";
 
-
 //styles pour les buttons
 const styles = {
   buttonFilter: { alignItems: "center", display: "flex" }
@@ -21,19 +20,28 @@ class EventFilterWhere extends Component {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
+          name: "Tout Lieux",
+          filter: `"Stéphanois-Pilat"&"Forez"&"Roannais"`,
+          image: toutLieux
+        },
+        {
           name: "Stéphanois-Pilat",
+          filter: "Stéphanois-Pilat",
           image: stephanois
         },
         {
           name: "Forez",
+          filter: "Forez",
           image: forez
         },
         {
           name: "Roannais",
+          filter: "Roannais",
           image: roannais
         }
       ]
     };
+
     this.id = this.props.match.params.id;
   }
 
@@ -48,13 +56,13 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <Container className="containerOu"> 
+      <Container className="containerOu">
         <Row>
           <Col xs="12" sm="12" md="12">
             <h1 className="titleOu">Où aller?</h1>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
             <Col  xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterMonica"
@@ -74,13 +82,13 @@ class EventFilterWhere extends Component {
                 </Container>
               </Button>
             </Col>
-        </Row>
-        <Row >
+        </Row> */}
+        <Row>
           {this.state.buttonList.map(button => (
             <Col xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterMonica"
-                onClick={() => this.eventsFiltred(button.name)} //Rappelle de la fonction eventsFiltred
+                onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred
                 color="secondary"
                 size="lg"
                 block
