@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
+import { Link } from 'react-router-dom';
 import "../App.css";
 import list from "../assets/list.png";
 import funnel from "../assets/funnel.png";
@@ -14,21 +15,31 @@ export default class NavBar extends React.Component {
       <div>
         <Navbar className="navbar navbar-default navbar-fixed-bottom">
 
-          <NavbarBrand href="/events">
-            <img src={list} width="35" height="35" alt="list" />
-          </NavbarBrand>
+          {/* Julie : Link permet de ne pas recharger la page et de garder en mémoire les choix du filtre */}
+          <Link to="/events">
+            <NavbarBrand className="icon">
+              <img src={list} width="45" height="45" alt="list" />
+            </NavbarBrand>
+          </Link>
 
-          <NavbarBrand href="/">
-            <img src={funnel} width="30" height="30" alt="entonnoir" />
-          </NavbarBrand>
+          <Link to="/">
+            <NavbarBrand className="icon">
+              <img src={funnel} width="40" height="40" alt="entonnoir" />
+            </NavbarBrand>
+          </Link>
 
-          {/* <NavbarBrand href="/map">
-            <img src={map} width="30" height="30" alt="map" />
-          </NavbarBrand> */}
+          {/* Pour la map :
+          <Link to="/map">
+            <NavbarBrand className="icon">
+              <img src={map} width="30" height="30" alt="map" />
+            </NavbarBrand>
+          </Link> */}
 
-          <NavbarBrand href="/menu">
-            <img src={menu} width="30" height="30" alt="menu" />
-          </NavbarBrand>
+          <Link to="/menu">
+            <NavbarBrand className="icon">
+              <img src={menu} width="40" height="40" alt="menu" />
+            </NavbarBrand>
+          </Link>
 
         </Navbar>
       </div>
