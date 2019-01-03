@@ -123,6 +123,12 @@ a {
   position: fixed;
   padding: 0.8rem 1rem !important;
 }
+.icon{
+  padding-left: 10%;
+}
+.menuB {
+  color: #4b4b4b !important;
+}
 .menuB a:link {
   color: #4b4b4b !important;
 }
