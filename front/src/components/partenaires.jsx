@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'reactstrap';
 import { Container, Card } from "reactstrap";
-import cahl from '../assets/cahl.png';
-import coeurvert from '../assets/coeurvert.png';
-import aura from '../assets/aura.png';
-import dept from '../assets/dept.png';
-import metroloire from '../assets/metroloire.jpg';
-import saintet from '../assets/saintet.png';
-import edf from '../assets/edf.png';
+import cahl from '../assets/CALHL-2017.png';
+import coeurvert from '../assets/logo coeur OFFICIEL.png';
+import aura from '../assets/aura-couleur.jpg';
+import dept from '../assets/logo-departement-loire.png';
+import metroloire from '../assets/logo sem rvb_RVB.jpg';
+import saintet from '../assets/saint-etienne-2016.jpg';
+import edf from '../assets/EDF_Logo_RGB_300_F.jpg';
 
 // Julie : logos cliquables avec lien sur le site internet de chaque partenaire
 
