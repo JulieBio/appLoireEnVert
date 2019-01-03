@@ -3,7 +3,7 @@
 // Julie Lisa : "when" est par défaut à 15 jours
 
 const filterEvents = (state = { where: null, who: null, when: 15 }, action) => {
-  console.log("je rendre dans redux filter", action);
+  console.log("je rentre dans redux filter", action);
   switch (action.type) {
     case "UPDATE_FILTER":
       console.log("reducer", state, action.filter);
