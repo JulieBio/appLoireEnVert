@@ -15,6 +15,7 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 const store = createStore(allReducers, applyMiddleware(thunk));
 
 ReactDOM.render(

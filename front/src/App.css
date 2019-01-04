@@ -133,14 +133,6 @@ a {
   color: #4b4b4b !important;
 }
 
-.menuClose {
-  position: absolute;
-  top: 70px;
-  right: 10px;
-}
-.closeCross {
-  position: absolute;
-}
 
 .menuBurger {
   margin-top: 90px;

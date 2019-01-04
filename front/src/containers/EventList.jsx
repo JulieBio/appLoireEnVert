@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card } from "reactstrap";
+import { Container, Row, Col, Card, Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
@@ -8,6 +8,8 @@ import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
 import ButtonToTop from "../components/buttonToTop";
 import "../App.css";
+
+
 
 class EventList extends Component {
 
@@ -23,13 +25,19 @@ class EventList extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
+  cancelFilter (filter) {
+  this.props.updateFilter({ [filter] : "%%"})
+  if ([filter] === "%%" ? ( null ) : (this.props.updateFilter({ [filter] : "%%"})));
+  
+  };
+
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
       <Container className="eventList">
         <div>
-          <Buttons/>
-
+          <Buttons />
+          
           {/* Julie : récupération des évenements */}
 
           {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
@@ -39,8 +47,24 @@ class EventList extends Component {
               {this.props.filterEvents.who !== null ? (
                 <Row>
                   <p className="phraseResultats">
-                    Résultats pour " {this.props.filterEvents.who} " à "{" "}
-                    {this.props.filterEvents.where} "
+                  <Button
+                   className="close-button" 
+                   aria-label="Close alert" 
+                   type="button" data-close
+                   onClick={()=>this.cancelFilter("who")}>
+                    {this.props.filterEvents.who}{" "}
+                    <span aria-hidden="true">&times;</span>
+                  </Button>
+                      {" "}
+                      <Button
+                   className="close-button" 
+                   aria-label="Close alert" 
+                   type="button" data-close
+                   onClick={()=>this.cancelFilter("where")}>
+                    {this.props.filterEvents.where}{" "}
+                    <span aria-hidden="true">&times;</span>
+                  </Button>
+                      {" "}
                   </p>
                 </Row>
               ) : (
