@@ -24,20 +24,20 @@ export default class NavBar extends React.Component {
 
           <Link to="/">
             <NavbarBrand className="icon">
-              <img src={funnel} width="40" height="40" alt="entonnoir" />
+              <img src={funnel} width="42" height="42" alt="entonnoir" />
             </NavbarBrand>
           </Link>
 
-          {/* Pour la map :
-          <Link to="/map">
+          {/* Pour la map : */}
+          {/* <Link to="/map">
             <NavbarBrand className="icon">
-              <img src={map} width="30" height="30" alt="map" />
+              <img src={map} width="45" height="45" alt="map" />
             </NavbarBrand>
           </Link> */}
 
           <Link to="/menu">
             <NavbarBrand className="icon">
-              <img src={menu} width="40" height="40" alt="menu" />
+              <img src={menu} width="45" height="45" alt="menu" />
             </NavbarBrand>
           </Link>
 

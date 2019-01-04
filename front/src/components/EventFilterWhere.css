@@ -11,21 +11,16 @@
   margin-bottom: 0vmin;
 }
 
-.titleOu {
-<<<<<<< HEAD
-  font-size: 20vmin;
-  font-family: "Questrial", Arial, sans-serif;
-=======
-  font-size: 15vmin;
+.titleWhoWhere {
+  font-size: 12vmin;
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
->>>>>>> cb1567f186176fb01933afc7bfc3ee34e54297d0
   color: #4b4b4b;
   text-align: center;
   margin-top: 0vmin;
   margin-bottom: 4vmin;
   padding-top: 0;
-  margin-bottom: 4vmin;
+  margin-bottom: 10vmin;
 }
 .buttonFilterMonica {
   display: flex;
