@@ -2,17 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import backgroundEuro from "../assets/euro.png";
-import {
-  Container,
-  Card,
-  CardImg,
-  CardBody,
-  Button,
-  CardText,
-  CardSubtitle,
-  Row,
-  Col
-} from "reactstrap";
+import {Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle, Row, Col} from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
 
@@ -68,7 +58,9 @@ class EventDetails extends Component {
         place: result.data.place,
         city: result.data.city,
         description: result.data.description,
-        free: result.data.free
+        free: result.data.free,
+        lat: result.data.lat,
+        lng: result.data.lng,
       });
     });
   }
@@ -129,7 +121,7 @@ class EventDetails extends Component {
                   <CardText className="description-event">
                     {this.state.description}
                   </CardText>
-
+                    
                   <div>
                     {this.state.free === "true" ? (
                       <h1> </h1>
