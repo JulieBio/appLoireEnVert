@@ -54,6 +54,7 @@ class EventFilterWho extends Component {
 
     
   render() {
+    
     return (
       <Container className="buttonsContainer">
         <Row> 

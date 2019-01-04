@@ -21,7 +21,7 @@ class EventFilterWhere extends Component {
       buttonList: [
         {
           name: "Tout Lieux",
-          filter: `"Stéphanois-Pilat"&"Forez"&"Roannais"`,
+          filter:` "Stéphanois-Pilat""&""Forez""&""Roannais"`,
           image: toutLieux
         },
         {
