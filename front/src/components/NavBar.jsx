@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "../App.css";
 import list from "../assets/list.png";
 import funnel from "../assets/funnel.png";
-// import map from "../assets/map.png";
+import map from "../assets/map.png";
 import menu from "../assets/menu.png";
 
 // Julie : NavBar fixe footer
@@ -28,12 +28,11 @@ export default class NavBar extends React.Component {
             </NavbarBrand>
           </Link>
 
-          {/* Pour la map : */}
-          {/* <Link to="/map">
+          <Link to="/map">
             <NavbarBrand className="icon">
               <img src={map} width="45" height="45" alt="map" />
             </NavbarBrand>
-          </Link> */}
+          </Link>
 
           <Link to="/menu">
             <NavbarBrand className="icon">
