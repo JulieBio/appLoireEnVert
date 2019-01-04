@@ -11,8 +11,8 @@
   margin-bottom: 0vmin;
 }
 
-.titleOu {
-  font-size: 15vmin;
+.titleWhoWhere {
+  font-size: 12vmin;
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   color: #4b4b4b;
@@ -20,7 +20,7 @@
   margin-top: 0vmin;
   margin-bottom: 4vmin;
   padding-top: 0;
-  margin-bottom: 4vmin;
+  margin-bottom: 10vmin;
 }
 .buttonFilterMonica {
   display: flex;
