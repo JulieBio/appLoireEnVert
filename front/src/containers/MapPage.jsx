@@ -63,29 +63,35 @@ class MapPage extends Component {
         return (
             <div>
                 <Buttons />
-            <Map className="map" center={position} zoom={this.state.zoom}>
-                <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+                <Map className="map" center={position} zoom={this.state.zoom}>
+                    <TileLayer
+                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
 
 
-                <Marker position={position} icon={myIcon}>
-                    <Popup>
-                        vous etes ici
-                </Popup>
-                </Marker>
-
-
-                {this.props.activeEvents.events.map((event, index, ) => (
-                    <Marker position={[event.lat,event.lng]} icon={iconGreen}>
+                    <Marker position={position} icon={myIcon}>
                         <Popup>
-                            <Event key={`event${index}`} event={event} />
-                        </Popup>
+                            vous etes ici
+                </Popup>
                     </Marker>
-                ))}
 
-            </Map>
+
+                    {this.props.activeEvents.events.map((event, index, ) => {
+                        if (event.lat && event.lng)
+                            return (
+                                <Marker position={[event.lat, event.lng]} icon={iconGreen}>
+                                    <Popup>
+                                        <Event key={`event${index}`} event={event} />
+                                    </Popup>
+                                </Marker>
+                            )
+                        else
+                            return ""
+                    })
+                    }
+
+                </Map>
             </div>
         );
     }
