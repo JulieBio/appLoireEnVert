@@ -21,7 +21,7 @@ class EventFilterWho extends Component {
       buttonList: [
         {
           name: "Tout Public",
-          filter :`"Famille"&"Enfants"&"En situation de handicap"`,
+          filter :"%%",
           image: toutPublic
         },
         {
