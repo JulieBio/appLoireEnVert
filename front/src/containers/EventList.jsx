@@ -23,6 +23,7 @@ class EventList extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
+
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
@@ -58,7 +59,9 @@ class EventList extends Component {
           ) : (
             <Card className="cardnoEvent">
               <div className="titreNoevent">
-                <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
+                <h2>Aucun événement ne correspond à votre recherche </h2>
+                <br/>
+                <button type="button" className="buttonSearch"><a href="/"> Nouvelle recherche </a></button>
               </div>
             </Card>
           )}
