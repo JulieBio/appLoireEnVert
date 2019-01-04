@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Card, Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateEventsList } from "../actions/index";
+import { updateFilter } from "../actions/index";
 import Event from "../components/Event";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchEvents } from "../actions/index";
@@ -25,10 +26,10 @@ class EventList extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
-  cancelFilter (filter) {
-  this.props.updateFilter({ [filter] : "%%"})
-  if ([filter] === "%%" ? ( null ) : (this.props.updateFilter({ [filter] : "%%"})));
-  
+  cancelFilter(filter) {
+    this.props.updateFilter({ [filter]: "%%" })
+    // if (filter === "%%") ? (<p/>) : (this.props.updateFilter({ [filter] : "%%"}));
+
   };
 
   render() {
@@ -37,60 +38,61 @@ class EventList extends Component {
       <Container className="eventList">
         <div>
           <Buttons />
-          
+
           {/* Julie : récupération des évenements */}
 
           {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
 
           {this.props.activeEvents.events.length > 0 ? (
             <div>
-              {this.props.filterEvents.who !== null ? (
-                <Row>
-                  <p className="phraseResultats">
-                  <Button
-                   className="close-button" 
-                   aria-label="Close alert" 
-                   type="button" data-close
-                   onClick={()=>this.cancelFilter("who")}>
-                    {this.props.filterEvents.who}{" "}
-                    <span aria-hidden="true">&times;</span>
-                  </Button>
-                      {" "}
-                      <Button
-                   className="close-button" 
-                   aria-label="Close alert" 
-                   type="button" data-close
-                   onClick={()=>this.cancelFilter("where")}>
-                    {this.props.filterEvents.where}{" "}
-                    <span aria-hidden="true">&times;</span>
-                  </Button>
-                      {" "}
-                  </p>
-                </Row>
-              ) : (
-                <p />
-              )}
-
               <Row>
-                {this.props.activeEvents.events.map((event, index) => (
-                  <Col xs="12" sm="12" md="6">
-                    <Event key={`event${index}`} event={event} />
-                  </Col>
-                ))}
+                <p className="phraseResultats">
+                  {this.props.filterEvents.who !== null
+                    && this.props.filterEvents.who !== '%%' ? <Button
+                      className="close-button"
+                      aria-label="Close alert"
+                      type="button" data-close
+                      onClick={() => this.cancelFilter("who")}>
+                      {this.props.filterEvents.who}{" "}
+                      <span aria-hidden="true">&times;</span>
+                    </Button>
+                    : ""}
+                  {" "}
+                  {this.props.filterEvents.where !== null
+                    && this.props.filterEvents.where !== '%%' ?
+                    <Button
+                      className="close-button"
+                      aria-label="Close alert"
+                      type="button" data-close
+                      onClick={() => this.cancelFilter("where")}>
+                      {this.props.filterEvents.where}{" "}
+                      <span aria-hidden="true">&times;</span>
+                    </Button>
+                    : ""}
+                </p>
               </Row>
-            </div>
-          ) : (
+              <p />
+
+          <Row>
+            {this.props.activeEvents.events.map((event, index) => (
+              <Col xs="12" sm="12" md="6">
+                <Event key={`event${index}`} event={event} />
+              </Col>
+            ))}
+          </Row>
+        </div>
+        ) : (
             <Card className="cardnoEvent">
-              <div className="titreNoevent">
-                <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
-              </div>
-            </Card>
-          )}
+          <div className="titreNoevent">
+            <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
+          </div>
+        </Card>
+        )}
 
           <div className="espace"> </div>
-          <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
+        <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
         </div>
-      </Container>
+      </Container >
     );
   }
 }
@@ -106,6 +108,9 @@ const mapDispatchToProps = dispatch => {
     functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
     addEvent: event => {
       dispatch(updateEventsList(event));
+    },
+    updateFilter: filter => {
+      dispatch(updateFilter(filter));
     }
 
     //*Test events filtrés Monica ne pas effacer merci**
