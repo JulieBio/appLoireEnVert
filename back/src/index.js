@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.get("/event", (req, res) => {
   // connection à la base de données, et sélection des évènements
-  connection.query("SELECT * from eventLoire", (err, results) => {
+  connection.query("SELECT * from wp_em_events", (err, results) => {
     if (err) {
       // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
       res.status(500).send("Erreur lors de la récupération des évènements");
@@ -31,14 +31,15 @@ app.get("/event", (req, res) => {
 
 app.post("/event", (req, res) => {
   //Marion : sélectionne tous les évènements dans la table
-  let query = "SELECT * from eventLoire";
+  let query = "SELECT * from wp_em_events";
   let queryParams = [];
   console.log(req.body);
   //Marion: si filtre where et où sont sélectionnés,...
   //Julie Lisa : filtre event_date pour recupérer la date courante + interval choisi avec "when"
+  // Marion, mémo : event_where
   if (req.body.where) {
     query +=
-      " WHERE event_where = ? AND who= ? AND event_date_start < DATE_ADD(NOW(), INTERVAL ? DAY) ";
+      " WHERE location_id = ? AND who= ? AND event_start_date < DATE_ADD(NOW(), INTERVAL ? DAY) ";
     queryParams.push(req.body.where);
     queryParams.push(req.body.who);
     queryParams.push(req.body.when);
@@ -67,7 +68,7 @@ app.post("/event", (req, res) => {
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
   connection.query(
-    "SELECT * from eventLoire where id = ?",
+    "SELECT * from wp_em_events where event_id = ?",
     [id],
     (err, results) => {
       if (err) {

@@ -54,21 +54,24 @@ class EventDetails extends Component {
     this.id = this.props.match.params.id;
   }
 
+
+
   componentWillMount() {
     axios.get(`/event/${this.id}`).then(result => {
       console.log(result.data);
       this.setState({
-        image: result.data.image,
-        name: result.data.name,
-        type: result.data.type,
-        who: result.data.who,
-        where: result.data.event_where,
-        start: result.data.event_date_start,
-        finish: result.data.event_date_finish,
-        place: result.data.place,
-        city: result.data.city,
-        description: result.data.description,
-        free: result.data.free
+        //image: result.data.image,
+        name: result.data.event_name,
+        //type: result.data.type,
+        //who: result.data.who,
+        where: result.data.location_id,
+        start: result.data.event_start_date,
+        finish: result.data.event_end_date,
+        /*place: result.data.place,
+        city: result.data.city,*/
+        description: result.data.post_content,
+        //free: result.data.free
+        free: result.data.event_rsvp
       });
     });
   }
@@ -81,7 +84,7 @@ class EventDetails extends Component {
   render() {
 
     return (
-      <Container className="container-eventDetails">
+      <Container className="container-eventDetails" >
         <Row>
           <Col>
             <div
@@ -127,7 +130,7 @@ class EventDetails extends Component {
                   <p className="place-eventDetails">{this.state.place}</p>
                   <p className="city-eventDetails">{this.state.city}</p>
                   <CardText className="description-event">
-                    {this.state.description}
+                    <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
                   </CardText>
 
                   <div>
