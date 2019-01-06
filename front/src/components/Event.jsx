@@ -54,7 +54,7 @@ const Event = ({ event })  => (
               </p>
             </CardSubtitle>
             <CardSubtitle className="itemEvent">
-              {event.location_id}
+              {event.location_name}
             </CardSubtitle>
             <CardSubtitle>
               <div className="cardIcones">

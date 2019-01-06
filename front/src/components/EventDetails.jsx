@@ -64,7 +64,7 @@ class EventDetails extends Component {
         name: result.data.event_name,
         //type: result.data.type,
         //who: result.data.who,
-        where: result.data.location_id,
+        where: result.data.location_name,
         start: result.data.event_start_date,
         finish: result.data.event_end_date,
         /*place: result.data.place,

@@ -46,7 +46,7 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <Container className="containerOu"> 
+      <Container className="containerOu">
         <Row>
           <Col xs="12" sm="12" md="12">
             <h1 className="titleOu">Où aller?</h1>
@@ -55,9 +55,10 @@ class EventFilterWhere extends Component {
         <Row className="">
           {this.state.buttonList.map(button => (
             <Col xs="12" sm="12" md="12">
+              {/*Rappelle de la fonction eventsFiltred*/}
               <Button
                 className="buttonFilterMonica"
-                onClick={() => this.eventsFiltred(button.name)} //Rappelle de la fonction eventsFiltred
+                onClick={() => this.eventsFiltred(button.name)}
                 color="secondary"
                 size="lg"
                 block
