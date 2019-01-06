@@ -66,8 +66,9 @@ app.post("/event", (req, res) => {
 // Marion : connection à la base de données, et sélection du détail de l'évènement
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
+  //Marion, mémo : "SELECT * FROM wp_em_events INNER JOIN wp_em_locations ON wp_em_events.location_id = wp_em_locations.location_id WHERE event_id = ?"
   connection.query(
-    "SELECT * from wp_em_events where event_id = ?",
+    "SELECT * FROM wp_em_events INNER JOIN wp_em_locations ON wp_em_events.location_id = wp_em_locations.location_id WHERE event_id = ?",
     [id],
     (err, results) => {
       if (err) {
