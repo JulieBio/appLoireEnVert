@@ -58,10 +58,10 @@ const Event = ({ event })  => (
             </CardSubtitle>
             <CardSubtitle>
               <div className="cardIcones">
-                {event.event_rsvp === "true" ? (
-                  <h1> </h1>
+                {event.event_rsvp === 1 ? (
+                  <div style={styleEuro.euro} />
                 ) : (
-                    <div style={styleEuro.euro} />
+                    <h1> </h1>
                   )}
                 <div className={event.type} />
               </div>

@@ -67,10 +67,10 @@ class EventDetails extends Component {
         where: result.data.location_name,
         start: result.data.event_start_date,
         finish: result.data.event_end_date,
-        /*place: result.data.place,
-        city: result.data.city,*/
+        place: result.data.location_address,
+        city: result.data.location_town,
         description: result.data.post_content,
-        //free: result.data.free
+        //free: result.data.free,
         free: result.data.event_rsvp
       });
     });
@@ -111,10 +111,10 @@ class EventDetails extends Component {
                   </CardSubtitle>
                   <p className="type-eventDetails">
                     <div className="freeEvent">
-                      {this.state.free === "true" ? (
-                        <h1> </h1>
-                      ) : (
+                      {this.state.free === 1 ? (
                         <div style={styleEuro.euro} />
+                      ) : (
+                        <h1> </h1>
                       )}
                       <div className={this.state.type} />
                     </div>
@@ -134,18 +134,18 @@ class EventDetails extends Component {
                   </CardText>
 
                   <div>
-                    {this.state.free === "true" ? (
-                      <h1> </h1>
-                    ) : (
-                      <Button
-                        color="success"
-                        className="inscription-button"
-                        href="https://loireenvert.fr/"
-                      >
-                      {" "}
-                      Je m'inscris
-                      </Button>
-                    )}
+                    {this.state.free === 1 ? (
+                      (
+                        <Button
+                          color="success"
+                          className="inscription-button"
+                          href="https://loireenvert.fr/"
+                        >
+                        {" "}
+                        Je m'inscris
+                        </Button>
+                      )
+                    ) : <h1> </h1>}
                   </div>
                 </CardBody>
               </div>
