@@ -21,7 +21,7 @@ const styleEuro = {
   }
 };
 // Lisa : affichage des dates en fr avec momentjs
-var idLocale = require("moment/locale/fr");
+const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
 

@@ -12,17 +12,6 @@
   margin-bottom: 0vmin;
 }
 
-.titleWho {
-  font-size: 15vmin;
-  font-family: "Questrial", Arial, sans-serif;
-  font-weight: bold;
-  color: #4b4b4b;
-  text-align: center;
-  margin-top: 0vmin;
-  padding-top: 0;
-  margin-bottom: 4vmin;
-}
-
 .buttonFilterWho {
   display: flex;
   justify-content: space-around;
@@ -32,8 +21,10 @@
   border-color: white !important;
   margin-bottom: 5vmin;
   align-items: baseline;
-  max-height: 18vmin;
+  min-height: 18.5vmin;
+  
 }
+
 
 .titleFilter {
   font-size: 5vmin;
