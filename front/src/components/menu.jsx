@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 class Menu extends Component {
 
   // Julie ferme le menu burger et revient à la dernière page
-  goBack = () => {
-    this.props.history.goBack();
-  };
 
   render() {
     return (

@@ -20,24 +20,24 @@ class EventFilterWho extends Component {
     this.state = {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
-        // {
-        //   name: "Tout Public",
-        //   filter :`"Famille"&"Enfants"&"En situation de handicap"`,
-        //   image: toutPublic
-        // },
+        {
+          name: "Tout Public",
+          filter :"%%",
+          image: toutPublic
+        },
         {
           name: "Famille",
-          // filter: "Famille",
+          filter: "Famille",
           image: famille
         },
         {
           name: "Enfants",
-          // filter: "Enfants",
+          filter: "Enfants",
           image: enfants
         },
         {
           name: "En situation de handicap",
-          // filter: "En situation de handicap",
+          filter: "En situation de handicap",
           image: handicap
         },
       ]
@@ -55,6 +55,7 @@ class EventFilterWho extends Component {
 
     
   render() {
+    
     return (
       <Container className="buttonsContainer">
         <Row> 
@@ -62,33 +63,13 @@ class EventFilterWho extends Component {
           Pour qui ?
           </Col>
         </Row>
-        <Row>
-            <Col  xs="12" sm="12" md="12">
-              <Button
-                className="buttonFilterWho"
-                onClick={() => this.eventsFiltred("Famille" & "Public en situation de handicap" & "Enfants")}
-                color="secondary"
-                size="lg"
-                block>
-                <Container>
-                  <Row>
-                    <Col xs="3">
-                      <img src={toutPublic} alt="tout public" />
-                    </Col>
-                    <Col xs="9" style={styles.buttonFilter}>
-                      <p className="titleFilter">TOUT PUBLIC</p>
-                    </Col>
-                  </Row>
-                </Container>
-              </Button>
-            </Col>
-        </Row>
+     
         <Row>
           {this.state.buttonList.map(button => (
             <Col  xs="12" sm="12" md="12">
               <Button
                 className="buttonFilterWho"
-                onClick={() => this.eventsFiltred(button.name)}
+                onClick={() => this.eventsFiltred(button.filter)}
                 color="secondary"
                 size="lg"
                 block>

@@ -123,3 +123,22 @@
   background-repeat: no-repeat;
   float: left;
 }
+
+/*CSS pour close chips*/
+
+.close-button{
+  border-radius: 3vmin;
+  font-weight: bold;
+  background-color:#707173 !important;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.crossClose{
+  background-color: #96969a;
+  margin-left: 2vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  border-radius: 50%;
+  border:0px;
+}
