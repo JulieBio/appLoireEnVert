@@ -3,6 +3,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWho.css";
+import "./EventFilterWhere.css";
 import famille from "../assets/famille.png";
 import toutPublic from "../assets/tout-public.png";
 import enfants from "../assets/enfants6-12-ans.png";
@@ -17,11 +18,11 @@ class EventFilterWho extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventsFiltred: null,
+      eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
           name: "Tout Public",
-          filter: `"Famille"&"Enfants"&"En situation de handicap"`,
+          filter: "%%",
           image: toutPublic
         },
         {
@@ -56,10 +57,11 @@ class EventFilterWho extends Component {
         <HeadNoBack />
         <Container className="buttonsContainer">
           <Row>
-            <Col xl="12" sm="12" md="12" className="titleWho">
+            <Col xl="12" sm="12" md="12" className="titleWhoWhere">
               Pour qui ?
             </Col>
           </Row>
+
           <Row>
             {this.state.buttonList.map(button => (
               <Col xs="12" sm="12" md="12">

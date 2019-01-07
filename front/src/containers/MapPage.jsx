@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { updateEventsList } from "../actions/index";
+import Event from "../components/Event";
+import { fetchEvents } from "../actions/index";
 import L from "leaflet";
+import Buttons from "./Buttons";
 import "../App.css";
 import HeadNoBack from "../components/headNoBack";
 
@@ -13,43 +17,92 @@ var myIcon = L.icon({
   popupAnchor: [0, -40]
 });
 
-class MapPage extends Component {
-  state = {
-    lat: 0,
-    lng: 0,
-    zoom: 13
-  };
+var iconGreen = new L.Icon({
+  iconUrl: require("../assets/map-default-green.png"),
+  iconRetinaUrl: require("../assets/map-default-green.png"),
+  iconSize: [45, 35],
+  popupAnchor: [0, -10]
+});
 
+class MapPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lat: 0,
+      lng: 0,
+      zoom: 13
+    };
+    // this.id = this.props.match.params.id;
+  }
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position);
+      console.log("position:", position);
       this.setState({
         lat: position.coords.latitude,
         lng: position.coords.longitude
       });
     });
   }
+  componentWillMount() {
+    console.log("here", this.props.filterEvents);
+    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+  }
+
+  componentWillReceiveProps(newprops) {
+    if (this.props.filterEvents !== newprops.filterEvents)
+      this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
+  }
 
   render() {
+    console.log("eventFiltré", this.props.filterEvents);
+
     const position = [this.state.lat, this.state.lng];
+
     return (
       <div>
         <HeadNoBack />
+        <Buttons />
         <Map className="map" center={position} zoom={this.state.zoom}>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+
           <Marker position={position} icon={myIcon}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
+            <Popup>vous etes ici</Popup>
           </Marker>
+
+          {this.props.activeEvents.events.map((event, index) => {
+            if (event.lat && event.lng)
+              return (
+                <Marker position={[event.lat, event.lng]} icon={iconGreen}>
+                  <Popup>
+                    <Event key={`event${index}`} event={event} />
+                  </Popup>
+                </Marker>
+              );
+            else return "";
+          })}
         </Map>
       </div>
     );
   }
 }
-const mapStateToProps = () => {};
+const mapStateToProps = ({ activeEvents, filterEvents }) => {
+  console.log("store", { activeEvents, filterEvents });
+  return { activeEvents, filterEvents };
+};
 
-export default connect(mapStateToProps)(MapPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
+    addEvent: event => {
+      dispatch(updateEventsList(event));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MapPage);

@@ -13,9 +13,9 @@ import {
   Row,
   Col
 } from "reactstrap";
+import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
 import HeadBack from "./headBack";
-import retourFleche from "../assets/retourFleche.png";
 
 const styleBack = {
   goBack: {
@@ -71,7 +71,9 @@ class EventDetails extends Component {
         place: result.data.place,
         city: result.data.city,
         description: result.data.description,
-        free: result.data.free
+        free: result.data.free,
+        lat: result.data.lat,
+        lng: result.data.lng
       });
     });
   }

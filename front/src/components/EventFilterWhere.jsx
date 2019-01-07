@@ -7,6 +7,7 @@ import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 import HeadNoBack from "./headNoBack";
+import toutLieux from "../assets/allplaces.jpeg";
 
 //styles pour les buttons
 const styles = {
@@ -20,19 +21,29 @@ class EventFilterWhere extends Component {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
+          name: "Tout Lieux",
+          filter: "%%",
+          image: toutLieux
+        },
+        {
           name: "Stéphanois-Pilat",
+          filter: "Stéphanois-Pilat",
           image: stephanois
         },
         {
           name: "Forez",
+          filter: "Forez",
           image: forez
         },
         {
           name: "Roannais",
+          filter: "Roannais",
           image: roannais
         }
       ]
     };
+
+    this.id = this.props.match.params.id;
   }
 
   //Fonction qui prend "where" et qui va actualiser la liste filtrée
@@ -51,15 +62,16 @@ class EventFilterWhere extends Component {
         <Container className="containerOu">
           <Row>
             <Col xs="12" sm="12" md="12">
-              <h1 className="titleOu">Où aller?</h1>
+              <h1 className="titleWhoWhere">Où aller ?</h1>
             </Col>
           </Row>
-          <Row className="">
+
+          <Row>
             {this.state.buttonList.map(button => (
               <Col xs="12" sm="12" md="12">
                 <Button
                   className="buttonFilterMonica"
-                  onClick={() => this.eventsFiltred(button.name)} //Rappelle de la fonction eventsFiltred
+                  onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred
                   color="secondary"
                   size="lg"
                   block
