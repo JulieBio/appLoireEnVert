@@ -63,27 +63,7 @@ class EventFilterWho extends Component {
           Pour qui ?
           </Col>
         </Row>
-        {/* <Row>
-            <Col  xs="12" sm="12" md="12">
-              <Button
-                className="buttonFilterWho"
-                onClick={() => this.eventsFiltred("Famille" & "Public en situation de handicap" & "Enfants")}
-                color="secondary"
-                size="lg"
-                block>
-                <Container>
-                  <Row>
-                    <Col xs="3">
-                      <img src={toutPublic} alt="tout public" />
-                    </Col>
-                    <Col xs="9" style={styles.buttonFilter}>
-                      <p className="titleFilter">TOUT PUBLIC</p>
-                    </Col>
-                  </Row>
-                </Container>
-              </Button>
-            </Col>
-        </Row> */}
+     
         <Row>
           {this.state.buttonList.map(button => (
             <Col  xs="12" sm="12" md="12">

@@ -13,15 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'leaflet/dist/leaflet.css';
 
 
-<<<<<<< HEAD
-import "./index.css";
-import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-
-
-=======
->>>>>>> dev
 const store = createStore(allReducers, applyMiddleware(thunk));
 
 ReactDOM.render(

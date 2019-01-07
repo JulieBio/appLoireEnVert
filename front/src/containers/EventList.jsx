@@ -54,7 +54,7 @@ class EventList extends Component {
                       type="button" data-close
                       onClick={() => this.cancelFilter("who")}>
                       {this.props.filterEvents.who}{" "}
-                      <span aria-hidden="true">&times;</span>
+                      <span className="crossClose" aria-hidden="true">&times;</span>
                     </Button>
                     : ""}
                   {" "}
@@ -66,7 +66,7 @@ class EventList extends Component {
                       type="button" data-close
                       onClick={() => this.cancelFilter("where")}>
                       {this.props.filterEvents.where}{" "}
-                      <span aria-hidden="true">&times;</span>
+                      <span className="crossClose" aria-hidden="true">&times;</span>
                     </Button>
                     : ""}
                 </p>
