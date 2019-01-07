@@ -3,6 +3,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
 import "./EventFilterWho.css";
+import "./EventFilterWhere.css";
 import famille from "../assets/famille.png";
 import toutPublic from "../assets/tout-public.png";
 import enfants from "../assets/enfants6-12-ans.png";
@@ -58,7 +59,7 @@ class EventFilterWho extends Component {
     return (
       <Container className="buttonsContainer">
         <Row> 
-          <Col xl="12" sm="12" md="12" className="titleWho">
+          <Col xl="12" sm="12" md="12" className="titleWhoWhere">
           Pour qui ?
           </Col>
         </Row>

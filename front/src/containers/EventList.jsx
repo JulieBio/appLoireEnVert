@@ -83,14 +83,16 @@ class EventList extends Component {
         </div>
         ) : (
             <Card className="cardnoEvent">
-          <div className="titreNoevent">
-            <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
-          </div>
-        </Card>
-        )}
+              <div className="titreNoevent">
+                <h2>Aucun événement ne correspond à votre recherche </h2>
+                <br/>
+                <button type="button" className="buttonSearch"><a href="/"> Nouvelle recherche </a></button>
+              </div>
+            </Card>
+          )}
 
           <div className="espace"> </div>
-        <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
+          <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
         </div>
       </Container >
     );

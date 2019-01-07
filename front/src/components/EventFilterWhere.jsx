@@ -59,7 +59,7 @@ class EventFilterWhere extends Component {
       <Container className="containerOu">
         <Row>
           <Col xs="12" sm="12" md="12">
-            <h1 className="titleOu">Où aller?</h1>
+            <h1 className="titleWhoWhere">Où aller ?</h1>
           </Col>
         </Row>
         
