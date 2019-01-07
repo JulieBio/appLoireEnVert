@@ -14,24 +14,22 @@ import MapPage from "./containers/MapPage";
 import "./components/EventDetails.css";
 import "./components/buttonToTop.css";
 
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Head />
           <div className="containerGeneral">
-          <Switch>
-            <Route exact path="/" component={EventFilterWhere} />
-            <Route path="/events" component={EventList} />
-            <Route path="/event/:id" component={EventDetails} />
-            <Route path="/who" component={EventFilterWho} />
-            <Route path="/menu" component={Menu} />
-            <Route path="/quiSommesNous" component={QuiSommesNous} />
-            <Route path="/partenaires" component={Partenaires} />
-            <Route path="/map" component={MapPage} />
-          </Switch>
+            <Switch>
+              <Route exact path="/" component={EventFilterWhere} />
+              <Route path="/events" component={EventList} />
+              <Route path="/event/:id" component={EventDetails} />
+              <Route path="/who" component={EventFilterWho} />
+              <Route path="/menu" component={Menu} />
+              <Route path="/quiSommesNous" component={QuiSommesNous} />
+              <Route path="/partenaires" component={Partenaires} />
+              <Route path="/map" component={MapPage} />
+            </Switch>
           </div>
           <NavBar />
         </div>

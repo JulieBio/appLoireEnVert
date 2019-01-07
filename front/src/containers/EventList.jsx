@@ -8,9 +8,9 @@ import { fetchEvents } from "../actions/index";
 import Buttons from "./Buttons";
 import ButtonToTop from "../components/buttonToTop";
 import "../App.css";
+import HeaderNoBack from "../components/headNoBack";
 
 class EventList extends Component {
-
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
@@ -26,47 +26,50 @@ class EventList extends Component {
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
-      <Container className="eventList">
-        <div>
-          <Buttons/>
+      <div>
+        <HeaderNoBack />
+        <Container className="eventList">
+          <div>
+            <Buttons />
 
-          {/* Julie : récupération des évenements */}
+            {/* Julie : récupération des évenements */}
 
-          {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
+            {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
 
-          {this.props.activeEvents.events.length > 0 ? (
-            <div>
-              {this.props.filterEvents.who !== null ? (
+            {this.props.activeEvents.events.length > 0 ? (
+              <div>
+                {this.props.filterEvents.who !== null ? (
+                  <Row>
+                    <p className="phraseResultats">
+                      Résultats pour " {this.props.filterEvents.who} " à "{" "}
+                      {this.props.filterEvents.where} "
+                    </p>
+                  </Row>
+                ) : (
+                  <p />
+                )}
+
                 <Row>
-                  <p className="phraseResultats">
-                    Résultats pour " {this.props.filterEvents.who} " à "{" "}
-                    {this.props.filterEvents.where} "
-                  </p>
+                  {this.props.activeEvents.events.map((event, index) => (
+                    <Col xs="12" sm="12" md="6">
+                      <Event key={`event${index}`} event={event} />
+                    </Col>
+                  ))}
                 </Row>
-              ) : (
-                <p />
-              )}
-
-              <Row>
-                {this.props.activeEvents.events.map((event, index) => (
-                  <Col xs="12" sm="12" md="6">
-                    <Event key={`event${index}`} event={event} />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          ) : (
-            <Card className="cardnoEvent">
-              <div className="titreNoevent">
-                <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
               </div>
-            </Card>
-          )}
+            ) : (
+              <Card className="cardnoEvent">
+                <div className="titreNoevent">
+                  <h2>Aucun événement ne correspond à votre recherche </h2>{" "}
+                </div>
+              </Card>
+            )}
 
-          <div className="espace"> </div>
-          <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
-        </div>
-      </Container>
+            <div className="espace"> </div>
+            <ButtonToTop scrollStepInPx="50" delayInMs="16.66" />
+          </div>
+        </Container>
+      </div>
     );
   }
 }

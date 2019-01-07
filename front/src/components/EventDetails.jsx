@@ -13,8 +13,9 @@ import {
   Row,
   Col
 } from "reactstrap";
-import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
+import HeadBack from "./headBack";
+import retourFleche from "../assets/retourFleche.png";
 
 const styleBack = {
   goBack: {
@@ -22,8 +23,11 @@ const styleBack = {
     opacity: "0.5",
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    height: "4.5vh",
-    width: "4.5vh"
+    position: "absolute",
+    height: "25vmin",
+    width: "10vmin",
+    paddingTop: "8px",
+    top: "-16vmin"
   }
 };
 
@@ -37,7 +41,6 @@ const styleEuro = {
     width: "5vh",
     float: "left",
     marginRight: "1vh"
-    //padding: '5px',
   }
 };
 
@@ -79,77 +82,67 @@ class EventDetails extends Component {
   };
 
   render() {
-
     return (
-      <Container className="container-eventDetails">
-        <Row>
-          <Col>
-            <div
-              style={{
-                position: "fixed",
-                backgroundColor: "rgb(240,240,240,0.5)",
-                height: "6vh",
-                width: "6vh",
-                borderRadius: "25px",
-                paddingTop: "4px",
-                paddingLeft: "2px",
-                margin: "5px",
-                zIndex: "2"
-              }}
-            >
-              <div style={styleBack.goBack} onClick={this.goBack} />
-            </div>
-            <Card>
+      <div>
+        <HeadBack />
+        <Container className="container-eventDetails">
+          <Row>
+            <Col>
               <div>
-                <CardImg src={this.state.image} alt="image evenement" />
-                <CardBody>
-                  <CardSubtitle className="nameEvent">
-                    {this.state.name}
-                  </CardSubtitle>
-                  <p className="type-eventDetails">
-                    <div className="freeEvent">
+                <div style={styleBack.goBack} onClick={this.goBack} />
+              </div>
+              <Card>
+                <div>
+                  <CardImg src={this.state.image} alt="image evenement" />
+                  <CardBody>
+                    <CardSubtitle className="nameEvent">
+                      {this.state.name}
+                    </CardSubtitle>
+                    <p className="type-eventDetails">
+                      <div className="freeEvent">
+                        {this.state.free === "true" ? (
+                          <h1> </h1>
+                        ) : (
+                          <div style={styleEuro.euro} />
+                        )}
+                        <div className={this.state.type} />
+                      </div>
+                    </p>
+                    <p className="qui-eventDetails">{this.state.who}</p>
+                    <p className="ou-eventDetails">{this.state.where}</p>
+                    <CardSubtitle className="itemEvent">
+                      <p>
+                        {moment(this.state.start).format("ll")} -{" "}
+                        {moment(this.state.finish).format("ll")}
+                      </p>
+                    </CardSubtitle>
+                    <p className="place-eventDetails">{this.state.place}</p>
+                    <p className="city-eventDetails">{this.state.city}</p>
+                    <CardText className="description-event">
+                      {this.state.description}
+                    </CardText>
+
+                    <div>
                       {this.state.free === "true" ? (
                         <h1> </h1>
                       ) : (
-                        <div style={styleEuro.euro} />
+                        <Button
+                          color="success"
+                          className="inscription-button"
+                          href="https://loireenvert.fr/"
+                        >
+                          {" "}
+                          Je m'inscris
+                        </Button>
                       )}
-                      <div className={this.state.type} />
                     </div>
-                  </p>
-                  <p className="qui-eventDetails">{this.state.who}</p>
-                  <p className="ou-eventDetails">{this.state.where}</p>
-                  <CardSubtitle className="itemEvent">
-                    <p>
-                      {moment(this.state.start).format("ll")} -{" "}
-                      {moment(this.state.finish).format("ll")}
-                    </p>
-                  </CardSubtitle>
-                  <p className="place-eventDetails">{this.state.place}</p>
-                  <p className="city-eventDetails">{this.state.city}</p>
-                  <CardText className="description-event">
-                    {this.state.description}
-                  </CardText>
-
-                  <div>
-                    {this.state.free === "true" ? (
-                      <h1> </h1>
-                    ) : (
-                      <Button
-                        color="success"
-                        className="inscription-button"
-                        href="https://loireenvert.fr/"
-                      >
-                      {" "}
-                      Je m'inscris
-                      </Button>
-                    )}
-                  </div>
-                </CardBody>
-              </div>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                  </CardBody>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
