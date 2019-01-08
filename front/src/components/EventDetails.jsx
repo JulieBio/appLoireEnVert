@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
+import HeadBack from "./headBack";
 
 const styleBack = {
   goBack: {
@@ -22,8 +23,11 @@ const styleBack = {
     opacity: "0.5",
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    height: "4.5vh",
-    width: "4.5vh"
+    position: "absolute",
+    height: "25vmin",
+    width: "10vmin",
+    paddingTop: "8px",
+    top: "-16vmin"
   }
 };
 
@@ -37,7 +41,6 @@ const styleEuro = {
     width: "5vh",
     float: "left",
     marginRight: "1vh"
-    //padding: '5px',
   }
 };
 
@@ -70,8 +73,9 @@ class EventDetails extends Component {
         place: result.data.location_address,
         city: result.data.location_town,
         description: result.data.post_content,
-        //free: result.data.free,
         free: result.data.event_rsvp
+        lat: result.data.lat,
+        lng: result.data.lng
       });
     });
   }
@@ -82,58 +86,47 @@ class EventDetails extends Component {
   };
 
   render() {
-
     return (
-      <Container className="container-eventDetails" >
-        <Row>
-          <Col>
-            <div
-              style={{
-                position: "fixed",
-                backgroundColor: "rgb(240,240,240,0.5)",
-                height: "6vh",
-                width: "6vh",
-                borderRadius: "25px",
-                paddingTop: "4px",
-                paddingLeft: "2px",
-                margin: "5px",
-                zIndex: "2"
-              }}
-            >
-              <div style={styleBack.goBack} onClick={this.goBack} />
-            </div>
-            <Card>
+      <div>
+        <HeadBack />
+        <Container className="container-eventDetails">
+          <Row>
+            <Col>
               <div>
-                <CardImg src={this.state.image} alt="image evenement" />
-                <CardBody>
-                  <CardSubtitle className="nameEvent">
-                    {this.state.name}
-                  </CardSubtitle>
-                  <p className="type-eventDetails">
-                    <div className="freeEvent">
-                      {this.state.free === 1 ? (
-                        <div style={styleEuro.euro} />
-                      ) : (
-                        <h1> </h1>
-                      )}
-                      <div className={this.state.type} />
-                    </div>
-                  </p>
-                  <p className="qui-eventDetails">{this.state.who}</p>
-                  <p className="ou-eventDetails">{this.state.where}</p>
-                  <CardSubtitle className="itemEvent">
-                    <p>
-                      {moment(this.state.start).format("ll")} -{" "}
-                      {moment(this.state.finish).format("ll")}
+                <div style={styleBack.goBack} onClick={this.goBack} />
+              </div>
+              <Card>
+                <div>
+                  <CardImg src={this.state.image} alt="image evenement" />
+                  <CardBody>
+                    <CardSubtitle className="nameEvent">
+                      {this.state.name}
+                    </CardSubtitle>
+                    <p className="type-eventDetails">
+                      <div className="freeEvent">
+                        {this.state.free === 1 ? (
+                          <div style={styleEuro.euro} />
+                        ) : (
+                          <h1> </h1>
+                        )}
+                        <div className={this.state.type} />
+                      </div>
                     </p>
-                  </CardSubtitle>
-                  <p className="place-eventDetails">{this.state.place}</p>
-                  <p className="city-eventDetails">{this.state.city}</p>
-                  <CardText className="description-event">
-                    <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
-                  </CardText>
+                    <p className="qui-eventDetails">{this.state.who}</p>
+                    <p className="ou-eventDetails">{this.state.where}</p>
+                    <CardSubtitle className="itemEvent">
+                      <p>
+                        {moment(this.state.start).format("ll")} -{" "}
+                        {moment(this.state.finish).format("ll")}
+                      </p>
+                    </CardSubtitle>
+                    <p className="place-eventDetails">{this.state.place}</p>
+                    <p className="city-eventDetails">{this.state.city}</p>
+                    <CardText className="description-event">
+                      {this.state.description}
+                    </CardText>
 
-                  <div>
+                    <div>
                     {this.state.free === 1 ? (
                       (
                         <Button
@@ -147,12 +140,13 @@ class EventDetails extends Component {
                       )
                     ) : <h1> </h1>}
                   </div>
-                </CardBody>
-              </div>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                  </CardBody>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
