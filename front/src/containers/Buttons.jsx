@@ -13,52 +13,68 @@ class Buttons extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      disabled: "1"
+      disabled: "1",
+      datesFiltred: null,
+      buttonDates: [
+        {
+          name: "15 jours",
+          when: "15",
+          id: "1"
+        },
+        {
+          name: "30 jours",
+          when: "30",
+          id: "2"
+        },
+        {
+          name: "90 jours",
+          when: "90",
+          id: "3"
+        }
+      ]
     };
     this.handleClick = this.handleClick.bind(this);
+    
   }
-//Marion : création d'une fonction pour rendre le bouton cliqué inactif
-//Marion :Désactivation bouton faite en lui ajoutant un id
-//Marion : /!\id attribué à chaque bouton n'est pas le meme que celui des évènements
+  //Marion : création d'une fonction pour rendre le bouton cliqué inactif
+  //Marion :Désactivation bouton faite en lui ajoutant un id
+  //Marion : /!\id attribué à chaque bouton n'est pas le meme que celui des évènements
   handleClick(e) {
     const id = e.target.id
     this.setState({ disabled: id })
   }
-
+  
+  datesFiltred = when => {
+    // const id = e.target.id;
+    this.props.updateFilter({ when: when });
+    // this.props.history.push("/when");
+  };
+  
 
   render() {
+    const {disabled}=this.state;
     return (
-
-      <div onClick={this.handleClick}>
-        <Container className="blockButtons">
-          <Row>
+   
+      <Container onClick={this.handleClick} className="blockButtons">
+        <Row>
+          {this.state.buttonDates.map(button => (
             <Col xs="4" sm="4" md="4">
-              {/*Marion : appelle du state à chaque bouton et si la valeur du state correspond à l'id du bouton, le bouton passe en inactif*/}
-              <Button disabled={this.state.disabled === "1"} id="1" className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 15 })}
-              >
-                15 jours
-              </Button>
-            </Col>
-            <Col xs="4" sm="4" md="4">
-              <Button disabled={this.state.disabled === "2"} id="2"
+              <Button
+                disabled={button.id===disabled}
+                id={button.id}
                 className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 30 })}
+                onClick={() => this.datesFiltred(button.when)} //Rappelle de la fonction eventsFiltred
+                color="secondary"
+                size="lg"
+                block
               >
-                1 mois
+                {button.name}
               </Button>
             </Col>
-            <Col xs="4" sm="4" md="4">
-              <Button disabled={this.state.disabled === "3"} id="3"
-                className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 90 })}
-              >
-                3 mois
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+          ))}
+        </Row>
+      </Container>
+     
     );
   }
 }
@@ -67,9 +83,9 @@ const mapDispatchToProps = dispatch => ({
   updateFilter: filter => {
     dispatch(updateFilter(filter));
   }
+  
 });
 // Julie Lisa : on met null car pas besoin du mapStateToProps
-export default connect(
-  null,
-  mapDispatchToProps
+export default connect(null,
+ mapDispatchToProps
 )(Buttons);

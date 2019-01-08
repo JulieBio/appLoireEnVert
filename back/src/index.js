@@ -39,7 +39,9 @@ app.post("/event", (req, res) => {
   // Monica: J'use LIKE comme *, besoin d'utiliser tous les valeurs dans event_where, pareil pour who
   if (req.body.where) {
     query +=
-      " WHERE event_where LIKE ? AND who LIKE ? AND event_date_start < DATE_ADD(NOW(), INTERVAL ? DAY)";
+      " WHERE event_where LIKE ? AND who LIKE ? "
+      +"AND event_date_start >= NOW()"
+      +"AND event_date_start < DATE_ADD(NOW(), INTERVAL ? DAY)";
     queryParams.push(req.body.where);
     queryParams.push(req.body.who);
     queryParams.push(req.body.when);
@@ -50,9 +52,10 @@ app.post("/event", (req, res) => {
    query += " ";
     queryParams.push(req.body.who)
   }
+  console.log(query)
   // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who
   connection.query(query, queryParams, (err, results) => {
-    console.log(err, results);
+    // console.log(err, results);
     if (err) {
       // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
       res.status(500).send(err);
