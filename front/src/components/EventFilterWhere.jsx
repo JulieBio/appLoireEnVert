@@ -6,6 +6,7 @@ import "./EventFilterWhere.css";
 import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
+import HeadNoBack from "./headNoBack";
 import toutLieux from "../assets/allplaces.jpeg";
 
 //styles pour les buttons
@@ -21,7 +22,7 @@ class EventFilterWhere extends Component {
       buttonList: [
         {
           name: "Tout Lieux",
-          filter:"%%",
+          filter: "%%",
           image: toutLieux
         },
         {
@@ -56,38 +57,43 @@ class EventFilterWhere extends Component {
 
   render() {
     return (
-      <Container className="containerOu">
-        <Row>
-          <Col xs="12" sm="12" md="12">
-            <h1 className="titleWhoWhere">Où aller ?</h1>
-          </Col>
-        </Row>
-        
-        <Row>
-          {this.state.buttonList.map(button => (
+      <div>
+        <HeadNoBack />
+        <Container className="containerOu">
+          <Row>
             <Col xs="12" sm="12" md="12">
-              <Button
-                className="buttonFilterMonica"
-                onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred
-                color="secondary"
-                size="lg"
-                block
-              >
-                <Container>
-                  <Row>
-                    <Col xs="3">
-                      <img src={button.image} alt="button filter" />
-                    </Col>
-                    <Col xs="9" style={styles.buttonFilter}>
-                      <p className="titleFilter">{button.name.toUpperCase()}</p>
-                    </Col>
-                  </Row>
-                </Container>
-              </Button>
+              <h1 className="titleWhoWhere">Où aller ?</h1>
             </Col>
-          ))}
-        </Row>
-      </Container>
+          </Row>
+
+          <Row>
+            {this.state.buttonList.map(button => (
+              <Col xs="12" sm="12" md="12">
+                <Button
+                  className="buttonFilterMonica"
+                  onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred
+                  color="secondary"
+                  size="lg"
+                  block
+                >
+                  <Container>
+                    <Row>
+                      <Col xs="3">
+                        <img src={button.image} alt="button filter" />
+                      </Col>
+                      <Col xs="9" style={styles.buttonFilter}>
+                        <p className="titleFilter">
+                          {button.name.toUpperCase()}
+                        </p>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Button>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
