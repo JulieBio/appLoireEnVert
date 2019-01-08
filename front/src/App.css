@@ -45,7 +45,7 @@ a {
 .inscription-button {
   background-color: #58a728;
   border-color: #58a728;
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1.6em;
   margin-left: 30%;
 }
@@ -63,13 +63,13 @@ a {
 }
 
 .type-eventDetails {
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
 }
 
 .qui-eventDetails {
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   margin-top: 15vmin;
@@ -77,7 +77,7 @@ a {
 }
 
 .ou-eventDetails {
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   margin-top: 2vmin;
@@ -85,7 +85,7 @@ a {
 }
 
 .place-eventDetails {
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   margin-top: 2vmin;
@@ -93,7 +93,7 @@ a {
 }
 
 .city-eventDetails {
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   margin-top: 2vmin;
@@ -101,11 +101,46 @@ a {
 }
 
 .description-event {
-  font-family: "Questrial";
+  font-family: "Questrial", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   padding: 2vmin 0 0 0;
 }
+
+
+/*Marion: pour rendre bouton actif*/
+
+.toggled {
+	background-color: #2f70e1;
+	color: #fff;
+}
+
+
+/* Julie : Bouton pour relancer la recherche dans eventlist */
+
+.buttonSearch {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-family: "Questrial", Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff !important;
+  background-color: #b6543a;
+}
+.buttonSearch a {
+  color: #fff !important;
+}
+.buttonSearch:hover {
+  background-color: #b6543a;
+}
+.buttonSearch a:hover {
+  color: #fff !important;
+}
+.buttonSearch a:active {
+  color: #fff !important;
+}
+
 
 /* Julie : NavBar, et tout ce qui en dépend */
 
@@ -118,6 +153,12 @@ a {
   position: fixed;
   padding: 0.8rem 1rem !important;
 }
+.icon{
+  padding-left: 10%;
+}
+.menuB {
+  color: #4b4b4b !important;
+}
 .menuB a:link {
   color: #4b4b4b !important;
 }
@@ -128,17 +169,9 @@ a {
   color: #4b4b4b !important;
 }
 
-.menuClose {
-  position: absolute;
-  top: 70px;
-  right: 10px;
-}
-.closeCross {
-  position: absolute;
-}
 
 .menuBurger {
-  margin-top: 40px;
+  margin-top: 90px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
@@ -199,6 +232,7 @@ a {
   margin-top: 30px;
 }
 
+
 /* Nadim: pour noEvent  */
 
 .cardnoEvent {
@@ -215,7 +249,7 @@ a {
 }
 
 .map {
-  height: 81vh;
+  height: 65vh;
   width: 100%;
 }
 

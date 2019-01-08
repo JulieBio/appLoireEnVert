@@ -2,27 +2,34 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "./head.css";
 import Logo from "../assets/loire-en-vert.png";
+import HeadBack from "./headBack";
+import HeadNoBack from "./headNoBack";
 // import Media from "react-media";
 
 // const Media = require("react-media");
 
 class Head extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      urlAdress: null
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ urlAdress: window.location.href });
+    console.log(window.location.href);
+    console.log("state " + this.state.urlAdress);
+  }
+
   render() {
     return (
       <div className="header">
-        <Container>
-          <Row>
-            <Col xs="3" sm="3" md="3">
-              <img src={Logo} alt="Logo Loire en vert" className="headerLogo" />
-            </Col>
-            <Col xs="9" sm="9" md="9">
-              <p>
-                Toutes les activités nature <br />
-                dans la Loire
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        {window.location.href === "http://localhost:3000/who" ? (
+          <HeadBack />
+        ) : (
+          <HeadNoBack />
+        )}
       </div>
     );
   }
