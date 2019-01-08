@@ -5,60 +5,74 @@ import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions";
 import "./buttons.css";
+
 // Julie lisa : Création d'un container buttons qui met met à jour son state.
 // ... on utilise when pour définir le nombre de jour souhaité, puis on met à jour le store avec dispatch
+
 class Buttons extends React.Component {
   // Marion : Désactivation du bouton actif afin de savoir sur quel bouton on a cliqué
-  //initiation d'un state pour faire la désactivation
+  // initiation d'un state pour faire la désactivation
+  // Monica, j'ai modifié tout le code de buttons.jsx: création d'un state disabled, datesFiltred an buttonDates
   constructor(props) {
     super(props);
     this.state = {
-      disabled: "1"
+      disabled: "1",
+      datesFiltred: null,
+      buttonDates: [
+        {
+          name: "15 jours",
+          when: "15",
+          id: "1"
+        },
+        {
+          name: "30 jours",
+          when: "30",
+          id: "2"
+        },
+        {
+          name: "90 jours",
+          when: "90",
+          id: "3"
+        }
+      ]
     };
     this.handleClick = this.handleClick.bind(this);
   }
-//Marion : création d'une fonction pour rendre le bouton cliqué inactif
-//Marion :Désactivation bouton faite en lui ajoutant un id
-//Marion : /!\id attribué à chaque bouton n'est pas le meme que celui des évènements
+  //Marion : création d'une fonction pour rendre le bouton cliqué inactif
+  //Marion :Désactivation bouton faite en lui ajoutant un id
+  //Marion : /!\id attribué à chaque bouton n'est pas le meme que celui des évènements
+
   handleClick(e) {
-    const id = e.target.id
-    this.setState({ disabled: id })
+    const id = e.target.id;
+    this.setState({ disabled: id });
   }
 
+  datesFiltred = when => {
+    this.props.updateFilter({ when: when });
+  };
 
   render() {
+    const { disabled } = this.state;
     return (
-
-      <div onClick={this.handleClick}>
-        <Container className="blockButtons">
-          <Row>
+      <Container onClick={this.handleClick} className="blockButtons">
+        <Row>
+          {this.state.buttonDates.map(button => (
             <Col xs="4" sm="4" md="4">
-              {/*Marion : appelle du state à chaque bouton et si la valeur du state correspond à l'id du bouton, le bouton passe en inactif*/}
-              <Button disabled={this.state.disabled === "1"} id="1" className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 15 })}
-              >
-                15 jours
-              </Button>
-            </Col>
-            <Col xs="4" sm="4" md="4">
-              <Button disabled={this.state.disabled === "2"} id="2"
+              <Button
+                disabled={button.id === disabled}
+                id={button.id}
                 className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 30 })}
+                onClick={() => this.datesFiltred(button.when)}
+                color="secondary"
+                size="lg"
+                block
               >
-                1 mois
+                {button.name}
               </Button>
             </Col>
-            <Col xs="4" sm="4" md="4">
-              <Button disabled={this.state.disabled === "3"} id="3"
-                className="buttonDates"
-                onClick={() => this.props.updateFilter({ when: 90 })}
-              >
-                3 mois
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }
