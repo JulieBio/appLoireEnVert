@@ -20,7 +20,7 @@ class EventList extends Component {
 
   //Lisa : on renvoie de nouveaux props quand on appuie sur les boutons de filtre jours
   componentWillReceiveProps(newprops) {
-    console.log("newprops",newprops)
+    console.log("newprops", newprops);
     if (this.props.filterEvents !== newprops.filterEvents)
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
@@ -42,49 +42,46 @@ class EventList extends Component {
             {/* Julie : récupération des évenements */}
 
             {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
-
+            <Row>
+              <p className="phraseResultats">
+                {this.props.filterEvents.who !== null &&
+                this.props.filterEvents.who !== "%%" ? (
+                  <Button
+                    className="close-button"
+                    aria-label="Close alert"
+                    type="button"
+                    data-close
+                    onClick={() => this.cancelFilter("who")}
+                  >
+                    {this.props.filterEvents.who}{" "}
+                    <span className="crossClose" aria-hidden="true">
+                      &times;
+                    </span>
+                  </Button>
+                ) : (
+                  ""
+                )}{" "}
+                {this.props.filterEvents.where !== null &&
+                this.props.filterEvents.where !== "%%" ? (
+                  <Button
+                    className="close-button"
+                    aria-label="Close alert"
+                    type="button"
+                    data-close
+                    onClick={() => this.cancelFilter("where")}
+                  >
+                    {this.props.filterEvents.where}{" "}
+                    <span className="crossClose" aria-hidden="true">
+                      &times;
+                    </span>
+                  </Button>
+                ) : (
+                  ""
+                )}
+              </p>
+            </Row>
             {this.props.activeEvents.events.length > 0 ? (
               <div>
-                <Row>
-                  <p className="phraseResultats">
-                    {this.props.filterEvents.who !== null &&
-                    this.props.filterEvents.who !== "%%" ? (
-                      <Button
-                        className="close-button"
-                        aria-label="Close alert"
-                        type="button"
-                        data-close
-                        onClick={() => this.cancelFilter("who")}
-                      >
-                        {this.props.filterEvents.who}{" "}
-                        <span className="crossClose" aria-hidden="true">
-                          &times;
-                        </span>
-                      </Button>
-                    ) : (
-                      ""
-                    )}{" "}
-                    {this.props.filterEvents.where !== null &&
-                    this.props.filterEvents.where !== "%%" ? (
-                      <Button
-                        className="close-button"
-                        aria-label="Close alert"
-                        type="button"
-                        data-close
-                        onClick={() => this.cancelFilter("where")}
-                      >
-                        {this.props.filterEvents.where}{" "}
-                        <span className="crossClose" aria-hidden="true">
-                          &times;
-                        </span>
-                      </Button>
-                    ) : (
-                      ""
-                    )}
-                  </p>
-                </Row>
-                <p />
-
                 <Row>
                   {this.props.activeEvents.events.map((event, index) => (
                     <Col xs="12" sm="12" md="6">
