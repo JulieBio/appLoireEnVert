@@ -88,6 +88,8 @@ class MapPage extends Component {
     );
   }
 }
+
+
 const mapStateToProps = ({ activeEvents, filterEvents }) => {
   console.log("store", { activeEvents, filterEvents });
   return { activeEvents, filterEvents };
