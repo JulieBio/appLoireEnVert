@@ -20,6 +20,7 @@ class EventList extends Component {
 
   //Lisa : on renvoie de nouveaux props quand on appuie sur les boutons de filtre jours
   componentWillReceiveProps(newprops) {
+    console.log("newprops",newprops)
     if (this.props.filterEvents !== newprops.filterEvents)
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
