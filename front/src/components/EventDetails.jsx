@@ -73,9 +73,9 @@ class EventDetails extends Component {
         place: result.data.location_address,
         city: result.data.location_town,
         description: result.data.post_content,
-        free: result.data.event_rsvp
-        lat: result.data.lat,
-        lng: result.data.lng
+        free: result.data.event_rsvp,
+        lat: result.data.location_latitude,
+        lng: result.data.location_longitude
       });
     });
   }
@@ -123,7 +123,7 @@ class EventDetails extends Component {
                     <p className="place-eventDetails">{this.state.place}</p>
                     <p className="city-eventDetails">{this.state.city}</p>
                     <CardText className="description-event">
-                      {this.state.description}
+                      <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
                     </CardText>
 
                     <div>
