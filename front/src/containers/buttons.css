@@ -5,11 +5,12 @@
   width: 100%;
   box-shadow: 0 0 4px 0 #9e9e9e !important;
   font-family: "Patrick Hand", Arial;
-  font-size: 1.3em !important;
+  font-size: 5vmin !important;
   text-align: center !important;
+  padding: 2vmin 0 2vmin 0;
 }
 
 .blockButtons {
-  padding: 15px 0 15px 0;
+  padding: 5vmin 0 5vmin 0;
   text-align: center;
 }
