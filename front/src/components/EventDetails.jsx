@@ -60,7 +60,7 @@ class EventDetails extends Component {
     axios.get(`/event/${this.id}`).then(result => {
       console.log(result.data);
       this.setState({
-        //image: result.data.image,
+        image: result.data.image,
         name: result.data.event_name,
         //type: result.data.type,
         //who: result.data.who,
