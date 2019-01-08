@@ -37,6 +37,7 @@ app.post("/event", (req, res) => {
   //Marion: si filtre where et où sont sélectionnés,...
   //Julie Lisa : filtre event_date pour recupérer la date courante + interval choisi avec "when"
   // Monica: J'use LIKE comme *, besoin d'utiliser tous les valeurs dans event_where, pareil pour who
+  // Monica: Modification de event_date_start >= now(), les events s'affichent bien à partir de NOW
   if (req.body.where) {
     query +=
       " WHERE event_where LIKE ? AND who LIKE ? "
@@ -47,7 +48,7 @@ app.post("/event", (req, res) => {
     queryParams.push(req.body.when);
   }
   //fonction qui permet de garder le tri des endroits et passer le filtre who//
-
+  // Selon Greg ce code est mort, vérifier "else if"
   else if (req.body.where) {
    query += " ";
     queryParams.push(req.body.who)
