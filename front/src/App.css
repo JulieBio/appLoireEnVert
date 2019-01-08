@@ -145,12 +145,12 @@ a {
 /* Julie : NavBar, et tout ce qui en dépend */
 
 .navbar {
+  z-index: 99999;
   background-color: #b6543a;
   position: absolute;
   overflow: hidden;
   bottom: 0;
   width: 100%;
-  position: fixed;
   padding: 0.8rem 1rem !important;
 }
 .icon{
@@ -248,15 +248,17 @@ a {
   text-align: center;
 }
 
-.map {
-  height: 65vh;
-  width: 100%;
-}
-
 .phraseResultats {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: #4b4b4b;
   margin-left: 10vmin;
+}
+
+/* Map */
+
+.map {
+  height: 64vh;
+  width: 100%;
 }
