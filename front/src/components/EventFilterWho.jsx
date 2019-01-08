@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
-import "./EventFilterWho.css";
-import "./EventFilterWhere.css";
 import famille from "../assets/famille.png";
 import toutPublic from "../assets/tout-public.png";
 import enfants from "../assets/enfants6-12-ans.png";
 import handicap from "../assets/handicap.png";
 import HeadNoBack from "./headNoBack";
+import "./EventFilterWhereWho.css";
 
 const styles = {
   buttonFilter: { alignItems: "center", display: "flex" }
@@ -66,7 +65,7 @@ class EventFilterWho extends Component {
             {this.state.buttonList.map(button => (
               <Col xs="12" sm="12" md="12">
                 <Button
-                  className="buttonFilterWho"
+                  className="buttonFilterWhoWhere"
                   onClick={() => this.eventsFiltred(button.filter)}
                   color="secondary"
                   size="lg"
