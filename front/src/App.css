@@ -249,10 +249,13 @@ a {
 }
 
 .map {
-  height: 65vh;
+  height: 60vh;
   width: 100%;
 }
 
+/* .containerMap{
+  margin-bottom: -50hmin;
+} */
 .phraseResultats {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
