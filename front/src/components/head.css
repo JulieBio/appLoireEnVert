@@ -6,14 +6,23 @@
   max-height: 25vmin;
   background-color: transparent;
   font-family: "Patrick Hand", Arial, cursive;
-  font-size: 5vmin;
+  font-size: 4.2vmin;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 15px;
+  padding-top: 15px;
   text-align: center;
   margin: 0 auto;
+  justify-content: center;
+}
+
+.headerRow {
+  justify-content: center;
 }
 
 .headerLogo {
-  max-width: 20vmin;
+  max-width: 17vmin;
+}
+
+.headerPhrase {
+  padding: 5px 0 0;
 }

@@ -8,11 +8,11 @@ import famille from "../assets/famille.png";
 import toutPublic from "../assets/tout-public.png";
 import enfants from "../assets/enfants6-12-ans.png";
 import handicap from "../assets/handicap.png";
+import HeadNoBack from "./headNoBack";
 
 const styles = {
   buttonFilter: { alignItems: "center", display: "flex" }
 };
-
 
 class EventFilterWho extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class EventFilterWho extends Component {
       buttonList: [
         {
           name: "Tout Public",
-          filter :"%%",
+          filter: "%%",
           image: toutPublic
         },
         {
@@ -39,55 +39,57 @@ class EventFilterWho extends Component {
           name: "En situation de handicap",
           filter: "En situation de handicap",
           image: handicap
-        },
+        }
       ]
     };
-  
+
     this.id = this.props.match.params.id;
   }
 
- 
   eventsFiltred = who => {
     this.props.updateFilter({ who: who });
     this.props.history.push("/events");
   };
- 
 
-    
   render() {
-    
     return (
-      <Container className="buttonsContainer">
-        <Row> 
-          <Col xl="12" sm="12" md="12" className="titleWhoWhere">
-          Pour qui ?
-          </Col>
-        </Row>
-     
-        <Row>
-          {this.state.buttonList.map(button => (
-            <Col  xs="12" sm="12" md="12">
-              <Button
-                className="buttonFilterWho"
-                onClick={() => this.eventsFiltred(button.filter)}
-                color="secondary"
-                size="lg"
-                block>
-                <Container>
-                  <Row>
-                    <Col xs="3">
-                      <img src={button.image} alt="button filter" />
-                    </Col>
-                    <Col xs="9" style={styles.buttonFilter}>
-                      <p className="titleFilter">{button.name.toUpperCase()}</p>
-                    </Col>
-                  </Row>
-                </Container>
-              </Button>
+      <div>
+        <HeadNoBack />
+        <Container className="buttonsContainer">
+          <Row>
+            <Col xl="12" sm="12" md="12" className="titleWhoWhere">
+              Pour qui ?
             </Col>
-          ))}
-        </Row>
-      </Container>
+          </Row>
+
+          <Row>
+            {this.state.buttonList.map(button => (
+              <Col xs="12" sm="12" md="12">
+                <Button
+                  className="buttonFilterWho"
+                  onClick={() => this.eventsFiltred(button.filter)}
+                  color="secondary"
+                  size="lg"
+                  block
+                >
+                  <Container>
+                    <Row>
+                      <Col xs="3">
+                        <img src={button.image} alt="button filter" />
+                      </Col>
+                      <Col xs="9" style={styles.buttonFilter}>
+                        <p className="titleFilter">
+                          {button.name.toUpperCase()}
+                        </p>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Button>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
