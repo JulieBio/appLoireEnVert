@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Button, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { updateFilter } from "../actions/index";
-import "./EventFilterWhere.css";
 import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 import HeadNoBack from "./headNoBack";
 import toutLieux from "../assets/allplaces.jpeg";
+import "./EventFilterWhereWho.css";
 
 //styles pour les buttons
 const styles = {
@@ -59,10 +59,10 @@ class EventFilterWhere extends Component {
     return (
       <div>
         <HeadNoBack />
-        <Container className="containerOu">
+        <Container className="buttonsContainer">
           <Row>
-            <Col xs="12" sm="12" md="12">
-              <h1 className="titleWhoWhere">Où aller ?</h1>
+            <Col xs="12" sm="12" md="12" className="titleWhoWhere">
+              Où aller ?
             </Col>
           </Row>
 
@@ -70,7 +70,7 @@ class EventFilterWhere extends Component {
             {this.state.buttonList.map(button => (
               <Col xs="12" sm="12" md="12">
                 <Button
-                  className="buttonFilterMonica"
+                  className="buttonFilterWhoWhere"
                   onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred
                   color="secondary"
                   size="lg"
