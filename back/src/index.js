@@ -50,13 +50,13 @@ app.post("/event", (req, res) => {
   //fonction qui permet de garder le tri des endroits et passer le filtre who//
   // Selon Greg ce code est mort, vérifier "else if"
   else if (req.body.where) {
-   query += " ";
-    queryParams.push(req.body.who)
+    query += " ";
+    queryParams.push(req.body.who);
   }
-  console.log(query)
+  console.log(query);
   // ...connection à la base de données, et sélection des évènements filtrés avec le filtre where et who
   connection.query(query, queryParams, (err, results) => {
-    // console.log(err, results);
+    console.log(err, results);
     if (err) {
       // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
       res.status(500).send(err);
