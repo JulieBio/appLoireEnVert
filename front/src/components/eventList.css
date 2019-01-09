@@ -16,6 +16,17 @@
   line-height: 80%;
 }
 
+.eventTitle {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #b6543a;
+  margin-top: -25px;
+  line-height: normal;
+  height: 54px;
+ }
+
+
 .itemEvent {
   font-family: "Patrick Hand";
   font-size: 1em;
@@ -29,6 +40,7 @@
   bottom: 0;
 }
 
+
 .card {
   border: none !important;
 }
@@ -37,6 +49,7 @@
   margin-bottom: 15px;
   border-radius: 0 !important;
   box-shadow: 0 0 4px 0 #9e9e9e;
+
 }
 
 .cardeImage {
@@ -44,6 +57,7 @@
   width: 100%;
   height: 170px;
   object-fit: cover;
+  margin-bottom: 12px;
 }
 
 .cardContent {
@@ -57,6 +71,7 @@
 
 .typeEvent {
   font-size: 1.3em;
+  margin-top: 5px;
 }
 
 .exposition,
@@ -126,19 +141,29 @@
 
 /*CSS pour close chips*/
 
-.close-button{
+.close-button {
   border-radius: 3vmin;
   font-weight: bold;
-  background-color:#707173 !important;
+  background-color: #707173 !important;
   padding-top: 2px;
   padding-bottom: 2px;
+  margin-right: 2px;
 }
 
-.crossClose{
+.crossClose {
   background-color: #96969a;
   margin-left: 2vmin;
   padding-left: 1vmin;
   padding-right: 1vmin;
   border-radius: 50%;
-  border:0px;
+  border: 0px;
+}
+
+.phraseResultats {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4b4b4b;
+  padding-left: 15px;
+  margin-bottom: 15px;
 }

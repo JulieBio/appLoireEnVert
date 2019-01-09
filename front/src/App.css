@@ -107,14 +107,12 @@ a {
   padding: 2vmin 0 0 0;
 }
 
-
 /*Marion: pour rendre bouton actif*/
 
 .toggled {
-	background-color: #2f70e1;
-	color: #fff;
+  background-color: #2f70e1;
+  color: #fff;
 }
-
 
 /* Julie : Bouton pour relancer la recherche dans eventlist */
 
@@ -141,19 +139,18 @@ a {
   color: #fff !important;
 }
 
-
 /* Julie : NavBar, et tout ce qui en dépend */
 
 .navbar {
   z-index: 99999;
   background-color: #b6543a;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
-  bottom: 0;
+  bottom: 0 !important;
   width: 100%;
   padding: 0.8rem 1rem !important;
 }
-.icon{
+.icon {
   padding-left: 10%;
 }
 .menuB {
@@ -168,7 +165,6 @@ a {
 .menuB a:active {
   color: #4b4b4b !important;
 }
-
 
 .menuBurger {
   margin-top: 90px;
@@ -188,8 +184,8 @@ a {
   height: 12, 5vh;
 }
 
-.toutQuiSommesNous {
-  margin-top: 20px;
+.colQuiSommesNous {
+  padding: 0;
 }
 .quiSommesNous {
   margin-top: 30px;
@@ -223,6 +219,11 @@ a {
   font-family: "Questrial", Arial, sans-serif;
   color: #4b4b4b !important;
 }
+
+.cardMenu {
+  border-radius: 0;
+}
+
 .partenaires .row {
   display: flex;
   justify-content: center;
@@ -232,7 +233,6 @@ a {
   margin-top: 30px;
 }
 
-
 /* Nadim: pour noEvent  */
 
 .cardnoEvent {
@@ -240,20 +240,13 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  border-radius: 0;
 }
 .titreNoevent {
   font-family: "Questrial", Arial, sans-serif;
   color: #b6543a;
   padding: 20px;
   text-align: center;
-}
-
-.phraseResultats {
-  font-family: "Questrial", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1em;
-  color: #4b4b4b;
-  margin-left: 10vmin;
 }
 
 /* Map */
