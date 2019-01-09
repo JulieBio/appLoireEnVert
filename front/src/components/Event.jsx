@@ -5,6 +5,7 @@ import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
+import LinesEllipsis from "react-lines-ellipsis";
 import "./eventList.css";
 
 const styleEuro = {

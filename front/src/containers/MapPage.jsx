@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Container } from "reactstrap";
+import { Container } from "reactstrap";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
@@ -36,7 +36,6 @@ class MapPage extends Component {
     // this.id = this.props.match.params.id;
   }
 
-
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
       console.log("position:", position);
@@ -56,7 +55,6 @@ class MapPage extends Component {
       this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
   }
 
-
   render() {
     console.log("eventFiltré", this.props.filterEvents);
 
@@ -65,9 +63,10 @@ class MapPage extends Component {
     return (
       <div>
         <HeadNoBack />
-        <Buttons />
+        <Container className="container-eventDetails">
+          <Buttons />
 
-        {/* <Container className="containerMap"> */}
+          {/* <Container className="containerMap"> */}
 
           <Map className="map" center={position} zoom={this.state.zoom}>
             <TileLayer
@@ -89,15 +88,13 @@ class MapPage extends Component {
                 );
               else return "";
             })}
-
           </Map>
-        {/* </Container> */}
-
+          {/* </Container> */}
+        </Container>
       </div>
     );
   }
 }
-
 
 const mapStateToProps = ({ activeEvents, filterEvents }) => {
   console.log("store", { activeEvents, filterEvents });
