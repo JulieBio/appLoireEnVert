@@ -148,7 +148,7 @@ a {
   background-color: #b6543a;
   position: absolute;
   overflow: hidden;
-  bottom: 0;
+  bottom: 0 !important;
   width: 100%;
   position: fixed;
   padding: 0.8rem 1rem !important;

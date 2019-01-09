@@ -36,8 +36,10 @@ const Event = ({ event }) => (
             className="cardeImage"
             /*  width="100%" */
           />
+          <div className="eventTitleParent">
+          <CardSubtitle className="eventTitle">{event.name}</CardSubtitle>
+          </div>
           <CardBody className="cardContent">
-            <CardSubtitle className="nameEvent">{event.name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
               <p className="typeEvent">{event.type} </p>
             </CardSubtitle>

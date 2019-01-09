@@ -14,7 +14,32 @@
   color: #b6543a;
   height: 50px;
   line-height: 80%;
+  text-overflow: ellipsis;
 }
+
+.eventTitleParent{
+  width: 300px;
+
+}
+
+.eventTitle {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #b6543a;
+  display: -webkit-box; 
+  max-width: 100%;
+  height: 48px;
+  margin-top: 30px; 
+  margin: 0 auto;
+  font-size: 24px; 
+  line-height: 1;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+   text-overflow: ellipsis;
+}
+
 
 .itemEvent {
   font-family: "Patrick Hand";
@@ -44,6 +69,7 @@
   width: 100%;
   height: 170px;
   object-fit: cover;
+  margin-bottom: 12px;
 }
 
 .cardContent {
