@@ -35,50 +35,48 @@ class EventList extends Component {
     return (
       <div>
         <HeaderNoBack />
-        <Container className="eventList">
+        <Container className="container-eventDetails">
           <div>
             <Buttons />
 
             {/* Julie : récupération des évenements */}
 
             {/* Nadim: une ternaire qui affiche les events si le tableau est rempli sinon un message s'il n'ya pas d'event*/}
-            <Row>
-              <p className="phraseResultats">
-                {this.props.filterEvents.who !== null &&
-                this.props.filterEvents.who !== "%%" ? (
-                  <Button
-                    className="close-button"
-                    aria-label="Close alert"
-                    type="button"
-                    data-close
-                    onClick={() => this.cancelFilter("who")}
-                  >
-                    {this.props.filterEvents.who}{" "}
-                    <span className="crossClose" aria-hidden="true">
-                      &times;
-                    </span>
-                  </Button>
-                ) : (
-                  ""
-                )}{" "}
-                {this.props.filterEvents.where !== null &&
-                this.props.filterEvents.where !== "%%" ? (
-                  <Button
-                    className="close-button"
-                    aria-label="Close alert"
-                    type="button"
-                    data-close
-                    onClick={() => this.cancelFilter("where")}
-                  >
-                    {this.props.filterEvents.where}{" "}
-                    <span className="crossClose" aria-hidden="true">
-                      &times;
-                    </span>
-                  </Button>
-                ) : (
-                  ""
-                )}
-              </p>
+            <Row className="phraseResultats">
+              {this.props.filterEvents.who !== null &&
+              this.props.filterEvents.who !== "%%" ? (
+                <Button
+                  className="close-button"
+                  aria-label="Close alert"
+                  type="button"
+                  data-close
+                  onClick={() => this.cancelFilter("who")}
+                >
+                  {this.props.filterEvents.who}{" "}
+                  <span className="crossClose" aria-hidden="true">
+                    &times;
+                  </span>
+                </Button>
+              ) : (
+                ""
+              )}{" "}
+              {this.props.filterEvents.where !== null &&
+              this.props.filterEvents.where !== "%%" ? (
+                <Button
+                  className="close-button"
+                  aria-label="Close alert"
+                  type="button"
+                  data-close
+                  onClick={() => this.cancelFilter("where")}
+                >
+                  {this.props.filterEvents.where}{" "}
+                  <span className="crossClose" aria-hidden="true">
+                    &times;
+                  </span>
+                </Button>
+              ) : (
+                ""
+              )}
             </Row>
             {this.props.activeEvents.events.length > 0 ? (
               <div>

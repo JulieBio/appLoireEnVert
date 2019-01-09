@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import EventDetails from "./components/EventDetails";
-import Head from "./components/head";
 import EventFilterWhere from "./components/EventFilterWhere.jsx";
 import EventFilterWho from "./components/EventFilterWho.jsx";
 import EventList from "./containers/EventList";
