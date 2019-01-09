@@ -1,6 +1,6 @@
 .scroll {
   position: fixed;
-  bottom: 10vh;
+  bottom: 15vh;
   right: 2vh;
   padding-top: 4px;
   margin: 5px;
@@ -8,7 +8,6 @@
   background-color: #b6543a;
   height: 6vh;
   width: 6vh;
-  border-radius: 5px;
   border: none;
   z-index: 2;
   color: white;

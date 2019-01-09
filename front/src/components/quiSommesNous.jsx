@@ -34,12 +34,12 @@ class QuiSommesNous extends Component {
     return (
       <div>
         <HeadBack />
-        <Container className="toutQuiSommesNous">
-          <Col>
+        <Container className="container-eventDetails">
+          <Col className="colQuiSommesNous">
             <div>
               <div style={styleBack.goBack} onClick={this.goBack} />
             </div>
-            <Card>
+            <Card className="cardMenu">
               <div>
                 <h2 className="quiSommesNous">Qui sommes-nous ?</h2>
 

@@ -42,11 +42,11 @@ class Partenaires extends Component {
       <div>
         <HeadBack />
         <Container className="container-eventDetails">
-          <Col>
+          <Col className="colQuiSommesNous">
             <div>
               <div style={styleBack.goBack} onClick={this.goBack} />
             </div>
-            <Card>
+            <Card className="cardMenu">
               <div className="partenaires">
                 <h2>Partenaires</h2>
 
