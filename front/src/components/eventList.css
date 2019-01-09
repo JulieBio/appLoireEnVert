@@ -11,6 +11,11 @@
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1.6em;
+
+  text-overflow: ellipsis;
+  text-overflow: "…";
+  text-overflow: fade(5px);
+
   color: #b6543a;
   height: 50px;
   line-height: 80%;

@@ -24,6 +24,7 @@ const styleEuro = {
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
+
 const Event = ({ event }) => (
   <Container>
     <div className="cardAccueil">
