@@ -5,6 +5,7 @@ import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
+import LinesEllipsis from 'react-lines-ellipsis'
 import "./eventList.css";
 
 const styleEuro = {
@@ -24,7 +25,9 @@ const styleEuro = {
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
+
 const Event = ({ event }) => (
+  
   <Container>
     <div className="cardAccueil">
       <NavLink to={`/event/${event.id}`} className="lienAccueil">
@@ -36,9 +39,11 @@ const Event = ({ event }) => (
             className="cardeImage"
             /*  width="100%" */
           />
-          <div className="eventTitleParent">
-          <CardSubtitle className="eventTitle">{event.name}</CardSubtitle>
-          </div>
+          <LinesEllipsis
+          className="eventTitle"
+          text= {event.name}
+          maxLine= "2"
+          basedOn='letters' />
           <CardBody className="cardContent">
             <CardSubtitle className="itemEvent">
               <p className="typeEvent">{event.type} </p>
