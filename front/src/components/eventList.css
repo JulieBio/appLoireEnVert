@@ -126,19 +126,29 @@
 
 /*CSS pour close chips*/
 
-.close-button{
+.close-button {
   border-radius: 3vmin;
   font-weight: bold;
-  background-color:#707173 !important;
+  background-color: #707173 !important;
   padding-top: 2px;
   padding-bottom: 2px;
+  margin-right: 2px;
 }
 
-.crossClose{
+.crossClose {
   background-color: #96969a;
   margin-left: 2vmin;
   padding-left: 1vmin;
   padding-right: 1vmin;
   border-radius: 50%;
-  border:0px;
+  border: 0px;
+}
+
+.phraseResultats {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4b4b4b;
+  padding-left: 15px;
+  margin-bottom: 15px;
 }
