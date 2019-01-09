@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Container } from "reactstrap";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { updateEventsList } from "../actions/index";
 import Event from "../components/Event";
 import { fetchEvents } from "../actions/index";
 import L from "leaflet";
 import Buttons from "./Buttons";
-import "../App.css";
+// import "../App.css";
 import HeadNoBack from "../components/headNoBack";
 
 var myIcon = L.icon({
@@ -34,6 +35,7 @@ class MapPage extends Component {
     };
     // this.id = this.props.match.params.id;
   }
+
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
       console.log("position:", position);
@@ -61,33 +63,39 @@ class MapPage extends Component {
     return (
       <div>
         <HeadNoBack />
-        <Buttons />
-        <Map className="map" center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+        <Container className="container-eventDetails">
+          <Buttons />
 
-          <Marker position={position} icon={myIcon}>
-            <Popup>vous etes ici</Popup>
-          </Marker>
+          {/* <Container className="containerMap"> */}
 
-          {this.props.activeEvents.events.map((event, index) => {
-            if (event.lat && event.lng)
-              return (
-                <Marker position={[event.lat, event.lng]} icon={iconGreen}>
-                  <Popup>
-                    <Event key={`event${index}`} event={event} />
-                  </Popup>
-                </Marker>
-              );
-            else return "";
-          })}
-        </Map>
+          <Map className="map" center={position} zoom={this.state.zoom}>
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position} icon={myIcon}>
+              <Popup> vous êtes ici </Popup>
+            </Marker>
+
+            {this.props.activeEvents.events.map((event, index) => {
+              if (event.lat && event.lng)
+                return (
+                  <Marker position={[event.lat, event.lng]} icon={iconGreen}>
+                    <Popup>
+                      <Event key={`event${index}`} event={event} />
+                    </Popup>
+                  </Marker>
+                );
+              else return "";
+            })}
+          </Map>
+          {/* </Container> */}
+        </Container>
       </div>
     );
   }
 }
+
 const mapStateToProps = ({ activeEvents, filterEvents }) => {
   console.log("store", { activeEvents, filterEvents });
   return { activeEvents, filterEvents };
