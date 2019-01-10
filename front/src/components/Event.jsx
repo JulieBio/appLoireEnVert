@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
@@ -24,6 +23,7 @@ const styleEuro = {
 // Lisa : affichage des dates en fr avec momentjs
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
+
 
 const Event = ({ event }) => (
   <div className="cardAccueil">

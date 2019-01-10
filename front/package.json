@@ -20,7 +20,8 @@
     "react-scripts": "^2.1.2",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "text-ellipsis": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
