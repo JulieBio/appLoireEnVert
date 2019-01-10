@@ -21,7 +21,7 @@ class EventFilterWhere extends Component {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
-          name: "Tout Lieux",
+          name: "Toutes Zones",
           filter: "%%",
           image: toutLieux
         },
