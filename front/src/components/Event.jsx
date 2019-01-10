@@ -42,8 +42,6 @@ const Event = ({ event }) => (
             maxLine="2"
             basedOn="letters"
           />
-          <CardBody className="cardContent">
-            <CardSubtitle className="nameEvent">{event.event_name}</CardSubtitle>
             <CardSubtitle className="itemEvent">
               <p className="typeEvent">{event.type} </p>
             </CardSubtitle>
@@ -73,7 +71,6 @@ const Event = ({ event }) => (
         </Card>
       </NavLink>
     </div>
-  </Container>
 );
 
 export default Event;
