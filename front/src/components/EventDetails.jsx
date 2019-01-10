@@ -86,8 +86,8 @@ class EventDetails extends Component {
   render() {
     return (
       <div>
-        <HeadBack />
-        <Container className="container-eventDetails">
+        <Container className="mainContainer">
+          <HeadBack />
           <Row>
             <Col>
               <div>
