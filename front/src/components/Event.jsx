@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
@@ -25,16 +24,16 @@ const styleEuro = {
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
+
 const Event = ({ event }) => (
   <div className="cardAccueil">
-    <NavLink to={`/event/${event.id}`} className="lienAccueil">
+    <NavLink to={`/event/${event.id}`}>
       <Card>
         <CardImg
           top
           src={event.image}
           alt="Card image cap"
-          className="cardeImage"
-          /*  width="100%" */
+          className="cardImage"
         />
         <CardBody className="cardContent">
           <LinesEllipsis

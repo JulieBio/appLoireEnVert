@@ -1,31 +1,32 @@
-.eventList {
+/* .eventList {
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-}
+} */
 
 /*composant Event*/
-
+/* titre card detail */
 .nameEvent {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1.6em;
   color: #b6543a;
-  height: 50px;
-  line-height: 80%;
+  height: 54px;
+  line-height: normal;
+  display: inline-block;
+  padding-bottom: 90px;
 }
-
+/* Nadim : titre liste Events */
 .eventTitle {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1.6em;
   color: #b6543a;
-  margin-top: -25px;
+  margin-top: -18px;
   line-height: normal;
   height: 54px;
- }
-
+}
 
 .itemEvent {
   font-family: "Patrick Hand";
@@ -40,7 +41,6 @@
   bottom: 0;
 }
 
-
 .card {
   border: none !important;
 }
@@ -49,12 +49,11 @@
   margin-bottom: 15px;
   border-radius: 0 !important;
   box-shadow: 0 0 4px 0 #9e9e9e;
-
 }
 
-.cardeImage {
+.cardImage {
   border-radius: 0 !important;
-  width: 100%;
+  width: 100% !important;
   height: 170px;
   object-fit: cover;
   margin-bottom: 12px;
@@ -146,8 +145,9 @@
   font-weight: bold;
   background-color: #707173 !important;
   padding-top: 2px;
-  padding-bottom: 2px;
+  margin-bottom: 5px;
   margin-right: 2px;
+
 }
 
 .crossClose {
@@ -157,6 +157,7 @@
   padding-right: 1vmin;
   border-radius: 50%;
   border: 0px;
+
 }
 
 .phraseResultats {
@@ -166,4 +167,45 @@
   color: #4b4b4b;
   padding-left: 15px;
   margin-bottom: 15px;
+}
+
+/* Nadim: pour noEvent  */
+
+.cardnoEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 0;
+}
+.titreNoevent {
+  font-family: "Questrial", Arial, sans-serif;
+  color: #b6543a;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Julie : Bouton pour relancer la recherche dans eventlist */
+
+.buttonSearch {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-family: "Questrial", Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff !important;
+  background-color: #b6543a;
+}
+.buttonSearch a {
+  color: #fff !important;
+}
+.buttonSearch:hover {
+  background-color: #b6543a;
+}
+.buttonSearch a:hover {
+  color: #fff !important;
+}
+.buttonSearch a:active {
+  color: #fff !important;
 }

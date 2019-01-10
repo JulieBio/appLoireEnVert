@@ -6,23 +6,37 @@
   max-height: 25vmin;
   background-color: transparent;
   font-family: "Patrick Hand", Arial, cursive;
-  font-size: 4.2vmin;
+  font-size: 5vmin;
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 15px;
   text-align: center;
-  margin: 0 auto;
-  justify-content: center;
+  padding-bottom: 15px;
 }
 
 .headerRow {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .headerLogo {
-  max-width: 17vmin;
+  float: left;
+  padding-left: 15px;
+}
+
+.headerLogoBack {
+  float: left;
+  padding-left: 13vmin;
+}
+
+.headerLogo img {
+  width: 17vmin;
+}
+
+.headerLogoBack img {
+  width: 17vmin;
 }
 
 .headerPhrase {
-  padding: 5px 0 0;
+  float: right;
+  padding-right: 15px;
 }

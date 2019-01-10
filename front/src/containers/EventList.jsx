@@ -34,9 +34,9 @@ class EventList extends Component {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
     return (
       <div>
-        <HeaderNoBack />
-        <Container className="container-eventDetails">
+        <Container className="mainContainer">
           <div>
+            <HeaderNoBack />
             <Buttons />
 
             {/* Julie : récupération des évenements */}
