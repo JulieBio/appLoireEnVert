@@ -25,12 +25,12 @@ class Buttons extends React.Component {
           id: "1"
         },
         {
-          name: "30 jours",
+          name: "1 mois",
           when: "30",
           id: "2"
         },
         {
-          name: "90 jours",
+          name: "3 mois",
           when: "90",
           id: "3"
         }
