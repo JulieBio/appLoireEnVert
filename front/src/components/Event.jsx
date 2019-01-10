@@ -27,14 +27,13 @@ moment.locale("fr", idLocale);
 
 const Event = ({ event }) => (
   <div className="cardAccueil">
-    <NavLink to={`/event/${event.id}`} className="lienAccueil">
+    <NavLink to={`/event/${event.id}`}>
       <Card>
         <CardImg
           top
           src={event.image}
           alt="Card image cap"
-          className="cardeImage"
-          /*  width="100%" */
+          className="cardImage"
         />
         <CardBody className="cardContent">
           <LinesEllipsis

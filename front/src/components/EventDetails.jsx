@@ -86,14 +86,14 @@ class EventDetails extends Component {
   render() {
     return (
       <div>
-        <HeadBack />
         <Container className="container-eventDetails">
+          <HeadBack />
           <Row>
             <Col>
               <div>
                 <div style={styleBack.goBack} onClick={this.goBack} />
               </div>
-              <Card>
+              <Card className="card-details">
                 <div>
                   <CardImg src={this.state.image} alt="image evenement" />
                   <CardBody>

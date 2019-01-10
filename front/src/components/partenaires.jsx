@@ -40,16 +40,15 @@ class Partenaires extends Component {
   render() {
     return (
       <div>
-        <HeadBack />
-        <Container className="container-eventDetails">
-          <Col className="colQuiSommesNous">
+        <Container className="mainContainer">
+          <HeadBack />
+          <Col className="colMenuPages">
             <div>
               <div style={styleBack.goBack} onClick={this.goBack} />
             </div>
-            <Card className="cardMenu">
-              <div className="partenaires">
+            <Card className="cardMenuPages">
+              <div className="contentMenuPages">
                 <h2>Partenaires</h2>
-
                 <div className="row">
                   <NavLink
                     classname="part col-xs-12 col-md-6 col-lg-4"
