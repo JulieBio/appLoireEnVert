@@ -36,7 +36,7 @@ class EventFilterWho extends Component {
         },
         {
           name: "En situation de handicap",
-          filter: "En situation de handicap",
+          filter: "Public en situation de handicap",
           image: handicap
         }
       ]

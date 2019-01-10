@@ -145,8 +145,9 @@
   font-weight: bold;
   background-color: #707173 !important;
   padding-top: 2px;
-  padding-bottom: 2px;
+  margin-bottom: 5px;
   margin-right: 2px;
+
 }
 
 .crossClose {
@@ -156,6 +157,7 @@
   padding-right: 1vmin;
   border-radius: 50%;
   border: 0px;
+
 }
 
 .phraseResultats {
