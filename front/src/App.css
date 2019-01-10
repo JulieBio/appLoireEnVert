@@ -14,10 +14,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.espace {
-  height: 90px;
-  width: 100%;
-}
 
 a {
   text-decoration: none !important;
@@ -29,18 +25,14 @@ a {
   min-width: 100vw;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-
-  /* box-sizing: border-box; */
 }
 
-/*composant EventDetails*/
-
-.container-eventDetails {
+.mainContainer {
   padding-top: 10px;
   min-height: 225vmin;
 }
+
+/*composant EventDetails*/
 
 .inscription-button {
   background-color: #58a728;
@@ -114,31 +106,6 @@ a {
   color: #fff;
 }
 
-/* Julie : Bouton pour relancer la recherche dans eventlist */
-
-.buttonSearch {
-  border: 0;
-  line-height: 2.5;
-  padding: 0 20px;
-  font-family: "Questrial", Arial, sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-  color: #fff !important;
-  background-color: #b6543a;
-}
-.buttonSearch a {
-  color: #fff !important;
-}
-.buttonSearch:hover {
-  background-color: #b6543a;
-}
-.buttonSearch a:hover {
-  color: #fff !important;
-}
-.buttonSearch a:active {
-  color: #fff !important;
-}
-
 /* Julie : NavBar, et tout ce qui en dépend */
 
 .navbar {
@@ -168,6 +135,8 @@ a {
 
 .menuBurger {
   margin-top: 90px;
+  margin-left: -15px;
+  margin-right: -15px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
@@ -184,10 +153,15 @@ a {
   height: 12, 5vh;
 }
 
-.colQuiSommesNous {
+.espace {
+  height: 90px;
+  width: 100%;
+}
+
+.colMenuPages {
   padding: 0;
 }
-.quiSommesNous {
+.contentMenuPages {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
@@ -203,50 +177,24 @@ a {
   margin-bottom: 50px;
 }
 
-.toutPartenaires {
-  margin-top: 20px;
-}
 .imgpart {
   display: flex;
   margin-top: 30px;
   margin: 0 auto;
   width: 150px;
 }
-.partenaires {
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
-  font-family: "Questrial", Arial, sans-serif;
-  color: #4b4b4b !important;
-}
 
-.cardMenu {
+.cardMenuPages {
   border-radius: 0;
 }
 
-.partenaires .row {
+.contentMenuPages .row {
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
 .part {
   margin-top: 30px;
-}
-
-/* Nadim: pour noEvent  */
-
-.cardnoEvent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  border-radius: 0;
-}
-.titreNoevent {
-  font-family: "Questrial", Arial, sans-serif;
-  color: #b6543a;
-  padding: 20px;
-  text-align: center;
 }
 
 /* Map */

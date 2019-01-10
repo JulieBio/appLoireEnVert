@@ -10,18 +10,15 @@ class HeadNoBack extends React.Component {
   render() {
     return (
       <div className="header">
-        <Container>
-          <Row className="headerRow">
-            <Col xs="3" sm="3" md="3">
-              <img src={Logo} alt="Logo Loire en vert" className="headerLogo" />
-            </Col>
-            <Col xs="1" sm="1" md="1" />
-            <Col xs="7" sm="7" md="7" className="headerPhrase">
-              Toutes les activités nature <br />
-              dans la Loire
-            </Col>
-          </Row>
-        </Container>
+        <Row className="headerRow">
+          <div className="headerLogo">
+            <img src={Logo} alt="Logo Loire en vert" />
+          </div>
+          <div className="headerPhrase">
+            Toutes les activités nature <br />
+            dans la Loire
+          </div>
+        </Row>
       </div>
     );
   }

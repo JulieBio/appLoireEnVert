@@ -53,8 +53,8 @@ class EventFilterWho extends Component {
   render() {
     return (
       <div>
-        <HeadNoBack />
-        <Container className="buttonsContainer">
+        <Container className="mainContainer">
+          <HeadNoBack />
           <Row>
             <Col xl="12" sm="12" md="12" className="titleWhoWhere">
               Pour qui ?
