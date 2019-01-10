@@ -93,7 +93,7 @@ class EventDetails extends Component {
               <div>
                 <div style={styleBack.goBack} onClick={this.goBack} />
               </div>
-              <Card>
+              <Card className="card-details">
                 <div>
                   <CardImg src={this.state.image} alt="image evenement" />
                   <CardBody>
