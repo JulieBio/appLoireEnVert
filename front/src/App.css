@@ -122,6 +122,7 @@ a {
 }
 .menuB {
   color: #4b4b4b !important;
+  width:100% !important;
 }
 .menuB a:link {
   color: #4b4b4b !important;
