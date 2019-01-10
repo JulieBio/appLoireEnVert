@@ -119,7 +119,12 @@ class EventDetails extends Component {
                       </p>
                     </CardSubtitle>
                     <p className="place-eventDetails">{this.state.place}</p>
-                    <p className="city-eventDetails">{this.state.city}</p>
+                    <p className="city-eventDetails">
+                    {this.state.city === "null" ? (
+                      <h1> </h1>
+                    ) : (
+                      <p> {this.state.city}</p>
+                    )}</p>
                     <CardText className="description-event">
                       {this.state.description}
                     </CardText>

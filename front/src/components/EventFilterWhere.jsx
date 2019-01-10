@@ -6,7 +6,7 @@ import forez from "../assets/forez.png";
 import roannais from "../assets/roannais.png";
 import stephanois from "../assets/stephanois.png";
 import HeadNoBack from "./headNoBack";
-import toutLieux from "../assets/allplaces.jpeg";
+import toutLieux from "../assets/loiretoutlieux.png";
 import "./EventFilterWhereWho.css";
 
 //styles pour les buttons
@@ -21,7 +21,7 @@ class EventFilterWhere extends Component {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
-          name: "Tout Lieux",
+          name: "Toutes Zones",
           filter: "%%",
           image: toutLieux
         },

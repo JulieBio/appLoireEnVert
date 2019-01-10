@@ -6,22 +6,24 @@
 } */
 
 /*composant Event*/
-
+/* titre card detail */
 .nameEvent {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1.6em;
   color: #b6543a;
-  height: 50px;
-  line-height: 80%;
+  height: 54px;
+  line-height: normal;
+  display: inline-block;
+  padding-bottom: 90px;
 }
-
+/* Nadim : titre liste Events */
 .eventTitle {
   font-family: "Questrial", Arial, sans-serif;
   font-weight: bold;
   font-size: 1.6em;
   color: #b6543a;
-  margin-top: -25px;
+  margin-top: -18px;
   line-height: normal;
   height: 54px;
 }
@@ -51,7 +53,7 @@
 
 .cardImage {
   border-radius: 0 !important;
-  width: 100%;
+  width: 100% !important;
   height: 170px;
   object-fit: cover;
   margin-bottom: 12px;
