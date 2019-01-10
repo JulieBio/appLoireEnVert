@@ -33,15 +33,15 @@ class QuiSommesNous extends Component {
   render() {
     return (
       <div>
-        <HeadBack />
-        <Container className="container-eventDetails">
-          <Col className="colQuiSommesNous">
+        <Container className="mainContainer">
+          <HeadBack />
+          <Col className="colMenuPages">
             <div>
               <div style={styleBack.goBack} onClick={this.goBack} />
             </div>
-            <Card className="cardMenu">
+            <Card className="cardMenuPages">
               <div>
-                <h2 className="quiSommesNous">Qui sommes-nous ?</h2>
+                <h2 className="contentMenuPages">Qui sommes-nous ?</h2>
 
                 <div className="texteQuiSommesNous">
                   <p>FNE Loire</p>

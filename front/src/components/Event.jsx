@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "reactstrap";
 import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
@@ -26,19 +25,22 @@ const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
 
-
-const Event = ({ event })  => (
-
-  <Container>
-    <div className="cardAccueil">
-      <NavLink to={`/event/${event.event_id}`} className="lienAccueil">
-        <Card>
-          <CardImg
-            top
-            src={event.image}
-            alt="Card image cap"
-            className="cardeImage"
-            /*  width="100%" */
+const Event = ({ event }) => (
+  <div className="cardAccueil">
+    <NavLink to={`/event/${event.event_id}`}>
+      <Card>
+        <CardImg
+          top
+          src={event.image}
+          alt="Card image cap"
+          className="cardImage"
+        />
+        <CardBody className="cardContent">
+          <LinesEllipsis
+            className="eventTitle"
+            text={event.name}
+            maxLine="2"
+            basedOn="letters"
           />
           <CardBody className="cardContent">
             <CardSubtitle className="nameEvent">{event.event_name}</CardSubtitle>

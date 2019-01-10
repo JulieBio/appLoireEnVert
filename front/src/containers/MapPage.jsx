@@ -62,8 +62,8 @@ class MapPage extends Component {
 
     return (
       <div>
-        <HeadNoBack />
         <Container className="container-eventDetails">
+          <HeadNoBack />
           <Buttons />
 
           {/* <Container className="containerMap"> */}

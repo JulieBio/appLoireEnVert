@@ -21,7 +21,7 @@ class EventFilterWhere extends Component {
       eventsFiltred: null, //state crée vider pour ensuite pusher sur lui les données.
       buttonList: [
         {
-          name: "Tout Lieux",
+          name: "Toutes Zones",
           filter: "%%",
           image: toutLieux
         },
@@ -58,8 +58,8 @@ class EventFilterWhere extends Component {
   render() {
     return (
       <div>
-        <HeadNoBack />
-        <Container className="buttonsContainer">
+        <Container className="mainContainer">
+          <HeadNoBack />
           <Row>
             <Col xs="12" sm="12" md="12" className="titleWhoWhere">
               Où aller ?

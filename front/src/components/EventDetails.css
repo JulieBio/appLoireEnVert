@@ -2,7 +2,8 @@
 
 .container-eventDetails {
   padding-top: 10px;
-  min-height: 290vmin;
+  /* min-height: 400vmin; */
+
 }
 
 .inscription-button {
@@ -13,6 +14,10 @@
   margin-left: 26%;
 }
 
+.card-details {
+  margin-bottom: 30vmin;
+
+}
 @media screen and (min-width: 576px) {
   .inscription-button {
     margin-left: 37%;
