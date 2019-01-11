@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build2cord": "react-scripts build && rm -rf cordova/www/* && mv build/* cordova/www && cd cordova && cordova run android"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,5 +44,6 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-  "proxy": "http://localhost:5000"
+  "proxy": "http://vps635285.ovh.net:5000",
+  "homepage": "./"
 }

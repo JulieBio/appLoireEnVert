@@ -10,6 +10,7 @@ import Buttons from "./Buttons";
 import ButtonToTop from "../components/buttonToTop";
 import "../App.css";
 import HeaderNoBack from "../components/headNoBack";
+import { Link } from "react-router-dom";
 
 class EventList extends Component {
   componentWillMount() {
@@ -94,7 +95,7 @@ class EventList extends Component {
                   <h2>Aucun événement ne correspond à votre recherche </h2>
                   <br />
                   <button type="button" className="buttonSearch">
-                    <a href="/"> Nouvelle recherche </a>
+                    <Link to="/"> Nouvelle recherche </Link>
                   </button>
                 </div>
               </Card>
