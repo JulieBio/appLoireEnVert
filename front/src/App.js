@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import EventDetails from "./components/EventDetails";
 import EventFilterWhere from "./components/EventFilterWhere.jsx";
 import EventFilterWho from "./components/EventFilterWho.jsx";
@@ -18,7 +18,7 @@ import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <div className="containerGeneral">
             <Switch>
@@ -36,7 +36,7 @@ class App extends Component {
           </div>
           <NavBar />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
