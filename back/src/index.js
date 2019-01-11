@@ -40,9 +40,12 @@ app.post("/event", (req, res) => {
   // Monica: Modification de event_date_start >= now(), les events s'affichent bien à partir de NOW
   if (req.body.where) {
     query +=
-      " WHERE location_town LIKE ? AND who LIKE ? "
+      /*" WHERE location_town LIKE ? AND who LIKE ? "
       +"AND event_start_date >= NOW()"
-      +"AND event_start_date < DATE_ADD(NOW(), INTERVAL ? DAY)";
+      +"AND event_start_date < DATE_ADD(NOW(), INTERVAL ? DAY)";*/
+      " WHERE event_where LIKE ? AND who LIKE ? "
+      +"AND event_date_start >= NOW()"
+      +"AND event_date_start  < DATE_ADD(NOW(), INTERVAL ? DAY)";
     queryParams.push(req.body.where);
     queryParams.push(req.body.who);
     queryParams.push(req.body.when);
@@ -70,9 +73,9 @@ app.post("/event", (req, res) => {
 // Marion : connection à la base de données, et sélection du détail de l'évènement
 app.get(`/event/:id`, (req, res) => {
   const id = req.params.id; // récupère id
-  //Marion, mémo : "SELECT * FROM wp_em_events INNER JOIN wp_em_locations ON wp_em_events.location_id = wp_em_locations.location_id WHERE event_id = ?"
+  //Marion, mémo : "SELECT * FROM wp_em_events INNER JOIN wp_em_locations ON wp_em_events.location_id = wp_em_locations.location_id WHERE event_id = ?",
   connection.query(
-    "SELECT * FROM wp_em_events INNER JOIN wp_em_locations ON wp_em_events.location_id = wp_em_locations.location_id WHERE event_id = ?",
+    "SELECT * FROM eventLoire WHERE id = ?",
     [id],
     (err, results) => {
       if (err) {

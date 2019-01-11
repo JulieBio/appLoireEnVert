@@ -27,7 +27,8 @@ moment.locale("fr", idLocale);
 
 const Event = ({ event }) => (
   <div className="cardAccueil">
-    <NavLink to={`/event/${event.event_id}`}>
+    {/*Mémo Marion : event_id*/}
+    <NavLink to={`/event/${event.id}`}>
       <Card>
         <CardImg
           top
@@ -46,6 +47,10 @@ const Event = ({ event }) => (
               <p className="typeEvent">{event.type} </p>
             </CardSubtitle>
             <CardSubtitle className="itemEvent">
+              {/*Mémo Marion : event.event_start_date
+                event.event_end_date
+                event_start_time
+                event_end_time*/}
               <p>
                 {moment(event.event_start_date).format("ll")} -{" "}
                 {moment(event.event_end_date).format("ll")}
