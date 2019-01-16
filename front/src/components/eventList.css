@@ -1,0 +1,211 @@
+/* .eventList {
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+} */
+
+/*composant Event*/
+/* titre card detail */
+.nameEvent {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #b6543a;
+  height: 54px;
+  line-height: normal;
+  display: inline-block;
+  padding-bottom: 90px;
+}
+/* Nadim : titre liste Events */
+.eventTitle {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #b6543a;
+  margin-top: -18px;
+  line-height: normal;
+  height: 54px;
+}
+
+.itemEvent {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  padding: 0 0 0 0;
+  margin-bottom: 0 !important;
+}
+
+.freeEvent {
+  width: 100%;
+  bottom: 0;
+}
+
+.card {
+  border: none !important;
+}
+
+.cardAccueil {
+  margin-bottom: 15px;
+  border-radius: 0 !important;
+  box-shadow: 0 0 4px 0 #9e9e9e;
+}
+
+.cardImage {
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: 170px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.cardContent {
+  height: 200px;
+}
+
+.cardIcones {
+  position: absolute;
+  bottom: 10px;
+}
+
+.typeEvent {
+  font-size: 1.3em;
+  margin-top: 5px;
+}
+
+.exposition,
+.expositions,
+.Expositions {
+  background-image: url("../assets/expositions.png");
+  background-size: cover;
+  height: 25px;
+  width: 30px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Passionnés {
+  background-image: url("../assets/passionnes.png");
+  background-size: cover;
+  height: 25px;
+  width: 30px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Sortie {
+  background-image: url("../assets/sortie.png");
+  background-size: cover;
+  height: 25px;
+  width: 29px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.conférence {
+  background-image: url("../assets/conferences.png");
+  background-size: cover;
+  height: 4vh;
+  width: 7vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Randonnées {
+  background-image: url("../assets/randonnee.png");
+  background-size: cover;
+  height: 25px;
+  width: 19px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.Ateliers {
+  background-image: url("../assets/ateliers.png");
+  background-size: cover;
+  height: 25px;
+  width: 50px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.apéro-quiz {
+  background-image: url("../assets/apero-quiz.png");
+  background-size: cover;
+  height: 5vh;
+  width: 4vh;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+/*CSS pour close chips*/
+
+.close-button {
+  border-radius: 3vmin;
+  font-weight: bold;
+  background-color: #707173 !important;
+  padding-top: 2px;
+  margin-bottom: 5px;
+  margin-right: 2px;
+
+}
+
+.crossClose {
+  background-color: #96969a;
+  margin-left: 2vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  border-radius: 50%;
+  border: 0px;
+
+}
+
+.phraseResultats {
+  font-family: "Questrial", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4b4b4b;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+/* Nadim: pour noEvent  */
+
+.cardnoEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 0;
+}
+.titreNoevent {
+  font-family: "Questrial", Arial, sans-serif;
+  color: #b6543a;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Julie : Bouton pour relancer la recherche dans eventlist */
+
+.buttonSearch {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-family: "Questrial", Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff !important;
+  background-color: #b6543a;
+}
+.buttonSearch a {
+  color: #fff !important;
+}
+.buttonSearch:hover {
+  background-color: #b6543a;
+}
+.buttonSearch a:hover {
+  color: #fff !important;
+}
+.buttonSearch a:active {
+  color: #fff !important;
+}

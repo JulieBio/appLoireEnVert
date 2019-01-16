@@ -8,199 +8,125 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
-/* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
-.espace {
-  height: 70px;
-  width: 100%;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none !important;
 }
 
-.card {
-  border: none !important;
-}
-
-.cardAccueil {
-  margin-bottom: 15px;
-  border-radius: 0 !important;
-  box-shadow: 0 0 4px 0 #9e9e9e;
-}
-
-.CardeImage {
-  border-radius: 0 !important;
-}
-
 .App {
   background-image: url(./assets/fond.jpg);
-}
-/*composant Event*/
-.cardAccueil-event {
-  margin-top: 20px;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.nameEvent {
-  font-family: "Old Press", Arial;
+.mainContainer {
+  padding-top: 10px;
+  min-height: 225vmin;
+}
+
+/*composant EventDetails*/
+
+.inscription-button {
+  background-color: #58a728;
+  border-color: #58a728;
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1.6em;
-  color: #b6543a;
+  margin-left: 30%;
 }
 
-.itemEvent {
-  font-family: "Patrick Hand";
+@media screen and (min-width: 576px) {
+  .inscription-button {
+    margin-left: 37%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inscription-button {
+    margin-left: 40%;
+  }
+}
+
+.type-eventDetails {
+  font-family: "Patrick Hand", Arial, sans-serif;
+  font-size: 1em;
+  color: #4b4b4b;
+}
+
+.qui-eventDetails {
+  font-family: "Patrick Hand", Arial, sans-serif;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 15vmin;
+  margin-bottom: 0;
+}
+
+.ou-eventDetails {
+  font-family: "Patrick Hand", Arial, sans-serif;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.place-eventDetails {
+  font-family: "Patrick Hand", Arial, sans-serif;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.city-eventDetails {
+  font-family: "Patrick Hand", Arial, sans-serif;
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.description-event {
+  font-family: "Questrial", Arial, sans-serif;
   font-size: 1em;
   color: #4b4b4b;
   padding: 2vmin 0 0 0;
 }
 
-.freeEvent {
-  padding-top: 5vmin;
-  text-align: center;
-  width: 100%;
+/*Marion: pour rendre bouton actif*/
+
+.toggled {
+  background-color: #2f70e1;
+  color: #fff;
 }
 
-.exposition,
-.expositions {
-  background-image: url("./assets/expositions.png");
-  background-size: cover;
-  height: 5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.sortie {
-  background-image: url("./assets/sortie.png");
-  background-size: cover;
-  height: 5.5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.conférence {
-  background-image: url("./assets/conferences.png");
-  background-size: cover;
-  height: 4vh;
-  width: 7vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Randonnées {
-  background-image: url("./assets/randonnee.png");
-  background-size: cover;
-  height: 6vh;
-  width: 4.5vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Ateliers {
-  background-image: url("./assets/ateliers.png");
-  background-size: cover;
-  height: 4vh;
-  width: 8vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.apéro-quiz {
-  background-image: url("./assets/apero-quiz.png");
-  background-size: cover;
-  height: 5vh;
-  width: 4vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.description-event {
-  margin-top: 40px;
-}
-.quand-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-.type-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-.heure-event {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-/*composant EventDetails*/
-
-.qui-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-.ou-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-.place-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-.city-eventDetails {
-  font-family: Arial, serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: rgb(54, 135, 150);
-}
-
-.buttonDates {
-  background-color: #b6543a !important;
-  border-color: #b6543a !important;
-  border-radius: 0 !important;
-  width: 85px;
-  box-shadow: 0 0 4px 0 #9e9e9e !important;
-  font-family: "Patrick Hand", Arial;
-  font-size: 1.3em !important;
-}
-
-.blockButtons {
-  width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-  justify-content: space-between;
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
 /* Julie : NavBar, et tout ce qui en dépend */
 
 .navbar {
+  z-index: 99999;
   background-color: #b6543a;
-  position: absolute;
-  overflow: hidden;
-  bottom: 0;
-  width: 100%;
   position: fixed;
+  overflow: hidden;
+  bottom: 0 !important;
+  width: 100%;
+  padding: 0.8rem 1rem !important;
 }
-
+.icon {
+  padding-left: 10%;
+}
+.menuB {
+  color: #4b4b4b !important;
+  width:100% !important;
+}
 .menuB a:link {
   color: #4b4b4b !important;
 }
-
 .menuB a:visited {
   color: #4b4b4b !important;
 }
@@ -209,7 +135,9 @@ a {
 }
 
 .menuBurger {
-  margin-top: 75px;
+  margin-top: 90px;
+  margin-left: -15px;
+  margin-right: -15px;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #4b4b4b;
   display: flex;
@@ -217,9 +145,8 @@ a {
   justify-content: center;
   background-color: white;
 }
-
 .menuB {
-  font-family: "Patrick Hand", cursive;
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 2.2em;
   border: 1px solid #4b4b4b;
   padding-left: 15px;
@@ -227,19 +154,26 @@ a {
   height: 12, 5vh;
 }
 
-.quiSommesNous {
+.espace {
+  height: 90px;
+  width: 100%;
+}
+
+.colMenuPages {
+  padding: 0;
+}
+.contentMenuPages {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: "Lobster", Arial, serif;
+  font-family: "Questrial", Arial, serif;
   color: #4b4b4b !important;
 }
-
 .texteQuiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: "Questrial", sans-serif;
+  font-family: "Questrial", Arial, sans-serif;
   color: #4b4b4b !important;
   margin-bottom: 50px;
 }
@@ -251,102 +185,22 @@ a {
   width: 150px;
 }
 
-.partenaires {
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
-  font-family: "Lobster", Arial, serif;
-  color: #4b4b4b !important;
+.cardMenuPages {
+  border-radius: 0;
 }
 
-.partenaires .row {
+.contentMenuPages .row {
+  display: flex;
   justify-content: center;
+  align-items: baseline;
 }
-
 .part {
   margin-top: 30px;
 }
 
-/* Anaële page filtre "pour qui?" */
-
-.buttonsContainer{
-width:80vmin ;
-height: 150vmin;
-display: flex;
-flex-direction: column;
-padding-left:0 !important;
-padding-right:0 !important;
-}
-
-
-.titleWho{
-  font-size: 20vmin;
-  font-family: "Old Press", Arial, serif;
-  font-style: normal;
-  font-weight: 400; 
-  justify-content: center;
-  height: 30vmin;
-  color: #4b4b4b;
-  margin-left:5vmin;
-  margin-bottom: 10vmin;
-}
-
-
-.buttonFilter{
-  display: flex;
-  font-family: "Patrick Hand", cursive;
-  color: #4b4b4b;
-  font-size: 1em;
-  background-color: white;
-  box-shadow: 0 0 8px 0 #9E9E9E;
-  border-color: white;
-  border-radius: 1px;
-  margin-bottom: 4vmin;
-  width: 80vw;
-  height: 14vmin;
-}
-
-
-
-.logoFilter{
-  height:6vmin;
-  margin-right:6vmin;  
-}
-
-.textButton{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 7vmin;
-}
-
-.textButton2{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 14vmin;
-}
-
-.textButton3{
-  display: flex;
-  justify-content: center;
-  font-size: 5vmin;
-  margin-left: 2vmin;
-}
-
-.logoFilter1{
-height: 8vmin;
-width: 9vmin;
-margin-right:6vmin
-}
-
-.logoFilter2{
-  height: 8vmin;
-  width: 10vmin;
-  margin-right:2vmin
-}
+/* Map */
 
 .map {
-  height: 81vh;
+  height: 64vh;
   width: 100%;
 }

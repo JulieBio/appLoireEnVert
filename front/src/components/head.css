@@ -2,56 +2,41 @@
 
 .header {
   top: 0;
-  padding-top: 10px;
-  width: 100%;
-  flex-direction: row;
-  text-align: center;
+  max-width: 900px;
+  max-height: 25vmin;
   background-color: transparent;
   font-family: "Patrick Hand", Arial, cursive;
-  text-transform: uppercase;
-  padding-right: 17px;
-  padding-left: 17px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-}
-
-.header > .headerLogo {
-  width: 20%;
-  height: auto;
-  float: left;
-}
-
-.header > .headerLogo img {
-  width: 100%;
-  height: auto;
-}
-
-.header > .titleLoire {
-  width: 75%;
-  list-style-type: none;
-  float: left;
-}
-
-.logo {
-  display: flex;
-  justify-content: flex-start;
-  background-image: url("https://i.postimg.cc/ZYdYfqbK/loire-en-vert50.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.titleHeader {
-  display: flex;
-  flex-direction: column;
-  height: 60px;
-}
-.titleLoire {
   font-size: 5vmin;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 15px;
 }
-.title2Loire {
-  display: flex;
-  flex-wrap: wrap;
-  color: rgb(203, 137, 52);
-  font-size: 13px;
-  margin: 5px 0 -5px 5px;
+
+.headerRow {
+  justify-content: space-between;
+}
+
+.headerLogo {
+  float: left;
+  padding-left: 15px;
+}
+
+.headerLogoBack {
+  float: left;
+  padding-left: 13vmin;
+}
+
+.headerLogo img {
+  width: 17vmin;
+}
+
+.headerLogoBack img {
+  width: 17vmin;
+}
+
+.headerPhrase {
+  float: right;
+  padding-right: 15px;
 }

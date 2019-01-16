@@ -1,24 +1,35 @@
 import React from "react";
+import { Container, Row, Col } from "reactstrap";
 import "./head.css";
 import Logo from "../assets/loire-en-vert.png";
+import HeadBack from "./headBack";
+import HeadNoBack from "./headNoBack";
 // import Media from "react-media";
 
 // const Media = require("react-media");
 
 class Head extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      urlAdress: null
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ urlAdress: window.location.href });
+    console.log(window.location.href);
+    console.log("state " + this.state.urlAdress);
+  }
+
   render() {
     return (
-      //Julie : bandeau head avec logo et nom
-      <div className="headerLisa">
-        <div className="header">
-          <div className="headerLogo" href="/">
-            <img src={Logo} alt="Logo Loire en vert" />
-          </div>
-          <div className="titleLoire">
-            Toutes les activités nature <br />
-            dans la Loire
-          </div>
-        </div>
+      <div className="header">
+        {window.location.href === "http://localhost:3000/who" ? (
+          <HeadBack />
+        ) : (
+          <HeadNoBack />
+        )}
       </div>
     );
   }
