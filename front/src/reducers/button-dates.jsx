@@ -1,3 +1,5 @@
+//action appelée par le reducer button-dates.jsx
+
 const activeButton = (state = {
     disabled: "1"
 }, action) => {
