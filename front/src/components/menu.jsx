@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import HeadNoBack from "./headNoBack";
-import { Container, Card, Col } from "reactstrap";
+import { Container } from "reactstrap";
 
 // Julie : liste des links du menu burger
 class Menu extends Component {

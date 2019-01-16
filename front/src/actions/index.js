@@ -17,6 +17,13 @@ export const updateFilter = filter => ({
   filter
 });
 
+export const updateButton = number => {
+  console.log("in ACTION", number)
+  return { type: "UPDATE_BUTTON",
+  number,}
+};
+
+
 // recupération dans la bdd
 export const fetchEvents = filter => {
   console.log("filter", filter);

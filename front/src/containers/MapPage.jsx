@@ -29,7 +29,7 @@ class MapPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 45.420986 ,
+      lat: 45.420986,
       lng: 4.385753,
       zoom: 13
     };
