@@ -1,4 +1,4 @@
-const express = require("express");
+/*const express = require("express");
 const bodyParser = require("body-parser");
 //const morgan = require('morgan');
 const app = express();
@@ -89,4 +89,4 @@ app.get(`/event/:id`, (req, res) => {
 
 let server = app.listen(process.env.PORT || 5000, function() {
   console.log("Listening on port " + server.address().port);
-});
+});*/
