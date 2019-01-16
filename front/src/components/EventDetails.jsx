@@ -58,22 +58,23 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`http://vps635285.ovh.net:5000/event/${this.id}`).then(result => {
+    axios.get(`https://loireenvert.fr/wp-json/wp/v2/event/${this.id}`).then(result => {
       console.log(result.data);
       this.setState({
         image: result.data.image,
-        name: result.data.name,
+        name: result.data.title.rendered,
         type: result.data.type,
         who: result.data.who,
         where: result.data.event_where,
-        start: result.data.event_date_start,
-        finish: result.data.event_date_finish,
-        place: result.data.place,
-        city: result.data.city,
-        description: result.data.description,
+        start: result.data.beginDate,
+        finish: result.data.endingDate,
+        place: result.data.location_name,
+        city: result.data.location_town,
+        description: result.data.content.rendered,
         free: result.data.free,
-        lat: result.data.lat,
-        lng: result.data.lng
+        lat: result.data.location_latitude,
+        lng: result.data.location_longitude
+
       });
     });
   }
@@ -126,7 +127,7 @@ class EventDetails extends Component {
                       <p> {this.state.city}</p>
                     )}</p>
                     <CardText className="description-event">
-                      {this.state.description}
+                      <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
                     </CardText>
 
                     <div>
