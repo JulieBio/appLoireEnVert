@@ -23,15 +23,17 @@ export const fetchEvents = filter => {
   return dispatch => {
     console.log(2);
     return (
+// Julie Lisa : filter est un req.body est le même que filter dans updateFilter
+      axios.all([
+          axios.get("https://loireenvert.fr/wp-json/wp/v2/event"),
+          axios.get("https://loireenvert.fr/wp-json/wp/v2/locations")
+      ])
 
-      axios
-        // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
-        .get("https://loireenvert.fr/wp-json/wp/v2/event")
-        .then(response => {
-          const activeEvents = response.data;
-          console.log("response", response.data);
+        .then(axios.spread((eventRes, locationsRes) => {
+          const activeEvents = [eventRes.data, locationsRes.data];
+          console.log("response", [eventRes.data, locationsRes.data]);
           dispatch(updateEventsList(activeEvents));
-        })
+        }))
         .catch(e => {
           console.log(e);
         })

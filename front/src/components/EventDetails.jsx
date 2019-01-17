@@ -58,25 +58,29 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`https://loireenvert.fr/wp-json/wp/v2/event/${this.id}`).then(result => {
-      console.log(result.data);
+    axios.all([
+      axios.get(`https://loireenvert.fr/wp-json/wp/v2/event/${this.id}`),
+      axios.get(`https://loireenvert.fr/wp-json/wp/v2/location/${this.id}`)
+    ])
+    .then(axios.spread((eventResult, locationsResult) => {
+      console.log([eventResult.data, locationsResult.data]);
       this.setState({
-        image: result.data.image,
-        name: result.data.title.rendered,
-        type: result.data.type,
-        who: result.data.who,
-        where: result.data.event_where,
-        start: result.data.beginDate,
-        finish: result.data.endingDate,
-        place: result.data.location_name,
-        city: result.data.location_town,
-        description: result.data.content.rendered,
-        free: result.data.free,
-        lat: result.data.location_latitude,
-        lng: result.data.location_longitude
+        image: eventResult.data.image,
+        name: eventResult.data.title.rendered,
+        type: eventResult.data.type,
+        //who: result.data.who,
+        //where: result.data.event_where,
+        start: eventResult.data.beginDate,
+        finish: eventResult.data.endingDate,
+        place: locationsResult.data.location_name,
+        city: locationsResult.data.location_town,
+        description: eventResult.data.content.rendered,
+        //free: result.data.free,
+        lat: locationsResult.data.location_latitude,
+        lng: locationsResult.data.location_longitude
 
       });
-    });
+    }));
   }
 
   // fonction Anaële qui rappelle la page précédement visitée
