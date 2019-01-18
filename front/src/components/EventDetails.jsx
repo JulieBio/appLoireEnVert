@@ -73,7 +73,8 @@ class EventDetails extends Component {
         description: result.data.description,
         free: result.data.free,
         lat: result.data.lat,
-        lng: result.data.lng
+        lng: result.data.lng,
+        urlSite: result.data.urlSite
       });
     });
   }
@@ -133,7 +134,7 @@ class EventDetails extends Component {
                         <Button
                           color="success"
                           className="inscription-button"
-                          href="https://loireenvert.fr/"
+                          href={this.state.urlSite}
                         >
                           {" "}
                           Je m'inscris

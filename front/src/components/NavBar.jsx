@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavLink, NavItem } from "reactstrap";
+import { Navbar, NavLink, NavItem, NavbarBrand } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../App.css";
 import list from "../assets/list.png";
@@ -21,11 +21,18 @@ export default class NavBar extends React.Component {
             </NavItem>
           </NavLink>
 
-          <NavItem className="icon">
+          {/* <Link to="/">
+            <NavbarBrand className="icon">
+              <img src={funnel} width="42" height="42" alt="entonnoir" />
+            </NavbarBrand>
+          </Link> */}
+
+          <NavbarBrand className="icon">
             <a href="/">
+              {" "}
               <img src={funnel} width="42" height="42" alt="entonnoir" />
             </a>
-          </NavItem>
+          </NavbarBrand>
 
           <Link to="/map">
             <NavItem className="icon">

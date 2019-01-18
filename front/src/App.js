@@ -31,41 +31,25 @@ class App extends Component {
               {/* Julie : Link permet de ne pas recharger la page et de garder en mémoire les choix du filtre */}
               <Nav>
                 <NavItem className="icon">
-                  <NavLink
-                    tag={Link}
-                    to="/events"
-                    className="iconNavLink"
-                    activeClassName="activeNB"
-                  >
+                  <NavLink to="/events" activeClassName="activeNB">
                     <img src={list} alt="list" />
                   </NavLink>
                 </NavItem>
 
                 <NavItem className="icon">
-                  <NavLink
-                    tag={Link}
-                    exact
-                    to="/"
-                    className="iconNavLink"
-                    activeClassName="activeNB"
-                  >
+                  <NavLink exact to="/" activeClassName="activeNB">
                     <img src={funnel} alt="entonnoir" />
                   </NavLink>
                 </NavItem>
 
                 <NavItem className="icon">
-                  <NavLink
-                    tag={Link}
-                    to="/map"
-                    className="iconNavLink"
-                    activeClassName="activeNB"
-                  >
+                  <NavLink to="/map" activeClassName="activeNB">
                     <img src={map} alt="map" />
                   </NavLink>
                 </NavItem>
 
                 <NavItem className="icon">
-                  <NavLink tag={Link} to="/menu" activeClassName="activeNB">
+                  <NavLink to="/menu" activeClassName="activeNB">
                     <img src={menu} alt="menu" />
                   </NavLink>
                 </NavItem>
