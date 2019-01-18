@@ -24,7 +24,6 @@ const styleEuro = {
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
-
 const Event = ({ event }) => (
   <div className="cardAccueil">
     <NavLink to={`/event/${event.id}`}>
@@ -61,7 +60,7 @@ const Event = ({ event }) => (
               ) : (
                 <div style={styleEuro.euro} />
               )}
-              <div className={event.type} />
+              <div className={event.type.toLowerCase().substring(0, 4)} />
             </div>
           </CardSubtitle>
         </CardBody>

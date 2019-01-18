@@ -73,7 +73,8 @@ class EventDetails extends Component {
         description: result.data.description,
         free: result.data.free,
         lat: result.data.lat,
-        lng: result.data.lng
+        lng: result.data.lng,
+        urlSite: result.data.urlSite
       });
     });
   }
@@ -100,16 +101,14 @@ class EventDetails extends Component {
                     <CardSubtitle className="nameEvent">
                       {this.state.name}
                     </CardSubtitle>
-                    <p className="type-eventDetails">
+                    <div className="type-eventDetails">
                       <div className="freeEvent">
-                        {this.state.free === "true" ? (
-                          <h1> </h1>
-                        ) : (
+                        {this.state.free === "true" ? null : (
                           <div style={styleEuro.euro} />
                         )}
                         <div className={this.state.type} />
                       </div>
-                    </p>
+                    </div>
                     <p className="qui-eventDetails">{this.state.who}</p>
                     <p className="ou-eventDetails">{this.state.where}</p>
                     <CardSubtitle className="itemEvent">
@@ -119,24 +118,23 @@ class EventDetails extends Component {
                       </p>
                     </CardSubtitle>
                     <p className="place-eventDetails">{this.state.place}</p>
-                    <p className="city-eventDetails">
-                    {this.state.city === "null" ? (
-                      <h1> </h1>
-                    ) : (
-                      <p> {this.state.city}</p>
-                    )}</p>
+                    <div className="city-eventDetails">
+                      {this.state.city === "null" ? (
+                        <div />
+                      ) : (
+                        <p> {this.state.city}</p>
+                      )}
+                    </div>
                     <CardText className="description-event">
                       {this.state.description}
                     </CardText>
 
                     <div>
-                      {this.state.free === "true" ? (
-                        <h1> </h1>
-                      ) : (
+                      {this.state.free === "true" ? null : (
                         <Button
                           color="success"
                           className="inscription-button"
-                          href="https://loireenvert.fr/"
+                          href={this.state.urlSite}
                         >
                           {" "}
                           Je m'inscris
