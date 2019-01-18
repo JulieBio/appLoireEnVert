@@ -51,8 +51,7 @@ class EventFilterWho extends Component {
   };
 
   render() {
-    return (
-      <div>
+    return <div>
         <Container className="mainContainer">
           <HeadNoBack />
           <Row>
@@ -62,8 +61,8 @@ class EventFilterWho extends Component {
           </Row>
 
           <Row>
-            {this.state.buttonList.map(button => (
-              <Col xs="12" sm="12" md="12">
+            {this.state.buttonList.map((button, index) => (
+              <Col xs="12" sm="12" md="12" key={index}>
                 <Button
                   className="buttonFilterWhoWhere"
                   onClick={() => this.eventsFiltred(button.filter)}
@@ -88,8 +87,7 @@ class EventFilterWho extends Component {
             ))}
           </Row>
         </Container>
-      </div>
-    );
+      </div>;
   }
 }
 
