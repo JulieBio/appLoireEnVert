@@ -227,3 +227,18 @@ a {
   height: 64vh;
   width: 100%;
 }
+
+
+.eventPopup{
+  position: fixed;
+  bottom: 0;
+  margin: 25px;
+  margin-bottom: 80px;
+  z-index:9999;
+}
+.eventPopup > button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
