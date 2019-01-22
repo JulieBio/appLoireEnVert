@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container } from "reactstrap";
+import { Container, Alert } from "reactstrap";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { updateEventsList } from "../actions/index";
+import { css } from '@emotion/core';
+import { ClipLoader } from 'react-spinners';
 import Event from "../components/Event";
 import { fetchEvents } from "../actions/index";
 import L from "leaflet";
 import Buttons from "./Buttons";
 // import "../App.css";
 import HeadNoBack from "../components/headNoBack";
+
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 var myIcon = L.icon({
   iconUrl:
@@ -31,19 +40,48 @@ class MapPage extends Component {
     this.state = {
       lat: 45.420986,
       lng: 4.385753,
-      zoom: 13
+      zoom: 12,
+      visible: true,
+      alert: false,
+      loader: false,
     };
-    // this.id = this.props.match.params.id;
+    this.onDismiss = this.onDismiss.bind(this);
+  }
+
+  onDismiss() {
+    this.setState({ visible: false });
   }
 
   componentDidMount() {
+    window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
+      if (!authorized) {
+        window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
+          this.getPosition();
+        })
+      } else {
+        this.getPosition();
+      }
+    })
+  }
+
+  getPosition() {
+
+    this.setState({ loader: true })
     navigator.geolocation.getCurrentPosition(position => {
-      console.log("position:", position);
       this.setState({
         lat: position.coords.latitude,
-        lng: position.coords.longitude
+        lng: position.coords.longitude,
+        loader: false,
       });
-    });
+    }, error => {
+      this.setState({
+        loader: false,
+        alert: "Impossible de récupérer votre position. Vérifier vos paramètres GPS!"
+      }, 3000)
+    }, {
+        timeout: 10000,
+        enableHighAccuracy: false
+      });
   }
   componentWillMount() {
     console.log("here", this.props.filterEvents);
@@ -62,34 +100,56 @@ class MapPage extends Component {
 
     return (
       <div>
+
+        <HeadNoBack />
+        
         <Container className="container-eventDetails">
-          <HeadNoBack />
-          <Buttons />
+          
+        <Buttons />
 
-          {/* <Container className="containerMap"> */}
+          
+          <Container className="containerMap">
+            {this.state.loader ? 
+              <div className='sweet-loading'>
+                <ClipLoader
+                  css={override}
+                  sizeUnit={"px"}
+                  size={10}
+                  color={'#4b4b4b'}
+                  loading={this.state.loading}
+                />
+              </div> 
+              : 
+              <div>
+                <Alert color="dark" style={{height:'2vmin'}} isOpen={this.state.visible} toggle={this.onDismiss}>
+                {this.state.alert} 
+                </Alert>
+              </div>}
+              
+            <Map className="map" center={position} zoom={this.state.zoom}>
+              
 
-          <Map className="map" center={position} zoom={this.state.zoom}>
-            <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position} icon={myIcon}>
-              <Popup> vous êtes ici </Popup>
-            </Marker>
+              <TileLayer
+                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={position} icon={myIcon}>
+                <Popup> vous êtes ici </Popup>
+              </Marker>
 
-            {this.props.activeEvents.events.map((event, index) => {
-              if (event.lat && event.lng)
-                return (
-                  <Marker position={[event.lat, event.lng]} icon={iconGreen}>
-                    <Popup>
-                      <Event key={`event${index}`} event={event} />
-                    </Popup>
-                  </Marker>
-                );
-              else return "";
-            })}
-          </Map>
-          {/* </Container> */}
+              {this.props.activeEvents.events.map((event, index) => {
+                if (event.lat && event.lng)
+                  return (
+                    <Marker position={[event.lat, event.lng]} icon={iconGreen}>
+                      <Popup>
+                        <Event key={`event${index}`} event={event} />
+                      </Popup>
+                    </Marker>
+                  );
+                else return "";
+              })}
+            </Map>
+          </Container>
         </Container>
       </div>
     );

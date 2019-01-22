@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 //Monica: ScrollToTop pour mettre à jour le scroll
 class App extends Component {
+
   render() {
     return (
       <HashRouter>

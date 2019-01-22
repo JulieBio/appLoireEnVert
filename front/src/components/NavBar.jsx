@@ -22,16 +22,16 @@ export default class NavBar extends React.Component {
             </NavbarBrand>
           </Link>
 
-          {/* <Link to="/">
+          <Link to="/">
             <NavbarBrand className="icon">
               <img src={funnel} width="42" height="42" alt="entonnoir" />
             </NavbarBrand>
-          </Link> */}
+          </Link>
 
          
-            <NavbarBrand className="icon">
+            {/* <NavbarBrand className="icon">
               <a href="/"> <img src={funnel} width="42" height="42" alt="entonnoir" /></a>
-            </NavbarBrand>
+            </NavbarBrand> */}
          
 
           <Link to="/map">

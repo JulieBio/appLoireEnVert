@@ -10,6 +10,7 @@ const filterEvents = (state = { where: '%%', who: '%%', when: 15 }, action) => {
   switch (action.type) {
     case "UPDATE_FILTER":
       console.log("reducer", state, action.filter);
+      if(action.filter.where && action.filter.where!=='%%') action.filter.when = 15
       return { ...state, ...action.filter };
     default:
       return state;
