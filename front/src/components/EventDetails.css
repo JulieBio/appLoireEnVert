@@ -1,0 +1,82 @@
+/* css composant EventDetails*/
+
+.container-eventDetails {
+  padding-top: 10px;
+  /* min-height: 400vmin; */
+
+}
+
+.inscription-button {
+  background-color: #58a728;
+  border-color: #58a728;
+  font-family: "Patrick Hand";
+  font-size: 1.6em;
+  margin-left: 26%;
+}
+
+.card-details {
+  margin-bottom: 30vmin;
+
+}
+@media screen and (min-width: 576px) {
+  .inscription-button {
+    margin-left: 37%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inscription-button {
+    margin-left: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .inscription-button {
+    margin-left: 43%;
+  }
+}
+
+.type-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+}
+
+.qui-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 15vmin;
+  margin-bottom: 0;
+}
+
+.ou-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.place-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.city-eventDetails {
+  font-family: "Patrick Hand";
+  font-size: 1em;
+  color: #4b4b4b;
+  margin-top: 2vmin;
+  margin-bottom: 0;
+}
+
+.description-event {
+  font-family: "Questrial";
+  font-size: 1em;
+  color: #4b4b4b;
+  padding: 2vmin 0 0 0;
+}

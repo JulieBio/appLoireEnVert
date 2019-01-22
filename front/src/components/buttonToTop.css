@@ -1,0 +1,19 @@
+.scroll {
+  position: fixed;
+  bottom: 15vh;
+  right: 2vh;
+  padding-top: 4px;
+  margin: 5px;
+  opacity: 0.5;
+  background-color: #b6543a;
+  height: 6vh;
+  width: 6vh;
+  border: none;
+  z-index: 2;
+  color: white;
+}
+
+.scroll:hover {
+  color: black;
+  cursor: pointer;
+}
