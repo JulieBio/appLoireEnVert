@@ -36,12 +36,15 @@ const Event = ({ event }) => (
           className="cardImage"
         />
         <CardBody className="cardContent">
-          <LinesEllipsis
+          {/*<LinesEllipsis
             className="eventTitle"
             text={event.event_name}
             maxLine="2"
             basedOn="letters"
-          />
+          />*/}
+          <CardSubtitle className="itemEvent">
+            <p className="eventTitle">{event.event_name} </p>
+          </CardSubtitle>
           <CardSubtitle className="itemEvent">
             <p className="typeEvent">{event.type} </p>
           </CardSubtitle>
