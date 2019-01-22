@@ -38,7 +38,7 @@ const Event = ({ event }) => (
         <CardBody className="cardContent">
           <LinesEllipsis
             className="eventTitle"
-            text={event.title.rendered}
+            text={event.event_name}
             maxLine="2"
             basedOn="letters"
           />
@@ -47,16 +47,16 @@ const Event = ({ event }) => (
           </CardSubtitle>
           <CardSubtitle className="itemEvent">
             <p>
-              {moment(event.beginDate).format("ll")} -{" "}
-              {moment(event.endingDate).format("ll")}
+              {moment(event.event_start_date).format("ll")} -{" "}
+              {moment(event.event_end_date).format("ll")}
               <br />
-              {event.beginTime}{" "}{event.endingTime}{" "}
+              {event.event_start_time}{" "}{event.event_end_time}{" "}
             </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">{event.location_town}</CardSubtitle>
           <CardSubtitle>
             <div className="cardIcones">
-              {event.free === "true" ? (
+              {event.event_rsvp === "true" ? (
                 <h1> </h1>
               ) : (
                 <div style={styleEuro.euro} />
