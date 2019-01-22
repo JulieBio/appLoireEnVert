@@ -53,6 +53,7 @@ class MapPage extends Component {
   }
 
   componentDidMount() {
+    //geolocalisation avec plugins de cordova pour autoriser la géolocalisation
     window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
       if (!authorized) {
         window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
@@ -65,20 +66,24 @@ class MapPage extends Component {
   }
 
   getPosition() {
-
-    this.setState({ loader: true })
+      // récupère la localisation
+    this.setState({ loader: true }) // spinner actif dès affichage de la map
     navigator.geolocation.getCurrentPosition(position => {
+      //si les coordonnées sont trouver le spinner passe en false
       this.setState({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
         loader: false,
       });
     }, error => {
+      //si les cordonnées Gps ne sont pas trouvées alors le spinner passe en false et alerte en true
       this.setState({
         loader: false,
-        alert: "Impossible de récupérer votre position. Vérifier vos paramètres GPS!"
-      }, 3000)
+        // Alerte prend ce message d'erreur
+        alert: <div style={{ textAlign: 'center' }}> Impossible de récupérer votre position. Vérifier vos paramètres GPS!</div>
+      })
     }, {
+      // impose un temps de recherche de la géolocalisation
         timeout: 10000,
         enableHighAccuracy: false
       });
@@ -101,56 +106,62 @@ class MapPage extends Component {
     return (
       <div>
 
-        <HeadNoBack />
-        
+
+
         <Container className="container-eventDetails">
-          
-        <Buttons />
 
-          
-          <Container className="containerMap">
-            {this.state.loader ? 
-              <div className='sweet-loading'>
-                <ClipLoader
-                  css={override}
-                  sizeUnit={"px"}
-                  size={10}
-                  color={'#4b4b4b'}
-                  loading={this.state.loading}
-                />
-              </div> 
-              : 
-              <div>
-                <Alert color="dark" style={{height:'2vmin'}} isOpen={this.state.visible} toggle={this.onDismiss}>
-                {this.state.alert} 
-                </Alert>
-              </div>}
-              
-            <Map className="map" center={position} zoom={this.state.zoom}>
-              
+          <HeadNoBack />
+          <Buttons />
+          {/*affiche le spinner suivant état de la condition et de son State */}
+          {this.state.loader ?
+            <div className='sweet-loading'>
+              <ClipLoader
+                css={override}
+                sizeUnit={"px"}
+                size={20}
+                color={'#4b4b4b'}
+                loading={this.state.loading}
 
-              <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={position} icon={myIcon}>
-                <Popup> vous êtes ici </Popup>
-              </Marker>
+            </div>
+            :
+            " "}
 
-              {this.props.activeEvents.events.map((event, index) => {
-                if (event.lat && event.lng)
-                  return (
-                    <Marker position={[event.lat, event.lng]} icon={iconGreen}>
-                      <Popup>
-                        <Event key={`event${index}`} event={event} />
-                      </Popup>
-                    </Marker>
-                  );
-                else return "";
-              })}
-            </Map>
-          </Container>
+          {/*affiche l'alerte suivant état de la condition et de si la geolocalisation à été trouvée */}
+          {this.state.alert ?
+            <div>
+              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position:'fixed', zIndex:'9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
+                {this.state.alert}
+              </Alert>
+            </div> :
+            " "}
+
+
+
+          <Map className="map" center={position} zoom={this.state.zoom}>
+
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position} icon={myIcon}>
+              <Popup> vous êtes ici </Popup>
+            </Marker>
+
+            {this.props.activeEvents.events.map((event, index) => {
+              if (event.lat && event.lng)
+                return (
+                  <Marker position={[event.lat, event.lng]} icon={iconGreen}>
+                    <Popup>
+                      <Event key={`event${index}`} event={event} />
+                    </Popup>
+                  </Marker>
+                );
+              else return "";
+            })}
+          </Map>
         </Container>
+
       </div>
     );
   }
