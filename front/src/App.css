@@ -54,6 +54,11 @@ a {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .inscription-button {
+    margin-left: 43%;
+  }
+}
 .type-eventDetails {
   font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;

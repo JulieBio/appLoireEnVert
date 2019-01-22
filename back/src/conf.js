@@ -1,7 +1,10 @@
 const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost", // adresse du serveur
-  user: "Safsoufa2016!", // le mot de passe
+  user: "****", // le mot de passe
+  //port:"8889",
+  user: "***", // le mot de passe
+  password: "***",
   database: "Loire_en_Vert" // le nom de la base de données
 });
 module.exports = connection;

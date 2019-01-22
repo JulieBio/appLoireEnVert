@@ -2,20 +2,11 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import backgroundEuro from "../assets/euro.png";
-import {
-  Container,
-  Card,
-  CardImg,
-  CardBody,
-  Button,
-  CardText,
-  CardSubtitle,
-  Row,
-  Col
-} from "reactstrap";
+import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle, Row, Col } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
 import HeadBack from "./headBack";
+import "../App.css";
 
 const styleBack = {
   goBack: {
@@ -122,24 +113,26 @@ class EventDetails extends Component {
                       {this.state.city === "null" ? (
                         <div />
                       ) : (
-                        <p> {this.state.city}</p>
-                      )}
+                          <p> {this.state.city}</p>
+                        )}
                     </div>
                     <CardText className="description-event">
                       {this.state.description}
                     </CardText>
 
                     <div>
-                      {this.state.free === "true" ? null : (
-                        <Button
-                          color="success"
-                          className="inscription-button"
-                          href={this.state.urlSite}
-                        >
-                          {" "}
-                          Je m'inscris
+                      {/* {this.state.free === "true" ? (
+                        <h1> </h1>
+                      ) : ( */}
+                      <Button
+                        color="success"
+                        className="inscription-button"
+                        href={this.state.urlSite}
+                      >
+                        {" "}
+                        + d'infos
                         </Button>
-                      )}
+
                     </div>
                   </CardBody>
                 </div>
