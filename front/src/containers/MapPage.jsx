@@ -16,7 +16,7 @@ class MapPage extends Component {
         state = {
                 lat: 0 ,
                 lng: 0,
-                zoom: 13
+                zoom: 1
             }
             
     
