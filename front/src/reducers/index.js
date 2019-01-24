@@ -8,10 +8,10 @@ import UpdateButtonReducer from "./button-dates";
 
 
 const allReducers = combineReducers({
-  activeEvents: ActiveEventsReducer,
+  eventsLoire: ActiveEventsReducer,
   filterEvents: FilterEventsReducer,
   buttonDates: UpdateButtonReducer
-  //J'amène mon action filterEvents pour la combiner avec "allReducers" (Monica/Nadim) 
+  //J'amène mon action filterEvents pour la combiner avec "allReducers" (Monica/Nadim)
 });
 
 export default allReducers;

@@ -49,8 +49,8 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`http://vps635285.ovh.net:5000/event/${this.id}`).then(result => {
-      console.log(result.data);
+    axios.get(`/event/${this.id}`).then(result => {
+      console.log(result.data)
       this.setState({
         image: result.data.image,
         name: result.data.name,
@@ -117,7 +117,7 @@ class EventDetails extends Component {
                         )}
                     </div>
                     <CardText className="description-event">
-                      {this.state.description}
+                      <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
                     </CardText>
 
                     <div>

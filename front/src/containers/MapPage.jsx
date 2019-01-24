@@ -77,7 +77,7 @@ class MapPage extends Component {
               <Popup> vous êtes ici </Popup>
             </Marker>
 
-            {this.props.activeEvents.events.map((event, index) => {
+            {this.props.eventsLoire.events.map((event, index) => {
               if (event.lat && event.lng)
                 return (
                   <Marker position={[event.lat, event.lng]} icon={iconGreen} onClick={()=> this.setState({currentEvent:event})}>
@@ -101,9 +101,9 @@ class MapPage extends Component {
   }
 }
 
-const mapStateToProps = ({ activeEvents, filterEvents }) => {
-  console.log("store", { activeEvents, filterEvents });
-  return { activeEvents, filterEvents };
+const mapStateToProps = ({ eventsLoire, filterEvents }) => {
+  console.log("store", { eventsLoire, filterEvents });
+  return { eventsLoire, filterEvents };
 };
 
 const mapDispatchToProps = dispatch => {
