@@ -128,12 +128,12 @@ class EventDetails extends Component {
                       <Button
                         color="success"
                         className="inscription-button"
-                        href={this.state.urlSite}
+                        // href={this.state.urlSite}
+                        href="https://loireenvert.fr/evenements/"
                       >
                         {" "}
                         + d'infos
                         </Button>
-
                     </div>
                   </CardBody>
                 </div>
