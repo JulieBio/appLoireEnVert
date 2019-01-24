@@ -126,6 +126,7 @@ class EventDetails extends Component {
                             <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
                           </CardText>
 
+<<<<<<< HEAD
                           <div>
                             <Button
                               color="success"
@@ -147,6 +148,29 @@ class EventDetails extends Component {
             : "Problème de chargement"
         }
       </div >
+=======
+                    <div>
+                      {/* {this.state.free === "true" ? (
+                        <h1> </h1>
+                      ) : ( */}
+                      <Button
+                        color="success"
+                        className="inscription-button"
+                        // href={this.state.urlSite}
+                        href="https://loireenvert.fr/evenements/"
+                      >
+                        {" "}
+                        + d'infos
+                        </Button>
+                    </div>
+                  </CardBody>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+>>>>>>> 7fe0e271f83552dc16c79f62d86055fd7a37191e
     );
   }
 }
