@@ -73,9 +73,7 @@
   margin-top: 5px;
 }
 
-.exposition,
-.expositions,
-.Expositions {
+.expo {
   background-image: url("../assets/expositions.png");
   background-size: cover;
   height: 25px;
@@ -84,7 +82,7 @@
   float: left;
 }
 
-.Passionnés {
+.pass {
   background-image: url("../assets/passionnes.png");
   background-size: cover;
   height: 25px;
@@ -93,7 +91,7 @@
   float: left;
 }
 
-.Sortie {
+.sort {
   background-image: url("../assets/sortie.png");
   background-size: cover;
   height: 25px;
@@ -102,7 +100,7 @@
   float: left;
 }
 
-.conférence {
+.conf {
   background-image: url("../assets/conferences.png");
   background-size: cover;
   height: 4vh;
@@ -111,7 +109,7 @@
   float: left;
 }
 
-.Randonnées {
+.rand {
   background-image: url("../assets/randonnee.png");
   background-size: cover;
   height: 25px;
@@ -120,7 +118,7 @@
   float: left;
 }
 
-.Ateliers {
+.atel {
   background-image: url("../assets/ateliers.png");
   background-size: cover;
   height: 25px;
@@ -129,7 +127,7 @@
   float: left;
 }
 
-.apéro-quiz {
+.apér {
   background-image: url("../assets/apero-quiz.png");
   background-size: cover;
   height: 5vh;
@@ -147,7 +145,6 @@
   padding-top: 2px;
   margin-bottom: 5px;
   margin-right: 2px;
-
 }
 
 .crossClose {
@@ -157,7 +154,6 @@
   padding-right: 1vmin;
   border-radius: 50%;
   border: 0px;
-
 }
 
 .phraseResultats {

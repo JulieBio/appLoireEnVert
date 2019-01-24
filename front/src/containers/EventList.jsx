@@ -79,10 +79,10 @@ class EventList extends Component {
                 ""
               )}
             </Row>
-            {this.props.activeEvents.events.length > 0 ? (
+            {this.props.eventsLoire.events.length > 0 ? (
               <div>
                 <Row>
-                  {this.props.activeEvents.events.map((event, index) => (
+                  {this.props.eventsLoire.events.map((event, index) => (
                     <Col xs="12" sm="12" md="6">
                       <Event key={`event${index}`} event={event} />
                     </Col>
@@ -111,9 +111,9 @@ class EventList extends Component {
 }
 
 //Julie : transfert des états
-const mapStateToProps = ({ activeEvents, filterEvents }) => {
-  console.log("store", { activeEvents, filterEvents });
-  return { activeEvents, filterEvents };
+const mapStateToProps = ({ eventsLoire, filterEvents }) => {
+  console.log("store", { eventsLoire, filterEvents });
+  return { eventsLoire, filterEvents };
 };
 
 const mapDispatchToProps = dispatch => {

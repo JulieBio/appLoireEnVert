@@ -2,20 +2,11 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import backgroundEuro from "../assets/euro.png";
-import {
-  Container,
-  Card,
-  CardImg,
-  CardBody,
-  Button,
-  CardText,
-  CardSubtitle,
-  Row,
-  Col
-} from "reactstrap";
+import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle, Row, Col } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
 import HeadBack from "./headBack";
+import "../App.css";
 
 const styleBack = {
   goBack: {
@@ -58,6 +49,7 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
+<<<<<<< HEAD
     axios.get(`https://loireenvert.fr/wp-json/wp/v2/events/${this.id}`).then(json => {
       console.log("axios",json.data[0]);
       this.setState({
@@ -73,6 +65,25 @@ class EventDetails extends Component {
         // description: result.data.description,
         // free: result.data.free,
         // location_latitude: rs
+=======
+    axios.get(`/event/${this.id}`).then(result => {
+      console.log(result.data)
+      this.setState({
+        image: result.data.image,
+        name: result.data.name,
+        type: result.data.type,
+        who: result.data.who,
+        where: result.data.event_where,
+        start: result.data.event_date_start,
+        finish: result.data.event_date_finish,
+        place: result.data.place,
+        city: result.data.city,
+        description: result.data.description,
+        free: result.data.free,
+        lat: result.data.lat,
+        lng: result.data.lng,
+        urlSite: result.data.urlSite
+>>>>>>> 0cb99e0f9f66fac664ecefddea0358978938178e
       });
     });
   }
@@ -99,16 +110,14 @@ class EventDetails extends Component {
                     <CardSubtitle className="nameEvent">
                       {this.state.name}
                     </CardSubtitle>
-                    <p className="type-eventDetails">
+                    <div className="type-eventDetails">
                       <div className="freeEvent">
-                        {this.state.free === "true" ? (
-                          <h1> </h1>
-                        ) : (
+                        {this.state.free === "true" ? null : (
                           <div style={styleEuro.euro} />
                         )}
                         <div className={this.state.type} />
                       </div>
-                    </p>
+                    </div>
                     <p className="qui-eventDetails">{this.state.who}</p>
                     <p className="ou-eventDetails">{this.state.where}</p>
                     <CardSubtitle className="itemEvent">
@@ -118,29 +127,30 @@ class EventDetails extends Component {
                       </p>
                     </CardSubtitle>
                     <p className="place-eventDetails">{this.state.place}</p>
-                    <p className="city-eventDetails">
-                    {this.state.city === "null" ? (
-                      <h1> </h1>
-                    ) : (
-                      <p> {this.state.city}</p>
-                    )}</p>
+                    <div className="city-eventDetails">
+                      {this.state.city === "null" ? (
+                        <div />
+                      ) : (
+                          <p> {this.state.city}</p>
+                        )}
+                    </div>
                     <CardText className="description-event">
-                      {this.state.description}
+                      <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
                     </CardText>
 
                     <div>
-                      {this.state.free === "true" ? (
+                      {/* {this.state.free === "true" ? (
                         <h1> </h1>
-                      ) : (
-                        <Button
-                          color="success"
-                          className="inscription-button"
-                          href="https://loireenvert.fr/"
-                        >
-                          {" "}
-                          Je m'inscris
+                      ) : ( */}
+                      <Button
+                        color="success"
+                        className="inscription-button"
+                        href={this.state.urlSite}
+                      >
+                        {" "}
+                        + d'infos
                         </Button>
-                      )}
+
                     </div>
                   </CardBody>
                 </div>
