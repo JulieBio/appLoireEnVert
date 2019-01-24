@@ -49,7 +49,8 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`/event/${this.id}`).then(result => {
+    axios.get(`/event/${this.id}`)
+    .then(result => {
       console.log(result.data)
       this.setState({
         image: result.data.image,
@@ -127,12 +128,12 @@ class EventDetails extends Component {
                       <Button
                         color="success"
                         className="inscription-button"
-                        href={this.state.urlSite}
+                        // href={this.state.urlSite}
+                        href="https://loireenvert.fr/evenements/"
                       >
                         {" "}
                         + d'infos
                         </Button>
-
                     </div>
                   </CardBody>
                 </div>

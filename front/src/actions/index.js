@@ -5,7 +5,7 @@ export const updateEventsList = events => ({
   type: "UPDATE_EVENTS_LIST",
   events
 });
-export const addEvent = (event) => ({
+export const addEvent = event => ({
   type: "ADD_EVENT",
   event
 });
