@@ -49,7 +49,8 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`/event/${this.id}`).then(result => {
+    axios.get(`/event/${this.id}`)
+    .then(result => {
       console.log(result.data)
       this.setState({
         image: result.data.image,
