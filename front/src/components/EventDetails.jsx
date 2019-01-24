@@ -51,29 +51,28 @@ class EventDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      type: null
+      location_latitudes: null,
+      location_longitude: null,
     };
     this.id = this.props.match.params.id;
   }
 
   componentWillMount() {
-    axios.get(`http://vps635285.ovh.net:5000/event/${this.id}`).then(result => {
-      console.log(result.data);
+    axios.get(`https://loireenvert.fr/wp-json/wp/v2/events/${this.id}`).then(json => {
+      console.log("axios",json.data[0]);
       this.setState({
-        image: result.data.image,
-        name: result.data.name,
-        type: result.data.type,
-        who: result.data.who,
-        where: result.data.event_where,
-        start: result.data.event_date_start,
-        finish: result.data.event_date_finish,
-        place: result.data.place,
-        city: result.data.city,
-        description: result.data.description,
-        free: result.data.free,
-        lat: result.data.lat,
-        lng: result.data.lng
+        // image: result.data.image,
+        //  name: response.data.event_name,
+        // type: result.data.type,
+        // who: result.data.who,
+        // where: result.data.event_where,
+        // start: result.data.event_date_start,
+        // finish: result.data.event_date_finish,
+        // place: result.data.place,
+        // city: result.data.city,
+        // description: result.data.description,
+        // free: result.data.free,
+        // location_latitude: rs
       });
     });
   }

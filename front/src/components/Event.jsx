@@ -30,9 +30,8 @@ const Event = ({ event }) => (
     <NavLink to={`/event/${event.id}`}>
       <Card>
         <CardImg
-          top
           src={event.image}
-          alt="Card image cap"
+          alt="Card image cap" 
           className="cardImage"
         />
         <CardBody className="cardContent">
