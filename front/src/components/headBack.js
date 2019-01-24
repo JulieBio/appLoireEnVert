@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Row } from "reactstrap";
 import "./head.css";
 import Logo from "../assets/loire-en-vert.png";
 

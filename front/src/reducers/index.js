@@ -4,11 +4,13 @@ import { combineReducers } from "redux";
 
 import ActiveEventsReducer from "./active-events";
 import FilterEventsReducer from "./filter-events";
+import UpdateButtonReducer from "./button-dates";
 
 
 const allReducers = combineReducers({
   eventsLoire: ActiveEventsReducer,
-  filterEvents: FilterEventsReducer
+  filterEvents: FilterEventsReducer,
+  buttonDates: UpdateButtonReducer
   //J'amène mon action filterEvents pour la combiner avec "allReducers" (Monica/Nadim)
 });
 

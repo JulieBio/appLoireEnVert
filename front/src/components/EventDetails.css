@@ -6,19 +6,20 @@
 
 }
 
+/* déjà developpé dans app.css
 .inscription-button {
   background-color: #58a728;
   border-color: #58a728;
-  font-family: "Patrick Hand";
+  font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1.6em;
   margin-left: 26%;
-}
+} */
 
 .card-details {
   margin-bottom: 30vmin;
 
 }
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
   .inscription-button {
     margin-left: 37%;
   }
@@ -34,7 +35,7 @@
   .inscription-button {
     margin-left: 43%;
   }
-}
+} */
 
 .type-eventDetails {
   font-family: "Patrick Hand";

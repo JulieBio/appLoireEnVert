@@ -29,11 +29,11 @@ class MapPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 45.420986 ,
+      lat: 45.420986,
       lng: 4.385753,
-      zoom: 13
+      zoom: 13,
+      currentEvent: null
     };
-    // this.id = this.props.match.params.id;
   }
 
   componentDidMount() {
@@ -80,10 +80,7 @@ class MapPage extends Component {
             {this.props.eventsLoire.events.map((event, index) => {
               if (event.lat && event.lng)
                 return (
-                  <Marker position={[event.lat, event.lng]} icon={iconGreen}>
-                    <Popup>
-                      <Event key={`event${index}`} event={event} />
-                    </Popup>
+                  <Marker position={[event.lat, event.lng]} icon={iconGreen} onClick={()=> this.setState({currentEvent:event})}>
                   </Marker>
                 );
               else return "";
@@ -91,6 +88,14 @@ class MapPage extends Component {
           </Map>
           {/* </Container> */}
         </Container>
+        {this.state.currentEvent?
+        <div className="eventPopup">
+          <button onClick={()=>this.setState({currentEvent:null})}>Fermer</button>
+          <Event event={this.state.currentEvent} />
+        </div>
+        : ""
+        }
+
       </div>
     );
   }
