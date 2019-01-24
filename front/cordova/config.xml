@@ -46,4 +46,5 @@
     <plugin name="org.apache.cordova.geolocation" spec="^0.3.6" />
     <plugin name="cordova.plugins.diagnostic" spec="^4.0.10" />
     <engine name="android" spec="^7.1.4" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
 </widget>
