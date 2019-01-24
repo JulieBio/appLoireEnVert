@@ -83,8 +83,8 @@ class EventList extends Component {
               <div>
                 <Row>
                   {this.props.eventsLoire.events.map((event, index) => (
-                    <Col xs="12" sm="12" md="6">
-                      <Event key={`event${index}`} event={event} />
+                    <Col key={`event${index}`} xs="12" sm="12" md="6">
+                      <Event  event={event} />
                     </Col>
                   ))}
                 </Row>

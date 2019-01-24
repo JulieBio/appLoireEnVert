@@ -45,9 +45,6 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
-=======
   "proxy": "https://loireenvert.fr/wp-json/wp/v2/event",
->>>>>>> 0cb99e0f9f66fac664ecefddea0358978938178e
   "homepage": "./"
 }

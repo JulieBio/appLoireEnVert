@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import backgroundEuro from "../assets/euro.png";
@@ -42,51 +43,32 @@ class EventDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location_latitudes: null,
-      location_longitude: null,
+      // location_latitudes: null,
+      // location_longitude: null,
     };
-    this.id = this.props.match.params.id;
+    // this.id = this.props.match.params.id;
   }
 
-  componentWillMount() {
-<<<<<<< HEAD
-    axios.get(`https://loireenvert.fr/wp-json/wp/v2/events/${this.id}`).then(json => {
-      console.log("axios",json.data[0]);
-      this.setState({
-        // image: result.data.image,
-        //  name: response.data.event_name,
-        // type: result.data.type,
-        // who: result.data.who,
-        // where: result.data.event_where,
-        // start: result.data.event_date_start,
-        // finish: result.data.event_date_finish,
-        // place: result.data.place,
-        // city: result.data.city,
-        // description: result.data.description,
-        // free: result.data.free,
-        // location_latitude: rs
-=======
-    axios.get(`/event/${this.id}`).then(result => {
-      console.log(result.data)
-      this.setState({
-        image: result.data.image,
-        name: result.data.name,
-        type: result.data.type,
-        who: result.data.who,
-        where: result.data.event_where,
-        start: result.data.event_date_start,
-        finish: result.data.event_date_finish,
-        place: result.data.place,
-        city: result.data.city,
-        description: result.data.description,
-        free: result.data.free,
-        lat: result.data.lat,
-        lng: result.data.lng,
-        urlSite: result.data.urlSite
->>>>>>> 0cb99e0f9f66fac664ecefddea0358978938178e
-      });
-    });
-  }
+  // componentWillMount() {
+  //   axios.get(`https://loireenvert.fr/wp-json/wp/v2/events/${this.id}`).then(json => {
+  //     console.log("axios", json.data[0]);
+  //     this.setState({
+  //       // image: result.data.image,
+  //       //  name: response.data.event_name,
+  //       // type: result.data.type,
+  //       // who: result.data.who,
+  //       // where: result.data.event_where,
+  //       // start: result.data.event_date_start,
+  //       // finish: result.data.event_date_finish,
+  //       // place: result.data.place,
+  //       // city: result.data.city,
+  //       // description: result.data.description,
+  //       // free: result.data.free,
+  //       // location_latitude: rs
+  //     });
+  //   });
+  //   console.log(this.props)
+  // }
 
   // fonction Anaële qui rappelle la page précédement visitée
   goBack = () => {
@@ -94,73 +76,79 @@ class EventDetails extends Component {
   };
 
   render() {
+    const event = this.props.location.state;
     return (
       <div>
-        <Container className="container-eventDetails">
-          <HeadBack />
-          <Row>
-            <Col>
-              <div>
-                <div style={styleBack.goBack} onClick={this.goBack} />
-              </div>
-              <Card className="card-details">
-                <div>
-                  <CardImg src={this.state.image} alt="image evenement" />
-                  <CardBody>
-                    <CardSubtitle className="nameEvent">
-                      {this.state.name}
-                    </CardSubtitle>
-                    <div className="type-eventDetails">
-                      <div className="freeEvent">
-                        {this.state.free === "true" ? null : (
-                          <div style={styleEuro.euro} />
-                        )}
-                        <div className={this.state.type} />
-                      </div>
-                    </div>
-                    <p className="qui-eventDetails">{this.state.who}</p>
-                    <p className="ou-eventDetails">{this.state.where}</p>
-                    <CardSubtitle className="itemEvent">
-                      <p>
-                        {moment(this.state.start).format("ll")} -{" "}
-                        {moment(this.state.finish).format("ll")}
-                      </p>
-                    </CardSubtitle>
-                    <p className="place-eventDetails">{this.state.place}</p>
-                    <div className="city-eventDetails">
-                      {this.state.city === "null" ? (
-                        <div />
-                      ) : (
-                          <p> {this.state.city}</p>
-                        )}
-                    </div>
-                    <CardText className="description-event">
-                      <div dangerouslySetInnerHTML={{__html: this.state.description}}/>
-                    </CardText>
-
+        {
+          event ?
+            (
+              <Container className="container-eventDetails">
+                <HeadBack />
+                <Row>
+                  <Col>
                     <div>
-                      {/* {this.state.free === "true" ? (
-                        <h1> </h1>
-                      ) : ( */}
-                      <Button
-                        color="success"
-                        className="inscription-button"
-                        href={this.state.urlSite}
-                      >
-                        {" "}
-                        + d'infos
+                      <div style={styleBack.goBack} onClick={this.goBack} />
+                    </div>
+                    <Card className="card-details">
+                      <div>
+                        <CardImg src={event.image} alt="image evenement" />
+                        <CardBody>
+                          <CardSubtitle className="nameEvent">
+                            {event.event_name}
+                          </CardSubtitle>
+                          <div className="type-eventDetails">
+                            <div className="freeEvent">
+                              {event.event_rsvp === "0" ? null : (
+                                <div style={styleEuro.euro} />
+                              )}
+                              <div className={event.category} />
+                            </div>
+                          </div>
+                          {/* <p className="qui-eventDetails">{this.state.who}</p>
+                          <p className="ou-eventDetails">{this.state.where}</p> */}
+                          <CardSubtitle className="itemEvent">
+                            <p>
+                              {moment(this.state.start).format("ll")} -{" "}
+                              {moment(this.state.finish).format("ll")}
+                              <br />
+              {event.event_start_time}{" "}{event.event_end_time}{" "}
+                            </p>
+                          </CardSubtitle>
+                          <p className="place-eventDetails">{event.location_name}</p>
+                          <div className="city-eventDetails">
+                            {event.location_name === "null" ? (
+                              <div />
+                            ) : (
+                                <p> {event.location_town}</p>
+                              )}
+                          </div>
+                          <CardText className="description-event">
+                            <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
+                          </CardText>
+
+                          <div>
+                            <Button
+                              color="success"
+                              className="inscription-button"
+                              href={event.link}
+                            >
+                              {" "}
+                              + d'infos
                         </Button>
 
-                    </div>
-                  </CardBody>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+                          </div>
+                        </CardBody>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
+            )
+            : "Problème de chargement"
+        }
+      </div >
     );
   }
 }
 
-export default EventDetails;
+export default withRouter(EventDetails);
