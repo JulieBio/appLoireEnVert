@@ -1,4 +1,4 @@
-const activeEvents = (state = { events: [] }, action) => {
+const eventsLoire = (state = { events: [] }, action) => {
   switch (action.type) {
 
 // Julie : déclaration des actions
@@ -18,6 +18,4 @@ const activeEvents = (state = { events: [] }, action) => {
   }
 }
 
-export default activeEvents;
-
-
+export default eventsLoire;

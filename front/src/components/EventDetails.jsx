@@ -58,25 +58,26 @@ class EventDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get(`http://vps635285.ovh.net:5000/event/${this.id}`).then(result => {
-      console.log(result.data);
-      this.setState({
-        image: result.data.image,
-        name: result.data.name,
-        type: result.data.type,
-        who: result.data.who,
-        where: result.data.event_where,
-        start: result.data.event_date_start,
-        finish: result.data.event_date_finish,
-        place: result.data.place,
-        city: result.data.city,
-        description: result.data.description,
-        free: result.data.free,
-        lat: result.data.lat,
-        lng: result.data.lng,
-        urlSite: result.data.urlSite
+    console.log("grego", this.id);
+    axios
+      .get(`https://loireenvert.fr/wp-json/wp/v2/event/${this.id}`)
+      .then(result => {
+        this.setState({
+          name: result.data.event_name
+          /* 
+          who: result.data.who,
+          where: result.data.event_where,
+          start: result.data.event_date_start,
+          finish: result.data.event_date_finish,
+          place: result.data.place,
+          city: result.data.city,
+          description: result.data.description,
+          free: result.data.free,
+          lat: result.data.lat,
+          lng: result.data.lng,
+          urlSite: result.data.urlSite */
+        });
       });
-    });
   }
 
   // fonction Anaële qui rappelle la page précédement visitée
@@ -126,7 +127,11 @@ class EventDetails extends Component {
                       )}
                     </div>
                     <CardText className="description-event">
-                      {this.state.description}
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: this.state.description
+                        }}
+                      />
                     </CardText>
 
                     <div>

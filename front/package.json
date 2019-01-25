@@ -44,6 +44,6 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-  "proxy": "http://vps635285.ovh.net:5000",
+  "proxy": "https://loireenvert.fr/wp-json/wp/v2/event",
   "homepage": "./"
 }
