@@ -19,8 +19,10 @@ export const updateFilter = filter => ({
 
 export const updateButton = number => {
   console.log("in ACTION", number)
-  return { type: "UPDATE_BUTTON",
-  number,}
+  return {
+    type: "UPDATE_BUTTON",
+    number,
+  }
 };
 
 
@@ -30,48 +32,60 @@ export const fetchEvents = filter => {
   return dispatch => {
     console.log(2);
     return (
-// Julie Lisa : filter est un req.body est le même que filter dans updateFilter
+      // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
       axios.all([
-          axios.get("https://loireenvert.fr/wp-json/wp/v2/events"),
-          axios.get("https://loireenvert.fr/wp-json/wp/v2/locations"),
-          axios.get("https://loireenvert.fr/wp-json/wp/v2/event-categories ")
+        axios.get("https://loireenvert.fr/wp-json/wp/v2/events"),
+        axios.get("https://loireenvert.fr/wp-json/wp/v2/locations"),
+        axios.get("https://loireenvert.fr/wp-json/wp/v2/event-categories ")
       ])
-// Marion : on crée deux variables contenant chacune les données de chaque table categoriesRes
-        .then(axios.spread((eventRes, locationsRes, categoriesRes ) => {
+        // Marion : on crée deux variables contenant chacune les données de chaque table categoriesRes
+        .then(axios.spread((eventRes, locationsRes, categoriesRes) => {
           const eventsLoire = eventRes.data;
           console.log("eventsLoire", eventsLoire)
           /**
            * Recupération des images dans le content
            */
-          
+
           const regexFindImage = /<img.*?https?(.*?(?:jpg|png)).*?>/;
-          const NewEventsLoire= eventsLoire.map(event => {
+          const eventswithImg = eventsLoire.map(event => {
             console.log(`http${regexFindImage.exec(event.post_content)[1]}`)
-            return({...event,image:`http${regexFindImage.exec(event.post_content)[1]}`})
+            return ({ ...event, image: `http${regexFindImage.exec(event.post_content)[1]}` })
           })
-          console.log('NewEventsLoire',NewEventsLoire )
+          console.log('NewEventsLoire', eventswithImg)
           console.log("image")
-          
+
           /**
            * Merge des events avec les locations
            */
           const locs = locationsRes.data;
           const categories = categoriesRes.data;
           // Marion : on prends la table de tous les évènements attribuée à la variable const events puis pour un évènement on récupère la colomne commune à la table des évènements et à la table des lieux dans chaque table et on compare qu'elles soient bien identique. Si oui, on retourne la table évènements avec le lieux correspondant à la clé.
-          const eventLoireFull = NewEventsLoire.map((event,i) => {
+          const eventswithImgWithLoc = eventswithImg.map((event, i) => {
             const loc = locs.find(loc => loc.location_id === event.location_id)
-            const categorie = categories.find(catego =>{
-              if(event.categories_id &&  event.categories_id.indexOf(catego.id ))
-                return true;
-                else
-                return false;
-            })
-            if(i===1)console.log(event,loc,{...event, ...loc, ...categorie})
-            return {...event, ...loc, ...categorie}
+            if (i === 1) console.log(event, loc, { ...event, ...loc })
+            return { ...event, ...loc }
           });
-          console.log("evenLoireFull",eventLoireFull)
-          eventLoireFull.map(ev=>console.log(ev.image))
-          dispatch(updateEventsList(eventLoireFull));
+
+          /**
+           * Merge categories
+           */
+          const eventswithImgWithLocWithCat = eventswithImgWithLoc.map((event, i) => {
+            if (event.categories_id) {
+              const newecategories = event.categories_id.map(evtcat => {
+                const goodcat = categories.find(cat => {
+                  return (evtcat === cat.id)
+                })
+                return goodcat
+              })
+              return { ...event, categories_id: newecategories };
+            }
+            else
+              return event;
+          });
+
+          console.log("eventswithImgWithLocWithCat", eventswithImgWithLocWithCat[1].categories_id[0], eventswithImgWithLocWithCat[1].categories_id[0].name)
+          eventswithImgWithLocWithCat.map(ev => console.log(ev.image))
+          dispatch(updateEventsList(eventswithImgWithLocWithCat));
         }))
         .catch(e => {
           console.log(e);
