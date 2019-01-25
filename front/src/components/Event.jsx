@@ -30,7 +30,7 @@ const Event = ({ event }) => (
       <Card>
         <CardImg
           src={event.image}
-          alt="Card image cap" 
+          alt="Card image cap"
           className="cardImage"
         />
         <CardBody className="cardContent">
@@ -44,7 +44,7 @@ const Event = ({ event }) => (
             <p className="eventTitle">{event.event_name} </p>
           </CardSubtitle> */}
           <CardSubtitle className="itemEvent">
-            <p className="typeEvent">{event.type} </p>
+            <p className="typeEvent">{event.name} </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">
             <p>
@@ -62,8 +62,12 @@ const Event = ({ event }) => (
               ) : (
                 <div style={styleEuro.euro} />
               )}
-              <div className={event.type} />
+              <div className={event.name} />
             </div>
+          </CardSubtitle>
+        <br />
+          <CardSubtitle className="itemEvent">
+          {event.categories_id && event.categories_id.map(cat =>  <span>{cat && cat.name} </span>)}
           </CardSubtitle>
         </CardBody>
       </Card>
