@@ -38,12 +38,13 @@ class MapPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 45.420986,
-      lng: 4.385753,
+      location_latitude: 45.420986,
+      location_longitude: 4.385753,
       zoom: 12,
       visible: true,
       alert: false,
       loader: false,
+      currentEvent: null
     };
     this.onDismiss = this.onDismiss.bind(this);
   }
@@ -71,8 +72,8 @@ class MapPage extends Component {
     navigator.geolocation.getCurrentPosition(position => {
       //si les coordonnées sont trouver le spinner passe en false
       this.setState({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        location_latitude: position.coords.latitude,
+        location_longitude: position.coords.longitude,
         loader: false,
       });
     }, error => {
@@ -88,20 +89,32 @@ class MapPage extends Component {
         enableHighAccuracy: false
       });
   }
+  // componentWillMount() {
+  //   console.log("here", this.props.filterEvents);
+  //   this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+  // }
+
   componentWillMount() {
-    console.log("here", this.props.filterEvents);
-    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+    console.log("here", this.props.activeEvents);
+    this.props.functionCallDispatchFetchEvents(this.props.activeEvents);
   }
 
+  // componentWillReceiveProps(newprops) {
+  //   if (this.props.filterEvents !== newprops.filterEvents)
+  //     this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
+  // }
+
   componentWillReceiveProps(newprops) {
-    if (this.props.filterEvents !== newprops.filterEvents)
-      this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
+    if (this.props.activeEvents !== newprops.activeEvents)
+      this.props.functionCallDispatchFetchEvents(newprops.activeEvents);
   }
 
   render() {
-    console.log("eventFiltré", this.props.filterEvents);
+    // console.log("eventFiltré", this.props.filterEvents);
+    console.log("activeEvents", this.props.activeEvents);
 
-    const position = [this.state.lat, this.state.lng];
+
+    const position = [this.state.location_latitude, this.state.location_longitude];
 
     return (
       <div>
@@ -149,18 +162,22 @@ class MapPage extends Component {
             </Marker>
 
             {this.props.activeEvents.events.map((event, index) => {
-              if (event.lat && event.lng)
+              if (event.location_latitude && event.location_longitude)
                 return (
-                  <Marker position={[event.lat, event.lng]} icon={iconGreen}>
-                    <Popup>
-                      <Event key={`event${index}`} event={event} />
-                    </Popup>
+                  <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={()=> this.setState({currentEvent:event})}>
                   </Marker>
                 );
               else return "";
             })}
           </Map>
         </Container>
+        {this.state.currentEvent?
+        <div className="eventPopup">
+          <button onClick={()=>this.setState({currentEvent:null})}>Fermer</button>
+          <Event event={this.state.currentEvent} />
+        </div>
+        : ""
+        }
 
       </div>
     );

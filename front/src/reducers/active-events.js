@@ -14,10 +14,7 @@ const activeEvents = (state = { events: [] }, action) => {
 
     default:
       return state
-
   }
 }
 
 export default activeEvents;
-
-

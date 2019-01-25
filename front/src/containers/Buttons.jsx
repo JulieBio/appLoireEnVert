@@ -62,8 +62,8 @@ class Buttons extends React.Component {
     return (
       <Container onClick={this.handleClick} className="blockButtons">
         <Row>
-          {this.state.buttonDates.map(button => (
-            <Col xs="4" sm="4" md="4">
+          {this.state.buttonDates.map((button, index) => (
+            <Col xs="4" sm="4" md="4" key={index}>
               <Button
                 disabled={button.id === updateButton}
                 id={button.id}

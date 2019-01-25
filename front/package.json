@@ -6,12 +6,13 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "express": "^4.16.4",
-    "leaflet": "^1.3.4",
+    "leaflet": "^1.4.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "react-leaflet": "^2.2.0",
     "moment": "^2.23.0",
     "react": "^16.7.0",
     "react-burger-menu": "^2.5.4",
     "react-dom": "^16.7.0",
-    "react-leaflet": "^2.1.3",
     "react-lines-ellipsis": "^0.14.0",
     "react-media": "^1.8.0",
     "react-moment": "^0.8.4",
@@ -45,6 +46,6 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-  "proxy": "http://vps635285.ovh.net:5000",
+  "proxy": "https://loireenvert.fr/wp-json/wp/v2/event",
   "homepage": "./"
 }

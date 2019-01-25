@@ -55,6 +55,11 @@ a {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .inscription-button {
+    margin-left: 43%;
+  }
+}
 .type-eventDetails {
   font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
@@ -109,21 +114,39 @@ a {
 
 /* Julie : NavBar, et tout ce qui en dépend */
 
-.navbar {
+.notreNavbar {
   z-index: 99999;
   background-color: #b6543a;
   position: fixed;
   overflow: hidden;
   bottom: 0 !important;
   width: 100%;
+  height: 10%;
   padding: 0.8rem 1rem !important;
+  list-style: none;
+  justify-content: space-between;
 }
+
+.activeNB {
+  display: block;
+  opacity: 0.3;
+}
+
 .icon {
-  padding-left: 10%;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+}
+
+.icon img {
+  padding: 28%;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
 }
 .menuB {
   color: #4b4b4b !important;
-  width:100% !important;
+  width: 100% !important;
 }
 .menuB a:link {
   color: #4b4b4b !important;
@@ -204,4 +227,19 @@ a {
 .map {
   height: 64vh;
   width: 100%;
+}
+
+
+.eventPopup{
+  position: fixed;
+  bottom: 0;
+  margin: 25px;
+  margin-bottom: 80px;
+  z-index:9999;
+}
+.eventPopup > button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
 }
