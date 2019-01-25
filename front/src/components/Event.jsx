@@ -45,7 +45,7 @@ const Event = ({ event }) => (
             <p className="eventTitle">{event.event_name} </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">
-            <p className="typeEvent">{event.type} </p>
+            <p className="typeEvent">{event.name} </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">
             <p>
@@ -63,7 +63,7 @@ const Event = ({ event }) => (
               ) : (
                 <div style={styleEuro.euro} />
               )}
-              <div className={event.type} />
+              <div className={event.name} />
             </div>
           </CardSubtitle>
         </CardBody>
