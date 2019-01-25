@@ -65,6 +65,7 @@ const Event = ({ event }) => (
               <div className={event.name} />
             </div>
           </CardSubtitle>
+        <br />
           <CardSubtitle className="itemEvent">
           {event.categories_id && event.categories_id.map(cat =>  <span>{cat && cat.name} </span>)}
           </CardSubtitle>
