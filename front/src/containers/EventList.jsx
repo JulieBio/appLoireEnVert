@@ -99,15 +99,9 @@ class EventList extends Component {
             {this.props.activeEvents.events.length > 0 ? (
               <div>
                 <Row>
-<<<<<<< HEAD
-                  {this.props.eventsLoire.events.map((event, index) => (
+                  {this.props.activeEvents.events.map((event, index) => (
                     <Col key={`event${index}`} xs="12" sm="12" md="6">
                       <Event  event={event} />
-=======
-                  {this.props.activeEvents.events.map((event, index) => (
-                    <Col xs="12" sm="12" md="6">
-                      <Event key={`event${index}`} event={event} />
->>>>>>> 7fe0e271f83552dc16c79f62d86055fd7a37191e
                     </Col>
                   ))}
                 </Row>
