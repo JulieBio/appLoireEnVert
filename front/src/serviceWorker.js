@@ -31,7 +31,7 @@ export function register(config) {
       return;
     }
 
-    window.addEventListener('load', () => {
+    window.addMovieListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
       if (isLocalhost) {

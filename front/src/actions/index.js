@@ -1,32 +1,26 @@
 import axios from "axios";
 
 //Julie : description de l'action
-export const updateEventsList = events => ({
-  type: "UPDATE_EVENTS_LIST",
-  events
+export const updateMoviesList = movies => ({
+  type: "UPDATE_MOVIES_LIST",
+  movies
 });
-export const addEvent = event => ({
-  type: "ADD_EVENT",
-  event
-});
-
-//On crée const pour actualiser les résultats filtrés (Monica/Nadim)
-export const updateFilter = filter => ({
-  type: "UPDATE_FILTER",
-  filter
+export const addMovie = movie => ({
+  type: "ADD_MOVIE",
+  movie
 });
 
 
-export const fetchEvents = filter => {
+export const fetchMovies = filter => {
   console.log("filter", filter);
   return dispatch => {
     console.log(2);
     return axios
-      .post("/event", filter)
+      .post("/movie", filter)
       .then(response => {
-        const activeEvents = response.data;
+        const activeMovies = response.data;
         console.log("response", response.data);
-        dispatch(updateEventsList(activeEvents));
+        dispatch(updateMoviesList(activeMovies));
       })
       .catch(e => {
         console.log(e);

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
-@font-face {
+/* @font-face {
   font-family: "Old Press";
   font-style: normal;
   font-weight: 400;
   src: url("./assets/old_press-webfont.woff");
-}
+} */
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 /* Julie: espace pour que le contenu soit lisible sur la barre de navigation */
@@ -33,9 +33,7 @@ a {
 }
 
 .App {
-  background-image: url(./assets/fond.jpg);
-}
-/*composant Event*/
+background-color: blue}
 .cardAccueil-event {
   margin-top: 20px;
 }
@@ -59,60 +57,6 @@ a {
   width: 100%;
 }
 
-.exposition,
-.expositions {
-  background-image: url("./assets/expositions.png");
-  background-size: cover;
-  height: 5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.sortie {
-  background-image: url("./assets/sortie.png");
-  background-size: cover;
-  height: 5.5vh;
-  width: 6vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.conférence {
-  background-image: url("./assets/conferences.png");
-  background-size: cover;
-  height: 4vh;
-  width: 7vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Randonnées {
-  background-image: url("./assets/randonnee.png");
-  background-size: cover;
-  height: 6vh;
-  width: 4.5vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.Ateliers {
-  background-image: url("./assets/ateliers.png");
-  background-size: cover;
-  height: 4vh;
-  width: 8vh;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-.apéro-quiz {
-  background-image: url("./assets/apero-quiz.png");
-  background-size: cover;
-  height: 5vh;
-  width: 4vh;
-  background-repeat: no-repeat;
-  float: left;
-}
 
 .description-event {
   margin-top: 40px;
