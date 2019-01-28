@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { updateEventsList } from "./actions/index";
 import { updateFilter } from "./actions/index";
 import { fetchEvents } from "./actions/index";
-
 import EventFilterWhere from "./components/EventFilterWhere.jsx";
 import EventFilterWho from "./components/EventFilterWho.jsx";
 import EventList from "./containers/EventList";
@@ -31,11 +30,13 @@ class App extends Component {
       eventsfiltre: []
     }
   }
+
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
     this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
+
   render() {
     return (
       <div className="App">

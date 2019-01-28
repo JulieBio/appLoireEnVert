@@ -27,7 +27,7 @@ class EventFilterWhere extends Component {
         },
         {
           name: "Stéphanois-Pilat",
-          filter: "Chambéon",
+          filter: "Stéphanois-Pilat",
           image: stephanois
         },
         {

@@ -14,17 +14,18 @@ import { Link } from "react-router-dom";
 
 class EventList extends Component {
   // Julie : pour le filtre en front
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     eventsfiltre: []
-  //   }
-  // }
-  // componentWillMount() {
-  //   console.log("here", this.props.filterEvents);
-  //   //filterEvents dispatchée par Fetchevents(Monica/Nadim)
-  //   this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
-  // }
+  constructor() {
+    super()
+    this.state = {
+      eventsfiltre: []
+    }
+  }
+
+  componentWillMount() {
+    console.log("here", this.props.filterEvents);
+    //filterEvents dispatchée par Fetchevents(Monica/Nadim)
+    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+  }
 
   //Lisa : on renvoie de nouveaux props quand on appuie sur les boutons de filtre jours
 
@@ -44,9 +45,13 @@ class EventList extends Component {
   }
 
   cancelFilter(filter) {
-    this.props.updateFilter({ [filter]: "%%" });
-    // if (filter === "%%") ? (<p/>) : (this.props.updateFilter({ [filter] : "%%"}));
-  }
+    // this.props.updateFilter({ [filter]: "%%" });
+    if (filter === "%%") { 
+      return (<p/>) 
+      }else{
+      (this.props.updateFilter({ [filter] : "%%"}));
+      }
+    };
 
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
@@ -142,7 +147,7 @@ const mapDispatchToProps = dispatch => {
     addEvent: event => {
       dispatch(updateEventsList(event));
     },
-    updateFiltgiter: filter => {
+    updateFilter: filter => {
       dispatch(updateFilter(filter));
     }
 
