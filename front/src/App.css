@@ -23,8 +23,9 @@ a {
   background-image: url(./assets/fond.jpg);
   min-height: 100vh;
   min-width: 100vw;
-  background-size: cover;
+  /* background-size: cover; */
   background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 .mainContainer {

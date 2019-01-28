@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container } from "reactstrap";
+import { Container, Alert } from "reactstrap";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { updateEventsList } from "../actions/index";
+import { css } from '@emotion/core';
+import { ClipLoader } from 'react-spinners';
 import Event from "../components/Event";
 import { fetchEvents } from "../actions/index";
 import L from "leaflet";
 import Buttons from "./Buttons";
 // import "../App.css";
 import HeadNoBack from "../components/headNoBack";
+
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 var myIcon = L.icon({
   iconUrl:
@@ -31,19 +40,54 @@ class MapPage extends Component {
     this.state = {
       location_latitude: 45.420986,
       location_longitude: 4.385753,
-      zoom: 13,
+      zoom: 12,
+      visible: true,
+      alert: false,
+      loader: false,
       currentEvent: null
     };
+    this.onDismiss = this.onDismiss.bind(this);
+  }
+
+  onDismiss() {
+    this.setState({ visible: false });
   }
 
   componentDidMount() {
+    //geolocalisation avec plugins de cordova pour autoriser la géolocalisation
+    window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
+      if (!authorized) {
+        window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
+          this.getPosition();
+        })
+      } else {
+        this.getPosition();
+      }
+    })
+  }
+
+  getPosition() {
+      // récupère la localisation
+    this.setState({ loader: true }) // spinner actif dès affichage de la map
     navigator.geolocation.getCurrentPosition(position => {
-      console.log("position:", position);
+      //si les coordonnées sont trouver le spinner passe en false
       this.setState({
         location_latitude: position.coords.latitude,
-        location_longitude: position.coords.longitude
+        location_longitude: position.coords.longitude,
+        loader: false,
       });
-    });
+    }, error => {
+      //si les cordonnées Gps ne sont pas trouvées alors le spinner passe en false et alerte en true
+      this.setState({
+        loader: false,
+        // Alerte prend ce message d'erreur
+        alert: <div style={{ textAlign: 'center' }}> Impossible de récupérer votre position. Vérifier vos paramètres GPS!</div>
+      })
+    }, {
+      // impose un temps de recherche de la géolocalisation
+        timeout: 10000,
+        enableHighAccuracy: false
+      });
   }
   // componentWillMount() {
   //   console.log("here", this.props.filterEvents);
@@ -74,13 +118,41 @@ class MapPage extends Component {
 
     return (
       <div>
+
+
+
         <Container className="container-eventDetails">
+
           <HeadNoBack />
           <Buttons />
+          {/*affiche le spinner suivant état de la condition et de son State */}
+          {this.state.loader ?
+            <div className='sweet-loading'>
+              <ClipLoader
+                css={override}
+                sizeUnit={"px"}
+                size={20}
+                color={'#4b4b4b'}
+                loading={this.state.loading}
 
-          {/* <Container className="containerMap"> */}
+              />
+            </div>
+            :
+            " "}
+
+          {/*affiche l'alerte suivant état de la condition et de si la geolocalisation à été trouvée */}
+          {this.state.alert ?
+            <div>
+              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position:'fixed', zIndex:'9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
+                {this.state.alert}
+              </Alert>
+            </div> :
+            " "}
+
+
 
           <Map className="map" center={position} zoom={this.state.zoom}>
+
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -98,7 +170,6 @@ class MapPage extends Component {
               else return "";
             })}
           </Map>
-          {/* </Container> */}
         </Container>
         {this.state.currentEvent?
         <div className="eventPopup">

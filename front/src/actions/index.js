@@ -28,9 +28,7 @@ export const updateButton = number => {
 
 // recupération dans la bdd
 export const fetchEvents = filter => {
-  console.log("filter", filter);
   return dispatch => {
-    console.log(2);
     return (
       // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
       axios.all([
@@ -41,18 +39,14 @@ export const fetchEvents = filter => {
         // Marion : on crée deux variables contenant chacune les données de chaque table categoriesRes
         .then(axios.spread((eventRes, locationsRes, categoriesRes) => {
           const eventsLoire = eventRes.data;
-          console.log("eventsLoire", eventsLoire)
           /**
            * Recupération des images dans le content
            */
 
           const regexFindImage = /<img.*?https?(.*?(?:jpg|png)).*?>/;
           const eventswithImg = eventsLoire.map(event => {
-            console.log(`http${regexFindImage.exec(event.post_content)[1]}`)
             return ({ ...event, image: `http${regexFindImage.exec(event.post_content)[1]}` })
           })
-          console.log('NewEventsLoire', eventswithImg)
-          console.log("image")
 
           /**
            * Merge des events avec les locations
@@ -83,8 +77,6 @@ export const fetchEvents = filter => {
               return event;
           });
 
-          console.log("eventswithImgWithLocWithCat", eventswithImgWithLocWithCat[1].categories_id[0], eventswithImgWithLocWithCat[1].categories_id[0].name)
-          eventswithImgWithLocWithCat.map(ev => console.log(ev.image))
           dispatch(updateEventsList(eventswithImgWithLocWithCat));
         }))
         .catch(e => {

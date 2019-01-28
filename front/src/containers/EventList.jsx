@@ -20,6 +20,7 @@ class EventList extends Component {
       eventsfiltre: []
     }
   }
+
   componentWillMount() {
     console.log("here", this.props.filterEvents);
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
@@ -43,10 +44,14 @@ class EventList extends Component {
     })
   }
 
-  // cancelFilter(filter) {
-  //   this.props.updateFilter({ [filter]: "%%" });
-  //   // if (filter === "%%") ? (<p/>) : (this.props.updateFilter({ [filter] : "%%"}));
-  // }
+  cancelFilter(filter) {
+    // this.props.updateFilter({ [filter]: "%%" });
+    if (filter === "%%") { 
+      return (<p/>) 
+      }else{
+      (this.props.updateFilter({ [filter] : "%%"}));
+      }
+    };
 
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés

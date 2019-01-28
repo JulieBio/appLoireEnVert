@@ -15,6 +15,7 @@ import 'leaflet/dist/leaflet.css';
 
 const store = createStore(allReducers, applyMiddleware(thunk));
 
+
 ReactDOM.render(
   // Julie : le store de Redux
   <Provider store={store}>

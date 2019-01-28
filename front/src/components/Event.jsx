@@ -1,25 +1,25 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import backgroundEuro from "../assets/euro.png";
+// import backgroundEuro from "../assets/euro.png";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
 import LinesEllipsis from "react-lines-ellipsis";
 import "./eventList.css";
 
-const styleEuro = {
-  euro: {
-    background: `url(${backgroundEuro})`,
-    backgroundSize: "contain",
-    opacity: "0.5",
-    backgroundRepeat: "no-repeat",
-    height: "25px",
-    width: "20px",
-    float: "left",
-    marginRight: "1vh"
-    //padding: '5px',
-  }
-};
+// const styleEuro = {
+//   euro: {
+//     background: `url(${backgroundEuro})`,
+//     backgroundSize: "contain",
+//     opacity: "0.5",
+//     backgroundRepeat: "no-repeat",
+//     height: "20px",
+//     width: "20px",
+//     float: "right",
+//     marginLeft: "1vh"
+//     //padding: '5px',
+//   }
+// };
 // Lisa : affichage des dates en fr avec momentjs
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
@@ -55,14 +55,12 @@ const Event = ({ event }) => (
             </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">{event.location_town}</CardSubtitle>
+
           <CardSubtitle>
             <div className="cardIcones">
-              {event.event_rsvp === "0" ? (
-                <h1> </h1>
-              ) : (
-                <div style={styleEuro.euro} />
-              )}
-              <div className={event.name} />
+            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
+                              <br /> 
+              <div className={event.type} />
             </div>
           </CardSubtitle>
         <br />

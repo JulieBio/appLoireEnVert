@@ -1,0 +1,40 @@
+{
+  "_from": "org.apache.cordova.geolocation",
+  "_id": "org.apache.cordova.geolocation@0.3.6",
+  "_inBundle": false,
+  "_integrity": "sha1-7jib5M+dbzuM5QAXta9+qJ+q1o0=",
+  "_location": "/org.apache.cordova.geolocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "org.apache.cordova.geolocation",
+    "name": "org.apache.cordova.geolocation",
+    "escapedName": "org.apache.cordova.geolocation",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/org.apache.cordova.geolocation/-/org.apache.cordova.geolocation-0.3.6.tgz",
+  "_shasum": "ee389be4cf9d6f3b8ce50017b5af7ea89faad68d",
+  "_spec": "org.apache.cordova.geolocation",
+  "_where": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "cordova-plugin-geolocation@0.3.6",
+  "directories": {
+    "doc": "doc"
+  },
+  "license": "Apache-2.0",
+  "main": "./www/geolocation.js",
+  "name": "org.apache.cordova.geolocation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.3.6"
+}
