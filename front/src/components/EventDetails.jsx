@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
 import "bootstrap/dist/css/bootstrap.min.css";
-import backgroundEuro from "../assets/euro.png";
+// import axios from "axios";
+//import backgroundEuro from "../assets/euro.png";
 import { Container, Card, CardImg, CardBody, Button, CardText, CardSubtitle, Row, Col } from "reactstrap";
 import retourFleche from "../assets/retourFleche.png";
 import moment from "moment";
@@ -22,18 +23,18 @@ const styleBack = {
   }
 };
 
-const styleEuro = {
-  euro: {
-    background: `url(${backgroundEuro})`,
-    backgroundSize: "contain",
-    opacity: "0.5",
-    backgroundRepeat: "no-repeat",
-    height: "4.5vh",
-    width: "5vh",
-    float: "left",
-    marginRight: "1vh"
-  }
-};
+// const styleEuro = {
+//   euro: {
+//     background: `url(${backgroundEuro})`,
+//     backgroundSize: "contain",
+//     opacity: "0.5",
+//     backgroundRepeat: "no-repeat",
+//     height: "4.5vh",
+//     width: "5vh",
+//     float: "left",
+//     marginRight: "1vh"
+//   }
+// };
 
 var idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
@@ -78,72 +79,74 @@ class EventDetails extends Component {
     const event = this.props.location.state;
     return (
       <div>
-        {
-          event ?
-            (
-              <Container className="container-eventDetails">
-                <HeadBack />
-                <Row>
-                  <Col>
+        {event ?
+          (
+            <Container className="container-eventDetails">
+              <HeadBack />
+              <Row>
+                <Col>
+                  <div>
+                    <div style={styleBack.goBack} onClick={this.goBack} />
+                  </div>
+                  <Card className="card-details">
                     <div>
-                      <div style={styleBack.goBack} onClick={this.goBack} />
-                    </div>
-                    <Card className="card-details">
-                      <div>
-                        <CardImg src={event.image} alt="image evenement" />
-                        <CardBody>
-                          <CardSubtitle className="nameEvent">
-                            {event.event_name}
-                          </CardSubtitle>
-                          <div className="type-eventDetails">
-                            <div className="freeEvent">
-                              {event.event_rsvp === "0" ? null : (
-                                <div style={styleEuro.euro} />
-                              )}
-                              <div className={event.category} />
-                            </div>
-                          </div>
+                      <CardImg src={event.image} alt="image evenement" />
+                      <CardBody>
+                        <CardSubtitle className="nameEvent">
+                          {event.event_name}
+                        </CardSubtitle>
+                        <div className="type-eventDetails">
+                          <div className={event.category} />
+                        </div>
                           {/* <p className="qui-eventDetails">{this.state.who}</p>
-                          <p className="ou-eventDetails">{this.state.where}</p> */}
-                          <CardSubtitle className="itemEvent">
-                            <p>
-                              {moment(this.state.start).format("ll")} -{" "}
-                              {moment(this.state.finish).format("ll")}
-                              <br />
-              {event.event_start_time}{" "}{event.event_end_time}{" "}
-                            </p>
-                          </CardSubtitle>
-                          <p className="place-eventDetails">{event.location_name}</p>
-                          <div className="city-eventDetails">
-                            {event.location_name === "null" ? (
-                              <div />
+                                <p className="ou-eventDetails">{this.state.where}</p> */}
+                        <CardSubtitle className="itemEvent">
+                          <p>
+                            {moment(event.event_start_date).format("ll")} -{" "}
+                            {moment(event.event_end_date).format("ll")}
+                            <br />
+                            {event.event_start_time}{" "}{event.event_end_time}{" "}
+                          </p>
+                        </CardSubtitle>
+                        <p className="place-eventDetails">{event.location_name}</p>
+                        <div className="city-eventDetails">
+                          {event.location_name === "null" ? (
+                            <div />
                             ) : (
-                                <p> {event.location_town}</p>
-                              )}
-                          </div>
-                          <CardText className="description-event">
-                            <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
-                          </CardText>
+                              <p> {event.location_town}</p>
+                          )}
 
-                          <div>
-                            <Button
-                              color="success"
-                              className="inscription-button"
-                              href={event.link}
-                            >
-                              {" "}
-                              + d'infos
-                        </Button>
-
+                          <div className="freeEvent">
+                            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
+                            <br />
                           </div>
-                        </CardBody>
-                      </div>
-                    </Card>
-                  </Col>
-                </Row>
-              </Container>
-            )
-            : "Problème de chargement"
+                        </div>
+                        <br />
+
+                        <CardText className="description-event">
+                          <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
+                        </CardText>
+
+                        <div>
+                          <Button
+                            color="success"
+                            className="inscription-button"
+                            // href={event.link}
+                            href="https://loireenvert.fr/evenements/"
+                          >
+                            {" "}
+                            + d'infos
+                          </Button>
+
+                        </div>
+                        
+                      </CardBody>
+                    </div>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          ) : "Problème de chargement"
         }
       </div >
     );

@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "org.apache.cordova.geolocation": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "fr.loireenvert.cordova"
+    }
+  }
+}

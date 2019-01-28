@@ -64,6 +64,9 @@
 }
 
 .cardIcones {
+  color:#4b4b4b;
+  font-family: "Patrick Hand";
+  font-size: 1em;
   position: absolute;
   bottom: 10px;
 }
