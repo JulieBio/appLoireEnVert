@@ -13,10 +13,10 @@ const styleEuro = {
     backgroundSize: "contain",
     opacity: "0.5",
     backgroundRepeat: "no-repeat",
-    height: "25px",
+    height: "20px",
     width: "20px",
-    float: "left",
-    marginRight: "1vh"
+    float: "right",
+    marginLeft: "1vh"
     //padding: '5px',
   }
 };
@@ -57,11 +57,8 @@ const Event = ({ event }) => (
           <CardSubtitle className="itemEvent">{event.location_town}</CardSubtitle>
           <CardSubtitle>
             <div className="cardIcones">
-              {event.event_rsvp === "0" ? (
-                <h1> </h1>
-              ) : (
-                <div style={styleEuro.euro} />
-              )}
+            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
+                              <br /> 
               <div className={event.type} />
             </div>
           </CardSubtitle>

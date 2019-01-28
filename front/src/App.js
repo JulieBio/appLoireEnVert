@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { HashRouter, Route, Switch, NavLink } from "react-router-dom";
 import EventDetails from "./components/EventDetails";
+import { connect } from "react-redux";
+import { updateEventsList } from "./actions/index";
+import { updateFilter } from "./actions/index";
+import { fetchEvents } from "./actions/index";
+
 import EventFilterWhere from "./components/EventFilterWhere.jsx";
 import EventFilterWho from "./components/EventFilterWho.jsx";
 import EventList from "./containers/EventList";
@@ -20,7 +25,17 @@ import menu from "./assets/menu.png";
 
 //Monica: ScrollToTop pour mettre à jour le scroll
 class App extends Component {
-
+  constructor() {
+    super()
+    this.state = {
+      eventsfiltre: []
+    }
+  }
+  componentWillMount() {
+    console.log("here", this.props.filterEvents);
+    //filterEvents dispatchée par Fetchevents(Monica/Nadim)
+    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+  }
   render() {
     return (
       <div className="App">
@@ -74,4 +89,36 @@ class App extends Component {
   }
 }
 
-export default App;
+//Julie : transfert des états
+// const mapStateToProps = ({ eventsLoire, filterEvents }) => {
+  // console.log("store", { eventsLoire, filterEvents });
+  // return { eventsLoire, filterEvents };
+  const mapStateToProps = ({ activeEvents, filterEvents }) => {
+    console.log("store", { activeEvents, filterEvents });
+    return { activeEvents, filterEvents };
+};
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
+    addEvent: event => {
+      dispatch(updateEventsList(event));
+    },
+    updateFilter: filter => {
+      dispatch(updateFilter(filter));
+    }
+
+    //*Test events filtrés Monica ne pas effacer merci**
+    // addEventFilter: filter => {
+    //   dispatch(updateFilter(filter));
+    // }
+  };
+};
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
+

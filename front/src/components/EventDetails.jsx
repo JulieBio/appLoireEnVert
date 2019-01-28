@@ -23,18 +23,18 @@ const styleBack = {
   }
 };
 
-const styleEuro = {
-  euro: {
-    background: `url(${backgroundEuro})`,
-    backgroundSize: "contain",
-    opacity: "0.5",
-    backgroundRepeat: "no-repeat",
-    height: "4.5vh",
-    width: "5vh",
-    float: "left",
-    marginRight: "1vh"
-  }
-};
+// const styleEuro = {
+//   euro: {
+//     background: `url(${backgroundEuro})`,
+//     backgroundSize: "contain",
+//     opacity: "0.5",
+//     backgroundRepeat: "no-repeat",
+//     height: "4.5vh",
+//     width: "5vh",
+//     float: "left",
+//     marginRight: "1vh"
+//   }
+// };
 
 var idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
@@ -97,19 +97,16 @@ class EventDetails extends Component {
                             {event.event_name}
                           </CardSubtitle>
                           <div className="type-eventDetails">
-                            <div className="freeEvent">
-                              {event.event_rsvp === "0" ? null : (
-                                <div style={styleEuro.euro} />
-                              )}
-                              <div className={event.category} />
-                            </div>
+
+                            <div className={event.category} />
+
                           </div>
                           {/* <p className="qui-eventDetails">{this.state.who}</p>
                           <p className="ou-eventDetails">{this.state.where}</p> */}
                           <CardSubtitle className="itemEvent">
                             <p>
-                              {moment(this.state.start).format("ll")} -{" "}
-                              {moment(this.state.finish).format("ll")}
+                              {moment(event.event_start_date).format("ll")} -{" "}
+                              {moment(event.event_end_date).format("ll")}
                               <br />
                               {event.event_start_time}{" "}{event.event_end_time}{" "}
                             </p>
@@ -121,7 +118,14 @@ class EventDetails extends Component {
                             ) : (
                                 <p> {event.location_town}</p>
                               )}
+            
+                              <div className="freeEvent">
+                            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
+                              <br /> 
                           </div>
+                          </div>
+                          <br />
+
                           <CardText className="description-event">
                             <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
                           </CardText>
@@ -130,7 +134,8 @@ class EventDetails extends Component {
                             <Button
                               color="success"
                               className="inscription-button"
-                              href={event.link}
+                              // href={event.link}
+                              href="https://loireenvert.fr/evenements/"
                             >
                               {" "}
                               + d'infos
