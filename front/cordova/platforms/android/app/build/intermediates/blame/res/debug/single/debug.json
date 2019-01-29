@@ -12,12 +12,12 @@
         "source": "/home/salvana/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f612789a37be2ced49d9ebd32750c6c4/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxhdpi_screen.png.flat",
-        "source": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/src/main/res/drawable-land-xxhdpi/screen.png"
-    },
-    {
         "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "/home/salvana/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f612789a37be2ced49d9ebd32750c6c4/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxhdpi_screen.png.flat",
+        "source": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/src/main/res/drawable-land-xxhdpi/screen.png"
     },
     {
         "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-hdpi_screen.png.flat",
@@ -352,12 +352,12 @@
         "source": "/home/salvana/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f612789a37be2ced49d9ebd32750c6c4/res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/mipmap-ldpi_icon.png.flat",
-        "source": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/src/main/res/mipmap-ldpi/icon.png"
-    },
-    {
         "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/layout_abc_action_menu_layout.xml.flat",
         "source": "/home/salvana/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f612789a37be2ced49d9ebd32750c6c4/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/mipmap-ldpi_icon.png.flat",
+        "source": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/src/main/res/mipmap-ldpi/icon.png"
     },
     {
         "merged": "/home/salvana/Bureau/Projets/Loire_en_vert/AppLoireEnVert/appLoireEnVert/front/cordova/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",

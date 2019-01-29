@@ -10,8 +10,8 @@ const filterEvents = (state = { where: '%%', who: '%%', when: 15 }, action) => {
   switch (action.type) {
     case "UPDATE_FILTER":
       console.log("reducer", state, action.filter);
-      //anaële modif par greg mais ne fonction pas apparemment
-      if(action.filter.where && action.filter.where!=='%%') action.filter.when = 15
+      //fait revenir le filtre date à 15 jours par default
+      if(action.filter.where && action.filter.who!=='%%') action.filter.when = 15
       return { ...state, ...action.filter };
     default:
       return state;

@@ -11,6 +11,7 @@ import ButtonToTop from "../components/buttonToTop";
 import "../App.css";
 import HeaderNoBack from "../components/headNoBack";
 import { Link } from "react-router-dom";
+import moment from 'moment';
 
 class EventList extends Component {
   // Julie : pour le filtre en front
@@ -23,8 +24,10 @@ class EventList extends Component {
 
   componentWillMount() {
     console.log("here", this.props.filterEvents);
+    this.filterEvent(this.props.activeEvents.events, this.props.filterEvents);
+
     //filterEvents dispatchée par Fetchevents(Monica/Nadim)
-    this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
+    // this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
 
   //Lisa : on renvoie de nouveaux props quand on appuie sur les boutons de filtre jours
@@ -32,29 +35,55 @@ class EventList extends Component {
   // Julie : filtres where et who pour l'API
   componentWillReceiveProps(newprops) {
     console.log("newprops API", newprops);
-    const evtFilt = newprops.activeEvents.events.filter((event) => {
+    this.filterEvent(newprops.activeEvents.events, newprops.filterEvents);
+  }
+  
+  filterEvent = (events, filter) => {
+    const evtFilt = events.filter((event) => {
       return (
-        (newprops.filterEvents.where === '%%' || event.location === newprops.filterEvents.where)
-        && (newprops.filterEvents.who === '%%' || event.target === newprops.filterEvents.who)
+        this.filterWhenCondition(filter.when,event.event_start_date, event.event_end_date) 
+        && this.filterWhereCondition(filter.where, event.categories_id)
+        && this.filterWhoCondition(filter.who, event.categories_id)
       )
     })
-    console.log(evtFilt)
+    console.log("filtered", evtFilt.length)
     this.setState({
       eventsfiltre: evtFilt
     })
   }
 
+  filterWhenCondition(filterWhen, targetWhenStart, targetWhenEnd){
+    return (-1 * moment().diff(targetWhenStart, "days") <= filterWhen
+    && -1 * moment().diff(targetWhenEnd, "days") >= 0)
+  }
+  filterWhereCondition(filterWhere, targetWhere){
+    if(!targetWhere) return false
+    return (filterWhere === '%%'
+          || (targetWhere && targetWhere.find(cat => 
+            (cat && cat.name.toLowerCase().indexOf(filterWhere.toLowerCase()) >= 0)
+          )))
+  }
+  filterWhoCondition(filterWho, targetWho){
+    if(!targetWho) return false
+    return (filterWho === '%%'
+          || (targetWho && targetWho.find(cat => 
+            (cat && cat.name.toLowerCase().indexOf(filterWho.toLowerCase()) >= 0)
+          )))
+  }
+
+
   cancelFilter(filter) {
     // this.props.updateFilter({ [filter]: "%%" });
-    if (filter === "%%") { 
-      return (<p/>) 
-      }else{
-      (this.props.updateFilter({ [filter] : "%%"}));
-      }
-    };
+    if (filter === "%%") {
+      return (<p />)
+    } else {
+      (this.props.updateFilter({ [filter]: "%%" }));
+    }
+  };
 
   render() {
     console.log(this.props.filterEvents); //console.log pour tester les events filtrés
+    const { eventsfiltre } = this.state;
     return (
       <div>
         <Container className="mainContainer">
@@ -101,12 +130,12 @@ class EventList extends Component {
                   ""
                 )}
             </Row>
-            {this.props.activeEvents.events.length > 0 ? (
+            {eventsfiltre.length > 0 ? (
               <div>
                 <Row>
-                  {this.props.activeEvents.events.map((event, index) => (
+                  {eventsfiltre.map((event, index) => (
                     <Col key={`event${index}`} xs="12" sm="12" md="6">
-                      <Event  event={event} />
+                      <Event event={event} />
                     </Col>
                   ))}
                 </Row>
@@ -134,11 +163,11 @@ class EventList extends Component {
 
 //Julie : transfert des états
 // const mapStateToProps = ({ eventsLoire, filterEvents }) => {
-  // console.log("store", { eventsLoire, filterEvents });
-  // return { eventsLoire, filterEvents };
-  const mapStateToProps = ({ activeEvents, filterEvents }) => {
-    console.log("store", { activeEvents, filterEvents });
-    return { activeEvents, filterEvents };
+// console.log("store", { eventsLoire, filterEvents });
+// return { eventsLoire, filterEvents };
+const mapStateToProps = ({ activeEvents, filterEvents }) => {
+  console.log("store", { activeEvents, filterEvents });
+  return { activeEvents, filterEvents };
 };
 
 const mapDispatchToProps = dispatch => {

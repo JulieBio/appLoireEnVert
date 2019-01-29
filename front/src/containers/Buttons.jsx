@@ -6,8 +6,10 @@ import { connect } from "react-redux";
 import { updateFilter, updateButton } from "../actions";
 import "./buttons.css";
 
+
 // Julie lisa : Création d'un container buttons qui met met à jour son state.
 // ... on utilise when pour définir le nombre de jour souhaité, puis on met à jour le store avec dispatch
+
 
 
 class Buttons extends React.Component {
@@ -22,17 +24,17 @@ class Buttons extends React.Component {
       buttonDates: [
         {
           name: "15 jours",
-          when: "15",
+          when: 15,
           id: "1"
         },
         {
           name: "1 mois",
-          when: "30",
+          when: 30,
           id: "2"
         },
         {
           name: "3 mois",
-          when: "90",
+          when: 90,
           id: "3"
         }
       ]
@@ -40,7 +42,7 @@ class Buttons extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
+  
 
   //Marion : création d'une fonction pour rendre le bouton cliqué inactif
   //Marion :Désactivation bouton faite en lui ajoutant un id
@@ -53,7 +55,9 @@ class Buttons extends React.Component {
   }
 
   datesFiltred = when => {
+  
     this.props.updateFilter({ when: when });
+    console.log ("Lisa et Anaële" + when)
   };
 
   render() {

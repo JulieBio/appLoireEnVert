@@ -74,7 +74,9 @@ class EventDetails extends Component {
   goBack = () => {
     this.props.history.goBack();
   };
-
+beautify(string){
+    return string.replace(/(<\w[^>]*>)/g,'<br />$1').replace(/\[\/?.*]/g,'');
+}
   render() {
     const event = this.props.location.state;
     return (
@@ -117,14 +119,13 @@ class EventDetails extends Component {
                           )}
 
                           <div className="freeEvent">
-                            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
+                            {event.event_rsvp === "0" ? (<div>Sur inscription ou payant</div>) : null}
                             <br />
                           </div>
                         </div>
-                        <br />
 
                         <CardText className="description-event">
-                          <div dangerouslySetInnerHTML={{ __html: event.post_content }} />
+                          <div className='postContent' dangerouslySetInnerHTML={{ __html: this.beautify(event.post_content) }} />
                         </CardText>
 
                         <div>

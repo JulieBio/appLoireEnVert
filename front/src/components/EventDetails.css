@@ -81,3 +81,13 @@
   color: #4b4b4b;
   padding: 2vmin 0 0 0;
 }
+
+.postContent{
+  white-space: normal;
+   
+}
+
+.postContent img {
+  width: 100%;
+  height: auto;
+}

@@ -27,7 +27,7 @@ moment.locale("fr", idLocale);
 const Event = ({ event }) => (
   <div className="cardAccueil">
     <NavLink to={{pathname:`/event/${event.event_id}`, state:event}}>
-      <Card>
+      <Card style={{"height" : 400 }}>
         <CardImg
           src={event.image}
           alt="Card image cap"
@@ -45,7 +45,7 @@ const Event = ({ event }) => (
           </CardSubtitle> */}
           <CardSubtitle className="itemEvent">
             <p className="typeEvent">{event.name} </p>
-          </CardSubtitle>
+          </CardSubtitle> <br/>
           <CardSubtitle className="itemEvent">
             <p>
               {moment(event.event_start_date).format("ll")} -{" "}
@@ -55,15 +55,16 @@ const Event = ({ event }) => (
             </p>
           </CardSubtitle>
           <CardSubtitle className="itemEvent">{event.location_town}</CardSubtitle>
-
+            <br/>     
           <CardSubtitle>
             <div className="cardIcones">
-            {event.event_rsvp === "0" ? (<div>Sur incription ou payant</div>) : null}
-                              <br /> 
-              <div className={event.type} />
+            {event.event_rsvp === "0" ? (<div>Sur inscription ou payant</div>) : null}
             </div>
           </CardSubtitle>
-        <br />
+          {/* <CardSubtitle>
+              <div className={event.} />
+          </CardSubtitle> */}
+        {/* <br /> */}
           <CardSubtitle className="itemEvent">
           {event.categories_id && event.categories_id.map(cat =>  <span>{cat && cat.name} </span>)}
           </CardSubtitle>

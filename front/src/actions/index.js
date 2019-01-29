@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from 'moment';
 
 //Julie : description de l'action
 export const updateEventsList = events => ({
@@ -76,7 +77,7 @@ export const fetchEvents = filter => {
             else
               return event;
           });
-
+          eventswithImgWithLocWithCat.sort((a,b)=> moment(a.event_start_date).diff(b.event_start_date))
           dispatch(updateEventsList(eventswithImgWithLocWithCat));
         }))
         .catch(e => {
@@ -85,3 +86,16 @@ export const fetchEvents = filter => {
     );
   };
 };
+
+
+
+// let now = new Date();
+// let twoWeeks  = moment(now).add(15, 'days');
+// let oneMounth  = moment(now).add(30, 'days');
+
+// const eventsFiltredDates = eventswithImgWithLocWithCat.map((event, when) => {
+//   if (event.event_start_date < oneMounth) {
+//     const 
+//   }
+// }
+// )
