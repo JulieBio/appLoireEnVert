@@ -1,0 +1,37 @@
+{
+    "name": "fr.loireenvert.cordova",
+    "displayName": "LoireEnVert",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build2cord": "react-scripts build && rm -rf cordova/www/* && mv build/* cordova/www && cd cordova && cordova run android"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-android": "^7.1.4",
+        "cordova-plugin-background-mode": "^0.7.2",
+        "cordova-plugin-device": "^2.0.2",
+        "cordova-plugin-screen-orientation": "^3.0.1",
+        "cordova-plugin-splashscreen": "^5.0.2",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova.plugins.diagnostic": "^4.0.10",
+        "es6-promise-plugin": "^4.2.2",
+        "org.apache.cordova.geolocation": "^0.3.6"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-background-mode": {},
+            "cordova-plugin-screen-orientation": {},
+            "org.apache.cordova.geolocation": {},
+            "cordova.plugins.diagnostic": {},
+            "cordova-plugin-splashscreen": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
