@@ -11,8 +11,6 @@ import edf from "../assets/EDF_Logo_RGB_300_F.jpg";
 import HeadBack from "./headBack";
 import retourFleche from "../assets/retourFleche.png";
 
-// Julie : logos cliquables avec lien sur le site internet de chaque partenaire
-
 const styleBack = {
   goBack: {
     background: `url(${retourFleche})`,
@@ -26,6 +24,8 @@ const styleBack = {
     top: "-16vmin"
   }
 };
+
+// logos cliquables de chaque partenaire, avec lien sur leur site internet 
 
 class Partenaires extends Component {
   constructor(props) {

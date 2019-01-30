@@ -9,7 +9,7 @@ class ButtonToTop extends React.Component {
       intervalId: 0
     };
   }
-  
+
   scrollStep() {
     if (window.pageYOffset === 0) {
       clearInterval(this.state.intervalId);

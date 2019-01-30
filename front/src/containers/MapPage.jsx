@@ -9,7 +9,6 @@ import Event from "../components/Event";
 import { fetchEvents } from "../actions/index";
 import L from "leaflet";
 import Buttons from "./Buttons";
-// import "../App.css";
 import HeadNoBack from "../components/headNoBack";
 
 
@@ -46,6 +45,7 @@ class MapPage extends Component {
       loader: false,
       currentEvent: null
     };
+    // onDismiss pour fermeture du message d'erreur de non géolocalisation
     this.onDismiss = this.onDismiss.bind(this);
   }
 
@@ -54,7 +54,7 @@ class MapPage extends Component {
   }
 
   componentDidMount() {
-    //geolocalisation avec plugins de cordova pour autoriser la géolocalisation
+    // geolocalisation avec plugins de cordova pour autoriser la géolocalisation
     window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
       if (!authorized) {
         window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
@@ -67,42 +67,33 @@ class MapPage extends Component {
   }
 
   getPosition() {
-      // récupère la localisation
+    // récupère la localisation
     this.setState({ loader: true }) // spinner actif dès affichage de la map
     navigator.geolocation.getCurrentPosition(position => {
-      //si les coordonnées sont trouver le spinner passe en false
+      // si les coordonnées sont trouvées le spinner passe en false
       this.setState({
         location_latitude: position.coords.latitude,
         location_longitude: position.coords.longitude,
         loader: false,
       });
     }, error => {
-      //si les cordonnées Gps ne sont pas trouvées alors le spinner passe en false et alerte en true
+      // si les cordonnées Gps ne sont pas trouvées alors le spinner passe en false et alerte en true
       this.setState({
         loader: false,
         // Alerte prend ce message d'erreur
         alert: <div style={{ textAlign: 'center' }}> Impossible de récupérer votre position. Vérifier vos paramètres GPS!</div>
       })
     }, {
-      // impose un temps de recherche de la géolocalisation
+        // impose un temps de recherche de la géolocalisation
         timeout: 10000,
         enableHighAccuracy: false
       });
   }
-  // componentWillMount() {
-  //   console.log("here", this.props.filterEvents);
-  //   this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
-  // }
+
 
   componentWillMount() {
-    console.log("here", this.props.activeEvents);
     this.props.functionCallDispatchFetchEvents(this.props.activeEvents);
   }
-
-  // componentWillReceiveProps(newprops) {
-  //   if (this.props.filterEvents !== newprops.filterEvents)
-  //     this.props.functionCallDispatchFetchEvents(newprops.filterEvents);
-  // }
 
   componentWillReceiveProps(newprops) {
     if (this.props.activeEvents !== newprops.activeEvents)
@@ -110,19 +101,11 @@ class MapPage extends Component {
   }
 
   render() {
-    // console.log("eventFiltré", this.props.filterEvents);
-    console.log("activeEvents", this.props.activeEvents);
-
-
     const position = [this.state.location_latitude, this.state.location_longitude];
 
     return (
       <div>
-
-
-
         <Container className="container-eventDetails">
-
           <HeadNoBack />
           <Buttons />
           {/*affiche le spinner suivant état de la condition et de son State */}
@@ -140,16 +123,14 @@ class MapPage extends Component {
             :
             " "}
 
-          {/*affiche l'alerte suivant état de la condition et de si la geolocalisation à été trouvée */}
+          {/*affiche l'alerte suivant état de la condition et si la geolocalisation à été trouvée */}
           {this.state.alert ?
             <div>
-              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position:'fixed', zIndex:'9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
+              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position: 'fixed', zIndex: '9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
                 {this.state.alert}
               </Alert>
             </div> :
             " "}
-
-
 
           <Map className="map" center={position} zoom={this.state.zoom}>
 
@@ -157,6 +138,7 @@ class MapPage extends Component {
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
             <Marker position={position} icon={myIcon}>
               <Popup> vous êtes ici </Popup>
             </Marker>
@@ -164,28 +146,26 @@ class MapPage extends Component {
             {this.props.activeEvents.events.map((event, index) => {
               if (event.location_latitude && event.location_longitude)
                 return (
-                  <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={()=> this.setState({currentEvent:event})}>
+                  <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={() => this.setState({ currentEvent: event })}>
                   </Marker>
                 );
               else return "";
             })}
           </Map>
         </Container>
-        {this.state.currentEvent?
-        <div className="eventPopup">
-          <button onClick={()=>this.setState({currentEvent:null})}>Fermer</button>
-          <Event event={this.state.currentEvent} />
-        </div>
-        : ""
+        {this.state.currentEvent ?
+          <div className="eventPopup">
+            <button onClick={() => this.setState({ currentEvent: null })}>Fermer</button>
+            <Event event={this.state.currentEvent} />
+          </div>
+          : ""
         }
-
       </div>
     );
   }
 }
 
 const mapStateToProps = ({ activeEvents, filterEvents }) => {
-  console.log("store", { activeEvents, filterEvents });
   return { activeEvents, filterEvents };
 };
 

@@ -52,42 +52,42 @@ class EventFilterWho extends Component {
 
   render() {
     return <div>
-        <Container className="mainContainer">
-          <HeadNoBack />
-          <Row>
-            <Col xl="12" sm="12" md="12" className="titleWhoWhere">
-              Pour qui ?
+      <Container className="mainContainer">
+        <HeadNoBack />
+        <Row>
+          <Col xl="12" sm="12" md="12" className="titleWhoWhere">
+            Pour qui ?
             </Col>
-          </Row>
+        </Row>
 
-          <Row>
-            {this.state.buttonList.map((button, index) => (
-              <Col xs="12" sm="12" md="12" key={index}>
-                <Button
-                  className="buttonFilterWhoWhere"
-                  onClick={() => this.eventsFiltred(button.filter)}
-                  color="secondary"
-                  size="lg"
-                  block
-                >
-                  <Container>
-                    <Row>
-                      <Col xs="3">
-                        <img src={button.image} alt="button filter" />
-                      </Col>
-                      <Col xs="9" style={styles.buttonFilter}>
-                        <p className="titleFilter">
-                          {button.name.toUpperCase()}
-                        </p>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Button>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>;
+        <Row>
+          {this.state.buttonList.map((button, index) => (
+            <Col xs="12" sm="12" md="12" key={index}>
+              <Button
+                className="buttonFilterWhoWhere"
+                onClick={() => this.eventsFiltred(button.filter)}
+                color="secondary"
+                size="lg"
+                block
+              >
+                <Container>
+                  <Row>
+                    <Col xs="3">
+                      <img src={button.image} alt="button filter" />
+                    </Col>
+                    <Col xs="9" style={styles.buttonFilter}>
+                      <p className="titleFilter">
+                        {button.name.toUpperCase()}
+                      </p>
+                    </Col>
+                  </Row>
+                </Container>
+              </Button>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>;
   }
 }
 

@@ -1,12 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
 import "./head.css";
-import Logo from "../assets/loire-en-vert.png";
 import HeadBack from "./headBack";
 import HeadNoBack from "./headNoBack";
-// import Media from "react-media";
-
-// const Media = require("react-media");
 
 class Head extends React.Component {
   constructor(props) {
@@ -18,8 +13,6 @@ class Head extends React.Component {
 
   componentDidMount() {
     this.setState({ urlAdress: window.location.href });
-    console.log(window.location.href);
-    console.log("state " + this.state.urlAdress);
   }
 
   render() {
@@ -28,8 +21,8 @@ class Head extends React.Component {
         {window.location.href === "http://localhost:3000/who" ? (
           <HeadBack />
         ) : (
-          <HeadNoBack />
-        )}
+            <HeadNoBack />
+          )}
       </div>
     );
   }

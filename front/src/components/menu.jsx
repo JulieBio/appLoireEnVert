@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import HeadNoBack from "./headNoBack";
 import { Container } from "reactstrap";
 
-// Julie : liste des links du menu burger
+// liste des links du menu burger
 class Menu extends Component {
-  // Julie ferme le menu burger et revient à la dernière page
 
   render() {
     return (
@@ -21,7 +20,7 @@ class Menu extends Component {
               <a href="https://loireenvert.fr/newsletter/">Newsletter</a>
             </div>
 
-            {/* Julie : Link permet de ne pas recharger la page */}
+            {/* Link permet de ne pas recharger la page */}
             <Link to="/quiSommesNous">
               <div className="menuB">Qui sommes-nous ?</div>
             </Link>

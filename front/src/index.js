@@ -8,16 +8,12 @@ import allReducers from "./reducers";
 import App from "./App";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// importer leaflet
 import 'leaflet/dist/leaflet.css';
-
 
 const store = createStore(allReducers, applyMiddleware(thunk));
 
-
 ReactDOM.render(
-  // Julie : le store de Redux
+  // le store de Redux
   <Provider store={store}>
     <App />
   </Provider>,

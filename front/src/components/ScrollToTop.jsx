@@ -1,4 +1,4 @@
-// Monica: component crée pour réinitialiser le scroll dans une nouvelle page
+// repositionne en haut de chaque nouvelle page 
 
 import { Component } from "react";
 import { withRouter } from "react-router";
