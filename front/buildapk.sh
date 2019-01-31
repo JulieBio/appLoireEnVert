@@ -1,0 +1,1 @@
+react-scripts build && rm -rf cordova/www/* && mv build/* cordova/www && cd cordova && cordova build android --release

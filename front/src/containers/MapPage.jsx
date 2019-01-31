@@ -5,11 +5,13 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { updateEventsList } from "../actions/index";
 import { css } from '@emotion/core';
 import { ClipLoader } from 'react-spinners';
+import { updateFilter } from "../actions/index";
 import Event from "../components/Event";
 import { fetchEvents } from "../actions/index";
 import L from "leaflet";
 import Buttons from "./Buttons";
 import HeadNoBack from "../components/headNoBack";
+import moment from 'moment';
 
 
 const override = css`
@@ -43,7 +45,9 @@ class MapPage extends Component {
       visible: true,
       alert: false,
       loader: false,
-      currentEvent: null
+      currentEvent: null,
+      eventsfiltre: []
+
     };
     // onDismiss pour fermeture du message d'erreur de non géolocalisation
     this.onDismiss = this.onDismiss.bind(this);
@@ -53,6 +57,48 @@ class MapPage extends Component {
     this.setState({ visible: false });
   }
 
+  componentWillMount() {
+    this.filterEvent(this.props.activeEvents.events, this.props.filterEvents);
+  }
+
+  componentWillReceiveProps(newprops) {
+    this.filterEvent(newprops.activeEvents.events, newprops.filterEvents);
+  }
+
+  filterEvent = (events, filter) => {
+    const evtFilt = events.filter((event) => {
+      return (
+        this.filterWhenCondition(filter.when, event.event_start_date, event.event_end_date)
+        && this.filterWhereCondition(filter.where, event.categories_id)
+        && this.filterWhoCondition(filter.who, event.categories_id)
+      )
+    })
+    this.setState({
+      eventsfiltre: evtFilt
+    })
+  }
+
+  filterWhenCondition(filterWhen, targetWhenStart, targetWhenEnd) {
+    return (-1 * moment().diff(targetWhenStart, "days") <= filterWhen
+      && -1 * moment().diff(targetWhenEnd, "days") >= 0)
+  }
+
+  filterWhereCondition(filterWhere, targetWhere) {
+    if (!targetWhere) return false
+    return (filterWhere === '%%'
+      || (targetWhere && targetWhere.find(cat =>
+        (cat && cat.name.toLowerCase().indexOf(filterWhere.toLowerCase()) >= 0)
+      )))
+  }
+
+  filterWhoCondition(filterWho, targetWho) {
+    if (!targetWho) return false
+    return (filterWho === '%%'
+      || (targetWho && targetWho.find(cat =>
+        (cat && cat.name.toLowerCase().indexOf(filterWho.toLowerCase()) >= 0)
+      )))
+  }
+  
   componentDidMount() {
     // geolocalisation avec plugins de cordova pour autoriser la géolocalisation
     window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
@@ -91,17 +137,20 @@ class MapPage extends Component {
   }
 
 
-  componentWillMount() {
-    this.props.functionCallDispatchFetchEvents(this.props.activeEvents);
-  }
+  // componentWillMount() {
+  //   this.props.functionCallDispatchFetchEvents(this.props.activeEvents);
 
-  componentWillReceiveProps(newprops) {
-    if (this.props.activeEvents !== newprops.activeEvents)
-      this.props.functionCallDispatchFetchEvents(newprops.activeEvents);
-  }
+  // }
+
+  // componentWillReceiveProps(newprops) {
+  //   if (this.props.activeEvents !== newprops.activeEvents)
+  //     this.props.functionCallDispatchFetchEvents(newprops.activeEvents);
+  // }
+
 
   render() {
     const position = [this.state.location_latitude, this.state.location_longitude];
+    const { eventsfiltre } = this.state;
 
     return (
       <div>
@@ -143,7 +192,7 @@ class MapPage extends Component {
               <Popup> vous êtes ici </Popup>
             </Marker>
 
-            {this.props.activeEvents.events.map((event, index) => {
+            {eventsfiltre.map((event, index) => {
               if (event.location_latitude && event.location_longitude)
                 return (
                   <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={() => this.setState({ currentEvent: event })}>
@@ -174,6 +223,9 @@ const mapDispatchToProps = dispatch => {
     functionCallDispatchFetchEvents: filter => dispatch(fetchEvents(filter)),
     addEvent: event => {
       dispatch(updateEventsList(event));
+    },
+    updateFilter: filter => {
+      dispatch(updateFilter(filter));
     }
   };
 };

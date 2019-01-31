@@ -17,7 +17,6 @@ class EventList extends Component {
   constructor() {
     super()
     this.state = {
-      // pour le filtre
       eventsfiltre: []
     }
   }

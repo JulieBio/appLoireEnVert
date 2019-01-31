@@ -35,6 +35,7 @@ class EventDetails extends Component {
 
   //fonction qui enlève les balises html du post-content ainsi que les balises [caption]
   beautify(string) {
+    if(!string) return '';
     return string.replace(/(<\w[^>]*>)/g, '<br />$1').replace(/\[\/?.*]/g, '');
   }
 
