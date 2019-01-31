@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Container, Card, Col } from "reactstrap";
-import { CardImg } from "reactstrap";
+import { CardImg, CardLink } from "reactstrap";
 import fneloire from "../assets/FNE_Loire_logo.png";
 import HeadBack from "./headBack";
 import retourFleche from "../assets/retourFleche.png";
 
-// Julie: voir si logo ok car link ne fonctionne pas
+// voir si logo ok car link ne fonctionne pas
 
 const styleBack = {
   goBack: {
@@ -20,6 +20,7 @@ const styleBack = {
     top: "-16vmin"
   }
 };
+
 class QuiSommesNous extends Component {
   constructor(props) {
     super(props);
@@ -71,11 +72,15 @@ class QuiSommesNous extends Component {
                       <li>l’éducation pour tous.</li>
                     </ul>
                   </div>
-                  <CardImg
-                    className="imgpart"
-                    src={fneloire}
-                    alt="logo France Nature Environnement Loire"
-                  />
+
+                  <CardLink href="http://www.fne-pays-de-la-loire.fr/">
+                    <CardImg
+                      className="imgpart"
+                      src={fneloire}
+                      alt="logo France Nature Environnement Loire"
+                    />
+                  </CardLink>
+
                   <div className="espace"> </div>
                 </div>
               </div>

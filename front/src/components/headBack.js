@@ -3,10 +3,6 @@ import { Row } from "reactstrap";
 import "./head.css";
 import Logo from "../assets/loire-en-vert.png";
 
-// import Media from "react-media";
-
-// const Media = require("react-media");
-
 class HeadBack extends React.Component {
   render() {
     return (

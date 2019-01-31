@@ -1,10 +1,9 @@
 const activeEvents = (state = { events: [] }, action) => {
   switch (action.type) {
 
-// Julie : déclaration des actions
+    // déclaration des actions
 
     case 'UPDATE_EVENTS_LIST':
-    console.log("erre",action.events)
       return { ...state, events: action.events };
 
     case 'ADD_EVENT':

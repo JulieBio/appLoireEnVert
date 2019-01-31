@@ -1,6 +1,7 @@
 import axios from "axios";
+import moment from 'moment';
 
-//Julie : description de l'action
+// description de l'action
 export const updateEventsList = events => ({
   type: "UPDATE_EVENTS_LIST",
   events
@@ -10,15 +11,14 @@ export const addEvent = event => ({
   event
 });
 
-//On crée const pour actualiser les résultats filtrés (Monica/Nadim)
-// Julie Lisa : filter (sous type) est un req.body
+// On crée const pour actualiser les résultats filtrés
+//  filter (sous type) est un req.body
 export const updateFilter = filter => ({
   type: "UPDATE_FILTER",
   filter
 });
 
 export const updateButton = number => {
-  console.log("in ACTION", number)
   return {
     type: "UPDATE_BUTTON",
     number,
@@ -26,17 +26,16 @@ export const updateButton = number => {
 };
 
 
-// recupération dans la bdd
 export const fetchEvents = filter => {
   return dispatch => {
     return (
-      // Julie Lisa : filter est un req.body est le même que filter dans updateFilter
+      // filter est un req.body est le même que filter dans updateFilter
       axios.all([
         axios.get("https://loireenvert.fr/wp-json/wp/v2/events"),
         axios.get("https://loireenvert.fr/wp-json/wp/v2/locations"),
         axios.get("https://loireenvert.fr/wp-json/wp/v2/event-categories ")
       ])
-        // Marion : on crée deux variables contenant chacune les données de chaque table categoriesRes
+        // on crée deux variables contenant chacune les données de chaque table categoriesRes
         .then(axios.spread((eventRes, locationsRes, categoriesRes) => {
           const eventsLoire = eventRes.data;
           /**
@@ -53,11 +52,10 @@ export const fetchEvents = filter => {
            */
           const locs = locationsRes.data;
           const categories = categoriesRes.data;
-          // Marion : on prends la table de tous les évènements attribuée à la variable const events puis pour un évènement on récupère la colomne commune à la table des évènements et à la table des lieux dans chaque table et on compare qu'elles soient bien identique. Si oui, on retourne la table évènements avec le lieux correspondant à la clé.
+          // on prends la table de tous les évènements attribuée à la variable const events puis pour un évènement on récupère la colomne commune à la table des évènements et à la table des lieux dans chaque table et on compare qu'elles soient bien identique. Si oui, on retourne la table évènements avec le lieux correspondant à la clé.
           const eventswithImgWithLoc = eventswithImg.map((event, i) => {
             const loc = locs.find(loc => loc.location_id === event.location_id)
-            if (i === 1) console.log(event, loc, { ...event, ...loc })
-            return { ...event, ...loc }
+              return { ...event, ...loc }
           });
 
           /**
@@ -76,7 +74,7 @@ export const fetchEvents = filter => {
             else
               return event;
           });
-
+          eventswithImgWithLocWithCat.sort((a, b) => moment(a.event_start_date).diff(b.event_start_date))
           dispatch(updateEventsList(eventswithImgWithLocWithCat));
         }))
         .catch(e => {
@@ -85,3 +83,5 @@ export const fetchEvents = filter => {
     );
   };
 };
+
+

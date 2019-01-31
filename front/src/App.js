@@ -22,7 +22,6 @@ import funnel from "./assets/funnel.png";
 import map from "./assets/map.png";
 import menu from "./assets/menu.png";
 
-//Monica: ScrollToTop pour mettre à jour le scroll
 class App extends Component {
   constructor() {
     super()
@@ -32,8 +31,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log("here", this.props.filterEvents);
-    //filterEvents dispatchée par Fetchevents(Monica/Nadim)
     this.props.functionCallDispatchFetchEvents(this.props.filterEvents);
   }
 
@@ -43,7 +40,6 @@ class App extends Component {
         <HashRouter>
           <div className="containerGeneral">
             <Navbar className="notreNavbar navbar-default navbar-fixed-bottom">
-              {/* Julie : Link permet de ne pas recharger la page et de garder en mémoire les choix du filtre */}
               <Nav>
                 <NavItem className="icon">
                   <NavLink to="/events" activeClassName="activeNB">
@@ -81,24 +77,18 @@ class App extends Component {
                 <Route path="/partenaires" component={Partenaires} />
                 <Route path="/map" component={MapPage} />
               </ScrollToTop>
+              {/* // ScrollToTop pour mettre à jour le scroll */}
             </Switch>
           </div>
-          {/*      <NavBar /> */}
         </HashRouter>
       </div>
     );
   }
 }
 
-//Julie : transfert des états
-// const mapStateToProps = ({ eventsLoire, filterEvents }) => {
-  // console.log("store", { eventsLoire, filterEvents });
-  // return { eventsLoire, filterEvents };
-  const mapStateToProps = ({ activeEvents, filterEvents }) => {
-    console.log("store", { activeEvents, filterEvents });
-    return { activeEvents, filterEvents };
+const mapStateToProps = ({ activeEvents, filterEvents }) => {
+  return { activeEvents, filterEvents };
 };
-
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -109,14 +99,8 @@ const mapDispatchToProps = dispatch => {
     updateFilter: filter => {
       dispatch(updateFilter(filter));
     }
-
-    //*Test events filtrés Monica ne pas effacer merci**
-    // addEventFilter: filter => {
-    //   dispatch(updateFilter(filter));
-    // }
   };
 };
-
 
 export default connect(
   mapStateToProps,

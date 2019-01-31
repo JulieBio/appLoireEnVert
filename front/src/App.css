@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
+
 @font-face {
   font-family: "Old Press";
   font-style: normal;
   font-weight: 400;
   src: url("./assets/old_press-webfont.woff");
 }
+
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 html,
@@ -23,7 +25,6 @@ a {
   background-image: url(./assets/fond.jpg);
   min-height: 100vh;
   min-width: 100vw;
-  /* background-size: cover; */
   background-attachment: fixed;
   background-repeat: repeat;
 }
@@ -60,6 +61,7 @@ a {
     margin-left: 43%;
   }
 }
+
 .type-eventDetails {
   font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 1em;
@@ -105,14 +107,14 @@ a {
   padding: 2vmin 0 0 0;
 }
 
-/*Marion: pour rendre bouton actif*/
+/* pour rendre bouton actif*/
 
 .toggled {
   background-color: #2f70e1;
   color: #fff;
 }
 
-/* Julie : NavBar, et tout ce qui en dépend */
+/* NavBar, et tout ce qui en dépend */
 
 .notreNavbar {
   z-index: 99999;
@@ -144,16 +146,20 @@ a {
   height: auto;
   margin: 0 auto;
 }
+
 .menuB {
   color: #4b4b4b !important;
   width: 100% !important;
 }
+
 .menuB a:link {
   color: #4b4b4b !important;
 }
+
 .menuB a:visited {
   color: #4b4b4b !important;
 }
+
 .menuB a:active {
   color: #4b4b4b !important;
 }
@@ -169,6 +175,7 @@ a {
   justify-content: center;
   background-color: white;
 }
+
 .menuB {
   font-family: "Patrick Hand", Arial, sans-serif;
   font-size: 2.2em;
@@ -186,6 +193,7 @@ a {
 .colMenuPages {
   padding: 0;
 }
+
 .contentMenuPages {
   margin-top: 30px;
   margin-left: 30px;
@@ -193,6 +201,7 @@ a {
   font-family: "Questrial", Arial, serif;
   color: #4b4b4b !important;
 }
+
 .texteQuiSommesNous {
   margin-top: 30px;
   margin-left: 30px;
@@ -218,6 +227,7 @@ a {
   justify-content: center;
   align-items: baseline;
 }
+
 .part {
   margin-top: 30px;
 }
@@ -229,15 +239,15 @@ a {
   width: 100%;
 }
 
-
-.eventPopup{
+.eventPopup {
   position: fixed;
   bottom: 0;
   margin: 25px;
   margin-bottom: 80px;
-  z-index:9999;
+  z-index: 9999;
 }
-.eventPopup > button{
+
+.eventPopup>button {
   position: absolute;
   top: 0;
   right: 0;
